@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>学习笔记 - 文心雕龙</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="整理一下这两天学的知识。
+ivp6和ivp4ivp6​...">
+  <meta name="author" content="明 尘">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">学习笔记</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">学习笔记</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 05, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2941</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <p>整理一下这两天学的知识。</p>
+<h1 id="ivp6和ivp4"><a href="#ivp6和ivp4" class="headerlink" title="ivp6和ivp4"></a>ivp6和ivp4</h1><h2 id="ivp6"><a href="#ivp6" class="headerlink" title="ivp6"></a>ivp6</h2><p>​		IPv6的地址长度为128位，是IPv4地址长度的4倍。于是IPv4点分十进制格式不再适用，采用十六进制表示。IPv6有3种表示方法。</p>
+<h3 id="0位压缩表示法"><a href="#0位压缩表示法" class="headerlink" title="0位压缩表示法"></a>0位压缩表示法</h3><p>​		在某些情况下，一个IPv6地址中间可能包含很长的一段0，可以把连续的一段0压缩为“::”。但为保证地址解析的唯一性，地址中”::”只能出现一次，例如：<br>​		FF01:0:0:0:0:0:0:1101 → FF01::1101<br>​		0:0:0:0:0:0:0:1 → ::1<br>​		0:0:0:0:0:0:0:0 → ::</p>
+<h3 id="冒分十六进制表示法"><a href="#冒分十六进制表示法" class="headerlink" title="冒分十六进制表示法"></a>冒分十六进制表示法</h3><p>​	格式为X:X:X:X:X:X:X:X，其中每个X表示地址中的16b，以十六进制表示，例如：<br>​		ABCD:EF01:2345:6789:ABCD:EF01:2345:6789<br>​	这种表示法中，每个X的前导0是可以省略的，例如：<br>​		2001:0DB8:0000:0023:0008:0800:200C:417A→ 	2001:DB8:0:23:8:800:200C:417A</p>
+<h2 id="ivp4"><a href="#ivp4" class="headerlink" title="ivp4"></a>ivp4</h2><p>​		网际协议版本4（英语：InternetProtocolversion4，IPv4），又称互联网通信协议第四版，是网际协议开发过程中的第四个修订版本，也是此协议第一个被广泛部署的版本。IPv4是互联网的核心，也是使用最广泛的网际协议版本，其后继版本为IPv6，直到2011年，IANAIPv4位址完全用尽时，IPv6仍处在部署的初期。<br>​		IPv4在IETF于1981年9月发布的RFC 791中被描述，此RFC替换了于1980年1月发布的RFC 760。</p>
+<h3 id="ip地址"><a href="#ip地址" class="headerlink" title="ip地址"></a>ip地址</h3><p>​	ip地址以圆点分隔号的四个十进制数字表示，每个数字从0到255，如某一台主机的ip地址为：128.20.4.1</p>
+<p>  <strong>IP地址 &#x3D; 网络地址</strong> <strong>+ 主机地址</strong>(又称：主机号和网络号组成)</p>
+<h3 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h3><p>​	长度 为 4 * 8bit（1字节），由 连续的1 以及 连续的0 两部分组成，</p>
+<p>​	例如：11111111.11111111.11111111.00000000，对应十进制：255.255.255.0</p>
+<p>​	子网掩码计算网络地址：将IP地址和子网掩码都换算成二进制；将两者进行 “与运算”，得到网络地址。</p>
+<h3 id="默认网关（地址）"><a href="#默认网关（地址）" class="headerlink" title="默认网关（地址）"></a>默认网关（地址）</h3><p><strong>网关地址</strong>就是网关设备的IP地址。</p>
+<p>​	假设我们有两个网络：</p>
+<p>​	网络A的IP地址范围为“192.168.1.1~192.168.1.254”，子网掩码为255.255.255.0</p>
+<p>​	网络B的IP地址范围为“192.168.2.1~192.168.2.254”，子网掩码为255.255.255.0</p>
+<p>​	要实现这两个网络之间的通信，则必须通过网关。</p>
+<h1 id="私网和公网"><a href="#私网和公网" class="headerlink" title="私网和公网"></a>私网和公网</h1><p>​	公网地址和私网地址之间的区别主要体现在以下几个方面： </p>
+<p>​	分配方式不同：公网地址由互联网注册机构分配，而私网地址由局域网管理员自行分配。</p>
+<pre><code> 使用范围不同：公网地址用于Internet上的设备，私网地址用于局域网内部的设备。 
+</code></pre>
+<p>​	 唯一性和可达性不同：公网地址具有全球唯一性和全球可达性，而私网地址只在局域网内部唯一，不具有全球可达性。	</p>
+<h2 id="私网地址的范围"><a href="#私网地址的范围" class="headerlink" title="私网地址的范围"></a>私网地址的范围</h2><p>​	 A类地址:10.0.0.0~10.255.255.255 </p>
+<p>​	 B类地址:172.16.0.0~172.31.255.255 </p>
+<p>​	 C类地址:192.168.0.0~192.168.255.255</p>
+<p>​	 IP地址分为5类，其中A、B、C分别保留3个区域作为专用网络地址，私有网络地址不能出现在公共网络上，但只能在内部网络中使用。</p>
+<h2 id="私网连接"><a href="#私网连接" class="headerlink" title="私网连接"></a>私网连接</h2><p>​	个人电脑连接网络</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204202308642.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231204202308642</span></p>
+<p>校园网套娃式降本增效</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204201712876.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231204201712876</span></p>
+<p>​												<u>校园网连接拓扑图</u></p>
+<h1 id="木马监控"><a href="#木马监控" class="headerlink" title="木马监控"></a>木马监控</h1><p>​	反弹shell</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204200234452.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231204200234452</span></p>
+<p>​		控制端监听在某TCP&#x2F;UDP端口，被控端发起请求到该端口，并将其命令行的输入输出转到控制端。</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701682087714-15c3417b-c7a0-4583-af7e-4182d464e631.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<pre><code> 服务端通过木马控制客户端
+</code></pre>
+<p>​		</p>
+<h1 id="路由器与交换"><a href="#路由器与交换" class="headerlink" title="路由器与交换"></a>路由器与交换</h1><p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205172543414.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231205172543414</span></p>
+<h2 id="路由器和ip"><a href="#路由器和ip" class="headerlink" title="路由器和ip"></a>路由器和ip</h2><p>​	<img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205173616456.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231205173616456</span></p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701758249423-270314fb-3dac-4735-93ca-c7fd52cf0183.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701758249423-270314fb-3dac-4735-93ca-c7fd52cf0183.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<h2 id="OSI（Open-Systems-Interconnection）七层协议模型"><a href="#OSI（Open-Systems-Interconnection）七层协议模型" class="headerlink" title="OSI（Open Systems Interconnection）七层协议模型"></a>OSI（Open Systems Interconnection）七层协议模型</h2><p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205102934221.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231205102934221</span></p>
+<ol>
+<li>物理层：该层负责传输比特流，涉及到电气、机械和定时接口的规范，如电缆、集线器和中继器等硬件设备。</li>
+<li>数据链路层：该层负责将比特流组合成帧，以及帧的发送和接收。它还处理错误检测和流量控制，例如以太网（Ethernet）和点对点协议（PPP）。</li>
+<li>网络层：该层负责将数据包从源地址发送到目的地址。它处理路由和转发，主要协议包括IP（Internet Protocol）、ICMP（Internet Control Message Protocol）和IGMP（Internet Group Management Protocol）。</li>
+<li>传输层：该层负责在源端和目的端之间建立、管理和终止会话。它提供了可靠的数据传输服务，例如TCP（Transmission Control Protocol）和不可靠的数据传输服务，例如UDP（User Datagram Protocol）。</li>
+<li>会话层：该层负责建立、管理和终止网络连接上的会话。它负责同步和对话控制，常见协议包括RPC（Remote Procedure Call）和SQL（Structured Query Language）。</li>
+<li>表示层：该层负责将数据转换成能被应用层理解的格式，并进行加密和解密。它处理数据格式转换和数据压缩，常见的数据表示协议包括MIME（Multipurpose Internet Mail Extensions）和TLS（Transport Layer Security）。</li>
+<li>应用层：该层是OSI模型的最高层，为用户提供应用程序和服务。它处理用户请求和响应，常见协议包括HTTP（Hypertext Transfer Protocol）、FTP（File Transfer Protocol）、SMTP（Simple Mail Transfer Protocol）和DNS（Domain Name System）。</li>
+</ol>
+<h2 id="桥接网络"><a href="#桥接网络" class="headerlink" title="桥接网络"></a>桥接网络</h2><p>​	给VM虚拟机桥接网络，VMware提供了三种网络连接方式，VMnet0, VMnet1, Vmnet8，分别代表桥接，Host-only及NAT模式。在VMware的编辑-虚拟网络编辑器可看到对应三种连接方式的设置。每一个VMnet均代表一个虚拟交换机，用于真实主机和虚拟主机构成对应的局域网络。VMware实际可支持更多虚拟交换机，包括VMnet0-9，均可与真实主机相连；此外还可扩展更多虚拟交换机。</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205210810705.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231205210810705</span></p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701757593889-56b4eacb-40fc-4268-81d2-2e4265964875.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image.png</span></p>
+<p>桥接网络时最好手动设置，不然容易连不上。</p>
+<p>​	</p>
+<p><em>这两天学习的大致内容就到这了，再见</em></p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>明 尘</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;05&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;05&#x2F;%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ivp6%E5%92%8Civp4"><span class="toc-text">ivp6和ivp4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ivp6"><span class="toc-text">ivp6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0%E4%BD%8D%E5%8E%8B%E7%BC%A9%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-text">0位压缩表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%92%E5%88%86%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-text">冒分十六进制表示法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ivp4"><span class="toc-text">ivp4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ip%E5%9C%B0%E5%9D%80"><span class="toc-text">ip地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-text">子网掩码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%BD%91%E5%85%B3%EF%BC%88%E5%9C%B0%E5%9D%80%EF%BC%89"><span class="toc-text">默认网关（地址）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%81%E7%BD%91%E5%92%8C%E5%85%AC%E7%BD%91"><span class="toc-text">私网和公网</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E7%BD%91%E5%9C%B0%E5%9D%80%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="toc-text">私网地址的范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%81%E7%BD%91%E8%BF%9E%E6%8E%A5"><span class="toc-text">私网连接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E7%9B%91%E6%8E%A7"><span class="toc-text">木马监控</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8E%E4%BA%A4%E6%8D%A2"><span class="toc-text">路由器与交换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8Cip"><span class="toc-text">路由器和ip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%EF%BC%88Open-Systems-Interconnection%EF%BC%89%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE%E6%A8%A1%E5%9E%8B"><span class="toc-text">OSI（Open Systems Interconnection）七层协议模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C"><span class="toc-text">桥接网络</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
