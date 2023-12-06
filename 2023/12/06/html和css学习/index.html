@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>html和css学习 - 文心雕龙</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="今天归纳一下学习的HTML和css。
+HTML​	HT...">
+  <meta name="author" content="明 尘">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">html和css学习</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">html和css学习</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 06, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1371</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <p>今天归纳一下学习的HTML和css。</p>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><p>​	HTML5是一种标记语言，用于构建和呈现互联网上的超文本内容。它是HTML的最新版本，增加了很多新的元素和API，使得创建更丰富、更交互的Web应用变得更加容易。</p>
+<h2 id="语义元素"><a href="#语义元素" class="headerlink" title="语义元素"></a>语义元素</h2><p>​	HTML5引入了许多新的语义元素，例如<code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>和<code>&lt;aside&gt;</code>等，它们使得页面的结构更加清晰，也更有利于搜索引擎优化和辅助阅读技术的使用。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>开始标签</td>
+<td align="left"><strong>元素内容</strong></td>
+<td align="left"><strong>结束标签</strong></td>
+</tr>
+<tr>
+<td><strong><p></strong></td>
+<td align="left"><strong>This is a paragraph</strong></td>
+<td align="left"><strong></p></strong></td>
+</tr>
+<tr>
+<td><strong><a href="default.htm" ></strong></td>
+<td align="left"><strong>This is a link</strong></td>
+<td align="left"><strong></a></strong></td>
+</tr>
+<tr>
+<td><br /></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>​	HTML 元素以<em>开始标签</em>起始，以<em>结束标签</em>终止，元素的内容*是开始标签与结束标签之间的内容。</p>
+<p>​	HTML 标签可以拥有<em>属性</em>。属性提供了有关 HTML 元素的<em>更多的信息</em>。</p>
+<p>​	属性总是以名称&#x2F;值对的形式出现，比如：*name&#x3D;”value”*。</p>
+<p>​	属性总是在 HTML 元素的<em>开始标签</em>中规定。</p>
+<p>​	HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-string">&quot;http://www.w3school.com.cn&quot;</span>&gt;This is <span class="hljs-keyword">a</span> link&lt;/<span class="hljs-keyword">a</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>定义标题的开始<h1></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;h1 <span class="hljs-attribute">align</span>=<span class="hljs-string">&quot;center&quot;</span>&gt; 拥有关于对齐方式的附加信息。<br></code></pre></td></tr></table></figure>
+
+<h2 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h2><p>​	表单控件: HTML5为表单提供了新的输入类型（如<code>email</code>, <code>date</code>, <code>time</code>, <code>url</code>, <code>search</code>, <code>range</code>, <code>color</code>等），以及新的属性（如<code>placeholder</code>, <code>required</code>, <code>autofocus</code>等），使得表单的创建更加方便，用户的体验也更好。</p>
+<pre><code>&lt;form&gt; 元素HTML 表单用于收集用户输入。
+&lt;/form&gt;
+</code></pre>
+<p><em><input></em> 元素是最重要的<em>表单元素</em>。</p>
+<p><input> 元素有很多形态，根据不同的 <em>type</em> 属性。</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">text</td>
+<td align="left">定义常规文本输入。</td>
+</tr>
+<tr>
+<td align="left">radio</td>
+<td align="left">定义单选按钮输入（选择多个选择之一）</td>
+</tr>
+<tr>
+<td align="left">submit</td>
+<td align="left">定义提交按钮（提交表单）</td>
+</tr>
+</tbody></table>
+<p><em><input type="text"></em> 定义用于<em>文本输入</em>的单行输入字段：</p>
+<p><em><input type="submit"></em> 定义用于向<em>表单处理程序</em>（form-handler）<em>提交</em>表单的按钮。</p>
+<p>表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。</p>
+<h2 id="元素（下拉列表）"><a href="#元素（下拉列表）" class="headerlink" title=" 元素（下拉列表）"></a><select> 元素（下拉列表）</h2><p>​	<select> 元素定义<em>下拉列表</em></p>
+<p><em><option></em> 元素定义待选择的选项。</p>
+<p>列表通常会把首个选项显示为被选选项。</p>
+<h2 id="元素"><a href="#元素" class="headerlink" title=" 元素"></a><textarea> 元素</h2><p><em><textarea></em> 元素定义多行输入字段（<em>文本域</em>）</p>
+<h2 id="元素-1"><a href="#元素-1" class="headerlink" title=" 元素"></a><button> 元素</h2><p><em><button></em> 元素定义可点击的<em>按钮</em></p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231206212825209.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231206212825209</span></p>
+<p><img    class="lazyload" data-original="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231206212942896.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231206212942896</span></p>
+<p>​	两个简易的表单效果图</p>
+<h2 id="HTML页面框架布局"><a href="#HTML页面框架布局" class="headerlink" title="HTML页面框架布局"></a>HTML页面框架布局</h2><p>​	HTML页面框架布局通常指的是页面的整体结构，包括页头（header）、页脚（footer）、导航栏（nav）、主要内容区（main）以及侧边栏（aside）等部分。</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/DBD1E737-47C5-445E-BFEC-7547210D88D5.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
+<p>​	利用学的HTML制作的一个简易页面，每个图片都是一个div盒子</p>
+<p><img    class="lazyload" data-original="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231206213734229.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20231206213734229</span></p>
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>明 尘</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;06&#x2F;html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;06&#x2F;html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%85%83%E7%B4%A0"><span class="toc-text">语义元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">
+1&lt;h1 align&#x3D;&quot;center&quot;&gt; 拥有关于对齐方式的附加信息。
+
+表单控件​	表单控件: HTML5为表单提供了新的输入类型（如email, date, time, url, search, range, color等），以及新的属性（如placeholder, required, autofocus等），使得表单的创建更加方便，用户的体验也更好。
+&lt;form&gt; 元素HTML 表单用于收集用户输入。
+&lt;&#x2F;form&gt;
+
+ 元素是最重要的表单元素。
+ 元素有很多形态，根据不同的 type 属性。
+
+
+
+类型
+描述
+
+
+
+text
+定义常规文本输入。
+
+
+radio
+定义单选按钮输入（选择多个选择之一）
+
+
+submit
+定义提交按钮（提交表单）
+
+
+ 定义用于文本输入的单行输入字段：
+ 定义用于向表单处理程序（form-handler）提交表单的按钮。
+表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。
+ 元素（下拉列表）​	 元素定义下拉列表
+ 元素定义待选择的选项。
+列表通常会把首个选项显示为被选选项。
+ 元素 元素定义多行输入字段（文本域）
+ 元素 元素定义可点击的按钮
+image-20231206212825209
+image-20231206212942896
+​	两个简易的表单效果图
+HTML页面框架布局​	HTML页面框架布局通常指的是页面的整体结构，包括页头（header）、页脚（footer）、导航栏（nav）、主要内容区（main）以及侧边栏（aside）等部分。
+img
+​	利用学的HTML制作的一个简易页面，每个图片都是一个div盒子
+image-20231206213734229
+CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%8E%A7%E4%BB%B6"><span class="toc-text">表单控件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%EF%BC%88%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%EF%BC%89"><span class="toc-text"> 元素（下拉列表）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-text"> 元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0-1"><span class="toc-text"> 元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%E9%A1%B5%E9%9D%A2%E6%A1%86%E6%9E%B6%E5%B8%83%E5%B1%80"><span class="toc-text">HTML页面框架布局</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
