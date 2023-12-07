@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>linux命令补充 - 文心雕龙</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="今天补充之前学的Linux命令
+Linux 查询命令m...">
+  <meta name="author" content="明 尘">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">linux命令补充</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">linux命令补充</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 06, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>5226</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <p>今天补充之前学的Linux命令</p>
+<h1 id="Linux-查询命令"><a href="#Linux-查询命令" class="headerlink" title="Linux 查询命令"></a>Linux 查询命令</h1><h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h2><p>linux中使用<code>man</code>命令来查询命令的帮助文件,命令格式如下:</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7"><span class="hljs-keyword">man</span> <span class="hljs-comment">[章节]</span> command<br></code></pre></td></tr></table></figure>
+
+<p>常用命令如下：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">d, Ctrl+D: 向文件尾部翻半屏；u, Ctrl+U: 向文件首部翻半屏； q: 退出； #：跳转至第#行； home: 回到文件首部； end：翻至文件尾部。<br></code></pre></td></tr></table></figure>
+
+<p>命令的帮助文件通常存放在<code>/usr/share/man</code>目录下。</p>
+<p><code>man</code>包含<code>9</code>个章节，章节用数字表示，分别是：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mathematica">用户命令 系统调用 <span class="hljs-built_in">C</span>库调用设备文件及特殊文件 配置文件格式 游戏杂项 管理类的命令<span class="hljs-variable">Linux</span> 内核<span class="hljs-variable">API</span><br></code></pre></td></tr></table></figure>
+
+<p>使用<code>man</code>搜索命令 以<code>KEYWORD</code>指定的字符串为关键字，从当前位置向文件首部搜索，不区分字符大小写；</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">n:</span> 下一个 N：上一个 <br></code></pre></td></tr></table></figure>
+
+<h2 id="Linux-info命令"><a href="#Linux-info命令" class="headerlink" title="Linux info命令"></a>Linux info命令</h2><p>linux中使用<code>info</code>命令来查询命令的帮助文件。<code>info</code>页面比<code>man page</code>编写得要更好、更容易理解，也更友好，但<code>man page</code>使用起来确实要更容易得多。一个<code>man page</code>只有一页，而<code>info</code>页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。</p>
+<p>命令格式如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">info</span> [命令参数] command<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数选项：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">-d：添加包含<span class="hljs-built_in">info</span>格式帮助文档的目录；-f：指定要读取的<span class="hljs-built_in">info</span>格式的帮助文档；-<span class="hljs-built_in">n</span>：指定首先访问的<span class="hljs-built_in">info</span>帮助文件的节点；-o：输出被选择的节点内容到指定文件。<br></code></pre></td></tr></table></figure>
+
+<p>常见命令如下：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm">?键：它就会显示<span class="hljs-meta">info</span>的常用快捷键；N键：显示（相对于本节点的）下一节点的文档内容；P键：显示（相对于本节点的）前一节点的文档内容；U键：进入当前命令所在的主题；M键：敲M键后输入命令的名称就可以查看该命令的帮助文档了；G键：敲G键后输入主题名称，进入该主题；L键：回到上一个访问的页面；<span class="hljs-meta">SPACE</span>键：向前滚动一页；BACKUP或DEL键：向后滚动一页；Q：退出<span class="hljs-meta">info</span>。<br></code></pre></td></tr></table></figure>
+
+<h1 id="Linux文件-目录管理"><a href="#Linux文件-目录管理" class="headerlink" title="Linux文件&#x2F;目录管理"></a>Linux文件&#x2F;目录管理</h1><h2 id="chattr"><a href="#chattr" class="headerlink" title="chattr"></a>chattr</h2><p>​	<code>chattr</code>的作用是修改文件&#x2F;目录的特殊属性。</p>
+<p>具体命令如下：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">chattr　[+|<span class="hljs-string">-</span>|<span class="hljs-string">=] 属性标示符　命令参数　文件/目录</span><br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml">-R：递归处理，将指令目录下的所有文件及子目录一并处理；-V：显示指令执行过程；<br>+<span class="hljs-tag">&lt;<span class="hljs-name">属性标示符</span>&gt;</span>：开启文件或目录的该项属性；-<span class="hljs-tag">&lt;<span class="hljs-name">属性标示符</span>&gt;</span>：关闭文件或目录的该项属性；=<span class="hljs-tag">&lt;<span class="hljs-name">属性标示符</span>&gt;</span>：指定文件或目录的该项属性。<br></code></pre></td></tr></table></figure>
+
+<p>常用属性标示符：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span>：让文件或目录仅供附加用途；<span class="hljs-selector-tag">A</span>：不更新文件或目录的最后存取时间；c：将文件或目录压缩后存放；d：将文件或目录排除在倾倒操作之外；<span class="hljs-selector-tag">i</span>：不得任意更动文件或目录；s：保密性删除文件或目录；S：即时更新文件或目录；u：预防意外删除。<br></code></pre></td></tr></table></figure>
+
+<h2 id="lsattr"><a href="#lsattr" class="headerlink" title="lsattr"></a>lsattr</h2><p><code>lsattr</code>的作用查看文件&#x2F;目录的特殊属性设置情况。</p>
+<p>具体命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">lsattr</span>　命令参数　文件/目录<br></code></pre></td></tr></table></figure>
+
+<p>常用参数如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">-R：递归的操作方式；-V：显示指令的版本信息；-<span class="hljs-selector-tag">a</span>：列出目录中的所有文件，包括隐藏文件。<br></code></pre></td></tr></table></figure>
+
+<p>查看目录<code>testDir</code>下所有内容的特殊属性，具体使用如下命令：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">lsattr -Ra testFile</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Linux硬链接"><a href="#Linux硬链接" class="headerlink" title="Linux硬链接"></a>Linux硬链接</h2><p>ln　源文件　目标文件</p>
+<p>为当前目录下的文件<code>testFile</code>创建一个硬链接<code>testFileLink</code>，可以使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> testFile testFileLink<br></code></pre></td></tr></table></figure>
+
+<h3 id="Linux软链接"><a href="#Linux软链接" class="headerlink" title="Linux软链接"></a>Linux软链接</h3><p>ln -s　源文件　目标文件</p>
+<p>为当前目录下的文件<code>testFile</code>创建一个软链接<code>myLink</code>，可以使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -s testFile myLink<br></code></pre></td></tr></table></figure>
+
+<h3 id="设置文件-目录的特殊权限setuid和setgid。"><a href="#设置文件-目录的特殊权限setuid和setgid。" class="headerlink" title="设置文件&#x2F;目录的特殊权限setuid和setgid。"></a>设置文件&#x2F;目录的特殊权限<code>setuid</code>和<code>setgid</code>。</h3><ul>
+<li><p><code>setuid</code>的八进制表示为<code>4000</code></p>
+</li>
+<li><p><code>setgid</code>的八进制表示为<code>2000</code></p>
+<p><code>setuid</code>的作用是让执行该命令的用户以该命令拥有者的权限去执行。</p>
+<ul>
+<li><p>数字设置命令：<code>chmod　4xxx　文件/目录</code></p>
+</li>
+<li><p>助记语法设置命令：<code>chmod　u [+|-] s　文件/目录</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>创建一个新文件<code>testFile</code>，使用数字设置方法为文件<code>testFile</code>添加<code>setuid</code>权限，具体使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> testFilels -l testFilesudo <span class="hljs-built_in">chmod</span> 4764 testFilels -l testFile<br></code></pre></td></tr></table></figure>
+
+<p>setgid</p>
+<ul>
+<li>数字设置命令：<code>chmod　2xxx　文件/目录</code></li>
+<li>助记语法设置命令：<code>chmod　g [+|-] s　文件/目录</code></li>
+</ul>
+<p>创建一个新文件<code>testFile</code>，使用数字设置方法为文件<code>testFile</code>添加<code>setgid</code>权限，具体使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> testFilels -l testFilesudo <span class="hljs-built_in">chmod</span> 2674 testFilels -l testFile<br></code></pre></td></tr></table></figure>
+
+<h1 id="Linux压缩和归档文件"><a href="#Linux压缩和归档文件" class="headerlink" title="Linux压缩和归档文件"></a>Linux压缩和归档文件</h1><h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p><code>tar</code>命令可以将多个文件&#x2F;目录进行打包，将多个文件生成一个文件，生成的文件后缀为<code>.tar</code>。</p>
+<p>具体打包命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-cvf　生成的tar包名　要打包的文件/目录列表<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>采用<code>bzip2</code>方式执行<code>tar</code>命令进行压缩的具体命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span> -jcvf　指定生成的压缩文件名　要被压缩的文件/目录列表<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；-j 以bzip2对文件/目录进行压缩；</span><br></code></pre></td></tr></table></figure>
+
+<p>采用<code>gzip</code>进行压缩的具体命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-zcvf　指定生成的压缩文件名　要被压缩的文件/目录列表<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；-z 以gzip对文件/目录进行压缩；</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">tar　-<span class="hljs-keyword">jxvf　</span>指定要解压的文件<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-literal">-</span><span class="hljs-comment">x 或</span><span class="hljs-literal">--</span><span class="hljs-comment">ext\fract或</span><span class="hljs-literal">--</span><span class="hljs-comment">get：从备份文件中还原文件；</span><span class="hljs-literal">-</span><span class="hljs-comment">v 处理过程中输出相关信息；</span><span class="hljs-literal">-</span><span class="hljs-comment">f 对普通文件操作；</span><span class="hljs-literal">-</span><span class="hljs-comment">j 以bunzip2进行解压缩；</span><br></code></pre></td></tr></table></figure>
+
+<p>采用<code>gzip</code>进行压缩的具体命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-zxvf　指定要解压的文件<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-literal">-</span><span class="hljs-comment">x 或</span><span class="hljs-literal">--</span><span class="hljs-comment">ext\fract或</span><span class="hljs-literal">--</span><span class="hljs-comment">get：从备份文件中还原文件；</span><span class="hljs-literal">-</span><span class="hljs-comment">v 处理过程中输出相关信息；</span><span class="hljs-literal">-</span><span class="hljs-comment">f 对普通文件操作；</span><span class="hljs-literal">-</span><span class="hljs-comment">z 以gunzip进行解压缩；</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">bu<span class="hljs-symbol">nzip2</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">-f或<span class="hljs-comment">--force：解压缩时，若输出的文件与现有文件同名时，预设不会覆盖现有的文件；-k或——keep：在解压缩后，预设会删除原来的压缩文件。若要保留压缩文件，请使用此参数；-v或——verbose：解压缩文件时，显示详细的信息；</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">gunzip</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">-f或-force：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；-l或-list：列出压缩文件的相关信息；-q或-quiet：不显示警告信息；-r或-<span class="hljs-keyword">recursive</span>：递归处理，将指定目录下的所有文件及子目录一并处理；-v或-<span class="hljs-keyword">verbose</span>：显示指令执行过程；<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">unzip</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">-q：执行时不显示任何信息；-n：解压缩时不要覆盖原有的文件；-d<span class="hljs-tag">&lt;<span class="hljs-name">目录</span>&gt;</span>：指定文件解压缩后所要存储的目录；<br></code></pre></td></tr></table></figure>
+
+<h1 id="Linux文件定位命令"><a href="#Linux文件定位命令" class="headerlink" title="Linux文件定位命令"></a>Linux文件定位命令</h1><h2 id="查询命令-locate"><a href="#查询命令-locate" class="headerlink" title="查询命令-locate"></a>查询命令-locate</h2><h2 id="ocate具体命令如下："><a href="#ocate具体命令如下：" class="headerlink" title="ocate具体命令如下："></a><code>ocate</code>具体命令如下：</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-keyword">locate</span>　命令参数　文件/目录<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">-c, <span class="hljs-attr">--count</span>            只输出找到的数量；<br>-d, <span class="hljs-attr">--database</span> DBPATH  使用DBPATH指定的数据库，而不是默认数据库/<span class="hljs-selector-tag">var</span>/lib/mlocate/mlocate<span class="hljs-selector-class">.db</span>；<br>-<span class="hljs-selector-tag">i</span>, <span class="hljs-attr">--ignore-case</span>      忽略大小写；<br>-<span class="hljs-selector-tag">q</span>, <span class="hljs-attr">--quiet</span>            安静模式，不会显示任何错误讯息；<br>-e, <span class="hljs-attr">--existing</span>         只显示当前存在的文件条目；<br></code></pre></td></tr></table></figure>
+
+<h2 id="查询命令-which-whereis"><a href="#查询命令-which-whereis" class="headerlink" title="查询命令-which&#x2F;whereis"></a>查询命令-which&#x2F;whereis</h2><p>使用<code>which</code>命令定位<code>passwd</code>命令的位置，具体使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> passwd<br></code></pre></td></tr></table></figure>
+
+<p>whereis具体命令如下：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">whereis</span>　命令参数　文件名<br></code></pre></td></tr></table></figure>
+
+<p>常用命令参数如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-b：只查找二进制文件；</span><br><span class="hljs-deletion">-B&lt;目录&gt;：只在设置的目录下查找二进制文件；</span><br><span class="hljs-deletion">-m：只查找说明文件；</span><br><span class="hljs-deletion">-M&lt;目录&gt;：只在设置的目录下查找说明文件；</span><br><span class="hljs-deletion">-s：只查找原始代码文件；</span><br><span class="hljs-deletion">-S&lt;目录&gt;只在设置的目录下查找原始代码文件；</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span>　查找目录　查找参数　查找内容<br></code></pre></td></tr></table></figure>
+
+<p>常用查找参数如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-amin&lt;+|-分钟&gt;：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；</span><br><span class="hljs-deletion">-atime&lt;+|-24小时数&gt;：查找在指定时间曾被存取过的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-cmin&lt;+|-分钟&gt;：查找在指定时间之时被更改过的文件或目录；</span><br><span class="hljs-deletion">-ctime&lt;+|-24小时数&gt;：查找在指定时间之时被更改的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-mmin&lt;+|-分钟&gt;：查找在指定时间曾被更改过的文件或目录，单位以分钟计算；</span><br><span class="hljs-deletion">-mtime&lt;+|-24小时数&gt;：查找在指定时间曾被更改过的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-depth：从指定目录下最深层的子目录开始查找；</span><br><span class="hljs-deletion">-exec&lt;执行指令&gt;：假设find指令的回传值为True，就执行该指令；</span><br><span class="hljs-deletion">-follow：排除符号连接；</span><br><span class="hljs-deletion">-gid&lt;群组识别码&gt;：查找符合指定群组识别码的文件或目录；</span><br><span class="hljs-deletion">-group&lt;群组名称&gt;：查找符合指定群组名称的文件或目录；</span><br><span class="hljs-deletion">-uid&lt;用户识别码&gt;：查找符合指定的用户识别码的文件或目录；</span><br><span class="hljs-deletion">-user&lt;拥有者名称&gt;：查找符和指定的拥有者名称的文件或目录；</span><br><span class="hljs-deletion">-name&lt;范本样式&gt;：指定字符串作为寻找文件或目录的范本样式；</span><br><span class="hljs-deletion">-iname&lt;范本样式&gt;：此参数的效果和指定“-name”参数类似，但忽略字符大小写的差别；</span><br><span class="hljs-deletion">-inum&lt;inode编号&gt;：查找符合指定的inode编号的文件或目录；</span><br><span class="hljs-deletion">-newer&lt;参考文件或目录&gt;：查找其更改时间较指定文件或目录的更改时间更接近现在的文件或目录；</span><br><span class="hljs-deletion">-size&lt;+|-|=文件大小&gt;：查找符合指定的文件大小的文件；</span><br><span class="hljs-deletion">-type&lt;文件类型&gt;：只寻找符合指定的文件类型的文件；</span><br><span class="hljs-deletion">-a：是前后条件都要满足；</span><br><span class="hljs-deletion">-o ：是满足一个条件就好；</span><br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><code>+：表示大于设置值的文件；</code></li>
+<li><code>- ：表示小于设置值的文件；</code></li>
+<li><code>= ：表示等于设置值的文件；</code></li>
+</ol>
+<p>常见文件类型：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">f：普通文件<br>l：符号链接<br>d：目录<br>c：字符设备<br><span class="hljs-selector-tag">b</span>：块设备<br>s：套接字<br><span class="hljs-selector-tag">p</span>：Fifo<br></code></pre></td></tr></table></figure>
+
+<p>常见文件大小单位：</p>
+<ol>
+<li><code>b —— 块（512字节）</code></li>
+<li><code>c —— 字节</code></li>
+<li><code>w —— 字（2字节）</code></li>
+<li><code>k —— 千字节</code></li>
+<li><code>M —— 兆字节</code></li>
+<li><code>G —— 吉字节</code></li>
+</ol>
+<h1 id="Linux-远程联机服务"><a href="#Linux-远程联机服务" class="headerlink" title="Linux 远程联机服务"></a>Linux 远程联机服务</h1><h5 id="Telnet远程登录服务器"><a href="#Telnet远程登录服务器" class="headerlink" title="Telnet远程登录服务器"></a>Telnet远程登录服务器</h5><p><code>telnet</code> 命令格式：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">telnet</span> 选项 参数<br></code></pre></td></tr></table></figure>
+
+<p>常见选项：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-a：尝试自动登入远端系统；</span><br><span class="hljs-deletion">-b&lt;主机别名&gt;：使用别名指定远端主机名称；</span><br><span class="hljs-deletion">-K：不自动登入远端主机；</span><br><span class="hljs-deletion">-l&lt;用户名称&gt;：指定要登入远端主机的用户名称；</span><br><span class="hljs-deletion">-e&lt;脱离字符&gt;：设置脱离字符；</span><br></code></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">远程主机：指定要登录进行管理的远程主机；<br>端口：指定TELNET协议使用的端口号；<br></code></pre></td></tr></table></figure>
+
+<h5 id="telnet常见命令"><a href="#telnet常见命令" class="headerlink" title="telnet常见命令"></a>telnet常见命令</h5><p>当我们执行输入<code>telnet</code>后回车，我们就进行了<code>telnet</code>的命令模式，<code>telnet</code>常见的命令：</p>
+<ol>
+<li><code>logout：强制退出远程登录用户并关闭连接；</code></li>
+<li><code>open：新打开一个连接；</code></li>
+<li><code>display：显示当前操作系统参数；</code></li>
+<li><code>quit：退出telnet；</code></li>
+<li><code>z：挂起telnet；</code></li>
+</ol>
+<h3 id="rsh远程登录"><a href="#rsh远程登录" class="headerlink" title="rsh远程登录"></a>rsh远程登录</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">rsh` 命令格式：`rsh 选项 参数<br></code></pre></td></tr></table></figure>
+
+<p>常见选项：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-d：使用Socket层级的排错功能。</span><br><span class="hljs-deletion">-n：把输入的指令号向代号为/dev/null的特殊外围设备。</span><br><span class="hljs-deletion">-l&lt;用户名称&gt;：指定要登入远端主机的用户名称；</span><br></code></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">远程主机：指定要登录进行管理的远程主机；<br>命令：指定执行的命令；<br></code></pre></td></tr></table></figure>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>明 尘</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;06&#x2F;linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;12&#x2F;06&#x2F;linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux 查询命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#man%E5%91%BD%E4%BB%A4"><span class="toc-text">man命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-info%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux info命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="toc-text">Linux文件&#x2F;目录管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#chattr"><span class="toc-text">chattr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lsattr"><span class="toc-text">lsattr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%A1%AC%E9%93%BE%E6%8E%A5"><span class="toc-text">Linux硬链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E8%BD%AF%E9%93%BE%E6%8E%A5"><span class="toc-text">Linux软链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95%E7%9A%84%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90setuid%E5%92%8Csetgid%E3%80%82"><span class="toc-text">设置文件&#x2F;目录的特殊权限setuid和setgid。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6"><span class="toc-text">Linux压缩和归档文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tar%E5%91%BD%E4%BB%A4"><span class="toc-text">tar命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8C%85"><span class="toc-text">打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9"><span class="toc-text">压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8B"><span class="toc-text">解压</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E5%AE%9A%E4%BD%8D%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux文件定位命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4-locate"><span class="toc-text">查询命令-locate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ocate%E5%85%B7%E4%BD%93%E5%91%BD%E4%BB%A4%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-text">ocate具体命令如下：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4-which-whereis"><span class="toc-text">查询命令-which&#x2F;whereis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux-%E8%BF%9C%E7%A8%8B%E8%81%94%E6%9C%BA%E6%9C%8D%E5%8A%A1"><span class="toc-text">Linux 远程联机服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rsh%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="toc-text">rsh远程登录</span></a></li></ol></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
