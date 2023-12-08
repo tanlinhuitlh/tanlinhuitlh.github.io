@@ -10,7 +10,7 @@
     
     
     
-    <title>学习笔记 | 文心雕龙</title>
+    <title>vue学习 | 文心雕龙</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -156,19 +156,19 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">文心雕龙</a>
         >
-        <span>学习笔记</span>
+        <span>vue学习</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2023-12-05
+                <i class="fa fa-calendar"></i> 2023-12-08
             </span>
             
         </div>
@@ -178,11 +178,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2023-12-05
+                <i class="fa fa-calendar"></i> 2023-12-08
             </p>
             <p>
                 
@@ -191,62 +191,45 @@
         </center>
     </div>
     <div class="content-article">
-        <p>整理一下这两天学的知识。</p>
-<h1 id="ivp6和ivp4"><a href="#ivp6和ivp4" class="headerlink" title="ivp6和ivp4"></a>ivp6和ivp4</h1><h2 id="ivp6"><a href="#ivp6" class="headerlink" title="ivp6"></a>ivp6</h2><p>​		IPv6的地址长度为128位，是IPv4地址长度的4倍。于是IPv4点分十进制格式不再适用，采用十六进制表示。IPv6有3种表示方法。</p>
-<h3 id="0位压缩表示法"><a href="#0位压缩表示法" class="headerlink" title="0位压缩表示法"></a>0位压缩表示法</h3><p>​		在某些情况下，一个IPv6地址中间可能包含很长的一段0，可以把连续的一段0压缩为“::”。但为保证地址解析的唯一性，地址中”::”只能出现一次，例如：<br>​		FF01:0:0:0:0:0:0:1101 → FF01::1101<br>​		0:0:0:0:0:0:0:1 → ::1<br>​		0:0:0:0:0:0:0:0 → ::</p>
-<h3 id="冒分十六进制表示法"><a href="#冒分十六进制表示法" class="headerlink" title="冒分十六进制表示法"></a>冒分十六进制表示法</h3><p>​	格式为X:X:X:X:X:X:X:X，其中每个X表示地址中的16b，以十六进制表示，例如：<br>​		ABCD:EF01:2345:6789:ABCD:EF01:2345:6789<br>​	这种表示法中，每个X的前导0是可以省略的，例如：<br>​		2001:0DB8:0000:0023:0008:0800:200C:417A→ 	2001:DB8:0:23:8:800:200C:417A</p>
-<h2 id="ivp4"><a href="#ivp4" class="headerlink" title="ivp4"></a>ivp4</h2><p>​		网际协议版本4（英语：InternetProtocolversion4，IPv4），又称互联网通信协议第四版，是网际协议开发过程中的第四个修订版本，也是此协议第一个被广泛部署的版本。IPv4是互联网的核心，也是使用最广泛的网际协议版本，其后继版本为IPv6，直到2011年，IANAIPv4位址完全用尽时，IPv6仍处在部署的初期。<br>​		IPv4在IETF于1981年9月发布的RFC 791中被描述，此RFC替换了于1980年1月发布的RFC 760。</p>
-<h3 id="ip地址"><a href="#ip地址" class="headerlink" title="ip地址"></a>ip地址</h3><p>​	ip地址以圆点分隔号的四个十进制数字表示，每个数字从0到255，如某一台主机的ip地址为：128.20.4.1</p>
-<p>  <strong>IP地址 &#x3D; 网络地址</strong> <strong>+ 主机地址</strong>(又称：主机号和网络号组成)</p>
-<h3 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h3><p>​	长度 为 4 * 8bit（1字节），由 连续的1 以及 连续的0 两部分组成，</p>
-<p>​	例如：11111111.11111111.11111111.00000000，对应十进制：255.255.255.0</p>
-<p>​	子网掩码计算网络地址：将IP地址和子网掩码都换算成二进制；将两者进行 “与运算”，得到网络地址。</p>
-<h3 id="默认网关（地址）"><a href="#默认网关（地址）" class="headerlink" title="默认网关（地址）"></a>默认网关（地址）</h3><p><strong>网关地址</strong>就是网关设备的IP地址。</p>
-<p>​	假设我们有两个网络：</p>
-<p>​	网络A的IP地址范围为“192.168.1.1~192.168.1.254”，子网掩码为255.255.255.0</p>
-<p>​	网络B的IP地址范围为“192.168.2.1~192.168.2.254”，子网掩码为255.255.255.0</p>
-<p>​	要实现这两个网络之间的通信，则必须通过网关。</p>
-<h1 id="私网和公网"><a href="#私网和公网" class="headerlink" title="私网和公网"></a>私网和公网</h1><p>​	公网地址和私网地址之间的区别主要体现在以下几个方面： </p>
-<p>​	分配方式不同：公网地址由互联网注册机构分配，而私网地址由局域网管理员自行分配。</p>
-<pre><code> 使用范围不同：公网地址用于Internet上的设备，私网地址用于局域网内部的设备。 
-</code></pre>
-<p>​	 唯一性和可达性不同：公网地址具有全球唯一性和全球可达性，而私网地址只在局域网内部唯一，不具有全球可达性。	</p>
-<h2 id="私网地址的范围"><a href="#私网地址的范围" class="headerlink" title="私网地址的范围"></a>私网地址的范围</h2><p>​	 A类地址:10.0.0.0~10.255.255.255 </p>
-<p>​	 B类地址:172.16.0.0~172.31.255.255 </p>
-<p>​	 C类地址:192.168.0.0~192.168.255.255</p>
-<p>​	 IP地址分为5类，其中A、B、C分别保留3个区域作为专用网络地址，私有网络地址不能出现在公共网络上，但只能在内部网络中使用。</p>
-<h2 id="私网连接"><a href="#私网连接" class="headerlink" title="私网连接"></a>私网连接</h2><p>​	个人电脑连接网络</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204202308642.png" alt="image-20231204202308642"></p>
-<p>校园网套娃式降本增效</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204201712876.png" alt="image-20231204201712876"></p>
-<p>​												<u>校园网连接拓扑图</u></p>
-<h1 id="木马监控"><a href="#木马监控" class="headerlink" title="木马监控"></a>木马监控</h1><p>​	反弹shell</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204200234452.png" alt="image-20231204200234452"></p>
-<p>​		控制端监听在某TCP&#x2F;UDP端口，被控端发起请求到该端口，并将其命令行的输入输出转到控制端。</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701682087714-15c3417b-c7a0-4583-af7e-4182d464e631.png" alt="image.png"></p>
-<pre><code> 服务端通过木马控制客户端
-</code></pre>
-<p>​		</p>
-<h1 id="路由器与交换"><a href="#路由器与交换" class="headerlink" title="路由器与交换"></a>路由器与交换</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205172543414.png" alt="image-20231205172543414"></p>
-<h2 id="路由器和ip"><a href="#路由器和ip" class="headerlink" title="路由器和ip"></a>路由器和ip</h2><p>​	<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205173616456.png" alt="image-20231205173616456"></p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701758249423-270314fb-3dac-4735-93ca-c7fd52cf0183.png" alt="image.png"></p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701758249423-270314fb-3dac-4735-93ca-c7fd52cf0183.png" alt="image.png"></p>
-<h2 id="OSI（Open-Systems-Interconnection）七层协议模型"><a href="#OSI（Open-Systems-Interconnection）七层协议模型" class="headerlink" title="OSI（Open Systems Interconnection）七层协议模型"></a>OSI（Open Systems Interconnection）七层协议模型</h2><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205102934221.png" alt="image-20231205102934221"></p>
-<ol>
-<li>物理层：该层负责传输比特流，涉及到电气、机械和定时接口的规范，如电缆、集线器和中继器等硬件设备。</li>
-<li>数据链路层：该层负责将比特流组合成帧，以及帧的发送和接收。它还处理错误检测和流量控制，例如以太网（Ethernet）和点对点协议（PPP）。</li>
-<li>网络层：该层负责将数据包从源地址发送到目的地址。它处理路由和转发，主要协议包括IP（Internet Protocol）、ICMP（Internet Control Message Protocol）和IGMP（Internet Group Management Protocol）。</li>
-<li>传输层：该层负责在源端和目的端之间建立、管理和终止会话。它提供了可靠的数据传输服务，例如TCP（Transmission Control Protocol）和不可靠的数据传输服务，例如UDP（User Datagram Protocol）。</li>
-<li>会话层：该层负责建立、管理和终止网络连接上的会话。它负责同步和对话控制，常见协议包括RPC（Remote Procedure Call）和SQL（Structured Query Language）。</li>
-<li>表示层：该层负责将数据转换成能被应用层理解的格式，并进行加密和解密。它处理数据格式转换和数据压缩，常见的数据表示协议包括MIME（Multipurpose Internet Mail Extensions）和TLS（Transport Layer Security）。</li>
-<li>应用层：该层是OSI模型的最高层，为用户提供应用程序和服务。它处理用户请求和响应，常见协议包括HTTP（Hypertext Transfer Protocol）、FTP（File Transfer Protocol）、SMTP（Simple Mail Transfer Protocol）和DNS（Domain Name System）。</li>
-</ol>
-<h2 id="桥接网络"><a href="#桥接网络" class="headerlink" title="桥接网络"></a>桥接网络</h2><p>​	给VM虚拟机桥接网络，VMware提供了三种网络连接方式，VMnet0, VMnet1, Vmnet8，分别代表桥接，Host-only及NAT模式。在VMware的编辑-虚拟网络编辑器可看到对应三种连接方式的设置。每一个VMnet均代表一个虚拟交换机，用于真实主机和虚拟主机构成对应的局域网络。VMware实际可支持更多虚拟交换机，包括VMnet0-9，均可与真实主机相连；此外还可扩展更多虚拟交换机。</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205210810705.png" alt="image-20231205210810705"></p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701757593889-56b4eacb-40fc-4268-81d2-2e4265964875.png" alt="image.png"></p>
-<p>桥接网络时最好手动设置，不然容易连不上。</p>
-<p>​	</p>
-<p><em>这两天学习的大致内容就到这了，再见</em></p>
+        <p>学vue之前还有一点DNS的知识，<br>各种协议端口号一般是可以一图概括</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701912461690-ceb3ff88-7049-4225-a306-4c641c054499.png" alt="image.png"></p>
+<p>DNS可以说就是域名解析服务<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701912652114-0c2718b6-d6df-41e2-8bba-9c4b1ed4fa47.png" alt="image.png"></p>
+<p>pc访问百度会发送请求，优先度从上到下，会先请求本地，本地若没有则依次往下。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701912949671-cf2d159e-22c9-43c5-b0ae-44b09d98573a.png" alt="image.png"></p>
+<h1 id="vue学习"><a href="#vue学习" class="headerlink" title="vue学习"></a>vue学习</h1><h2 id="vue下载"><a href="#vue下载" class="headerlink" title="vue下载"></a>vue下载</h2><p>安装</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">npm config set refistry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br></code></pre></td></tr></table></figure>
+
+<p><code>npm install -g @vue/cli</code><br>到项目目录</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gauss">vue <span class="hljs-keyword">create</span> xxxx<br>npm <span class="hljs-keyword">run</span> serve<br></code></pre></td></tr></table></figure>
+
+<p>vue3引入element-plus</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> create vue@latest<br><span class="hljs-built_in">npm</span> install element-plus --save<br><span class="hljs-built_in">npm</span> install -D unplugin-vue-components unplugin-auto-<span class="hljs-keyword">import</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208203048763.png" alt="image-20231208203048763"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208203213207.png" alt="image-20231208203213207"></p>
+<p>这时候vue已经安装好了，可以在vscode中打开。</p>
+<p>点开vue.app文件就会出现如图</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208200935492.png" alt="image-20231208200935492"></p>
+<p>但这是初始设置，最好改一下配置文件</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs clean">main.js<br><br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> ElementPlus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><br>createApp(App).mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<p>src&#x2F;App.vue是入口文件</p>
+<script setup></script>。 //导包
+<p><template></template>。    &#x2F;&#x2F;html部分</p>
+<style scoped></style>    //css部分
+
+<p>vite.config.js配置文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; fileURLToPath, <span class="hljs-variable constant_">URL</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;node:url&#x27;</span><br><br><span class="hljs-keyword">import</span> &#123; defineConfig &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">AutoImport</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-auto-import/vite&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Components</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/vite&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ElementPlusResolver</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/resolvers&#x27;</span><br><br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-title function_">vue</span>(),<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-title class_">AutoImport</span>(&#123;<br>      <span class="hljs-attr">resolvers</span>: [<span class="hljs-title class_">ElementPlusResolver</span>()],<br>    &#125;),<br>    <span class="hljs-title class_">Components</span>(&#123;<br>      <span class="hljs-attr">resolvers</span>: [<span class="hljs-title class_">ElementPlusResolver</span>()],<br>    &#125;),<br>  ],<br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-string">&#x27;@&#x27;</span>: <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&#x27;./src&#x27;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>))<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>学习vue可以去Element,上面很多组件都可以直接用，内容齐全<a target="_blank" rel="noopener" href="https://element-plus.org/">https://element-plus.org/</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208202418554.png" alt="image-20231208202418554"></p>
+<p>案例下面可以直接查看源代码。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208202652371.png" alt="image-20231208202652371"></p>
+<p>将代码复制到vue.app中可以直接运行</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231208202906252.png" alt="image-20231208202906252"></p>
+<p>这是运行效果。vue有js和ts,编写时有部分不同。</p>
 
     </div>
 </article>
@@ -417,17 +400,17 @@
 
                 
                 <li>
-                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
