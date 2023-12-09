@@ -196,7 +196,22 @@
 <p>DNS可以说就是域名解析服务<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701912652114-0c2718b6-d6df-41e2-8bba-9c4b1ed4fa47.png" alt="image.png"></p>
 <p>pc访问百度会发送请求，优先度从上到下，会先请求本地，本地若没有则依次往下。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701912949671-cf2d159e-22c9-43c5-b0ae-44b09d98573a.png" alt="image.png"></p>
-<h1 id="vue学习"><a href="#vue学习" class="headerlink" title="vue学习"></a>vue学习</h1><h2 id="vue下载"><a href="#vue下载" class="headerlink" title="vue下载"></a>vue下载</h2><p>安装</p>
+<h1 id="vue学习"><a href="#vue学习" class="headerlink" title="vue学习"></a>vue学习</h1><h2 id="Vue概述"><a href="#Vue概述" class="headerlink" title="Vue概述"></a>Vue概述</h2><ul>
+<li><p>Vue 是一套用于构建用户界面的渐进式框架，发布于2014年2月。</p>
+</li>
+<li><p>与其它大型框架不同的是，Vue被设计为可以自底向上逐层应用。</p>
+</li>
+<li><p>Vue的核心库只关注视图层，不仅易于上手，还便于与第三方库(如: vue-router: 跳转，vue-resource: 通信，vuex:管理)或既有项目整合。</p>
+</li>
+<li><p>官网：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/">https://cn.vuejs.org/</a></p>
+<h2 id="三要素"><a href="#三要素" class="headerlink" title="三要素"></a>三要素</h2><ul>
+<li>HTML (结构) :超文本标记语言(Hyper Text Markup Language) ，决定网页的结构和内容。</li>
+<li>CSS (表现) :层叠样式表(Cascading Style sheets) ，设定网页的表现样式。</li>
+<li>JavaScript (行为) :是一种弱类型脚本语言，其源代码不需经过编译，而是由浏览器解释运行,用于控制网页的行为。</li>
+</ul>
+</li>
+</ul>
+<h2 id="vue下载"><a href="#vue下载" class="headerlink" title="vue下载"></a>vue下载</h2><p>安装</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">npm config set refistry https:<span class="hljs-comment">//registry.npm.taobao.org</span><br></code></pre></td></tr></table></figure>
 
 <p><code>npm install -g @vue/cli</code><br>到项目目录</p>
@@ -213,8 +228,7 @@
 <p>但这是初始设置，最好改一下配置文件</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs clean">main.js<br><br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> ElementPlus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><br>createApp(App).mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
-
-
+<h2 id="Vue基础语法"><a href="#Vue基础语法" class="headerlink" title="Vue基础语法"></a>Vue基础语法</h2><p>Vue.config.productionTip &#x3D; false &#x2F;&#x2F;阻止vue在启动时生成提示<br>Vue实例和容器是一一对应的</p>
 <p>src&#x2F;App.vue是入口文件</p>
 <script setup></script>。 //导包
 <p><template></template>。    &#x2F;&#x2F;html部分</p>
@@ -288,6 +302,12 @@
             <i class="fa fa-chevron-circle-up panel-toggle"></i>
         </div>
         <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
             
             <li class="list-group-item">
                 <span class="post-title">
@@ -386,6 +406,12 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
                 </span>
             </li>
             

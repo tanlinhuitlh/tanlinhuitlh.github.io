@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>python列表元组 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>python列表元组</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-09
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2023-12-09
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h1><p>​	数据结构是以某种方式（如通过编号）组合起来的数据元素（如数、字符乃至其他数据结构）集合。Python中最基本的数据结构是 序列（sequence）。</p>
+<p>​	序列中的每个元素都有编号，即其位置或索引，其中第一个元素的索引位0，第二个元素的索引位1，依次类推。</p>
+<p>​	列表和元组的主要不同在于，列表是可以修改的，而元组不可以。列表适用于需要中途添加元素的情形，而元组适用于处于某种考虑需要禁止修改序列的情形。几乎所有情况下都可使用列表来代替元组，一种情况例外：将元组用作字典键。在需要处理一系列值时，序列很有用。</p>
+<p>​	适用于所有序列的操作： <strong>索引、切片、相加、相乘</strong> 和 <strong>成员资格</strong>检查。还有一个重要的操作：<strong>迭代</strong>（iteration）。</p>
+<p>索引序列中的所有元素都有编号——从0开始递增。</p>
+<p>可使用 <strong>切片</strong>（slicing）来访问特定范围内的元素。</p>
+<p>序列相加可使用加法运算符来拼接序列。</p>
+<p>乘法将序列与数 x 相乘时，将重复这个序列 x 次来创建一个新序列。</p>
+<p>​	要检查特定的值是否包含在序列中，可使用运算符 in。它检查是否满足指定的条件，并返回相应的值：满足时返回True，不满足时返回False。这样的运算符称为<strong>布尔运算符</strong>，而前述真值称为<strong>布尔值</strong>。</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="函数-list"><a href="#函数-list" class="headerlink" title="函数 list"></a>函数 list</h3><p>使用字符串创建列表，可使用函数 <strong>list</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;world&#x27;</span>)	  <br>[<span class="hljs-string">&#x27;w&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>]<br></code></pre></td></tr></table></figure>
+
+<p>注意，可将任何序列（而不仅仅是字符串）作为list的参数。</p>
+<h3 id="修改列表：给元素赋值"><a href="#修改列表：给元素赋值" class="headerlink" title="修改列表：给元素赋值"></a>修改列表：给元素赋值</h3><p>使用索引表示法给特定位置的元素赋值，如 x[1] &#x3D; 2。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]  <br><span class="hljs-meta">&gt;&gt;&gt; </span>x[<span class="hljs-number">1</span>]=<span class="hljs-number">2</span>  <br><span class="hljs-meta">&gt;&gt;&gt; </span>x	  <br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+<p>注意：不能给不存在的元素赋值。</p>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>使用 <strong>del</strong> 语句，从列表中删除元素：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>names = [<span class="hljs-string">&#x27;abandon&#x27;</span>,<span class="hljs-string">&#x27;loss&#x27;</span>,<span class="hljs-string">&#x27;good&#x27;</span>,<span class="hljs-string">&#x27;email&#x27;</span>,<span class="hljs-string">&#x27;error&#x27;</span>]  <br>&gt;&gt;&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">del</span> names[<span class="hljs-number">2</span>]	  <br><span class="hljs-meta">&gt;&gt;&gt; </span>names	  <br>[<span class="hljs-string">&#x27;abandon&#x27;</span>, <span class="hljs-string">&#x27;loss&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;error&#x27;</span>]<br></code></pre></td></tr></table></figure>
+
+<p>给切片赋值<br>切片是一项极其强大的功能，而能够给切片赋值让这项功能显得更加强大。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>name = <span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;Perl&#x27;</span>)  <br><span class="hljs-meta">&gt;&gt;&gt; </span>name  <br><span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>name[<span class="hljs-number">2</span>:] = <span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;ar&#x27;</span>)	  <br><span class="hljs-meta">&gt;&gt;&gt; </span>name	  <br>[<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>]<br></code></pre></td></tr></table></figure>
+<p>可同时给多个元素赋值。通过使用切片赋值，可将切片替换为长度与其不同的序列。</p>
+<h2 id="列表方法"><a href="#列表方法" class="headerlink" title="列表方法"></a>列表方法</h2><p>方法是与对象（列表、数、字符串等）联系紧密的函数。<br>通常，如下方法调用：</p>
+<p>object.method(arguments)</p>
+<p>列表包含多个用来查看和修改其内容的方法：</p>
+<ol>
+<li><p>append方法 ,append 用于将一个对象附加到列表末尾。</p>
+</li>
+<li><p>clear方法, clear 就地清空列表的内容。</p>
+</li>
+<li><p>copy方法, copy 复制列表。常规复制只是将另一个名称关系到列表。</p>
+</li>
+<li><p>count方法, count 计算指定的元素在列表中出现了多少次.</p>
+</li>
+<li><p>extend方法, extend 能够同时将多个值附加到列表末尾，为此可将这些值组成的序列作为参数提供个方法extend。换言之，可使用一个列表来扩展另一个列表。</p>
+</li>
+<li><p>index方法 ,index 在列表中查找指定值第一次出现的索引。</p>
+</li>
+<li><p>insert方法, insert 用于将一个对象插入列表。</p>
+</li>
+<li><p>pop方法, pop 从列表中删除一个元素（末尾为最后一个元素），并返回这一元素。</p>
+</li>
+<li><p>remove方法, remove 用于删除第一个为指定值的元素。</p>
+</li>
+<li><p>reverse方法 ,reverse 按相反的顺序排序列列表中的元素。</p>
+</li>
+<li><p>sort方法, sort 用于对列表就地排序。意味着对原来的列表进行修改，使其元素按顺序排列，而不是返回排序后的列表的副本。</p>
+</li>
+<li><p>高级排序方法 ,sort 接受两个可选参数：key 和 reverse。这两个参数通常是按名称指定的，称为关键字参数。参数key类似于参数 cmp：将其设置为一个用于排序的函数。根据长度对元素进行排序，可将参数key设置为函数len。</p>
+</li>
+</ol>
+<h1 id="元组：不可修改的序列"><a href="#元组：不可修改的序列" class="headerlink" title="元组：不可修改的序列"></a>元组：不可修改的序列</h1><p>​	与列表一样，元组也是序列，唯一的差别在于元组是<strong>不能修改</strong>的。<br>​	元组的语法很简单，只要将一些值用逗号分隔，就能自动创建一个元组。</p>
+<p>​	元组还可用圆括号括起来。</p>
+<p>​	空元组用两个不包含任何内容的圆括号表示。</p>
+<p>​	只包含一个值的元组，也必须在它后面加上逗号。</p>
+<p>​	函数tuple的工作原理与 list很像：它将一个序列作为参数，并将其转换为元组。如果参数已经是元组，就原封不动地返回它。</p>
+<p>​	元组的创建及其元素的访问方式与其他序列相同。</p>
+<p>​	元组的切片也是元组，就像列表的切片也是列表一样。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 元组的不可变性</span><br>tup = (<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>)<br>tup[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;改变&#x27;</span><br><span class="hljs-built_in">print</span>(tup)<br><br>---------------------------------------------------------------------------<br><br>TypeError                                 Traceback (most recent call last)<br><br>&lt;ipython-<span class="hljs-built_in">input</span>-<span class="hljs-number">56</span>-493da6be5b3d&gt; <span class="hljs-keyword">in</span> &lt;module&gt;()<br>      <span class="hljs-number">1</span> <span class="hljs-comment"># 元组的不可变性</span><br>      <span class="hljs-number">2</span> tup = (<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>)<br>----&gt; <span class="hljs-number">3</span> tup[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;改变&#x27;</span><br>      <span class="hljs-number">4</span> <span class="hljs-built_in">print</span>(tup)<br><br><br>TypeError: <span class="hljs-string">&#x27;tuple&#x27;</span> <span class="hljs-built_in">object</span> does <span class="hljs-keyword">not</span> support item assignment<br><br>    <span class="hljs-comment"># 创建空元组</span><br>a = ()<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))<br><br><br><span class="hljs-comment"># 当元组只有一个元素时需要在末尾加一个逗号，</span><br><span class="hljs-comment"># 否则会解析为括号的运算方法</span><br>a = (<span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))<br>a = (<span class="hljs-number">3</span>,)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))<br><br><br><br>&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;int&#x27;</span>&gt;<br>&lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;tuple&#x27;</span>&gt;<br><br><br><br><span class="hljs-comment"># 多个元素的元组创建</span><br><span class="hljs-comment"># 可以不用加括号</span><br>a = <span class="hljs-number">1</span>,<span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))<br>b = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(b))<br><br><br><span class="hljs-comment"># 多种类型元素的元组</span><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-number">1.2</span>,<span class="hljs-literal">None</span>,<span class="hljs-literal">True</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>])<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(a))<br></code></pre></td></tr></table></figure>
+
+<h2 id="列表转元组方法"><a href="#列表转元组方法" class="headerlink" title="列表转元组方法"></a>列表转元组方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">lst = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;s&#x27;</span>,<span class="hljs-literal">True</span>]<br>a = <span class="hljs-built_in">tuple</span>(lst)<br><span class="hljs-built_in">print</span>(a,<span class="hljs-built_in">type</span>(a))<br>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>) &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;tuple&#x27;</span>&gt;<br><br><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>)<br>当然元组也可以转为列表<br>b = <span class="hljs-built_in">list</span>(a)<br><span class="hljs-built_in">print</span>(b,<span class="hljs-built_in">type</span>(b))<br><br>[<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>] &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;list&#x27;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<h2 id="元组的连接与复制"><a href="#元组的连接与复制" class="headerlink" title="元组的连接与复制"></a>元组的连接与复制</h2><p>元组的连接，与列表类似，通过+连接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">a = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br>b = (<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<br>a+b<br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-number">3</span><br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br><span class="hljs-number">1</span><br>元组的复制，与列表类似，通过* 复制<br><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>,)<br>a * <span class="hljs-number">4</span><br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>索引与切片，与列表的操作类似</p>
+<h2 id="元组的常用操作"><a href="#元组的常用操作" class="headerlink" title="元组的常用操作"></a>元组的常用操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs python">查询元组的长度<br><br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-built_in">len</span>(tup)<br><span class="hljs-number">6</span><br><br><br>获取纯数值元组的最大值、最小值和总和<br><br>a = <span class="hljs-built_in">tuple</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最大值为：&#x27;</span>,<span class="hljs-built_in">max</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最小值为：&#x27;</span>,<span class="hljs-built_in">min</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;总  和为：&#x27;</span>,<span class="hljs-built_in">sum</span>(a))<br>最大值为： <span class="hljs-number">10</span><br>最小值为： <span class="hljs-number">1</span><br>总  和为： <span class="hljs-number">55</span><br>查询索引值<br><br>tup.index(<span class="hljs-string">&#x27;a&#x27;</span>)<br><span class="hljs-number">2</span><br><br>统计元组的元素出现的次数<br><br>tup.count(<span class="hljs-number">1</span>)<br><span class="hljs-number">2</span><br>删除元组(只能删除整个元组，不能删除具体的元素)<br><br><span class="hljs-keyword">del</span> tup<br>tup<br><br>---------------------------------------------------------------------------<br><br>NameError                                 Traceback (most recent call last)<br><br>&lt;ipython-<span class="hljs-built_in">input</span>-<span class="hljs-number">72</span>-cbde4a271b58&gt; <span class="hljs-keyword">in</span> &lt;module&gt;()<br>      <span class="hljs-number">1</span> <span class="hljs-keyword">del</span> tup<br>----&gt; <span class="hljs-number">2</span> tup<br><br>NameError: name <span class="hljs-string">&#x27;tup&#x27;</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined<br><br>    <br>    <br><span class="hljs-keyword">for</span>遍历元组<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> tup:<br>    <span class="hljs-built_in">print</span>(i)<br>    <br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br>a<br><span class="hljs-literal">True</span><br><span class="hljs-literal">None</span><br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><br>判断某个元素是否在元组中<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-literal">None</span> <span class="hljs-keyword">in</span> tup<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/day1/">Linux命令</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/day1/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
