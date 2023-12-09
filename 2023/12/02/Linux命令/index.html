@@ -10,7 +10,7 @@
     
     
     
-    <title>categories | 文心雕龙</title>
+    <title>Linux命令 | 文心雕龙</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -178,21 +178,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>Linux命令</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/index.html">categories</a>
+                <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
             </h1>
         </div>
         <div class="tag-article">
+            
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2023-12-09
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Linux/">Linux</a>, 
+                
+                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                
             </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-02
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -200,19 +215,45 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/index.html">categories</a>
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2023-12-09
+                <i class="fa fa-calendar"></i> 2023-12-02
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Linux/">Linux</a>, 
+                
+                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                
+                
+                
             </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <p>VM虚拟机搭建</p>
+<p>第一天</p>
+<p>学习linux命令</p>
+<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><p>切换目录（cd）<br>  cd &#x2F;                 &#x2F;&#x2F;切换到根目录<br>  cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录<br>  cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..<br>  cd ~                 &#x2F;&#x2F;切换到home目录<br>  cd -                 &#x2F;&#x2F;切换到上次访问的目录<br>  cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错<br>  cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，</p>
+<h1 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231203134721528.png" alt="image-20231203134721528"></p>
+<h1 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h1><p> ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件<br>  ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）<br>  ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令”ll”效果一样<br>  ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </p>
+<p>d  目录   -文件    r读   w写    x执行     </p>
+<p>三个一组  例如</p>
+<p>属性   所有者  所属组  其他人</p>
+<p>d        r w x      r w -     r - -</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/2.png"></p>
+<h1 id="删除目录与文件（rm）"><a href="#删除目录与文件（rm）" class="headerlink" title="删除目录与文件（rm）"></a>删除目录与文件（rm）</h1><p>  rm 文件名              &#x2F;&#x2F;删除当前目录下的文件<br>  rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）<br>  rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录<br>  rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）<br>  rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除<br>  rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/3.png"></p>
+<h1 id="搜索目录（find）"><a href="#搜索目录（find）" class="headerlink" title="搜索目录（find）"></a>搜索目录（find）</h1><p>  find &#x2F;bin -name ‘a*’        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</p>
+<h1 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h1><p>vi 文件名              &#x2F;&#x2F;打开需要编辑的文件<br>  –进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）<br>  命令模式<br>  -刚进入文件就是命令模式，通过方向键控制光标位置，<br>  -使用命令”dd”删除当前整行<br>  -使用命令”&#x2F;字段”进行查找<br>  -按”i”在光标所在字符前开始插入<br>  -按”a”在光标所在字符后开始插入<br>  -按”o”在光标所在行的下面另起一新行插入<br>  -按”：”进入底行模式<br>  插入模式<br>  -此时可以对文件内容进行编辑，左下角会显示 “– 插入 –””<br>  -按”ESC”进入底行模式<br>  底行模式<br>  -退出编辑：      :q<br>  -强制退出：      :q!<br>  -保存并退出：    :wq</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/4.png"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/5.png"></p>
+
     </div>
 </article>
-
 
 
                 </div>
@@ -392,17 +433,17 @@
 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -410,9 +451,9 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 12.949372588061209px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 10.065533062955616px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.06138661531121px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.940851437331265px;" class="tag-cloud-link">基础知识</a>
     
 </div>
                 
