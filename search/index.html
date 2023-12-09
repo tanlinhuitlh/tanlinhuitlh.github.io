@@ -47,7 +47,7 @@
       if (document.images) {
         var avatar = new Image();
         avatar.src = '/imgs/avatar.jpg'
-        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
@@ -206,7 +206,7 @@
       	var [month, day] = article.date.split('-')
         ''
         ''
-        var defaultPreview = '/imgs/preview/preview4.jpg'
+        var defaultPreview = '/imgs/preview/preview7.jpg'
         var preview = article.preview ? article.preview : defaultPreview
         var path = '/' + article.path
         resultList.append(`<div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
@@ -456,12 +456,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/02/day1/">Linux命令</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -477,12 +471,6 @@
         </div>
         <ul class="list-group list-group-flush">
             
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/02/day1/">Linux命令</a>
-                </span>
-            </li>
             
             <li class="list-group-item">
                 <span class="post-title">
