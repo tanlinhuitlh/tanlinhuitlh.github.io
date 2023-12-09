@@ -191,7 +191,223 @@
         </center>
     </div>
     <div class="content-article">
-        
+        <h1 id="Python-特点"><a href="#Python-特点" class="headerlink" title="Python 特点"></a>Python 特点</h1><h2 id="完全面向对象的语言"><a href="#完全面向对象的语言" class="headerlink" title="完全面向对象的语言"></a>完全面向对象的语言</h2><p>函数、模块、数字、字符串都是对象，Python 中一切皆对象<br>完全支持继承、重载、多重继承<br>支持重载运算符，也支持泛型设计</p>
+<h2 id="拥有一个强大的标准库"><a href="#拥有一个强大的标准库" class="headerlink" title="拥有一个强大的标准库"></a>拥有一个强大的标准库</h2><p>Python 标准库提供了 系统管理、网络通信、文本处理、数据库接口、图形系统、XML 处理 等额外的功能</p>
+<h2 id="有大量的第三方模块"><a href="#有大量的第三方模块" class="headerlink" title="有大量的第三方模块"></a>有大量的第三方模块</h2><p>使用方式与标准库类似。它们的功能覆盖 科学计算、人工智能、机器学习、Web 开发、数据库接口、图形系统 多个领域</p>
+<h2 id="面向对象的思维方式"><a href="#面向对象的思维方式" class="headerlink" title="面向对象的思维方式"></a>面向对象的思维方式</h2><p>面向对象 是一种 思维方式，也是一门 程序设计技术<br>要解决一个问题前，首先考虑 由谁 来做，怎么做事情是 谁 的职责，最后把事情做好就行！<br>对象 就是 谁<br>要解决复杂的问题，就可以找多个不同的对象，各司其职，共同实现，最终完成需求<br>先找一个可以完成功能的对象，并且使用对象所提供的能力来解决问题</p>
+<h2 id="Python-的优缺点"><a href="#Python-的优缺点" class="headerlink" title="Python 的优缺点"></a>Python 的优缺点</h2><p>（1）优点<br>简单、易学、免费、开源。<br>面向对象，丰富的库，可扩展性<br>如果需要一段关键代码运行得更快或者希望某些算法不公开，可以把这部分程序用 C 或 C++ 编写，然后在 Python 程序中使用它们<br>（2）缺点<br>运行速度差一点，国内市场较小，中文资料匮乏。</p>
+<p>执行 <code>Python</code> 程序的三种方式</p>
+<ul>
+<li>解释器 —— <code>python</code> &#x2F; <code>python3</code></li>
+<li>交互式 —— <code>ipython</code></li>
+<li>集成开发环境 —— <code>PyCharm</code></li>
+</ul>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p><strong>程序就是用来处理数据的，而变量就是用来存储数据的</strong></p>
+<h3 id="数字型"><a href="#数字型" class="headerlink" title="数字型"></a>数字型</h3><ul>
+<li><p>整型 (<code>int</code>)</p>
+</li>
+<li><p>浮点型（<code>float</code>）</p>
+</li>
+<li><p>布尔型（bool）</p>
+<p>真 <code>True</code> <code>非 0 数</code> —— <strong>非零即真</strong></p>
+<p>假 <code>False</code> <code>0</code></p>
+</li>
+<li><p>复数型 (complex)</p>
+</li>
+</ul>
+<h3 id="非数字型"><a href="#非数字型" class="headerlink" title="非数字型"></a>非数字型</h3><p>字符串、列表、元组、字典</p>
+<p>如果变量是bool型，在计算时True<code>对应的数字是</code>1<code>，</code>False<code>对应的数字是</code>0</p>
+<p> 字符串变量之间使用 <code>+</code> 拼接字符串</p>
+<p>input 函数实现键盘输入</p>
+<h3 id="格式化操作符"><a href="#格式化操作符" class="headerlink" title="格式化操作符"></a>格式化操作符</h3><p>% 被称为 格式化操作符，专门用于处理字符串中的格式<br>包含 % 的字符串，被称为 格式化字符串<br>% 和不同的 字符 连用，不同类型的数据 需要使用 不同的格式化字符<br>格式化字符	含义<br>%s	字符串<br>%d	有符号十进制整数，%06d 表示输出的整数显示位数，不足的地方使用 0 补全<br>%f	浮点数，%.2f 表示小数点后只显示两位<br>%%	输出 %</p>
+<h2 id="标识符和关键字"><a href="#标识符和关键字" class="headerlink" title="标识符和关键字"></a>标识符和关键字</h2><h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>​	标示符就是程序员定义的 变量名、函数名，名字 要 见名知义</p>
+<p>​	标示符可以由 字母、下划线 和 数字 组成，不能以数字开头，不能与关键字重名</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>​	关键字 就是在 Python 内部已经使用的标识符<br>​	关键字 具有特殊的功能和含义<br>​	不允许定义和关键字相同的名字的标示符</p>
+<h2 id="变量的命名规则"><a href="#变量的命名规则" class="headerlink" title="变量的命名规则"></a>变量的命名规则</h2><p>​	注意 Python 中的 标识符 是 区分大小写的</p>
+<p>​	在定义变量时，为了保证代码格式，&#x3D; 的左右应该各保留一个空格<br>​	在 Python 中，如果 变量名 需要由 二个 或 多个单词 组成时，可以按照以下方式命名<br>​	每个单词都使用小写字母。</p>
+<h3 id="小驼峰式命名法"><a href="#小驼峰式命名法" class="headerlink" title="小驼峰式命名法"></a>小驼峰式命名法</h3><p>第一个单词以小写字母开始，后续单词的首字母大写。</p>
+<h3 id="大驼峰式命名法"><a href="#大驼峰式命名法" class="headerlink" title="大驼峰式命名法"></a>大驼峰式命名法</h3><p>每一个单词的首字母都采用大写字母。</p>
+<h3 id="引用的概念"><a href="#引用的概念" class="headerlink" title="引用的概念"></a>引用的概念</h3><p>在 <code>Python</code> 中 ：变量和 数据 是分开存储的</p>
+<p>​	数据保存在内存中的一个位置</p>
+<p>​	变量中保存着数据在内存中的地址</p>
+<p>​	变量中 记录数据的地址即 引用</p>
+<p>使用 <code>id()</code> 函数查看变量中保存数据所在的 内存地址。</p>
+<p>在 <code>Python</code> 中，函数的 <strong>实参</strong>&#x2F;<strong>返回值</strong> 都是是靠 <strong>引用</strong> 来传递来的。</p>
+<h3 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h3><ul>
+<li><strong>局部变量</strong> 是在 <strong>函数内部</strong> 定义的变量，<strong>只能在函数内部使用</strong></li>
+<li><strong>全局变量</strong> 是在 <strong>函数外部定义</strong> 的变量（没有定义在某一个函数内），<strong>所有函数</strong> 内部 <strong>都可以使用这个变量</strong></li>
+</ul>
+<h3 id="可变和不可变类型"><a href="#可变和不可变类型" class="headerlink" title="可变和不可变类型"></a>可变和不可变类型</h3><ul>
+<li>不可变类型，内存中的数据不允许被修改：<ul>
+<li>数字类型 <code>int</code>, <code>bool</code>, <code>float</code>, <code>complex</code>, <code>long(2.x)</code></li>
+<li>字符串 <code>str</code></li>
+<li>元组 <code>tuple</code></li>
+</ul>
+</li>
+<li>可变类型，内存中的数据可以被修改：<ul>
+<li>列表 <code>list</code></li>
+<li>字典 <code>dict</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串的定义"><a href="#字符串的定义" class="headerlink" title="字符串的定义"></a>字符串的定义</h2><p>​	字符串 就是 一串字符，是编程语言中表示文本的数据类型<br>​	在 Python 中可以使用 一对双引号 “ 或者 一对单引号 ‘ 定义一个字符串，如果字符串内部需要使用 “，可以使用 ‘ 定义字符串，如果字符串内部需要使用 ‘，可以使用 “ 定义字符串，可以使用 索引 获一个字符串中 指定位置的字符，索引计数从 0 开始，也可以使用 for 循环遍历 字符串中每一个字符</p>
+<h2 id="字符串的常用操作"><a href="#字符串的常用操作" class="headerlink" title="字符串的常用操作"></a>字符串的常用操作</h2><h3 id="判断类型"><a href="#判断类型" class="headerlink" title="判断类型"></a>判断类型</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231209143618686.png" alt="image-20231209143618686"></p>
+<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231209143734876.png" alt="image-20231209143734876"></p>
+<h3 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231209143824065.png" alt="image-20231209143824065"></p>
+<h3 id="去除空白字符"><a href="#去除空白字符" class="headerlink" title="去除空白字符"></a>去除空白字符</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231209143906618.png" alt="image-20231209143906618"></p>
+<h3 id="拆分和连接"><a href="#拆分和连接" class="headerlink" title="拆分和连接"></a>拆分和连接</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231209143945480.png" alt="image-20231209143945480"></p>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><ul>
+<li>先乘除后加减</li>
+<li>同级运算符是 <strong>从左至右</strong> 计算</li>
+<li>可以使用 () 调整计算的优先级</li>
+<li>算数优先级由高到最低顺序排列</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>**</td>
+<td>幂 (最高优先级)</td>
+</tr>
+<tr>
+<td>* &#x2F; % &#x2F;&#x2F;</td>
+<td>乘、除、取余数、取整除</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>加法、减法</td>
+</tr>
+</tbody></table>
+<h3 id="比较（关系）运算符"><a href="#比较（关系）运算符" class="headerlink" title="比较（关系）运算符"></a>比较（关系）运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;&#x3D;</td>
+<td>检查两个操作数的值是否 <strong>相等</strong>，如果是，则条件成立，返回 True</td>
+</tr>
+<tr>
+<td>!&#x3D;</td>
+<td>检查两个操作数的值是否 <strong>不相等</strong>，如果是，则条件成立，返回 True</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左操作数的值是否 <strong>大于</strong> 右操作数的值，如果是，则条件成立，返回 True</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左操作数的值是否 <strong>小于</strong> 右操作数的值，如果是，则条件成立，返回 True</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;</td>
+<td>检查左操作数的值是否 <strong>大于或等于</strong> 右操作数的值，如果是，则条件成立，返回 True</td>
+</tr>
+<tr>
+<td>&lt;&#x3D;</td>
+<td>检查左操作数的值是否 <strong>小于或等于</strong> 右操作数的值，如果是，则条件成立，返回 True</td>
+</tr>
+</tbody></table>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>逻辑表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>x and y</td>
+<td>同True返True，否则返False</td>
+</tr>
+<tr>
+<td>or</td>
+<td>x or y</td>
+<td>一True返True，同False返False</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not x</td>
+<td>为True返 False，为 False返 True</td>
+</tr>
+</tbody></table>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x3D;</td>
+<td>简单的赋值运算符</td>
+</tr>
+<tr>
+<td>+&#x3D;</td>
+<td>加法赋值运算符</td>
+</tr>
+<tr>
+<td>-&#x3D;</td>
+<td>减法赋值运算符</td>
+</tr>
+<tr>
+<td>*&#x3D;</td>
+<td>乘法赋值运算符</td>
+</tr>
+<tr>
+<td>&#x2F;&#x3D;</td>
+<td>除法赋值运算符</td>
+</tr>
+<tr>
+<td>&#x2F;&#x2F;&#x3D;</td>
+<td>取整除赋值运算符</td>
+</tr>
+<tr>
+<td>%&#x3D;</td>
+<td>取 <strong>模</strong> (余数)赋值运算符</td>
+</tr>
+</tbody></table>
+<p>赋值运算符中间不能使用空格</p>
+<table>
+<thead>
+<tr>
+<th>**</th>
+<th>幂 (最高优先级)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>* &#x2F; % &#x2F;&#x2F;</td>
+<td>乘、除、取余数、取整除</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>加法、减法</td>
+</tr>
+<tr>
+<td>&lt;&#x3D; &lt; &gt; &gt;&#x3D;</td>
+<td>比较运算符</td>
+</tr>
+<tr>
+<td>&#x3D;&#x3D; !&#x3D;</td>
+<td>等于运算符</td>
+</tr>
+<tr>
+<td>&#x3D; %&#x3D; &#x2F;&#x3D; &#x2F;&#x2F;&#x3D; -&#x3D; +&#x3D; *&#x3D; **&#x3D;</td>
+<td>赋值运算符</td>
+</tr>
+<tr>
+<td>not or and</td>
+<td>逻辑运算符</td>
+</tr>
+</tbody></table>
+
     </div>
 </article>
 
