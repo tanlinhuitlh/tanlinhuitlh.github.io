@@ -284,12 +284,6 @@
 <p>校园网套娃式降本增效</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204201712876.png" alt="image-20231204201712876"></p>
 <p>​												<u>校园网连接拓扑图</u></p>
-<h1 id="木马监控"><a href="#木马监控" class="headerlink" title="木马监控"></a>木马监控</h1><p>​	反弹shell</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231204200234452.png" alt="image-20231204200234452"></p>
-<p>​		控制端监听在某TCP&#x2F;UDP端口，被控端发起请求到该端口，并将其命令行的输入输出转到控制端。</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701682087714-15c3417b-c7a0-4583-af7e-4182d464e631.png" alt="image.png"></p>
-<pre><code> 服务端通过木马控制客户端
-</code></pre>
 <p>​		</p>
 <h1 id="路由器与交换"><a href="#路由器与交换" class="headerlink" title="路由器与交换"></a>路由器与交换</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205172543414.png" alt="image-20231205172543414"></p>
 <h2 id="路由器和ip"><a href="#路由器和ip" class="headerlink" title="路由器和ip"></a>路由器和ip</h2><p>​	<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231205173616456.png" alt="image-20231205173616456"></p>
@@ -311,17 +305,17 @@
 <p>2.打开自己的clash猫，找到自己的代理IP和端口号</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701776163292-84a16641-885c-43f2-b308-7184a7192cc8.png" alt="img"></p>
 <p>3.打开proxifier点击配置文件-&gt;代理服务器-&gt;编辑</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701776229442-99c18f94-241a-4665-8f8c-96b30f950980.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701776229442-99c18f94-241a-4665-8f8c-96b30f950980.png" alt="img"></p>
 <p>4.将端口号改为clash猫上面的端口号，协议选择SOCKS5，点击确定</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701776854800-f53f8e69-8a7f-4810-9eaf-370c0e314b34.png" alt="img"></p>
 <p>5.配置文件-&gt;代理规则，点击添加</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701776934226-d9a103e1-5084-4863-b33d-dd4b788666e1.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701776934226-d9a103e1-5084-4863-b33d-dd4b788666e1.png" alt="img"></p>
 <p>6.应用程序输入ssh*; ,动作选择第一个，点击确定，给localhost规则移除</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701777086415-77add8c0-6eca-4ff2-b411-21e97b6ebd66.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777086415-77add8c0-6eca-4ff2-b411-21e97b6ebd66.png" alt="img"></p>
 <p>7.default选择direct</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777349422-80adca35-0e82-46f2-a71a-f322f906227d.png" alt="img"></p>
 <p>8.配置文件-&gt;名称解析</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701777434319-0aac0a5c-cb08-472a-8878-0b2a0bd31e65.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777434319-0aac0a5c-cb08-472a-8878-0b2a0bd31e65.png" alt="img"></p>
 <p>9.将设置改为下图所示，这样proxifier就配置好了</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777492892-b509770f-12fb-43b2-b980-a4c1708c7403.png" alt="img"></p>
 <h2 id="wireshark的使用"><a href="#wireshark的使用" class="headerlink" title="wireshark的使用"></a>wireshark的使用</h2><p>1.下载wireshark</p>
@@ -330,7 +324,7 @@
 <p>3.双击WLAN，就可以抓获WLAN的包</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777745179-f00200df-80b7-4f7d-83d0-0e8a9254d27c.png" alt="img"></p>
 <p>4.点击停止</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701777789325-bf287b62-ddcc-4d95-b541-b8e975180dfc.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777789325-bf287b62-ddcc-4d95-b541-b8e975180dfc.png" alt="img"></p>
 <p>5.可以搜索tcp、udp、http等协议</p>
 <p>ip.src &#x3D;&#x3D; 源ip   源IP过滤</p>
 <p>ip.dst &#x3D;&#x3D; 目的IP   目的ip过滤</p>
@@ -338,7 +332,7 @@
 <p>6.抓获ping命令的包</p>
 <p>搜索icmp，然后打开cmd输入ping baidu.com</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701777959244-21506089-3b64-4951-9871-fca6dd9d823e.png" alt="img"></p>
-<p><img src="https://cdn.nlark.com/yuque/0/2023/png/38965110/1701778021650-c439645e-f411-40c3-9890-13dca4e805dd.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701778021650-c439645e-f411-40c3-9890-13dca4e805dd.png" alt="img"></p>
 <p>此时打开wireshark就可以看到捕获了ping命令的数据包</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701778041850-250901f2-e4f6-44b2-a4d3-59961986cebb.png" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1701757593889-56b4eacb-40fc-4268-81d2-2e4265964875.png" alt="image.png"></p>
@@ -403,6 +397,12 @@
             <i class="fa fa-chevron-circle-up panel-toggle"></i>
         </div>
         <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
             
             <li class="list-group-item">
                 <span class="post-title">
@@ -516,6 +516,12 @@
                 </span>
             </li>
             
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
         </ul>
     </div>
 </aside>
@@ -545,37 +551,37 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 16.030969242294248px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 15.116364063506664px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 19.680118985022226px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.328994651265917px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14.105332584621593px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 18.09290902047781px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 15.79479961110755px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 15.6533107034941px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 10.045464127303097px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 15.465996626725506px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 10.242420626291171px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 11.474833194912232px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 11.17054597944001px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 12.182627508597804px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 17.860460867258205px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.850382978373645px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 19.109470112094392px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 16.251840432839842px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 16.56831532103476px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 16.062376241477516px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 16.76545602759528px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 10.40150426778317px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 15.311951531747962px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 19.188278383108653px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 11.142020296427905px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 19.278340114611417px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 14.831393651339715px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.795967561610563px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10.028719868444185px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 8.814589318356791px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 16.06239137621442px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 10.198648001112748px;" class="tag-cloud-link">下载与安装</a>
     
 </div>
                 
