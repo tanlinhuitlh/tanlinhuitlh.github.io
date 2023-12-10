@@ -257,6 +257,7 @@
     <div class="content-article">
         <p>今天补充之前学的Linux命令</p>
 <h1 id="Linux-查询命令"><a href="#Linux-查询命令" class="headerlink" title="Linux 查询命令"></a>Linux 查询命令</h1><h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h2><p>linux中使用<code>man</code>命令来查询命令的帮助文件,命令格式如下:</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210171733048.png" alt="image-20231210171733048"></p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7"><span class="hljs-keyword">man</span> <span class="hljs-comment">[章节]</span> command<br></code></pre></td></tr></table></figure>
 
 <p>常用命令如下：</p>
@@ -271,6 +272,7 @@
 
 <h2 id="Linux-info命令"><a href="#Linux-info命令" class="headerlink" title="Linux info命令"></a>Linux info命令</h2><p>linux中使用<code>info</code>命令来查询命令的帮助文件。<code>info</code>页面比<code>man page</code>编写得要更好、更容易理解，也更友好，但<code>man page</code>使用起来确实要更容易得多。一个<code>man page</code>只有一页，而<code>info</code>页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。</p>
 <p>命令格式如下：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/183243" alt="预览大图"></p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">info</span> [命令参数] command<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数选项：</p>
@@ -281,6 +283,8 @@
 
 <h1 id="Linux文件-目录管理"><a href="#Linux文件-目录管理" class="headerlink" title="Linux文件&#x2F;目录管理"></a>Linux文件&#x2F;目录管理</h1><h2 id="chattr"><a href="#chattr" class="headerlink" title="chattr"></a>chattr</h2><p>​	<code>chattr</code>的作用是修改文件&#x2F;目录的特殊属性。</p>
 <p>具体命令如下：</p>
+<p>将目录<code>testDir</code>以及目录下所有内容一并设置为不得任意更动，具体使用如下命令：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185143" alt="预览大图"></p>
 <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">chattr　[+|<span class="hljs-string">-</span>|<span class="hljs-string">=] 属性标示符　命令参数　文件/目录</span><br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
@@ -291,6 +295,7 @@
 
 <h2 id="lsattr"><a href="#lsattr" class="headerlink" title="lsattr"></a>lsattr</h2><p><code>lsattr</code>的作用查看文件&#x2F;目录的特殊属性设置情况。</p>
 <p>具体命令如下：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185145" alt="预览大图"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">lsattr</span>　命令参数　文件/目录<br></code></pre></td></tr></table></figure>
 
 <p>常用参数如下：</p>
@@ -301,10 +306,12 @@
 
 <h2 id="Linux硬链接"><a href="#Linux硬链接" class="headerlink" title="Linux硬链接"></a>Linux硬链接</h2><p>ln　源文件　目标文件</p>
 <p>为当前目录下的文件<code>testFile</code>创建一个硬链接<code>testFileLink</code>，可以使用如下命令：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185066" alt="预览大图"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> testFile testFileLink<br></code></pre></td></tr></table></figure>
 
 <h3 id="Linux软链接"><a href="#Linux软链接" class="headerlink" title="Linux软链接"></a>Linux软链接</h3><p>ln -s　源文件　目标文件</p>
 <p>为当前目录下的文件<code>testFile</code>创建一个软链接<code>myLink</code>，可以使用如下命令：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185067" alt="预览大图"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -s testFile myLink<br></code></pre></td></tr></table></figure>
 
 <h3 id="设置文件-目录的特殊权限setuid和setgid。"><a href="#设置文件-目录的特殊权限setuid和setgid。" class="headerlink" title="设置文件&#x2F;目录的特殊权限setuid和setgid。"></a>设置文件&#x2F;目录的特殊权限<code>setuid</code>和<code>setgid</code>。</h3><ul>
@@ -321,6 +328,7 @@
 </li>
 </ul>
 <p>创建一个新文件<code>testFile</code>，使用数字设置方法为文件<code>testFile</code>添加<code>setuid</code>权限，具体使用如下命令：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210171400928.png" alt="image-20231210171400928"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> testFilels -l testFilesudo <span class="hljs-built_in">chmod</span> 4764 testFilels -l testFile<br></code></pre></td></tr></table></figure>
 
 <p>setgid</p>
@@ -333,18 +341,22 @@
 
 <h1 id="Linux压缩和归档文件"><a href="#Linux压缩和归档文件" class="headerlink" title="Linux压缩和归档文件"></a>Linux压缩和归档文件</h1><h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p><code>tar</code>命令可以将多个文件&#x2F;目录进行打包，将多个文件生成一个文件，生成的文件后缀为<code>.tar</code>。</p>
 <p>具体打包命令如下：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210165104272.png" alt="image-20231210165104272"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-cvf　生成的tar包名　要打包的文件/目录列表<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>采用<code>bzip2</code>方式执行<code>tar</code>命令进行压缩的具体命令如下：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210164630999.png" alt="image-20231210164630999"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210164443803.png" alt="image-20231210164443803"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span> -jcvf　指定生成的压缩文件名　要被压缩的文件/目录列表<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；-j 以bzip2对文件/目录进行压缩；</span><br></code></pre></td></tr></table></figure>
 
 <p>采用<code>gzip</code>进行压缩的具体命令如下：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210164938728.png" alt="image-20231210164938728"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-zcvf　指定生成的压缩文件名　要被压缩的文件/目录列表<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
@@ -352,27 +364,32 @@
 
 <h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">tar　-<span class="hljs-keyword">jxvf　</span>指定要解压的文件<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210163656825.png" alt="image-20231210163656825"></p>
 <p>常用命令参数如下：</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-literal">-</span><span class="hljs-comment">x 或</span><span class="hljs-literal">--</span><span class="hljs-comment">ext\fract或</span><span class="hljs-literal">--</span><span class="hljs-comment">get：从备份文件中还原文件；</span><span class="hljs-literal">-</span><span class="hljs-comment">v 处理过程中输出相关信息；</span><span class="hljs-literal">-</span><span class="hljs-comment">f 对普通文件操作；</span><span class="hljs-literal">-</span><span class="hljs-comment">j 以bunzip2进行解压缩；</span><br></code></pre></td></tr></table></figure>
 
-<p>采用<code>gzip</code>进行压缩的具体命令如下：</p>
+<p>采用<code>gzip</code>进行解压的具体命令如下：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-zxvf　指定要解压的文件<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162957659.png" alt="image-20231210162957659"></p>
 <p>常用命令参数如下：</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-literal">-</span><span class="hljs-comment">x 或</span><span class="hljs-literal">--</span><span class="hljs-comment">ext\fract或</span><span class="hljs-literal">--</span><span class="hljs-comment">get：从备份文件中还原文件；</span><span class="hljs-literal">-</span><span class="hljs-comment">v 处理过程中输出相关信息；</span><span class="hljs-literal">-</span><span class="hljs-comment">f 对普通文件操作；</span><span class="hljs-literal">-</span><span class="hljs-comment">z 以gunzip进行解压缩；</span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gcode">bu<span class="hljs-symbol">nzip2</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210163130299.png" alt="image-20231210163130299"></p>
 <p>常用命令参数如下：</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">-f或<span class="hljs-comment">--force：解压缩时，若输出的文件与现有文件同名时，预设不会覆盖现有的文件；-k或——keep：在解压缩后，预设会删除原来的压缩文件。若要保留压缩文件，请使用此参数；-v或——verbose：解压缩文件时，显示详细的信息；</span><br></code></pre></td></tr></table></figure>
 
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">gunzip</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210163810908.png" alt="image-20231210163810908"></p>
 <p>常用命令参数如下：</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">-f或-force：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；-l或-list：列出压缩文件的相关信息；-q或-quiet：不显示警告信息；-r或-<span class="hljs-keyword">recursive</span>：递归处理，将指定目录下的所有文件及子目录一并处理；-v或-<span class="hljs-keyword">verbose</span>：显示指令执行过程；<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">unzip</span>　命令参数　指定要解压的文件<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210163333649.png" alt="image-20231210163333649"></p>
 <p>常用命令参数如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">-q：执行时不显示任何信息；-n：解压缩时不要覆盖原有的文件；-d<span class="hljs-tag">&lt;<span class="hljs-name">目录</span>&gt;</span>：指定文件解压缩后所要存储的目录；<br></code></pre></td></tr></table></figure>
 
@@ -384,12 +401,14 @@
 <h2 id="查询命令-which-whereis"><a href="#查询命令-which-whereis" class="headerlink" title="查询命令-which&#x2F;whereis"></a>查询命令-which&#x2F;whereis</h2><p>使用<code>which</code>命令定位<code>passwd</code>命令的位置，具体使用如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> passwd<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162458545.png" alt="image-20231210162458545"></p>
 <p>whereis具体命令如下：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">whereis</span>　命令参数　文件名<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-b：只查找二进制文件；</span><br><span class="hljs-deletion">-B&lt;目录&gt;：只在设置的目录下查找二进制文件；</span><br><span class="hljs-deletion">-m：只查找说明文件；</span><br><span class="hljs-deletion">-M&lt;目录&gt;：只在设置的目录下查找说明文件；</span><br><span class="hljs-deletion">-s：只查找原始代码文件；</span><br><span class="hljs-deletion">-S&lt;目录&gt;只在设置的目录下查找原始代码文件；</span><br></code></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162606360.png" alt="image-20231210162606360"></p>
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span>　查找目录　查找参数　查找内容<br></code></pre></td></tr></table></figure>
 
 <p>常用查找参数如下：</p>
@@ -412,7 +431,14 @@
 <li><code>M —— 兆字节</code></li>
 <li><code>G —— 吉字节</code></li>
 </ol>
-<h1 id="Linux-远程联机服务"><a href="#Linux-远程联机服务" class="headerlink" title="Linux 远程联机服务"></a>Linux 远程联机服务</h1><h5 id="Telnet远程登录服务器"><a href="#Telnet远程登录服务器" class="headerlink" title="Telnet远程登录服务器"></a>Telnet远程登录服务器</h5><p><code>telnet</code> 命令格式：</p>
+<p>查找<code>/etc</code>目录下大于<code>1M</code>的文件&#x2F;目录的详细信息，具体使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo find /etc -size 1M -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">ls</span> -l &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162216910.png" alt="image-20231210162216910"></p>
+<h1 id="Linux-远程联机服务"><a href="#Linux-远程联机服务" class="headerlink" title="Linux 远程联机服务"></a>Linux 远程联机服务</h1><h5 id="Telnet远程登录服务器"><a href="#Telnet远程登录服务器" class="headerlink" title="Telnet远程登录服务器"></a>Telnet远程登录服务器</h5><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190813552.png" alt="image-20231210190813552"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210192223812.png" alt="image-20231210192223812"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210192355434.png" alt="image-20231210192355434"></p>
+<p><code>telnet</code> 命令格式：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">telnet</span> 选项 参数<br></code></pre></td></tr></table></figure>
 
 <p>常见选项：</p>
@@ -429,7 +455,17 @@
 <li><code>quit：退出telnet；</code></li>
 <li><code>z：挂起telnet；</code></li>
 </ol>
-<h3 id="rsh远程登录"><a href="#rsh远程登录" class="headerlink" title="rsh远程登录"></a>rsh远程登录</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">rsh` 命令格式：`rsh 选项 参数<br></code></pre></td></tr></table></figure>
+<h3 id="rsh远程登录"><a href="#rsh远程登录" class="headerlink" title="rsh远程登录"></a>rsh远程登录</h3><ol>
+<li><p><code>更新软件源：sudo apt-get update</code></p>
+</li>
+<li><p><code>安装Rsh服务器：sudo apt-get install rsh-server</code></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210185954268.png" alt="image-20231210185954268"></p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190032989.png" alt="image-20231210190032989"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190301910.png" alt="image-20231210190301910"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190425448.png" alt="image-20231210190425448"></p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">rsh` 命令格式：`rsh 选项 参数<br></code></pre></td></tr></table></figure>
 
 <p>常见选项：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-d：使用Socket层级的排错功能。</span><br><span class="hljs-deletion">-n：把输入的指令号向代号为/dev/null的特殊外围设备。</span><br><span class="hljs-deletion">-l&lt;用户名称&gt;：指定要登入远端主机的用户名称；</span><br></code></pre></td></tr></table></figure>
@@ -648,37 +684,43 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 15.669841976998446px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 16.965985317897555px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 19.36692806875079px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 13.72110847984051px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 9.99509498905103px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10.367540790480875px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 9.410449662652432px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 16.232546190793503px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 19.046249206603523px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 13.961213214915198px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 10.2566186501694px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 15.86401295440605px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 14.449415665580943px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 14.814919882742009px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.100367926775792px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.516435282621266px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15.498146420925757px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.913100667947033px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 17.924310836366633px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.828007650563494px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 12.550161138143462px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 19.496916720138415px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 8.51519973776871px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 11.269265361030708px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 12.073886735467166px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 19.60451547475255px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 16.890418360405945px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 14.580493321453694px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 14.194133904175679px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13.538780289836142px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 10.79855681719624px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 18.76163643528668px;" class="tag-cloud-link">下载与安装</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 8.61031716347534px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 19.71917353520741px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.211464216130828px;" class="tag-cloud-link">字符串</a>
     
 </div>
                 
