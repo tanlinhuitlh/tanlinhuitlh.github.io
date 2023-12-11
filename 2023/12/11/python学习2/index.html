@@ -10,7 +10,7 @@
     
     
     
-    <title>categories: python | 文心雕龙</title>
+    <title>python学习2 | 文心雕龙</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -194,19 +194,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://example.com">文心雕龙</a>
         >
-        <span>目录</span>
+        <span>python学习2</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/python/index.html">python</a>
+                <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>, 
+                
+                <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">if条件判断</a>, 
+                
+                <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/">循环语句</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-11
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -214,27 +233,92 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/python/index.html">python</a>
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2023-12-11
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/python/">python</a>, 
+                
+                <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/">if条件判断</a>, 
+                
+                <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/">循环语句</a>
+                
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
-            <br>
-            
-            <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
-            <br>
-            
-            <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h1 id="if语句执行规则"><a href="#if语句执行规则" class="headerlink" title="if语句执行规则"></a>if语句执行规则</h1><ol>
+<li>if 条件：</li>
+</ol>
+<p>​				代码</p>
+<p>​		如果条件成立就执行代码，如果不成立就不执行。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211184625108.png" alt="image-20231211184625108"></p>
+<p>2</p>
+<p>​		if 条件：</p>
+<p>​				代码1</p>
+<p>​		else：</p>
+<p>​				代码2</p>
+<p>​			如果条件成立执行代码1，否则执行2</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211184923191.png" alt="image-20231211184923191"></p>
+<p>3</p>
+<p>if语句可以嵌套并且可以无限的嵌套</p>
+<p>​			if 条件1：</p>
+<p>​					if条件2:</p>
+<p>​								XXXX</p>
+<p>​					else：</p>
+<p>​						    	XXXX</p>
+<p>​				else:</p>
+<p>​							代码块</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211191053829.png" alt="image-20231211191053829"></p>
+<ol start="4">
+<li>如果不想if嵌套太深则可以这样使用</li>
+</ol>
+<pre><code>if条件 1:
+</code></pre>
+<p>   ​		代码1</p>
+<p>   elif  条件2:</p>
+<p>   ​		代码2</p>
+<p>   elif 条件3:</p>
+<p>   ‘’’’’’</p>
+<p>   else:</p>
+<p>   ​		XXX</p>
+<p>   <img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211192806315.png" alt="image-20231211192806315"></p>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>   ​		<code>for</code>循环是一种常用的编程结构，用于重复执行一段代码，直到满足特定的条件。在<code>for</code>循环中，通常会定义一个计数器变量，该变量的初始值、终止条件和递增或递减的方式都会在循环开始前确定。每次循环迭代时，计数器变量的值会自动更新，直到达到终止条件，循环才会停止。一般for循环用的多，while循环一般用于死循环</p>
+<p>   <img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211195312786.png" alt="image-20231211195312786"></p>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>   ​		while循环是一种基本的循环结构，适用于不确定循环次数的情况。while循环由关键字while、循环条件和循环体组成。当循环条件为真时，循环体会一直执行，直到循环条件变为假，循环才会结束。</p>
+<p>   例如使用while循环来计算数字1到10的和：</p>
+<p>   <img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211200223324.png" alt="image-20231211200223324"></p>
+<p>   ​	这个例子中，<code>num</code> 变量从1开始，每次循环增加1，直到 <code>num</code> 大于10时循环停止。在循环体内，我们将 <code>num</code> 加到 <code>total</code> 变量上，最终输出 <code>total</code> 的值。</p>
+<h2 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a>break和continue语句</h2><p>   ​		1.<code>break</code> 语句：<code>break</code>语句主要用于循环结构中，当程序遇到<code>break</code>语句时，会立即终止当前循环，跳出该循环体，执行后面的代码。如果是在嵌套循环中，<code>break</code>只会终止当前循环，不会影响到其他循环。</p>
+<p>   <img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194251237.png" alt="image-20231211194251237"></p>
+<p>   ​		2.continue<code> 语句：</code>continue<code>语句同样主要用于循环结构中，当程序遇到</code>continue&#96;语句时，会立即跳过本次循环中剩余的代码，并开始执行下一次循环。</p>
+<p>   <img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194205161.png" alt="image-20231211194205161"></p>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>​	字典（Dictionary）是一种数据结构，它将一个键（Key）与一个值（Value）进行关联。键和值可以是任何类型的数据，如数字、字符串、列表等。字典通常用于存储和检索相关联的数据集，可以通过键来快速地查找和访问对应的值。字典是以键值对的形式进行存储的。</p>
+<p>​	在Python中，字典是一种内置的数据类型，使用大括号 {} 来定义。每个键值对之间使用冒号 : 分隔，不同的键值对之间使用逗号 , 分隔。字典表示方式：{key:value1,key2:value2,key3:value}</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211201906222.png" alt="image-20231211201906222"></p>
+<p>​	字典的key必须是可哈希的数据类型，value可以是任何数据类型。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211202220631.png" alt="image-20231211202220631"></p>
+<h2 id="增加新的键值对"><a href="#增加新的键值对" class="headerlink" title="增加新的键值对"></a>增加新的键值对</h2><p>可以使用 <code>dict[key] = value</code> 的形式来添加新的键值对。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203034981.png" alt="image-20231211203034981"></p>
+<h2 id="删除键值对"><a href="#删除键值对" class="headerlink" title="删除键值对"></a>删除键值对</h2><p>可以使用 <code>del dict[key]</code> 的形式来删除键值对。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203306041.png" alt="image-20231211203306041"></p>
+<h2 id="修改键值对"><a href="#修改键值对" class="headerlink" title="修改键值对"></a>修改键值对</h2><p>可以使用 <code>dict[key] = new_value</code> 的形式来修改键值对的值。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203448894.png" alt="image-20231211203448894"></p>
+<h2 id="查找键值对"><a href="#查找键值对" class="headerlink" title="查找键值对"></a>查找键值对</h2><p>​	可以使用 <code>dict[key]</code> 的形式来查找键对应的值。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203651569.png" alt="image-20231211203651569"></p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -436,17 +520,17 @@
 
                 
                 <li>
-                    <a href="/categories/python/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/python/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/python/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -454,51 +538,51 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 19.007102376024328px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 16.531643868605308px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 8.134014472351412px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.824097176994538px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 17.13891720949946px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.469897711724204px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 17.528263632619627px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 13.100788346753347px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 12.619295242537344px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 19.56551387265919px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 15.316056552526474px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 16.188199338125834px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 9.067340241924057px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 10.293676962988066px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 18.562864427484953px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 18.16340390536849px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13.876321614576046px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 12.337692316887093px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 11.831511693338392px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 17.980847809685837px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 12.157393151807298px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 12.75786675826709px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 10.572679400084517px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 18.576242421567493px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 10.15801561077875px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 19.570269273363778px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.703018885553302px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 13.5655570727142px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 14.418322697438565px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 14.513509332779968px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 8.059406547283414px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 11.749394467301643px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.19761774711721px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 11.399325208079372px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.409588555420925px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.10716805366169px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.570451471264622px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.297742865518881px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 11.6840068455233px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 12.884909834420252px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 11.328724380173572px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 12.346880481630482px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 13.020007207128714px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 17.198749456685402px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.283219139830287px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 18.35468330444932px;" class="tag-cloud-link">循环语句</a>
     
 </div>
                 
