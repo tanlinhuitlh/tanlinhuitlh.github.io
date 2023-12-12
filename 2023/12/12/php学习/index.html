@@ -10,7 +10,7 @@
     
     
     
-    <title>Linux命令 | 文心雕龙</title>
+    <title>php学习 | 文心雕龙</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -200,13 +200,13 @@
         <i class="fa fa-home"></i>
         <a href="http://example.com">文心雕龙</a>
         >
-        <span>Linux命令</span>
+        <span>php学习</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -214,16 +214,16 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Linux/">Linux</a>, 
+                <a href="/tags/%E5%AE%89%E8%A3%85/">安装</a>, 
                 
-                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>, 
+                <a href="/tags/PHP/">PHP</a>, 
                 
-                <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                <a href="/tags/Navicat/">Navicat</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2023-12-02
+                <i class="fa fa-calendar"></i> 2023-12-12
             </span>
             
         </div>
@@ -233,21 +233,21 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2023-12-02
+                <i class="fa fa-calendar"></i> 2023-12-12
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/Linux/">Linux</a>, 
+                <a href="/tags/%E5%AE%89%E8%A3%85/">安装</a>, 
                 
-                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>, 
+                <a href="/tags/PHP/">PHP</a>, 
                 
-                <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                <a href="/tags/Navicat/">Navicat</a>
                 
                 
                 
@@ -255,67 +255,69 @@
         </center>
     </div>
     <div class="content-article">
-        <p>VM虚拟机搭建</p>
-<p>第一天</p>
-<p>学习linux命令</p>
-<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><p>切换目录（cd）<br>  cd &#x2F;                 &#x2F;&#x2F;切换到根目录<br>  cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录<br>  cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..<br>  cd ~                 &#x2F;&#x2F;切换到home目录<br>  cd -                 &#x2F;&#x2F;切换到上次访问的目录<br>  cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错<br>  cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，</p>
-<h1 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231203134721528.png" alt="image-20231203134721528"></p>
-<h1 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h1><p> ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件<br>  ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）<br>  ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令”ll”效果一样<br>  ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </p>
-<p>d  目录   -文件    r读   w写    x执行     </p>
-<p>三个一组  例如</p>
-<p>属性   所有者  所属组  其他人</p>
-<p>d        r w x      r w -     r - -</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/2.png"></p>
-<h1 id="删除目录与文件（rm）"><a href="#删除目录与文件（rm）" class="headerlink" title="删除目录与文件（rm）"></a>删除目录与文件（rm）</h1><p>  rm 文件名              &#x2F;&#x2F;删除当前目录下的文件<br>  rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）<br>  rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录<br>  rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）<br>  rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除<br>  rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/3.png"></p>
-<h1 id="搜索目录（find）"><a href="#搜索目录（find）" class="headerlink" title="搜索目录（find）"></a>搜索目录（find）</h1><p>  find &#x2F;bin -name ‘a*’        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</p>
-<h1 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h1><p>vi 文件名              &#x2F;&#x2F;打开需要编辑的文件<br>  –进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）<br>  命令模式<br>  -刚进入文件就是命令模式，通过方向键控制光标位置，<br>  -使用命令”dd”删除当前整行<br>  -使用命令”&#x2F;字段”进行查找<br>  -按”i”在光标所在字符前开始插入<br>  -按”a”在光标所在字符后开始插入<br>  -按”o”在光标所在行的下面另起一新行插入<br>  -按”：”进入底行模式<br>  插入模式<br>  -此时可以对文件内容进行编辑，左下角会显示 “– 插入 –””<br>  -按”ESC”进入底行模式<br>  底行模式<br>  -退出编辑：      :q<br>  -强制退出：      :q!<br>  -保存并退出：    :wq</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/4.png"></p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/5.png"></p>
-<h1 id="Linux创建用户命令"><a href="#Linux创建用户命令" class="headerlink" title="Linux创建用户命令"></a>Linux创建用户命令</h1><p><code>Linux</code>中使用<code>useradd</code>命令来创建一个新用户。</p>
-<p>命令格式格式：<code>useradd [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
+        <h1 id="PHP安装"><a href="#PHP安装" class="headerlink" title="PHP安装"></a>PHP安装</h1><p>网站搜索phpstudy,在官网下载</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212145330593.png" alt="image-20231212145330593"></p>
+<p>phpstudy的mysql会与本地的MySQL相互冲突，要运行的话需要关掉一个，所以最好在虚拟机的环境下。</p>
+<p>下载后安装，并打开。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212150156818.png" alt="image-20231212150156818"></p>
+<p>开启第1个和第3个，点击网站，打开管理，修改，高级配置，打开索引目录，进入WWW创建php文件。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212150601461.png" alt="image-20231212150601461"></p>
+<p>编写代码，进入phpstudy点击网站，选择打开网站。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212150937611.png" alt="image-20231212150937611"></p>
+<h1 id="PHP网站知识"><a href="#PHP网站知识" class="headerlink" title="PHP网站知识"></a>PHP网站知识</h1><h2 id="phpstudy各部分的关系"><a href="#phpstudy各部分的关系" class="headerlink" title="phpstudy各部分的关系"></a>phpstudy各部分的关系</h2><p>php只能在网站上运行，依托与网站。</p>
+<ol>
+<li>Apache是一个流行的Web服务器软件，它负责处理HTTP请求并返回网页内容。它提供了对PHP脚本的执行环境，可以将PHP代码嵌入到HTML文件中，并在服务器端执行。</li>
+<li>PHP是一种服务器端脚本语言，它可以在Web服务器上执行，并且与Apache服务器紧密集成。PHP可以生成动态内容，处理表单数据，访问数据库，生成动态网页等。在PHPStudy中，你可以通过配置Apache来启用PHP脚本的解释和执行。</li>
+<li>MySQL是一个关系型数据库管理系统（RDBMS），用于存储和管理网站的数据。它与PHP相互协作，通过使用PHP中的MySQL扩展，你可以从PHP脚本中连接到MySQL数据库并执行各种操作，例如插入、更新、查询和删除数据。</li>
+</ol>
+<p>​		在PHPStudy中，Apache、PHP和MySQL通常一起工作，以提供一个完整的Web开发环境。当你编写一个包含PHP代码的网页时，当有人访问该网页时，Apache服务器将执行PHP代码，并将结果返回给访问者。同时，你可以使用MySQL来存储和管理网站的数据，并通过PHP与MySQL进行交互，以从数据库中检索数据或将数据存储到数据库中。</p>
+<p>​		为了在PHPStudy中配置PHP、MySQL和Apache的关系，需要进行一些设置和配置。这包括在Apache中启用PHP解释器，以及在PHP中配置MySQL连接参数。通过正确的配置，你可以确保这些组件能够协同工作，以提供动态的、数据驱动的网站内容。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212201841648.png" alt="image-20231212201841648"></p>
+<h2 id="PHP基础知识"><a href="#PHP基础知识" class="headerlink" title="PHP基础知识"></a>PHP基础知识</h2><ol>
+<li><p>语法：PHP的语法包括变量、数据类型、运算符、条件语句、循环语句、函数等基本概念。</p>
+<p>PHP 脚本可以放在文档中的任何位置。</p>
+<p>PHP 脚本以 <strong><?php** 开始，以 **?></strong> 结束</p>
+<p>PHP 文件的默认文件扩展名是 <strong>.php</strong>。</p>
+<p>PHP 文件通常包含 HTML 标签和一些 PHP 脚本代码。</p>
+<p>PHP 中的每个代码行都必须以分号结束。分号是一种分隔符，用于把指令集区分开来。</p>
+<p>通过 PHP，有两种在浏览器输出文本的基础指令：<strong>echo</strong> 和 <strong>print</strong>。</p>
+</li>
+<li><p>变量：在PHP中，变量可以存储各种类型的数据，如字符串、整数、浮点数、布尔值等。变量名以符号开头，后面跟着变量名。例如：name &#x3D; “John”;</p>
+<p>与代数类似，可以给 PHP 变量赋予某个值（x&#x3D;5）或者表达式（z&#x3D;x+y）。</p>
+<p>变量可以是很短的名称（如 x 和 y）或者更具描述性的名称（如 age、carname、totalvolume）。</p>
+<p>PHP 没有声明变量的命令。变量在第一次赋值给它的时候被创建</p>
+</li>
+<li><p>数据类型：PHP支持多种数据类型，包括字符串（String）、整数（Integer）、浮点数（Float）、布尔值（Boolean）、数组（Array）、对象（Object）等。</p>
+</li>
+</ol>
+<h2 id="PHP-是一门弱类型语言"><a href="#PHP-是一门弱类型语言" class="headerlink" title="PHP 是一门弱类型语言"></a>PHP 是一门弱类型语言</h2><p>​	PHP 会根据变量的值，自动把变量转换为正确的数据类型。</p>
+<p>​	在强类型的编程语言中，我们必须在使用变量前先声明（定义）变量的类型和名称。</p>
+<p>弱类型匹配，&#x3D;&#x3D;</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212103828403.png" alt="image-20231212103828403"></p>
+<p>强类型匹配，&#x3D;&#x3D;&#x3D;</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212103754371.png" alt="image-20231212103754371"></p>
+<h2 id="PHP-循环-For-循环"><a href="#PHP-循环-For-循环" class="headerlink" title="PHP 循环 - For 循环"></a>PHP 循环 - For 循环</h2><p>语法</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs abnf">for (初始值<span class="hljs-comment">; 条件; 增量)</span><br>&#123;<br>    要执行的代码<span class="hljs-comment">;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li>-d&lt;登入目录&gt;：指定用户登入时的启始目录；</li>
-<li>-D：查看或变更预设值；</li>
-<li>-g&lt;群组&gt;：指定用户所属的群组；</li>
-<li>-m：自动建立用户的登入目录；</li>
-<li>-M：不要自动建立用户的登入目录；</li>
-<li>-s：指定用户登入后所使用的<code>shell</code>。</li>
+<li><strong>初始值</strong>：主要是初始化一个变量值，用于设置一个计数器（但可以是任何在循环的开始被执行一次的代码）。</li>
+<li><strong>条件</strong>：循环执行的限制条件。如果为 TRUE，则循环继续。如果为 FALSE，则循环结束。</li>
+<li><strong>增量</strong>：主要用于递增计数器（但可以是任何在循环的结束被执行的代码）。</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210172621025.png" alt="image-20231210172621025"></p>
-<p><code>Linux</code>中使用<code>userdel</code>命令来删除一个已经存在的用户。</p>
-<p>命令格式：<code>userdel [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
-<ul>
-<li>-f：强制删除用户，即使用户当前已登录；</li>
-<li>-r：删除用户的同时，删除与用户相关的所有文件。</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210172951053.png" alt="image-20231210172951053"></p>
-<p>因为系统默认是不会给新创建的用户自动创建一个文件夹用于用户账户接收邮件，所以在使用<code>userdel -r</code>命令删除的时候会提醒<code>/var/mail/test</code>文件夹不存在。</p>
-<h1 id="使用passwd命令修改用户密码"><a href="#使用passwd命令修改用户密码" class="headerlink" title="使用passwd命令修改用户密码"></a>使用passwd命令修改用户密码</h1><p>命令格式：<code>passwd [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
-<ul>
-<li>-d 删除密码；</li>
-<li>-l 停止账号使用；</li>
-<li>-S 显示密码信息。</li>
-</ul>
-<p><code>passwd</code>必须以<code>root</code>权限才能执行，如果是普通用户想执行<code>passwd</code>时，需要在命令前加<code>sudo</code>命令来提升权限为<code>root</code>权限。</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210173316262.png" alt="image-20231210173316262"></p>
-<h1 id="DNS域名解析过程"><a href="#DNS域名解析过程" class="headerlink" title="DNS域名解析过程"></a>DNS域名解析过程</h1><p>​	1，在浏览器中输入<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。</p>
-<p>​	2，如果hosts里没有这个域名的映射，则查找<strong>本地DNS解析器缓存</strong>，是否有这个网址映射关系，如果有，直接返回，完成域名解析。</p>
-<p>​	3，如果hosts与本地DNS解析器缓存都没有相应的网址映射关系，首先会找TCP&#x2F;ip参数中设置的首选DNS服务器，在此我们叫它<strong>本地DNS服务器</strong>，此服务器收到查询时，如果要查询的域名，包含在本地配置区域资源中，则返回解析结果给客户机，完成域名解析，此解析具有权威性。</p>
-<p>​	4，如果要查询的域名，不在本地DNS服务器区域解析，但该服务器已缓存了此网址映射关系，则调用这个IP地址映射，完成域名解析，此解析不具有权威性。</p>
-<p>​	5，如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询，如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(<a href="https://link.zhihu.com/?target=http://BTC.com">http://BTC.com</a>)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>域服务器，重复上面的动作，进行查询，直至找到<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>主机。</p>
-<p>各协议端口号</p>
-<p><strong>1、公认端口（Well-KnownPorts）：</strong>范围从0到1023。</p>
-<p><strong>2、动态端口（Dynamic Ports）：</strong>范围从1024到65535。</p>
-<p>0端口：无效端口,通常用于分析操作系统</p>
-<p>所以实际是1-65535</p>
-<p>21端口：FTP文件传输协议(控制)<br>22端口：SSH远程登录协议<br>23端口：telnet(终端仿真协议),木马Tiny Telnet Server开放此端口</p>
-<p>53端口：dns域名服务器</p>
-<p>80端口：http,用于网页浏览,木马Executor开放此端口</p>
-<p>443端口：基于TLS&#x2F;SSL的网页浏览端口，能提供加密和通过安全端口传输的另一种HTTP</p>
-<p>445端口：Microsoft-DS，为共享开放，震荡波病毒利用，一般应关闭（smb)</p>
+<p>利用for循环，我们可以完成一个简单的鸡兔同笼问题计算。假设在笼子里有头数为8的鸡和兔子，总共有22只脚。鸡兔各几只。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212151429322.png" alt="image-20231212151429322"></p>
+<h1 id="NavicatPremium下载安装"><a href="#NavicatPremium下载安装" class="headerlink" title="NavicatPremium下载安装"></a>NavicatPremium下载安装</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212153449078.png" alt="image-20231212153449078"></p>
+<p>官网下载，安装，打开，建立连接。命名，设置密码，连接测试。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212153856176.png" alt="image-20231212153856176"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212153932908.png" alt="image-20231212153932908"></p>
+<h1 id="表单和数据库连接"><a href="#表单和数据库连接" class="headerlink" title="表单和数据库连接"></a>表单和数据库连接</h1><p>​	利用学的知识，我们可以表单向数据库查内容再返回页面。</p>
+<p>​	创建一个数据库连接，以便能够与数据库进行通信。可以使用PHP的<code>mysqli</code>等扩展库来实现连接。根据数据库类型和配置，具体的连接代码会有所不同。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212194652812.png" alt="image-20231212194652812"></p>
+<p>​	创建表单：在HTML中创建一个表单，其中包含输入字段（例如文本框、下拉列表等），用于接收用户输入的数据。设置表单的<code>method</code>属性为<code>POST</code>，将数据以POST请求的方式提交给服务器。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212194815482.png" alt="image-20231212194815482"></p>
+<p>​	创建一个PHP文件（例如<code>link.php</code>），用于处理表单提交的数据，并与数据库进行交互。在这个文件中，可以获取通过POST方法提交的用户名和密码。然后，使用SQL查询语句在数据库中查找匹配的记录。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231212195003497.png" alt="image-20231212195003497"></p>
+<p><em>纵使困顿难行，亦当砥砺奋进!</em></p>
 
     </div>
 </article>
@@ -522,17 +524,17 @@
 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -540,55 +542,55 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 18.637684807310315px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 16.635187822082695px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.321938719770774px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.86774061777806px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 8.395482589142738px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 17.049094819014154px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 8.794597237311816px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 17.081308470751807px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.26632527930197px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 17.26530232893763px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 12.590805586597345px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 11.369129559733008px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 14.951429158751228px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 17.419686733818253px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 11.055180128056511px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 11.631317271074595px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.14431906374503px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.126857684206609px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.55430215176981px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.425044814632233px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 18.547019357498897px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 12.34388800163916px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 9.681123188091064px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 9.97566652087429px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 13.805926403065994px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 18.442348466975584px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 9.104825941281039px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.900405327312496px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13.99201356396133px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 14.557068692584082px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 18.886350395924993px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 10.536850214718708px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 9.582482879071293px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 8.804861080869198px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.075994069011994px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 13.567870121163235px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.103764591755038px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.76455165231784px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.269992675738461px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 12.937090602822703px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 15.895313051760933px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 9.029813906526496px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.721430968777675px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 10.135959180181775px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.016593419361048px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.331120287201507px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/PHP/" style="font-size: 19.430273965888006px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 15.743052801226721px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 16.791376907290594px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 16.173630327681423px;" class="tag-cloud-link">Navicat</a>
     
 </div>
                 

@@ -10,7 +10,7 @@
     
     
     
-    <title>Linux命令 | 文心雕龙</title>
+    <title>archive_a | 文心雕龙</title>
     <link href="http://example.com" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -194,38 +194,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://example.com">文心雕龙</a>
         >
-        <span>Linux命令</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/Linux/">Linux</a>, 
-                
-                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>, 
-                
-                <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2023-12-02
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -233,94 +214,67 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2023-12-02
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/Linux/">Linux</a>, 
-                
-                <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>, 
-                
-                <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
-                
-                
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <p>VM虚拟机搭建</p>
-<p>第一天</p>
-<p>学习linux命令</p>
-<h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><p>切换目录（cd）<br>  cd &#x2F;                 &#x2F;&#x2F;切换到根目录<br>  cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录<br>  cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..<br>  cd ~                 &#x2F;&#x2F;切换到home目录<br>  cd -                 &#x2F;&#x2F;切换到上次访问的目录<br>  cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错<br>  cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，</p>
-<h1 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231203134721528.png" alt="image-20231203134721528"></p>
-<h1 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h1><p> ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件<br>  ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）<br>  ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令”ll”效果一样<br>  ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </p>
-<p>d  目录   -文件    r读   w写    x执行     </p>
-<p>三个一组  例如</p>
-<p>属性   所有者  所属组  其他人</p>
-<p>d        r w x      r w -     r - -</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/2.png"></p>
-<h1 id="删除目录与文件（rm）"><a href="#删除目录与文件（rm）" class="headerlink" title="删除目录与文件（rm）"></a>删除目录与文件（rm）</h1><p>  rm 文件名              &#x2F;&#x2F;删除当前目录下的文件<br>  rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）<br>  rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录<br>  rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）<br>  rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除<br>  rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/3.png"></p>
-<h1 id="搜索目录（find）"><a href="#搜索目录（find）" class="headerlink" title="搜索目录（find）"></a>搜索目录（find）</h1><p>  find &#x2F;bin -name ‘a*’        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</p>
-<h1 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h1><p>vi 文件名              &#x2F;&#x2F;打开需要编辑的文件<br>  –进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）<br>  命令模式<br>  -刚进入文件就是命令模式，通过方向键控制光标位置，<br>  -使用命令”dd”删除当前整行<br>  -使用命令”&#x2F;字段”进行查找<br>  -按”i”在光标所在字符前开始插入<br>  -按”a”在光标所在字符后开始插入<br>  -按”o”在光标所在行的下面另起一新行插入<br>  -按”：”进入底行模式<br>  插入模式<br>  -此时可以对文件内容进行编辑，左下角会显示 “– 插入 –””<br>  -按”ESC”进入底行模式<br>  底行模式<br>  -退出编辑：      :q<br>  -强制退出：      :q!<br>  -保存并退出：    :wq</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/4.png"></p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/5.png"></p>
-<h1 id="Linux创建用户命令"><a href="#Linux创建用户命令" class="headerlink" title="Linux创建用户命令"></a>Linux创建用户命令</h1><p><code>Linux</code>中使用<code>useradd</code>命令来创建一个新用户。</p>
-<p>命令格式格式：<code>useradd [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
-<ul>
-<li>-d&lt;登入目录&gt;：指定用户登入时的启始目录；</li>
-<li>-D：查看或变更预设值；</li>
-<li>-g&lt;群组&gt;：指定用户所属的群组；</li>
-<li>-m：自动建立用户的登入目录；</li>
-<li>-M：不要自动建立用户的登入目录；</li>
-<li>-s：指定用户登入后所使用的<code>shell</code>。</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210172621025.png" alt="image-20231210172621025"></p>
-<p><code>Linux</code>中使用<code>userdel</code>命令来删除一个已经存在的用户。</p>
-<p>命令格式：<code>userdel [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
-<ul>
-<li>-f：强制删除用户，即使用户当前已登录；</li>
-<li>-r：删除用户的同时，删除与用户相关的所有文件。</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210172951053.png" alt="image-20231210172951053"></p>
-<p>因为系统默认是不会给新创建的用户自动创建一个文件夹用于用户账户接收邮件，所以在使用<code>userdel -r</code>命令删除的时候会提醒<code>/var/mail/test</code>文件夹不存在。</p>
-<h1 id="使用passwd命令修改用户密码"><a href="#使用passwd命令修改用户密码" class="headerlink" title="使用passwd命令修改用户密码"></a>使用passwd命令修改用户密码</h1><p>命令格式：<code>passwd [命令参数] 参数</code></p>
-<p>常见命令参数：</p>
-<ul>
-<li>-d 删除密码；</li>
-<li>-l 停止账号使用；</li>
-<li>-S 显示密码信息。</li>
-</ul>
-<p><code>passwd</code>必须以<code>root</code>权限才能执行，如果是普通用户想执行<code>passwd</code>时，需要在命令前加<code>sudo</code>命令来提升权限为<code>root</code>权限。</p>
-<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210173316262.png" alt="image-20231210173316262"></p>
-<h1 id="DNS域名解析过程"><a href="#DNS域名解析过程" class="headerlink" title="DNS域名解析过程"></a>DNS域名解析过程</h1><p>​	1，在浏览器中输入<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。</p>
-<p>​	2，如果hosts里没有这个域名的映射，则查找<strong>本地DNS解析器缓存</strong>，是否有这个网址映射关系，如果有，直接返回，完成域名解析。</p>
-<p>​	3，如果hosts与本地DNS解析器缓存都没有相应的网址映射关系，首先会找TCP&#x2F;ip参数中设置的首选DNS服务器，在此我们叫它<strong>本地DNS服务器</strong>，此服务器收到查询时，如果要查询的域名，包含在本地配置区域资源中，则返回解析结果给客户机，完成域名解析，此解析具有权威性。</p>
-<p>​	4，如果要查询的域名，不在本地DNS服务器区域解析，但该服务器已缓存了此网址映射关系，则调用这个IP地址映射，完成域名解析，此解析不具有权威性。</p>
-<p>​	5，如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询，如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(<a href="https://link.zhihu.com/?target=http://BTC.com">http://BTC.com</a>)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>域服务器，重复上面的动作，进行查询，直至找到<a href="https://link.zhihu.com/?target=http://pool.btc.com">http://pool.btc.com</a>主机。</p>
-<p>各协议端口号</p>
-<p><strong>1、公认端口（Well-KnownPorts）：</strong>范围从0到1023。</p>
-<p><strong>2、动态端口（Dynamic Ports）：</strong>范围从1024到65535。</p>
-<p>0端口：无效端口,通常用于分析操作系统</p>
-<p>所以实际是1-65535</p>
-<p>21端口：FTP文件传输协议(控制)<br>22端口：SSH远程登录协议<br>23端口：telnet(终端仿真协议),木马Tiny Telnet Server开放此端口</p>
-<p>53端口：dns域名服务器</p>
-<p>80端口：http,用于网页浏览,木马Executor开放此端口</p>
-<p>443端口：基于TLS&#x2F;SSL的网页浏览端口，能提供加密和通过安全端口传输的另一种HTTP</p>
-<p>445端口：Microsoft-DS，为共享开放，震荡波病毒利用，一般应关闭（smb)</p>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2023年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                        <br>
+            
+             
+                        <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -465,7 +419,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
                 </span>
             </li>
             
@@ -522,17 +476,17 @@
 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/2023/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/archives/2023/page/2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/archives/2023/page/2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -540,55 +494,55 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 18.637684807310315px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 14.580623784747175px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.321938719770774px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.903561471755914px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 8.395482589142738px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 18.97571738924112px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 8.794597237311816px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 12.402947481605315px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.26632527930197px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 13.904319939643791px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 12.590805586597345px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 16.420316091157368px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 14.951429158751228px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 8.229520976709647px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 11.055180128056511px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.08622840666632px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.14431906374503px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15.73642964718576px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.55430215176981px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.048784422707909px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 18.547019357498897px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 13.998856104747311px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 9.681123188091064px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 16.21490857955799px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 13.805926403065994px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 14.143588056770291px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 9.104825941281039px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 11.552097899417056px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13.99201356396133px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 18.923264215604064px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 18.886350395924993px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 16.423136331755295px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 9.582482879071293px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 10.535888325525928px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.075994069011994px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 14.472894279713234px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.103764591755038px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.782584827347087px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.269992675738461px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.305172684058462px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 15.895313051760933px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 10.45451198989336px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.721430968777675px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.34297424111747px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.016593419361048px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 18.85164566051188px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/PHP/" style="font-size: 19.430273965888006px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 18.749960350890586px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 16.791376907290594px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 15.639328421155684px;" class="tag-cloud-link">Navicat</a>
     
 </div>
                 
