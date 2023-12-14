@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>php学习1 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/python/">python</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>php学习1</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/php/">php</a>, 
+                
+                <a href="/tags/php%E5%87%BD%E6%95%B0/">php函数</a>, 
+                
+                <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">简单网站功能实现</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-13
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2023-12-13
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/php/">php</a>, 
+                
+                <a href="/tags/php%E5%87%BD%E6%95%B0/">php函数</a>, 
+                
+                <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">简单网站功能实现</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="php函数"><a href="#php函数" class="headerlink" title="php函数"></a>php函数</h1><p>​	PHP 的真正威力源自于它的函数。</p>
+<p>​	在 PHP 中，提供了超过 1000 个内建的函数。如要在页面加载时执行脚本，可以把它放到函数里。</p>
+<p>函数是通过调用函数来执行的。可以在页面的任何位置调用函数。</p>
+<h2 id="创建-PHP-函数"><a href="#创建-PHP-函数" class="headerlink" title="创建 PHP 函数"></a>创建 PHP 函数</h2><p>函数是通过调用函数来执行的。</p>
+<p>​	语法</p>
+<?php function functionName() {    // 要执行的代码 } ?>
+
+<p>PHP 函数准则：</p>
+<ul>
+<li>函数的名称应该提示出它的功能</li>
+<li>函数名称以字母或下划线开头（不能以数字开头）</li>
+</ul>
+<h2 id="PHP-函数-添加参数"><a href="#PHP-函数-添加参数" class="headerlink" title="PHP 函数 - 添加参数"></a>PHP 函数 - 添加参数</h2><p>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
+<p>​	参数就在函数名称后面的一个括号内指定。<br>‘’’<br>&lt;?php<br>function writeName($fname)<br>{<br>​    echo $fname . “ Refsnes.<br>“;<br>}</p>
+<p>echo “My name is “;<br>writeName(“Kai Jim”);<br>echo “My sister’s name is “;<br>writeName(“Hege”);<br>echo “My brother’s name is “;<br>writeName(“Stale”);<br>?&gt;<br>‘’’</p>
+<p>运行结果</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213170035927.png" alt="image-20231213170035927"></p>
+<h2 id="PHP-函数-返回值"><a href="#PHP-函数-返回值" class="headerlink" title="PHP 函数 - 返回值"></a>PHP 函数 - 返回值</h2><p>如需让函数返回一个值，请使用 return 语句。</p>
+<p>实例</p>
+<p><code>&lt;?php function add($x,$y) &#123;    $total=$x+$y;    return $total; &#125;  echo &quot;1 + 16 = &quot; . add(1,16); ?&gt;</code></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213170321693.png" alt="image-20231213170321693"></p>
+<h2 id="PHP-变量函数"><a href="#PHP-变量函数" class="headerlink" title="PHP 变量函数"></a>PHP 变量函数</h2><p>变量函数是指在 PHP 中，将一个变量作为函数名来调用的函数。</p>
+<p>变量函数可以让我们在运行时动态地决定调用哪个函数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;In foo()&lt;br /&gt;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"><span class="hljs-variable">$arg</span> = <span class="hljs-string">&#x27;&#x27;</span></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;In bar(); argument was &#x27;<span class="hljs-subst">$arg</span>&#x27;.&lt;br /&gt;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-comment">// 使用 echo 的包装函数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoit</span>(<span class="hljs-params"><span class="hljs-variable">$string</span></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$string</span>;<br>&#125;<br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;foo&#x27;</span>;<br><span class="hljs-variable">$func</span>();        <span class="hljs-comment">// 调用 foo()</span><br><br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;<br><span class="hljs-variable">$func</span>(<span class="hljs-string">&#x27;test&#x27;</span>);  <span class="hljs-comment">// 调用 bar()</span><br><br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;echoit&#x27;</span>;<br><span class="hljs-variable">$func</span>(<span class="hljs-string">&#x27;test&#x27;</span>);  <span class="hljs-comment">// 调用 echoit()</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="登录验证"><a href="#登录验证" class="headerlink" title="登录验证"></a>登录验证</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs awk">&lt;?php<br>header(<span class="hljs-string">&#x27;content-type: text/html; charset=utf-8&#x27;</span>);<br>session_start();<br><br><span class="hljs-keyword">if</span>(isset(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;submit&#x27;</span>]))&#123;<br>    <span class="hljs-variable">$u</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);<br>    <span class="hljs-variable">$p</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>]);<br> <span class="hljs-variable">$link</span>=mysqli_connect(<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;security&quot;</span>)or <span class="hljs-keyword">exit</span>(<span class="hljs-string">&quot;Error connecting&quot;</span>);<br>      mysqli_query(<span class="hljs-variable">$link</span>,<span class="hljs-string">&quot;set names utf8&quot;</span>);<br>  <span class="hljs-variable">$sql</span>=  <span class="hljs-string">&quot;select * from users where username=&#x27;$u&#x27; and password=&#x27;$p&#x27;&quot;</span>;<br>  <span class="hljs-variable">$result</span>=mysqli_query(<span class="hljs-variable">$link</span>, <span class="hljs-variable">$sql</span>) ;<br>  <span class="hljs-keyword">if</span>(mysqli_num_rows(<span class="hljs-variable">$result</span>)&gt;=<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]=<span class="hljs-variable">$u</span>;       <br>        setcookie(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-variable">$p</span>,time()+<span class="hljs-number">7</span>*<span class="hljs-number">12</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>);<br>        header(<span class="hljs-string">&#x27;Location:zhuye.php&#x27;</span>);<br>        <span class="hljs-keyword">exit</span>();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        echo <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        echo <span class="hljs-string">&#x27;用户名或密码错误!请重新输入!&#x27;</span>;<br>		<span class="hljs-regexp">//</span>sleep(<span class="hljs-number">3</span>);<br>		echo <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;./index.php&quot;&gt;返回&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><code>header(&#39;content-type: text/html; charset=utf-8&#39;);</code><ul>
+<li>设置 HTTP 响应头，指定内容类型为 HTML，并设置字符集为 UTF-8。</li>
+</ul>
+</li>
+<li><code>session_start();</code><ul>
+<li>启动 PHP 会话，用于存储和获取会话数据。</li>
+</ul>
+</li>
+<li><code>if(isset($_POST[&#39;submit&#39;]))&#123;</code><ul>
+<li>检查是否提交了表单。如果表单已提交，将执行以下代码块。</li>
+</ul>
+</li>
+<li><code>$u = trim($_POST[&#39;username&#39;]);</code><ul>
+<li>从 POST 请求中获取用户名，并使用 <code>trim()</code> 函数去除用户名前后的空白字符。</li>
+</ul>
+</li>
+<li><code>$p = trim($_POST[&#39;password&#39;]);</code><ul>
+<li>从 POST 请求中获取密码，并使用 <code>trim()</code> 函数去除密码前后的空白字符。</li>
+</ul>
+</li>
+<li><code>$link=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;root&quot;,&quot;security&quot;)or exit(&quot;Error connecting&quot;);</code><ul>
+<li>使用 MySQLi 扩展连接到本地 MySQL 数据库。如果连接失败，将退出并显示错误消息。</li>
+</ul>
+</li>
+<li><code>mysqli_query($link,&quot;set names utf8&quot;);</code><ul>
+<li>设置数据库连接的字符集为 UTF-8。</li>
+</ul>
+</li>
+<li><code>$sql= &quot;select * from users where username=&#39;$u&#39; and password=&#39;$p&#39;&quot;;</code><ul>
+<li>构建 SQL 查询语句，从 <code>users</code> 表中查找与输入的用户名和密码匹配的记录。</li>
+</ul>
+</li>
+<li><code>$result=mysqli_query($link, $sql) ;</code><ul>
+<li>执行 SQL 查询，并将结果存储在 <code>$result</code> 变量中。</li>
+</ul>
+</li>
+<li><code>if(mysqli_num_rows($result)&gt;=1)&#123;</code><ul>
+<li>检查查询结果中是否有至少一行数据。如果有，表示找到了匹配的用户。</li>
+</ul>
+</li>
+<li><code>$_SESSION[&#39;user&#39;]=$u;</code><ul>
+<li>将找到的用户名存储在会话中，方便后续访问。</li>
+</ul>
+</li>
+<li><code>setcookie(&#39;password&#39;,$p,time()+7*12*60*60);</code><ul>
+<li>设置一个名为 <code>password</code> 的 cookie，其中包含密码，有效期为 7 天（7 天 * 12 小时&#x2F;天 * 60 分钟&#x2F;小时）。这通常不是一个好的做法，因为直接存储密码在 cookie 中是不安全的。</li>
+</ul>
+</li>
+<li><code>header(&#39;Location:zhuye.php&#39;);</code><ul>
+<li>重定向到 <code>zhuye.php</code> 页面。这通常是用户成功登录后的目标页面。</li>
+</ul>
+</li>
+<li><code>exit();</code><ul>
+<li>结束脚本执行。</li>
+</ul>
+</li>
+<li><code>&#125;else&#123;</code><ul>
+<li>如果查询结果中没有找到匹配的记录，执行以下代码块。</li>
+</ul>
+</li>
+<li><code>echo &#39;用户名或密码错误!请重新输入!&#39;;</code><ul>
+<li>输出错误消息，提示用户输入正确的用户名或密码。</li>
+</ul>
+</li>
+<li><code>//sleep(3);</code> &#x2F;&#x2F; 这行代码被注释掉了，所以不会执行。如果取消注释，它将使脚本暂停执行 3 秒。</li>
+<li><code>echo &#39;&lt;h1&gt;&lt;a href=&quot;./index.php&quot;&gt;返回&lt;/a&gt;&lt;/h1&gt;&#39;;</code></li>
+</ol>
+<ul>
+<li>输出一个返回链接，点击后将重定向到 <code>index.php</code> 页面。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213173658448.png" alt="image-20231213173658448"></p>
+<h1 id="接收和显示评论"><a href="#接收和显示评论" class="headerlink" title="接收和显示评论"></a>接收和显示评论</h1><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>历史评论</h1>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['comment']) && !empty($_POST['comment'])) {
+            $comment = $_POST['comment'];
+            $link = mysqli_connect("localhost", "root", "root", "security") or exit("数据库连接失败！");
+            mysqli_query($link, "set names utf8");
+            $ChaRu = "insert INTO comments (comment) VALUES('$comment')";
+            if (mysqli_query($link, $ChaRu)) {
+                echo "<p>你的评论已成功保存到数据库。</p>";
+            } else {
+                echo "<p style='color: red;'>保存评论时出错。</p>";
+            }
+            mysqli_close($link);
+        }
+    }
+    // 显示最近的20条评论
+    $link = mysqli_connect("localhost", "root", "root", "security") or exit("数据库连接失败！");
+    mysqli_query($link, "set names utf8");
+
+<pre><code>$query = &quot;SELECT * FROM comments ORDER BY id DESC LIMIT 20&quot;;    
+$result = mysqli_query($link, $query);
+
+if ($result) &#123;
+    echo &quot;&lt;h2&gt;最近的评论&lt;/h2&gt;&quot;;
+    while ($row = mysqli_fetch_assoc($result)) &#123;
+        echo &quot;&lt;p&gt;&#123;$row[&#39;comment&#39;]&#125;&lt;/p&gt;&quot;;
+    &#125;
+&#125; else &#123;
+    echo &quot;&lt;p style=&#39;color: red;&#39;&gt;获取评论时出错。&lt;/p&gt;&quot;;
+&#125;
+
+mysqli_close($link);
+?&gt;
+&lt;form method=&quot;post&quot; action=&quot;&quot;&gt;
+    &lt;label for=&quot;comment&quot;&gt;发表评论&lt;/label&gt;&lt;br /&gt;
+    &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; rows=&quot;10&quot; cols=&quot;80&quot;&gt;&lt;/textarea&gt;&lt;br /&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交评论&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+</body>
+
+</html>
+
+<ul>
+<li><p>从 <code>comments</code> 表中获取最新的20条评论，并按ID降序排列。</p>
+</li>
+<li><p>如果成功获取评论，则显示这些评论；否则，显示错误消息。</p>
+</li>
+<li><p><code>set names utf8</code>：设置字符集为 UTF-8。</p>
+</li>
+<li><p><code>insert INTO comments (comment) VALUES(&#39;$comment&#39;)</code>：将评论插入到 <code>comments</code> 表中。</p>
+</li>
+<li><p><code>SELECT * FROM comments ORDER BY id DESC LIMIT 20</code>：从 <code>comments</code> 表中获取最新的20条评论。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213174455256.png" alt="image-20231213174455256"></p>
+<h1 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="hljs-string">&lt;label for=&quot;upload&quot;&gt;上传你的头像&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;file&quot; id=&quot;upload&quot; type=&quot;file&quot; &gt;</span><br><span class="hljs-string">&lt;label for=&quot;submit&quot;  &gt;文件上传&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;submit&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;</span><br><span class="hljs-string">&lt;h1&gt;下面是接收到的文件&lt;/h1&gt;</span><br><span class="hljs-string">&lt;/form&gt;</span><br><span class="hljs-string">&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>]))&#123;<br>    <span class="hljs-variable">$upload_dir</span> = <span class="hljs-string">&quot;uploads&quot;</span>;<br>    <span class="hljs-variable">$file_name</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;name&quot;</span>];<br>    <span class="hljs-variable">$file_type</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;type&quot;</span>];<br>    <span class="hljs-variable">$file_size</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;size&quot;</span>];<br>    <span class="hljs-variable">$file_tmp</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;tmp_name&quot;</span>];<br>    <span class="hljs-variable">$target_path</span> = <span class="hljs-variable">$upload_dir</span>.<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$file_name</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">move_uploaded_file</span>(<span class="hljs-variable">$file_tmp</span>, <span class="hljs-variable">$target_path</span>))&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传成功&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件类型: &quot;</span> . <span class="hljs-variable">$file_type</span> . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件大小: &quot;</span> . (<span class="hljs-variable">$file_size</span> / <span class="hljs-number">1024</span>) . <span class="hljs-string">&quot; kB&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件存储的位置: &quot;</span> . <span class="hljs-variable">$target_path</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传失败&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>    &#125;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=&#x27;<span class="hljs-subst">$target_path</span>.&#x27;&gt;&quot;</span>;<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213190546540.png" alt="image-20231213190546540"></p>
+<p>使用 <code>enctype=&quot;multipart/form-data&quot;</code> 来确保可以上传文件。</p>
+<p>检查 <code>$_FILES[&quot;file&quot;]</code> 是否设置，这表示是否有文件被上传。</p>
+<ul>
+<li><code>$upload_dir</code>：上传目录的路径。</li>
+<li><code>$file_name</code>：上传文件的名称。</li>
+<li><code>$file_type</code>：上传文件的类型。</li>
+<li><code>$file_size</code>：上传文件的大小。</li>
+<li><code>$file_tmp</code>：上传文件的临时路径。</li>
+</ul>
+<p><code>move_uploaded_file($file_tmp, $target_path)</code> 将临时文件移动到目标路径。如果移动成功，则显示成功消息和文件的详细信息；否则，显示上传失败的消息。</p>
+<p><img src='$target_path'> 显示上传的图片。</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 10.547558692994482px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 9.667532524483715px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.531020225258636px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/HTML/" style="font-size: 14.310108875549975px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 15.880991492039719px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/python/" style="font-size: 11.98934385729273px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/vue/" style="font-size: 19.286483842806277px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 11.546139142357834px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 19.038104504946837px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 19.147468520595424px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/ipv6/" style="font-size: 10.67642867395061px;" class="tag-cloud-link">ipv6</a>
+    
+    <a href="/tags/ipv4/" style="font-size: 17.96289301062784px;" class="tag-cloud-link">ipv4</a>
+    
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 18.786319797139292px;" class="tag-cloud-link">私网</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.47410120380383px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 8.045289599996046px;" class="tag-cloud-link">抓包</a>
+    
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 8.513378144030135px;" class="tag-cloud-link">下载与安装</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 8.047298493010498px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.758453628683505px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.787456288704249px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 16.060205684888125px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 13.359710929108253px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 16.19203491175681px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.48849081346226px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/PHP/" style="font-size: 12.490693115223625px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 13.37065197688735px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/php/" style="font-size: 15.107962222707311px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.719124434902369px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 14.250331805845697px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
