@@ -295,11 +295,7 @@
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs clean">main.js<br><br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> ElementPlus <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><br>createApp(App).mount(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <h2 id="Vue基础语法"><a href="#Vue基础语法" class="headerlink" title="Vue基础语法"></a>Vue基础语法</h2><p>Vue.config.productionTip &#x3D; false &#x2F;&#x2F;阻止vue在启动时生成提示<br>Vue实例和容器是一一对应的</p>
-<p>src&#x2F;App.vue是入口文件</p>
-<script setup></script>。 //导包
-<p><template></template>。    &#x2F;&#x2F;html部分</p>
-<style scoped></style>    //css部分
-
+<p>src&#x2F;App.vue是入口文件<br>script  &#x2F;&#x2F;导包<br>template。    &#x2F;&#x2F;html部分<br>style    &#x2F;&#x2F;css部分</p>
 <p>vite.config.js配置文件</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; fileURLToPath, <span class="hljs-variable constant_">URL</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;node:url&#x27;</span><br><br><span class="hljs-keyword">import</span> &#123; defineConfig &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">AutoImport</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-auto-import/vite&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Components</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/vite&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ElementPlusResolver</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-components/resolvers&#x27;</span><br><br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-title function_">vue</span>(),<br>    <span class="hljs-comment">// ...</span><br>    <span class="hljs-title class_">AutoImport</span>(&#123;<br>      <span class="hljs-attr">resolvers</span>: [<span class="hljs-title class_">ElementPlusResolver</span>()],<br>    &#125;),<br>    <span class="hljs-title class_">Components</span>(&#123;<br>      <span class="hljs-attr">resolvers</span>: [<span class="hljs-title class_">ElementPlusResolver</span>()],<br>    &#125;),<br>  ],<br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-string">&#x27;@&#x27;</span>: <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&#x27;./src&#x27;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>))<br>    &#125;<br>  &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
@@ -468,6 +464,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
                 </span>
             </li>
@@ -516,12 +518,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
                 </span>
             </li>
@@ -555,61 +551,61 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 17.745811955947143px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 19.883599076310457px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 17.990614846363904px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 12.802222282338409px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.96022841667491px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14.392735590714244px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 16.707550278534896px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 12.651326014609205px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 10.465039058293412px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 15.118171433927424px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 10.128168524410352px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 10.854473754884008px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 17.457767696341px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 13.940476180167591px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.443758937551546px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.144093423436075px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 16.99479402241232px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.300480485503606px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.488335721237611px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 12.029229034444908px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 16.478349802941032px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 11.344883200382935px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 10.691222055611249px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 11.66101984330733px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 13.973365233348733px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 12.541552657102622px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 17.524633719837375px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 9.696241916200087px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 18.02725655796122px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 19.24849462823573px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 18.41653477383011px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 8.179488823082721px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.348962280887989px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 18.918105629001232px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 13.430848359532034px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 10.842075599095116px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.526917332167235px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.57640214302388px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 9.733511282333154px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.297908876030988px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 15.575836989815857px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 18.436502955874737px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.814672312662562px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 10.947767830967564px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 13.235964763580467px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 13.428655971953525px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/PHP/" style="font-size: 13.876680547502776px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 14.559810319138137px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 11.391748935246117px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 12.757203980862215px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/php/" style="font-size: 10.923197332859118px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 8.548941462600464px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 18.97363893007047px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.525920245475874px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.951680779885567px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 15.599267675970406px;" class="tag-cloud-link">简单网站功能实现</a>
     
 </div>
                 

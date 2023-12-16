@@ -358,37 +358,40 @@
 <li>输出一个返回链接，点击后将重定向到 <code>index.php</code> 页面。</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213173658448.png" alt="image-20231213173658448"></p>
-<h1 id="接收和显示评论"><a href="#接收和显示评论" class="headerlink" title="接收和显示评论"></a>接收和显示评论</h1><!DOCTYPE html>
-<html lang="en">
+<h1 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./comment.php&quot;</span>);<br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./upload.php&quot;</span>);<br><span class="hljs-title function_ invoke__">session_start</span>();<br><br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]))&#123;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;当前登录用户:&#x27;</span>.<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>].<span class="hljs-string">&#x27;&#x27;</span>; <br>	<br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;logout&#x27;</span>])) &#123;<br>    <span class="hljs-comment">// 清除会话数据</span><br>    <span class="hljs-title function_ invoke__">session_unset</span>();<br>    <span class="hljs-title function_ invoke__">session_destroy</span>();<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;您已成功注销。&lt;br&gt;&quot;</span>;<br>	<span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;?logout=true&quot;&gt;注销&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;错误!&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<p>include(“.&#x2F;comment.php”);<br>include(“.&#x2F;upload.php”);</p>
+<p>代码将<code>comment.php</code>文件包含进来。这个文件包含了关于评论功能的相关代码或设置。</p>
+<p>代码将<code>upload.php</code>文件包含进来。这个文件包含了关于文件上传功能的相关代码或设置。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231214103538242.png" alt="image-20231214103538242"></p>
+<h1 id="接收和显示评论"><a href="#接收和显示评论" class="headerlink" title="接收和显示评论"></a>接收和显示评论</h1><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;body&gt;
+  &lt;h1&gt;历史评论&lt;/h1&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>历史评论</h1>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (isset($_POST['comment']) && !empty($_POST['comment'])) {
-            $comment = $_POST['comment'];
-            $link = mysqli_connect("localhost", "root", "root", "security") or exit("数据库连接失败！");
-            mysqli_query($link, "set names utf8");
-            $ChaRu = "insert INTO comments (comment) VALUES('$comment')";
-            if (mysqli_query($link, $ChaRu)) {
-                echo "<p>你的评论已成功保存到数据库。</p>";
-            } else {
-                echo "<p style='color: red;'>保存评论时出错。</p>";
-            }
-            mysqli_close($link);
-        }
-    }
-    // 显示最近的20条评论
-    $link = mysqli_connect("localhost", "root", "root", "security") or exit("数据库连接失败！");
-    mysqli_query($link, "set names utf8");
-
-<pre><code>$query = &quot;SELECT * FROM comments ORDER BY id DESC LIMIT 20&quot;;    
+&lt;?php
+    if ($_SERVER[&#39;REQUEST_METHOD&#39;] == &#39;POST&#39;) &#123;
+        if (isset($_POST[&#39;comment&#39;]) &amp;&amp; !empty($_POST[&#39;comment&#39;])) &#123;
+            $comment = $_POST[&#39;comment&#39;];
+​           $link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;) or exit(&quot;数据库连接失败！&quot;);
+​            mysqli_query($link, &quot;set names utf8&quot;);
+​            $ChaRu = &quot;insert INTO comments (comment) VALUES(&#39;$comment&#39;)&quot;;
+​            if (mysqli_query($link, $ChaRu)) &#123;
+​                echo &quot;&lt;p&gt;你的评论已成功保存到数据库。&lt;/p&gt;&quot;;
+​            &#125; else &#123;
+​                echo &quot;&lt;p style=&#39;color: red;&#39;&gt;保存评论时出错。&lt;/p&gt;&quot;;
+​            &#125;
+​            mysqli_close($link);
+​        &#125;
+​    &#125;
+​    // 显示最近的20条评论
+​    $link = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;, &quot;root&quot;, &quot;security&quot;) or exit(&quot;数据库连接失败！&quot;);
+​    mysqli_query($link, &quot;set names utf8&quot;);
+$query = &quot;SELECT * FROM comments ORDER BY id DESC LIMIT 20&quot;;    
 $result = mysqli_query($link, $query);
 
 if ($result) &#123;
@@ -407,11 +410,10 @@ mysqli_close($link);
     &lt;textarea name=&quot;comment&quot; id=&quot;comment&quot; rows=&quot;10&quot; cols=&quot;80&quot;&gt;&lt;/textarea&gt;&lt;br /&gt;
     &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交评论&quot;&gt;
 &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
 </code></pre>
-</body>
-
-</html>
-
 <ul>
 <li><p>从 <code>comments</code> 表中获取最新的20条评论，并按ID降序排列。</p>
 </li>
@@ -576,7 +578,7 @@ mysqli_close($link);
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
                 </span>
             </li>
             
@@ -624,13 +626,13 @@ mysqli_close($link);
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
                 </span>
             </li>
             
@@ -663,61 +665,61 @@ mysqli_close($link);
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 10.547558692994482px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 12.608811312798053px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 9.667532524483715px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 8.931019503281554px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.531020225258636px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10.092403932540734px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 14.310108875549975px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 19.399495312819884px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 15.880991492039719px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 16.303171299539944px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 11.98934385729273px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 17.448367421572364px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 19.286483842806277px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 17.40983393816277px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 11.546139142357834px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 9.980365993845439px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 19.038104504946837px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13.911539476085572px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 19.147468520595424px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.490341610703974px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 10.67642867395061px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 17.475442893521922px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 17.96289301062784px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 18.422374790819198px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 18.786319797139292px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 9.155199599520868px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.47410120380383px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.982496749891041px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 8.045289599996046px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 12.303821317372108px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 8.513378144030135px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 11.797680917893706px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 8.047298493010498px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.40125776654795px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.758453628683505px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 14.331261209786383px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 15.787456288704249px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.646814539534947px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 16.060205684888125px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 11.239279835413004px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 13.359710929108253px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 16.970191729387825px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 16.19203491175681px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 18.32427332194787px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.48849081346226px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 12.512805957421131px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/PHP/" style="font-size: 12.490693115223625px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 13.830762984603082px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 13.37065197688735px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 18.237965738255923px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/php/" style="font-size: 15.107962222707311px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 9.630762365207959px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.719124434902369px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 9.551146293306154px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 14.250331805845697px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.664011093041736px;" class="tag-cloud-link">简单网站功能实现</a>
     
 </div>
                 

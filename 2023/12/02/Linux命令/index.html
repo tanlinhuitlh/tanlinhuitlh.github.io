@@ -262,7 +262,17 @@
         <p>VM虚拟机搭建</p>
 <p>第一天</p>
 <p>学习linux命令</p>
+<h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1><h2 id="2-1-关闭系统"><a href="#2-1-关闭系统" class="headerlink" title="2.1 关闭系统"></a>2.1 关闭系统</h2><p>(1)立刻关机<br>  shutdown -h now 或者 poweroff<br>(2)两分钟后关机<br>  shutdown -h 2</p>
+<h2 id="2-2-关闭重启"><a href="#2-2-关闭重启" class="headerlink" title="2.2 关闭重启"></a>2.2 关闭重启</h2><p>(1)立刻重启<br>  shutdown -r now 或者 reboot<br>(2)两分钟后重启<br>  shutdown -r 2 </p>
+<h2 id="2-3-帮助命令（help）"><a href="#2-3-帮助命令（help）" class="headerlink" title="2.3 帮助命令（help）"></a>2.3 帮助命令（help）</h2><p>  ifconfig  –help     &#x2F;&#x2F;查看 ifconfig 命令的用法</p>
+<h2 id="2-4-命令说明书（man）"><a href="#2-4-命令说明书（man）" class="headerlink" title="2.4 命令说明书（man）"></a>2.4 命令说明书（man）</h2><p>  man shutdown         &#x2F;&#x2F;打开命令说明后，可按”q”键退出</p>
+<h2 id="2-5-切换用户（su）"><a href="#2-5-切换用户（su）" class="headerlink" title="2.5 切换用户（su）"></a>2.5 切换用户（su）</h2><p>  su yao               &#x2F;&#x2F;切换为用户”yao”,输入后回车需要输入该用户的密码<br>  exit                 &#x2F;&#x2F;退出当前用户</p>
 <h1 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h1><p>切换目录（cd）<br>  cd &#x2F;                 &#x2F;&#x2F;切换到根目录<br>  cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录<br>  cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..<br>  cd ~                 &#x2F;&#x2F;切换到home目录<br>  cd -                 &#x2F;&#x2F;切换到上次访问的目录<br>  cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错<br>  cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，</p>
+<h2 id="删除目录与文件（rm）"><a href="#删除目录与文件（rm）" class="headerlink" title="删除目录与文件（rm）"></a>删除目录与文件（rm）</h2><p>  rm 文件名              &#x2F;&#x2F;删除当前目录下的文件<br>  rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）<br>  rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录<br>  rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）<br>  rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除<br>  rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/3.png"></p>
+<h2 id="修改目录（mv）"><a href="#修改目录（mv）" class="headerlink" title="修改目录（mv）"></a>修改目录（mv）</h2><p>  mv 当前目录名 新目录名        &#x2F;&#x2F;修改目录名，同样适用与文件操作<br>  mv &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录剪切到 &#x2F;opt目录下面<br>  mv -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪切目录中所有文件和文件夹</p>
+<h2 id="拷贝目录（cp）"><a href="#拷贝目录（cp）" class="headerlink" title="拷贝目录（cp）"></a>拷贝目录（cp）</h2><p>  cp &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录复制到 &#x2F;opt目录下面<br>  cp -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪复制目录中所有文件和文件夹</p>
+<h2 id="查看当前目录（pwd）"><a href="#查看当前目录（pwd）" class="headerlink" title="查看当前目录（pwd）"></a>查看当前目录（pwd）</h2><p>  pwd                         &#x2F;&#x2F;显示当前位置路径</p>
+<h2 id="搜索目录（find）"><a href="#搜索目录（find）" class="headerlink" title="搜索目录（find）"></a>搜索目录（find）</h2><p>  find &#x2F;bin -name ‘a*’        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</p>
 <h1 id="touch-创建文件"><a href="#touch-创建文件" class="headerlink" title="touch 创建文件"></a>touch 创建文件</h1><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231203134721528.png" alt="image-20231203134721528"></p>
 <h1 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h1><p> ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件<br>  ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）<br>  ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令”ll”效果一样<br>  ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </p>
 <p>d  目录   -文件    r读   w写    x执行     </p>
@@ -270,11 +280,11 @@
 <p>属性   所有者  所属组  其他人</p>
 <p>d        r w x      r w -     r - -</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/2.png"></p>
-<h1 id="删除目录与文件（rm）"><a href="#删除目录与文件（rm）" class="headerlink" title="删除目录与文件（rm）"></a>删除目录与文件（rm）</h1><p>  rm 文件名              &#x2F;&#x2F;删除当前目录下的文件<br>  rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）<br>  rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录<br>  rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）<br>  rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除<br>  rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/3.png"></p>
-<h1 id="搜索目录（find）"><a href="#搜索目录（find）" class="headerlink" title="搜索目录（find）"></a>搜索目录（find）</h1><p>  find &#x2F;bin -name ‘a*’        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</p>
 <h1 id="编辑文件"><a href="#编辑文件" class="headerlink" title="编辑文件"></a>编辑文件</h1><p>vi 文件名              &#x2F;&#x2F;打开需要编辑的文件<br>  –进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）<br>  命令模式<br>  -刚进入文件就是命令模式，通过方向键控制光标位置，<br>  -使用命令”dd”删除当前整行<br>  -使用命令”&#x2F;字段”进行查找<br>  -按”i”在光标所在字符前开始插入<br>  -按”a”在光标所在字符后开始插入<br>  -按”o”在光标所在行的下面另起一新行插入<br>  -按”：”进入底行模式<br>  插入模式<br>  -此时可以对文件内容进行编辑，左下角会显示 “– 插入 –””<br>  -按”ESC”进入底行模式<br>  底行模式<br>  -退出编辑：      :q<br>  -强制退出：      :q!<br>  -保存并退出：    :wq</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/4.png"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/5.png"></p>
+<h1 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h1><h2 id="权限说明"><a href="#权限说明" class="headerlink" title="权限说明"></a>权限说明</h2><p>  文件权限简介：’r’ 代表可读（4），’w’ 代表可写（2），’x’ 代表执行权限（1），括号内代表”8421法”<br>  ##文件权限信息示例：-rwxrw-r–<br>  -第一位：’-‘就代表是文件，’d’代表是文件夹<br>  -第一组三位：拥有者的权限<br>  -第二组三位：拥有者所在的组，组员的权限<br>  -第三组三位：代表的是其他用户的权限</p>
+<h2 id="文件权限-1"><a href="#文件权限-1" class="headerlink" title="文件权限"></a>文件权限</h2><p>  普通授权    chmod +x a.txt<br>  8421法     chmod 777 a.txt     &#x2F;&#x2F;1+2+4&#x3D;7，”7”说明授予所有权限</p>
 <h1 id="Linux创建用户命令"><a href="#Linux创建用户命令" class="headerlink" title="Linux创建用户命令"></a>Linux创建用户命令</h1><p><code>Linux</code>中使用<code>useradd</code>命令来创建一个新用户。</p>
 <p>命令格式格式：<code>useradd [命令参数] 参数</code></p>
 <p>常见命令参数：</p>
@@ -544,61 +554,61 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 19.305696362101994px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 9.785109235405013px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.21276493962997px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.192776612297388px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10.349140925208879px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.53410219415037px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 10.436149985094305px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 17.30973606854961px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.781991697631057px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 10.94299455561666px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/python/" style="font-size: 12.322693463687113px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 11.756202208517394px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/vue/" style="font-size: 12.69910984266959px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 8.09271779139298px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.168780283405503px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.639555328980464px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10.07219407508979px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.62285822436835px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 13.665138334060506px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 8.796093080135442px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ipv6/" style="font-size: 11.975661755994592px;" class="tag-cloud-link">ipv6</a>
+    <a href="/tags/ipv6/" style="font-size: 11.781755491379041px;" class="tag-cloud-link">ipv6</a>
     
-    <a href="/tags/ipv4/" style="font-size: 12.933469682206685px;" class="tag-cloud-link">ipv4</a>
+    <a href="/tags/ipv4/" style="font-size: 14.98161302117912px;" class="tag-cloud-link">ipv4</a>
     
-    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 8.000785696802389px;" class="tag-cloud-link">私网</a>
+    <a href="/tags/%E7%A7%81%E7%BD%91/" style="font-size: 14.03559866150814px;" class="tag-cloud-link">私网</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 14.201651946431896px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 19.875059001537217px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 14.749456471042238px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13.911020775630988px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 12.141162387502893px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 16.662561272331864px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 10.312573292888093px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 8.903729678499865px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.572756218736524px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.616521693836303px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.96617260365021px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.5087068047118px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.166452323030107px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.67784058414211px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 18.165932294794956px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 11.866320797283008px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.48373514090673px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 9.159530691258244px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.010510601722928px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 11.250024882550093px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/PHP/" style="font-size: 10.352479228092154px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 18.794908141557208px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 11.611564519352603px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 9.717119498611096px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/php/" style="font-size: 14.465353914269123px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 13.855236161550732px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 15.07146356761537px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 19.97671793279713px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.869723152683136px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 12.73543629658989px;" class="tag-cloud-link">简单网站功能实现</a>
     
 </div>
                 
