@@ -302,6 +302,52 @@
 <p>如果出现错误可以试试hexo clean然后再上传</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231203160908177.png" alt="image-20231203160908177"></p>
 <p>这个博客只是雏形，我们可以找到合适的主题导入，让其更美观。</p>
+<h1 id="网站基本信息的修改"><a href="#网站基本信息的修改" class="headerlink" title="网站基本信息的修改"></a>网站基本信息的修改</h1><p>搭建好网站之后，有许多配置信息需要我们去修改，比如网站的标题、标签等选项，具体修改步骤如下（以我的博客为例）：</p>
+<ol>
+<li><p>打开博客目录下的<code>_config.yml</code>文件，找到如图所示的选项</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231217203729712.png" alt="image-20231217203729712"></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>网站的标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>网站的副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>对于网站的描述，主要用于SEO</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>网站的关键词，支持多个关键词</td>
+</tr>
+<tr>
+<td>author</td>
+<td>作者名</td>
+</tr>
+<tr>
+<td>language</td>
+<td>网站使用的语言，对于简体中文用户来说，语言的设置跟使用不同的主题有关，可以参考各自主题的文档自行配置，一般为zh-CN</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>设置网站的时区，如果不填则默认使用你电脑的时区</td>
+</tr>
+</tbody></table>
+<p>hexo默认的主题有点不好看，修改好基本配置信息之后，可以考虑换一个主题，主题多可以说的上是hexo框架的一大卖点。</p>
+<p>​	<code>themes</code>文件夹，就是存放网站主题的文件夹。打开文件夹，你就能看到现在能用的主题有哪几个，文件夹名就是主题名。</p>
+<p>​	选好主题后，就得先把主题弄到本地来，可以使用<code>git clone</code>命令进行下载(具体参考每个主题仓库的<code>README</code>文档)，也有一种粗暴的方法，直接下载压缩包，然后解压到刚才说的<code>themes</code>文件夹就可以了。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/v2-b4777a6f45bd40633d2830c191eda948_1440w.webp" alt="img"></p>
 <h2 id="使用该主题前要安装的东西"><a href="#使用该主题前要安装的东西" class="headerlink" title="使用该主题前要安装的东西:"></a>使用该主题前要安装的东西:</h2><p>可以去hexo找自己喜欢的主题<a target="_blank" rel="noopener" href="https://hexo.io/themes">https://hexo.io/themes</a></p>
 <p>例如我找的主题是gal。</p>
 <p>将配置文件的主题名字改成下载的主题，不喜欢的话可以重命名主题文件。</p>
@@ -527,7 +573,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
                 </span>
             </li>
             
@@ -539,7 +585,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
                 </span>
             </li>
             
@@ -572,61 +618,63 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 17.491648049314648px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 11.55013241697267px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.50132854952984px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10.385783263054286px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12.02033829818102px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 15.542372966622143px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/PHP/" style="font-size: 8.545483949964286px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 11.73290233477444px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 16.69252858548749px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 15.366541071154018px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.948299202685313px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.726334799125915px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/HTML/" style="font-size: 16.96703019552906px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 10.73139052071477px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 15.576985073268084px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 15.833592992898282px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 12.665094599582764px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 17.14706855164692px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/php/" style="font-size: 11.426504913098544px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 18.45667085337145px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 10.975449684419566px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 9.577562676334843px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.626152715096417px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 18.707668931338652px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/python/" style="font-size: 13.323267886061085px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 13.649372681788684px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.02828054716153px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 19.160143064295575px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.859065611015637px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.368631101965999px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 9.257991836163798px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 9.361434516099408px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 12.054936576733951px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 12.353343997351686px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 17.557835860330876px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 9.587914050764482px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 15.794119211653005px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 12.010746706372405px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/vue/" style="font-size: 12.484092992014144px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 13.144957686009366px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.78868698274226px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.313381398124712px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 15.438874344050724px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.1702136233617px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 13.89782743733511px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 16.942522235514396px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10.060193705792226px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 18.199369279355913px;" class="tag-cloud-link">抓包</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 12.872323791384009px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 17.66085862341759px;" class="tag-cloud-link">下载与安装</a>
     
-    <a href="/tags/html/" style="font-size: 15.916955319619046px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 9.577070538913546px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 17.376314679576296px;" class="tag-cloud-link">网站搭建</a>
+    <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 10.338551333367318px;" class="tag-cloud-link">网站搭建</a>
     
-    <a href="/tags/proxifier/" style="font-size: 17.71982434237107px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 15.229775725761293px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 14.874881111798208px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 
