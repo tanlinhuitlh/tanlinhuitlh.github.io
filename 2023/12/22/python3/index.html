@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>python3 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>python3</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2023/12/22/python3/">python3</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-22
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2023/12/22/python3/">python3</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2023-12-22
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">文件操作</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>在计算机 中要操作文件一共包含三个步骤：<br>1.打开文件</p>
+<p>2.读、写文件</p>
+<ul>
+<li>读 将文件内容读入内容</li>
+<li>写 将内存内容写入文件</li>
+</ul>
+<p>3.关闭文件</p>
+<h2 id="文件打开与关闭"><a href="#文件打开与关闭" class="headerlink" title="文件打开与关闭"></a>文件打开与关闭</h2><p>使用Python对文件进行读和写。为此，使用合适的模式打开文件</p>
+<p>1，open 函数负责打开文件，并且返回文件对象</p>
+<p>2，read &#x2F;write &#x2F; close 三个方法都需要通过文件对象 来调用</p>
+<p>read方法——读取文件</p>
+<p>3，open 函数的第一个参数是要打开的文件名（文件名区分大小写）</p>
+<ul>
+<li><p>如果文件存在，返回 文件操作对象</p>
+</li>
+<li><p>如果文件不存在，会抛出异常</p>
+</li>
+<li><p>read 方法可以一次性 读入 并 返回文件的所有内容</p>
+</li>
+<li><p>close 方法负责关闭文件</p>
+<p>如果忘记关闭文件，会造成系统资源消耗，而且会影响到后续对文件的访问</p>
+<table>
+<thead>
+<tr>
+<th>访问方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头，这是默认模式。如果文件不存在，抛出异常</td>
+</tr>
+<tr>
+<td>w</td>
+<td>以只写方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>a</td>
+<td>以追加方式打开文件。如果该文件已存在，文件指针将会放在文件的末尾。如果文件不存在，创建新文件进行写入</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>以读写方式打开文件。文件的指针将会放在文件的开头。如果文件不存在，抛出异常</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>以读写方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>以读写方式打开文件。如果该文件已存在，文件指针将会放在文件的结尾。如果文件不存在，创建新文件进行写入</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>在python中，使用open函数，可以打开已经存在的文件，或者创建一个新文件，open（文件名，访问模式）</p>
+<p>f &#x3D; open(‘test.txt’,’w’)</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223174721064.png" alt="image-20231223174721064"></p>
+<p>没有找到‘test.txt’文件，所以新建了‘test.txt’文件。</p>
+<h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h3><p>close()<br>示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#新建一个文件，文件名为：test.txt</span><br>f = <span class="hljs-built_in">open</span>(“text.txt”,”w”)<br>f.colse()<span class="hljs-comment">#关闭这个文件</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="写数据（write）"><a href="#写数据（write）" class="headerlink" title="写数据（write）"></a>写数据（write）</h3><p>  三种写入模式</p>
+<p>​		覆盖模式（“w”）：打开文件并将内容写入文件，如果文件存在，则覆盖原有内容。如果文件不存在则创建一个新的文件。<br>​		追加模式（“a”）：打开文件并将内容写入文件，如果文件存在，则在文件末尾添加内容。如果文件不存在则创建一个新的文件。<br>​		读写模式（“r+”）：打开文件供读取和写入，如果文件存在，则覆盖原有内容。如果文件不存在，将抛出FileNotFoundError异常。</p>
+<p>使用write()可以完后向文件写入数据<br>f &#x3D; open(“test.txt”,”w”) #打开文件，w模式（写模式），文件不存在就新建<br>f.write(“hello world,I am here!”)   #将字符串写入文件中<br>f.close()   #关闭文件</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182211574.png" alt="image-20231223182211574"></p>
+<p>写入字节数据<br>使用write()方法将字节数据写入文件。<br>可以使用encode()方法将字符串转换为字节数据进行写入。</p>
+<h1 id="写入字节数据"><a href="#写入字节数据" class="headerlink" title="写入字节数据"></a>写入字节数据</h1><p><code>wi</code>th open(“file.txt”, “wb”) as file:<code>     </code>content &#x3D; “Hello, World!\n”<code>     file.write(content.encode(&quot;utf-8&quot;))</code></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223185100999.png" alt="image-20231223185100999"></p>
+<h3 id="读数据（read）"><a href="#读数据（read）" class="headerlink" title="读数据（read）"></a>读数据（read）</h3><p>  使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度(单位是字节)，如果没有传入num，那么就表示读取文件中的所有数据</p>
+<p><code>#读：read方法，读取指定的字符，开始时定位在文件头部，每执行一次向后移动指定字符数</code><br><code>f = open(&quot;test.txt&quot;,&quot;r&quot;)</code><br><code>content = f.read(5) #一次读五个字符</code><br><code>print(content)</code><br><code>print(&#39;-&#39;*30)</code><br><code>content = f.read()</code><br><code>print(content)</code><br><code>f.close()</code></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182632326.png" alt="image-20231223182632326"></p>
+<h3 id="读数据（readlines）"><a href="#读数据（readlines）" class="headerlink" title="读数据（readlines）"></a>读数据（readlines）</h3><p>​	就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性的读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182915395.png" alt="image-20231223182915395"></p>
+<h4 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>    <br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> os.scandir():<br>    <span class="hljs-built_in">print</span>(file.stat())<br>    os.stat(文件名）<br></code></pre></td></tr></table></figure>
+
+<h2 id="文件的相关操作"><a href="#文件的相关操作" class="headerlink" title="文件的相关操作"></a>文件的相关操作</h2><p>  有些时候，需要对文件进行重命名、删除一些操作，python的os模块中都有这些功能</p>
+<h3 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h3><p>  os模块中的rename()可以完成对文件的重命名操作rename(需要修改的文件名，新的文件名)text.txt被改为了ppt.txt。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223183606038.png" alt="image-20231223183606038"></p>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>  os中的remove()可以完成对文件的删除操作remove(待删除的文件名)，删除ppt.txt文件。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os <br>os.remove(<span class="hljs-string">&quot;ppt.txt&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223183755884.png" alt="image-20231223183755884"></p>
+<h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.mkdir(<span class="hljs-string">&quot;张三&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>创建一个名叫张三的文件夹。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223184102457.png" alt="image-20231223184102457"></p>
+<h3 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a>获取当前目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.getcwd()<br></code></pre></td></tr></table></figure>
+
+<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p>两种方式使用：</p>
+<ul>
+<li>第二个参数是文件夹位置，则移动到文件夹下面</li>
+<li>第二个参数是文件路径，移动到这个路径并且重命名<br>注意：如果是文件夹后面一定要加<code>&#39;/&#39;</code>。</li>
+</ul>
+<p>shutil.move(要移动的文件&#x2F;文件夹,要移动的位置)</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> shutil  <br>shutil.<span class="hljs-keyword">move</span>(<span class="hljs-string">&#x27;file.txt&#x27;</span>,<span class="hljs-string">&#x27;张三&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223185744292.png" alt="image-20231223185744292"></p>
+<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><p>shutil.copy(要复制的文件，要复制到的位置)</p>
+<p><code>import shutil</code><br><code>shutil.copy(&#39;file1.txt&#39;,&#39;./张三&#39;)</code>      #复制到路径下<br><code>shutil.copy(&#39;file1.txt&#39;,&#39;./张三/f2&#39;)</code>   #复制到路径下并重命名</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223190241909.png" alt="image-20231223190241909"></p>
+<h4 id="遍历目录下所有的文件"><a href="#遍历目录下所有的文件" class="headerlink" title="遍历目录下所有的文件"></a>遍历目录下所有的文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> dirpath, dirnames, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&#x27;./&#x27;</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;发现文件夹：<span class="hljs-subst">&#123;dirpath&#125;</span>&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(files)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223190642969.png" alt="image-20231223190642969"></p>
+<h3 id="创建临时文件"><a href="#创建临时文件" class="headerlink" title="创建临时文件"></a>创建临时文件</h3><p><code>TemporaryFile()</code></p>
+<p><code>from tempfile import TemporaryFile</code><br><code>f = TemporaryFile(&#39;w+&#39;)</code><br><code>f.write(&#39;Hello World&#39;)</code><br><code>f.seek(0)</code><br><code>data = f.readlines()</code><br><code>print(data)</code><br><code>f.close()</code></p>
+<p><code>with TempooraryFile(&#39;w+&#39;) as f:</code><br>    <code>f.write(&#39;Hello World&#39;)</code><br>    <code>f.seek(0)</code><br>    <code>data = f.readlines()</code><br>    <code>print(data)</code><br>‘w+’表示写入及读取文件 .seek(0)表示回到文件开头位置 程序运行完后会自动删掉临时文件</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223193059595.png" alt="image-20231223193059595"></p>
+<h4 id="匹配文件名"><a href="#匹配文件名" class="headerlink" title="匹配文件名"></a>匹配文件名</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> fnmatch<br>    <br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>, <span class="hljs-string">&#x27;le*1.py&#x27;</span>))  <span class="hljs-comment"># True</span><br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>,<span class="hljs-string">&#x27;le*[0-9].py&#x27;</span>)) <span class="hljs-comment"># True</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="匹配文件名称"><a href="#匹配文件名称" class="headerlink" title="匹配文件名称"></a>匹配文件名称</h4><p>（1）字符串内置方法<br>.startswith(),.endswith()</p>
+<p>（2）glob模块<br><code>import glob</code><br><code>print(glob.glob(&#39;*.py&#39;))</code><br><code>print(glob.glob(&#39;**/.txt&#39;,recursive=True))</code></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>＊</td>
+<td>匹配所有</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配任何单个字符</td>
+</tr>
+<tr>
+<td>[seq]</td>
+<td>匹配seq中的任何字符</td>
+</tr>
+<tr>
+<td>[!seq]</td>
+<td>匹配任何不在seq中的字符</td>
+</tr>
+</tbody></table>
+<p>用<code>**</code>表示任意层文件或文件夹 recursive＝True会不断进入文件夹内</p>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>try:</p>
+<pre><code>with open(&#39;file.txt&#39;, &#39;r&#39;) as file:
+
+    content = file.read()
+
+    print(content)
+ except FileNotFoundError:
+    print(&#39;文件不存在&#39;)
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223195741474.png" alt="image-20231223195741474"></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2023/12/22/python3/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/22/python3/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/22/python3/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 9.644424023017066px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 9.509141697010872px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 9.415631456790361px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 11.950575468719443px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 14.371090130622093px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 15.431825115244248px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 19.153052742932385px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 19.001565362345087px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 17.75026298703212px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/php/" style="font-size: 15.971940848812507px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 17.503450904108558px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 17.837103404848897px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 16.32360506226054px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/html/" style="font-size: 17.497705937341898px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 19.059674119564924px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/python/" style="font-size: 14.72118474941848px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 8.264110154597473px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 19.019532273534498px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.91864548538269px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.53105442884345px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 13.015069169146788px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 8.661096839413196px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 10.292963020768045px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 11.448370170091216px;" class="tag-cloud-link">操作步骤</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 14.797545778423672px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/vue/" style="font-size: 12.90914355108108px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 17.488005169875976px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 19.290665608185186px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.19061993797731px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.70582923666636px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 15.362246737701957px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 11.615805083615694px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 10.590488773407642px;" class="tag-cloud-link">wireshark抓包</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

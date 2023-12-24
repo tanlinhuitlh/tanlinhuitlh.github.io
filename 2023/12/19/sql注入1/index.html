@@ -130,11 +130,11 @@
                         </li>
                         
                         <li>
-                            <a href="/categories/php/">php</a>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
                         </li>
                         
                         <li>
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                            <a href="/categories/php/">php</a>
                         </li>
                         
                         
@@ -168,7 +168,7 @@
                         </li>
                         
                         <li>
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
                         </li>
                         
                         
@@ -360,6 +360,104 @@
 <td>id&#x3D;‘1’ –+’’ 返回正常</td>
 </tr>
 </tbody></table>
+<h1 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h1><p>​	SQLmap是一款「自动化」<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=SQL%E6%B3%A8%E5%85%A5&spm=1001.2101.3001.7020">SQL注入</a>工具，kali自带。路径 &#x2F;usr&#x2F;share&#x2F;sqlmap</p>
+<p>打开终端，输入<code>sqlmap</code>，出现以下界面，就说明SQLmap「可用」。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223212418256.png" alt="image-20231223212418256"></p>
+<p>​     或者Sqlmap官网：<a target="_blank" rel="noopener" href="http://sqlmap.org/%EF%BC%8CSqlmap%E7%9A%84%E5%AE%89%E8%A3%85%E9%9C%80%E8%A6%81Python%E7%8E%AF%E5%A2%83%EF%BC%8C%E6%9C%80%E6%96%B0%E7%89%88%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E5%9C%A8">http://sqlmap.org/，Sqlmap的安装需要Python环境，最新版可以运行在</a> Python 2.6, 2.7 和 3.x 版本的任何平台上。</p>
+<p>下载完成后可以添加进环境变量，方便使用（不添加也可以用）</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/2021021723551258.png" alt="在这里插入图片描述"></p>
+<h2 id="Sqlmap简介"><a href="#Sqlmap简介" class="headerlink" title="Sqlmap简介"></a>Sqlmap简介</h2><p>​	Sqlmap是一个开源的渗透测试工具，可以用来自动化的检测，利用SQL注入漏洞，获取数据库服务器的权限。它具有功能强大的检测引擎，针对各种不同类型数据库的渗透测试的功能选项，包括获取数据库中存储的数据，访问操作系统文件甚至可以通过外带数据连接的方式执行操作系统命令。</p>
+<p>​	目前支持的数据库有MySQL、Oracle、PostgreSQL、Microsoft SQL Server、Microsoft Access等大多数据库。</p>
+<h2 id="Sqlmap支持的注入方式："><a href="#Sqlmap支持的注入方式：" class="headerlink" title="Sqlmap支持的注入方式："></a>Sqlmap支持的注入方式：</h2><p>Sqlmap全面支持六种SQL注入技术：</p>
+<p>​	基于布尔类型的盲注：即可以根据返回页面判断条件真假的注入。</p>
+<p>​	基于时间的盲注：即不能根据页面返回的内容判断任何信息，要用条件语句查看时间延迟语句是否已执行(即页面返回时间是否增加)来判断。</p>
+<p>​	基于报错注入：即页面会返回错误信息，或者把注入的语句的结果直接返回到页面中。</p>
+<p>​	联合查询注入：在可以使用Union的情况下的注入。</p>
+<p>​	堆查询注入：可以同时执行多条语句时的注入。</p>
+<pre><code>带外注入：构造SQL语句，这些语句在呈现给数据库时会触发数据库系统创建与攻击者控制的外部服务器的连接。以这种方式，攻击者可以收集数据或可能控制数据库的行为。
+</code></pre>
+<h2 id="Sqlmap输出级别："><a href="#Sqlmap输出级别：" class="headerlink" title="Sqlmap输出级别："></a>Sqlmap输出级别：</h2><p>使用 Sqlmap 对一个注入点进行测试时，可以使用 -v x 参数指定回显信息的复杂度，x范围为[0~6]，共有 7 个等级，默认为 1。</p>
+<p>0：只显示python错误以及严重的信息。<br>1：同时显示基本信息和警告信息。（默认）<br>2：同时显示debug信息。<br>3：同时显示注入的payload。<br>4：同时显示HTTP请求。<br>5：同时显示HTTP响应头。<br>6：同时显示HTTP响应页面。<br>如果想看到 Sqlmap 发送的测试 payload 最好的等级就是3，例：</p>
+<p><code>sqlmap.py -v 3 -u &quot;http://www.xxx.com/a.php?id=x&quot;</code></p>
+<p>可以输入sqlmap -h来查找帮助命令。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223212740535.png" alt="image-20231223212740535"></p>
+<p>  用法: python3 sqlmap [选项]</p>
+<p>  选项:<br>    -h, –help            显示基本帮助信息并退出<br>    -hh                   显示高级帮助信息并退出<br>    –version             显示程序版本号并退出<br>    -v VERBOSE            冗长输出级别: 0-6 (默认 1)</p>
+<pre><code>目标:
+  至少需要提供以下选项之一来定义目标
+
+  -u URL, --url=URL   目标URL (例如 &quot;http://www.site.com/vuln.php?id=1&quot;)
+  -g GOOGLEDORK       使用Google dork结果作为目标URL
+
+请求:
+  这些选项可用于指定如何连接到目标URL
+
+  --data=DATA         通过POST发送的数据字符串 (例如 &quot;id=1&quot;)
+  --cookie=COOKIE     HTTP Cookie头的值 (例如 &quot;PHPSESSID=a8d127e..&quot;)
+  --random-agent      使用随机选择的HTTP用户代理头值
+  --proxy=PROXY       使用代理连接到目标URL
+  --tor               使用Tor匿名网络
+  --check-tor         检查Tor是否被正确使用
+
+注入:
+  这些选项可用于指定要测试哪些参数，提供自定义注入载荷和可选的篡改脚本
+
+  -p TESTPARAMETER    可测试的参数(s)
+  --dbms=DBMS         强制指定后端DBMS
+
+检测:
+  这些选项可用于自定义检测阶段
+
+  --level=LEVEL       执行测试的级别 (1-5, 默认 1)
+  --risk=RISK         执行测试的风险等级 (1-3, 默认 1)
+
+技术:
+  这些选项可用于调整特定SQL注入技术的测试
+
+  --technique=TECH..  要使用的SQL注入技术 (默认 &quot;BEUSTQ&quot;)
+
+枚举:
+  这些选项可用于枚举后端数据库管理系统的信息、结构和表中包含的数据
+
+  -a, --all           获取所有信息
+  -b, --banner        获取DBMS横幅
+  --current-user      获取DBMS当前用户
+  --current-db        获取DBMS当前数据库
+  --passwords         枚举DBMS用户密码哈希
+  --dbs               枚举DBMS数据库
+  --tables            枚举DBMS数据库表
+  --columns           枚举DBMS数据库表列
+  --schema            枚举DBMS模式
+  --dump              转储DBMS数据库表条目
+  --dump-all          转储所有DBMS数据库表条目
+  -D DB               枚举的DBMS数据库
+  -T TBL              要枚举的DBMS数据库表(s)
+  -C COL              要枚举的DBMS数据库表列(s)
+
+操作系统访问:
+  这些选项可用于访问后端数据库管理系统底层操作系统
+
+  --os-shell          提示输入交互操作系统shell
+  --os-pwn            提示输入OOB shell、Meterpreter或VNC
+
+一般:
+  这些选项可用于设置一些通用的工作参数
+
+  --batch             从不要求用户输入，使用默认行为
+  --flush-session     清除当前目标的会话文件
+
+杂项:
+  这些选项不属于任何其他类别
+
+  --wizard            针对入门用户的简易向导界面
+</code></pre>
+<p>若要查看完整的选项列表，请使用 ‘-hh’ 选项运行</p>
+<p>利用sqlmap进行注入查询出表名。</p>
+<p>sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.113/sqli/Less-1/?id=1">http://192.168.2.113/sqli/Less-1/?id=1</a>“  –batch -D security –tables </p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223213033186.png" alt="image-20231223213033186"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223213104336.png" alt="image-20231223213104336"></p>
+<p>查询id和用户名字段sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.113/sqli/Less-1/?id=1">http://192.168.2.113/sqli/Less-1/?id=1</a>“   –batch -D security -T users -C “id,username” –dump</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223213558975.png" alt="image-20231223213558975"></p>
 
     </div>
 </article>
@@ -421,6 +519,18 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
@@ -467,18 +577,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -497,31 +595,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
             
@@ -539,19 +631,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
                 </span>
             </li>
             
@@ -584,71 +682,71 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 18.707226684610067px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 13.96739774425741px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.927973969675634px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 13.28365391297228px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 17.544880070720925px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 9.446433163043388px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/PHP/" style="font-size: 12.675228005327021px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/HTML/" style="font-size: 15.936936538174312px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/Navicat/" style="font-size: 9.033609976166911px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/CSS/" style="font-size: 9.77460466133613px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 18.302772066446476px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.438266712538029px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/HTML/" style="font-size: 19.196676450430232px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/PHP/" style="font-size: 12.952127772264218px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/CSS/" style="font-size: 11.57803031016806px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/Navicat/" style="font-size: 19.937878446951107px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 18.19854328279164px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.47676809806735px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/php/" style="font-size: 15.385660694679764px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 12.308124521226599px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 19.29199367565249px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 12.889818352272332px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 12.018540223023038px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 14.622568243784675px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/python/" style="font-size: 12.419261904970567px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 12.632009788133585px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 19.277926419274955px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/html/" style="font-size: 16.952161290032535px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.641270763394186px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/postman/" style="font-size: 8.43863463463602px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 14.656912006988541px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/python/" style="font-size: 12.732353437697395px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 18.42751585050736px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 16.106555111936125px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 17.333865058102173px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 19.117901056072036px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 18.89211312613073px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 18.411601005654585px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/vue/" style="font-size: 12.485726987598555px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.688231574075328px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 12.564258344627202px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 17.038803430514044px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 19.82542289792988px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 15.78290353969463px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 19.792247391509676px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 14.97378055442064px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 12.045811632250395px;" class="tag-cloud-link">抓包</a>
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 8.880092323028906px;" class="tag-cloud-link">操作步骤</a>
     
-    <a href="/tags/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" style="font-size: 9.723895839017715px;" class="tag-cloud-link">下载与安装</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 17.935582164448196px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/html/" style="font-size: 8.758215978631956px;" class="tag-cloud-link">html</a>
+    <a href="/tags/vue/" style="font-size: 17.71464212640737px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 9.218960547364755px;" class="tag-cloud-link">网站搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 8.947876980261094px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/proxifier/" style="font-size: 12.066584152686561px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 19.56139971484434px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 17.12705310314995px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 11.653437164193836px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/postman/" style="font-size: 19.002917044675144px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 14.844153635226824px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 16.044254561374274px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 14.371108070545777px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 19.336933171292525px;" class="tag-cloud-link">操作步骤</a>
+    <a href="/tags/proxifier/" style="font-size: 11.294524183285708px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 19.84362248933214px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 17.67980345599086px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 
