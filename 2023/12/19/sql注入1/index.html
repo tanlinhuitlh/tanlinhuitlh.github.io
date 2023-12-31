@@ -375,6 +375,7 @@
 <p>​	基于报错注入：即页面会返回错误信息，或者把注入的语句的结果直接返回到页面中。</p>
 <p>​	联合查询注入：在可以使用Union的情况下的注入。</p>
 <p>​	堆查询注入：可以同时执行多条语句时的注入。</p>
+<p>​    数据库指纹识别:通过识别数据库指纹，实现特定数据库的注入</p>
 <pre><code>带外注入：构造SQL语句，这些语句在呈现给数据库时会触发数据库系统创建与攻击者控制的外部服务器的连接。以这种方式，攻击者可以收集数据或可能控制数据库的行为。
 </code></pre>
 <h2 id="Sqlmap输出级别："><a href="#Sqlmap输出级别：" class="headerlink" title="Sqlmap输出级别："></a>Sqlmap输出级别：</h2><p>使用 Sqlmap 对一个注入点进行测试时，可以使用 -v x 参数指定回显信息的复杂度，x范围为[0~6]，共有 7 个等级，默认为 1。</p>
@@ -459,6 +460,18 @@
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223213104336.png" alt="image-20231223213104336"></p>
 <p>查询id和用户名字段sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.113/sqli/Less-1/?id=1">http://192.168.2.113/sqli/Less-1/?id=1</a>“   –batch -D security -T users -C “id,username” –dump</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223213558975.png" alt="image-20231223213558975"></p>
+<p>查询有哪些数据库</p>
+<p>-r XX.txt   –dbs (-r指定POST请求所在的路径)</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227155628710.png" alt="image-20231227155628710"></p>
+<p>查询security数据库中有哪些表</p>
+<p>-r XX.txt -D security –tables</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227155841152.png" alt="image-20231227155841152"></p>
+<p>查询security数据库中users表有哪些字段   security.users</p>
+<p>-r XX.txt  -D security -T users –columns</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227155946459.png" alt="image-20231227155946459"></p>
+<p>dump出字段username与password中的数据</p>
+<p>-r XX.txt   -D security -T users -C “username,password” –dump</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231227160052840.png" alt="image-20231227160052840"></p>
 
     </div>
 </article>
@@ -520,6 +533,18 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2023/12/28/T2/">T2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/T1/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
@@ -566,18 +591,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -596,13 +609,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                    <a href="/2023/12/27/T1/">T1</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                    <a href="/2023/12/28/T2/">T2</a>
                 </span>
             </li>
             
@@ -614,25 +627,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/22/python3/">python3</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                    <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
             
@@ -644,7 +657,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
                 </span>
             </li>
             
@@ -683,71 +696,71 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 19.091560911917778px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 9.410699646050393px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.189898902127911px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 8.85330293269118px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.837162487673623px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.435534269002734px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/HTML/" style="font-size: 12.820913603487313px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 9.07395155872926px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.860659048009722px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 11.963552179811272px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 17.262174761344145px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.119233752956582px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/PHP/" style="font-size: 16.975629318652544px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 15.121900381470555px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 15.452350937327747px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 8.222151628169412px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.77241411231554px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 9.939574328428716px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/php/" style="font-size: 18.511535795646203px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 17.197025652484076px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 12.834037140842188px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 11.694356878392409px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 10.330229826238142px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.16300221953296px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 15.174280849883681px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/html/" style="font-size: 17.03158301309177px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/html/" style="font-size: 12.150969417093854px;" class="tag-cloud-link">html</a>
+    <a href="/tags/postman/" style="font-size: 19.084557788116097px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/postman/" style="font-size: 8.080455900460024px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 19.115139613642548px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/python/" style="font-size: 19.799855186613147px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 9.472964931526876px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.57635552985629px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 13.863085117579054px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 11.10932442043162px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.46934724693213px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 16.765214523506145px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.942866397050963px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.959933139778443px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 17.916398669972168px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 10.664607889475299px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 15.4994552585068px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 17.85661246246685px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 8.118566954299252px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 15.376373006558076px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 9.528039085996273px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 11.469803213979704px;" class="tag-cloud-link">操作步骤</a>
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 15.232883052862425px;" class="tag-cloud-link">操作步骤</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 19.225609998341717px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 11.131024793483677px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/vue/" style="font-size: 19.866711156485792px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 11.997834044377537px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 11.833895584182365px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 18.195900160845095px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 14.166863706482562px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/vue/" style="font-size: 15.239873059421736px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10.727547514012262px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 12.639703935245521px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 11.686995933376922px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 12.954986430174563px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.11576338495804px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 8.536081314819583px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 10.707120124238084px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 14.558590284708224px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 13.600881718715062px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 19.024469023797455px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 
