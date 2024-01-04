@@ -351,6 +351,65 @@
 <figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nsis">for遍历元组<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br>for i in tup:<br>    <span class="hljs-literal">print</span>(i)<br>    <br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br>a<br><span class="hljs-literal">True</span><br><span class="hljs-literal">None</span><br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><br>判断某个元素是否在元组中<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-literal">None</span> in tup<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210212158381.png" alt="image-20231210212158381"></p>
+<h1 id="if语句执行规则"><a href="#if语句执行规则" class="headerlink" title="if语句执行规则"></a>if语句执行规则</h1><ol>
+<li>if 条件：</li>
+</ol>
+<p>​				代码</p>
+<p>​		如果条件成立就执行代码，如果不成立就不执行。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211184625108.png" alt="image-20231211184625108"></p>
+<p>2</p>
+<p>​		if 条件：</p>
+<p>​				代码1</p>
+<p>​		else：</p>
+<p>​				代码2</p>
+<p>​			如果条件成立执行代码1，否则执行2</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211184923191.png" alt="image-20231211184923191"></p>
+<p>3</p>
+<p>if语句可以嵌套并且可以无限的嵌套</p>
+<p>​			if 条件1：</p>
+<p>​					if条件2:</p>
+<p>​								XXXX</p>
+<p>​					else：</p>
+<p>​						    	XXXX</p>
+<p>​				else:</p>
+<p>​							代码块</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211191053829.png" alt="image-20231211191053829"></p>
+<ol start="4">
+<li><p>如果不想if嵌套太深则可以这样使用</p>
+<p>if条件 1:</p>
+<p>​		代码1</p>
+<p>elif  条件2:</p>
+<p>​		代码2</p>
+<p>elif 条件3:</p>
+<p>‘’’’’’</p>
+<p>else:</p>
+<p>​		XXX</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211192806315.png" alt="image-20231211192806315"></p>
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>​		<code>for</code>循环是一种常用的编程结构，用于重复执行一段代码，直到满足特定的条件。在<code>for</code>循环中，通常会定义一个计数器变量，该变量的初始值、终止条件和递增或递减的方式都会在循环开始前确定。每次循环迭代时，计数器变量的值会自动更新，直到达到终止条件，循环才会停止。一般for循环用的多，while循环一般用于死循环</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211195312786.png" alt="image-20231211195312786"></p>
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>​		while循环是一种基本的循环结构，适用于不确定循环次数的情况。while循环由关键字while、循环条件和循环体组成。当循环条件为真时，循环体会一直执行，直到循环条件变为假，循环才会结束。</p>
+<p>例如使用while循环来计算数字1到10的和：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211200223324.png" alt="image-20231211200223324"></p>
+<p>​	这个例子中，<code>num</code> 变量从1开始，每次循环增加1，直到 <code>num</code> 大于10时循环停止。在循环体内，我们将 <code>num</code> 加到 <code>total</code> 变量上，最终输出 <code>total</code> 的值。</p>
+<h2 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a>break和continue语句</h2><p>​		1.<code>break</code> 语句：<code>break</code>语句主要用于循环结构中，当程序遇到<code>break</code>语句时，会立即终止当前循环，跳出该循环体，执行后面的代码。如果是在嵌套循环中，<code>break</code>只会终止当前循环，不会影响到其他循环。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194251237.png" alt="image-20231211194251237"></p>
+<p>​		2.continue<code> 语句：</code>continue<code>语句同样主要用于循环结构中，当程序遇到</code>continue&#96;语句时，会立即跳过本次循环中剩余的代码，并开始执行下一次循环。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194205161.png" alt="image-20231211194205161"></p>
+</li>
+</ol>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>​	字典（Dictionary）是一种数据结构，它将一个键（Key）与一个值（Value）进行关联。键和值可以是任何类型的数据，如数字、字符串、列表等。字典通常用于存储和检索相关联的数据集，可以通过键来快速地查找和访问对应的值。字典是以键值对的形式进行存储的。</p>
+<p>​	在Python中，字典是一种内置的数据类型，使用大括号 {} 来定义。每个键值对之间使用冒号 : 分隔，不同的键值对之间使用逗号 , 分隔。字典表示方式：{key:value1,key2:value2,key3:value}</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211201906222.png" alt="image-20231211201906222"></p>
+<p>​	字典的key必须是可哈希的数据类型，value可以是任何数据类型。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211202220631.png" alt="image-20231211202220631"></p>
+<h2 id="增加新的键值对"><a href="#增加新的键值对" class="headerlink" title="增加新的键值对"></a>增加新的键值对</h2><p>可以使用 <code>dict[key] = value</code> 的形式来添加新的键值对。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203034981.png" alt="image-20231211203034981"></p>
+<h2 id="删除键值对"><a href="#删除键值对" class="headerlink" title="删除键值对"></a>删除键值对</h2><p>可以使用 <code>del dict[key]</code> 的形式来删除键值对。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203306041.png" alt="image-20231211203306041"></p>
+<h2 id="修改键值对"><a href="#修改键值对" class="headerlink" title="修改键值对"></a>修改键值对</h2><p>可以使用 <code>dict[key] = new_value</code> 的形式来修改键值对的值。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203448894.png" alt="image-20231211203448894"></p>
+<h2 id="查找键值对"><a href="#查找键值对" class="headerlink" title="查找键值对"></a>查找键值对</h2><p>​	可以使用 <code>dict[key]</code> 的形式来查找键对应的值。例如：</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203651569.png" alt="image-20231211203651569"></p>
 
     </div>
 </article>
@@ -412,13 +471,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2023/12/28/T2/">T2</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/27/T1/">T1</a>
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
                 </span>
             </li>
             
@@ -452,24 +529,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -488,19 +547,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/27/T1/">T1</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/28/T2/">T2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
                 </span>
             </li>
             
@@ -512,19 +565,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/22/python3/">python3</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
             
@@ -542,7 +583,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
                 </span>
             </li>
             
@@ -575,71 +634,85 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 15.315593313152164px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 14.792147259799982px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.971816875409306px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.420096170113695px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 16.055135209963982px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 12.633232722861278px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/HTML/" style="font-size: 8.971793896576253px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 18.08837485874527px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 16.485180436125063px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 17.836472117638593px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14.446102367143073px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.470410986018113px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/PHP/" style="font-size: 18.275091989161062px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 13.357115040372989px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 17.95580414773377px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 16.69114792106876px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 9.763818027114585px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.20302972497242px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/php/" style="font-size: 8.402407932257297px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 13.186355791222464px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 10.139469640713143px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 8.77875301675087px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 14.483359363821776px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 17.438409876379335px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/html/" style="font-size: 13.128027140470884px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 14.959335761269912px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/postman/" style="font-size: 17.6367480759312px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/postman/" style="font-size: 18.639460205082305px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 11.200268592917176px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 10.329591195487302px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/python/" style="font-size: 14.29209765747687px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 9.50408690067454px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.92734203699481px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.973263174695138px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.614497018276424px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.655065140732095px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.16950446148526px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 10.861417257381284px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 8.415041901147777px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 9.464969543910419px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.26261294728529px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.524886981390226px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 8.50547258372692px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.754486350436906px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 10.317338175456634px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 11.116168753685354px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 12.817536875870905px;" class="tag-cloud-link">操作步骤</a>
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 16.26246981875035px;" class="tag-cloud-link">操作步骤</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.536956858124388px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 15.979560867061604px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 14.974227056529696px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 15.102676231262024px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 19.695002869685517px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 14.827059753803272px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/vue/" style="font-size: 12.837423383348817px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 15.639086690731421px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.812493766283694px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 12.75415087257021px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 15.189582133827669px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 13.738612282835955px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.33888589952643px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 16.303181667623598px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 15.881274837008071px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 16.893899628606157px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 14.576189240285752px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 10.571436253962329px;" class="tag-cloud-link">wireshark抓包</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 13.817325207954383px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 14.475319958106216px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 15.466372125467675px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 10.613600447760527px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/waf/" style="font-size: 8.9529090944616px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 9.53976251538469px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 16.56600071223933px;" class="tag-cloud-link">nmap</a>
     
 </div>
                 

