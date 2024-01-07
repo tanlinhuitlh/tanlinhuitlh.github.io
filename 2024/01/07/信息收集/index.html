@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>信息收集 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>信息收集</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/">百度谷歌语法</a>, 
+                
+                <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/">支付逻辑漏洞</a>, 
+                
+                <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/">弱口令</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-07
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-07
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/">百度谷歌语法</a>, 
+                
+                <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/">支付逻辑漏洞</a>, 
+                
+                <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/">弱口令</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1 id="谷歌语法"><a href="#谷歌语法" class="headerlink" title="谷歌语法"></a>谷歌语法</h1><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><table>
+<thead>
+<tr>
+<th><strong>算</strong>  <strong>符</strong></th>
+<th><strong>含</strong>    <strong>义</strong></th>
+<th><strong>应用举例</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AND&#x2F;空格</td>
+<td>所连接的关键词之间是“与”的关系;</td>
+<td>云计算 分布式计算</td>
+</tr>
+<tr>
+<td>OR&#x2F;|</td>
+<td>所连接的关键词之间是“或”的关系</td>
+<td>图片 | 写真</td>
+</tr>
+<tr>
+<td>-</td>
+<td>所连接的关键词之间是“非”的关系</td>
+<td>神雕侠侣 -游戏</td>
+</tr>
+<tr>
+<td>（）</td>
+<td>在检索式中括号里的运算将优先进行</td>
+<td>电子商务 AND  (云计算 -分布式计算)</td>
+</tr>
+<tr>
+<td>“”</td>
+<td>“”英文双引号中的内容作为一个整体被搜索; 精确匹配搜索</td>
+<td>“智能天线”</td>
+</tr>
+<tr>
+<td>*</td>
+<td>通配符-星号*，代表完整的字词; A * B、A * * B这两个是有区别的</td>
+<td>Flower  * pots &#x2F;Flower * * pots</td>
+</tr>
+<tr>
+<td>+</td>
+<td>强制搜索一般会被自动忽略的搜索关键词，如：who、the、of、am</td>
+<td>+B</td>
+</tr>
+<tr>
+<td>~</td>
+<td>同义符;在搜索词前使用，表示会和同时搜索相近词义的词;示例中会同搜元素Si</td>
+<td>~  silicon</td>
+</tr>
+<tr>
+<td>..</td>
+<td>搜索数字范围限定</td>
+<td>手机价格2000..5000</td>
+</tr>
+<tr>
+<td>filetype:</td>
+<td>把搜索范围限定在特定文件类型中; .pdf&#x2F;.doc&#x2F;.docx&#x2F;.ppt&#x2F;.pptx&#x2F;.xls&#x2F;.xlsx&#x2F;.rtf&#x2F;.txt&#x2F;.swf&#x2F;.ps</td>
+<td>霍金 黑洞filetype:pdf</td>
+</tr>
+<tr>
+<td>site：</td>
+<td>把搜索范围限定在特定站点、某一站点特定频道、特定域名后缀中</td>
+<td>科技 site:news.163.com</td>
+</tr>
+<tr>
+<td>inurl:</td>
+<td>把搜索范围限定在url链接中</td>
+<td>inurl:jiqiao  photoshop</td>
+</tr>
+<tr>
+<td>allinurl:</td>
+<td>把搜索范围限定在url链接中, 只不过其后所有关键词均要在url链接中出现</td>
+<td>allinurl:jiqiao  photoshop</td>
+</tr>
+<tr>
+<td>intitle</td>
+<td>把搜索范围限定在网页标题中</td>
+<td>商业 intitle:超级女声</td>
+</tr>
+<tr>
+<td>allintitle:</td>
+<td>把搜索范围限定在网页标题中; 只不过其后所有关键词均要在网页标题中出现</td>
+<td>allintitle:超级女声 张靓颖</td>
+</tr>
+<tr>
+<td>intext:</td>
+<td>把搜索范围限定在网页正文中; 忽略超链接文本、URL以及题目等</td>
+<td></td>
+</tr>
+<tr>
+<td>inanchor:</td>
+<td>把搜索范围限定在链接锚文本文字中</td>
+<td>inanchor:吴清源</td>
+</tr>
+<tr>
+<td>anchor:</td>
+<td>检索某一作者&#x2F;发明人的论著; 只在Google Scholar中可用</td>
+<td>anchor:&#x2F;作者:</td>
+</tr>
+<tr>
+<td>link：</td>
+<td>检索所有链接到某个特定URL网址的网页;只能单独使用</td>
+<td>link:163.com</td>
+</tr>
+<tr>
+<td>cache:</td>
+<td>Google网页快照</td>
+<td></td>
+</tr>
+<tr>
+<td>related：</td>
+<td>检索与某特定网页类似的网页</td>
+<td>related:<a target="_blank" rel="noopener" href="http://www.163.com/index.shtml">www.163.com/index.shtml</a></td>
+</tr>
+<tr>
+<td>info:</td>
+<td>用来显示与某链接相关的一系列搜索; 提供cache、similar-pages、link、related等连接</td>
+<td>info:<a target="_blank" rel="noopener" href="http://www.sina.com.cn/">www.sina.com.cn</a></td>
+</tr>
+<tr>
+<td>Index  of</td>
+<td>可以帮助你寻找网络和FTP目录</td>
+<td>index  of mp3</td>
+</tr>
+<tr>
+<td>daterange:</td>
+<td>查找在一定的日期或者一定的日期范围内; 只关注被Google收录的时间</td>
+<td></td>
+</tr>
+<tr>
+<td>location:</td>
+<td>指定地区区域内查询关键词相关的网页</td>
+<td>wow  gold location:France</td>
+</tr>
+<tr>
+<td>weather:</td>
+<td>查询该地区或城市当前的天气状况</td>
+<td>weather:北京</td>
+</tr>
+<tr>
+<td>stocks:</td>
+<td>查询股票信息; 一般源于专业财经网站</td>
+<td>stocks:比亚迪</td>
+</tr>
+<tr>
+<td>define:</td>
+<td>返回包含查询关键词定义的网面</td>
+<td>define:  暗网</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>注意:关键词与命令之间有一个空格;在这些关键字中;请勿在冒号后面接空格;命令需用英文输入,包括冒号。AND、OR、NOT均应大写,而其他算符必须是小写，虽其对检索词完全不区分大小写</p>
+<h3 id="Google高级搜索"><a href="#Google高级搜索" class="headerlink" title="Google高级搜索"></a>Google高级搜索</h3><p><a target="_blank" rel="noopener" href="http://www.google.com.hk/advanced_search">http://www.google.com.hk/advanced_search</a>                                                                                                                                                                                                                                           </p>
+<h3 id="Google网页搜索帮助中心"><a href="#Google网页搜索帮助中心" class="headerlink" title="Google网页搜索帮助中心"></a>Google网页搜索帮助中心</h3><p><a target="_blank" rel="noopener" href="https://support.google.com/websearch/?hl=zh-Hans">https://support.google.com/websearch/?hl=zh-Hans</a></p>
+<h3 id="谷歌分类目录"><a href="#谷歌分类目录" class="headerlink" title="谷歌分类目录"></a>谷歌分类目录</h3><p><a target="_blank" rel="noopener" href="http://directory.google.com/">http://directory.google.com/</a></p>
+<p>Google对于检索词中的大小写是完全不做区分的;在Google中，检索词的排序方式对于整个检索式具有重要的影响，它将首先匹配按照检索式给出的次序进行搜索。同时它也将优先匹配检索词相互邻接的网页。GOOGLE支持多达132种语言，包括简体中文和繁体中文，可以设置页面语言和搜索语言，可对汉字繁简体进行转换，可以跨语言搜索。Google搜索结果中可对搜索范围进行限制，如：网页的发布更新时间或一个时间段内，搜索结果的类型选择如图片、视频、书籍、应用程序、新闻。</p>
+<h1 id="百度语法"><a href="#百度语法" class="headerlink" title="百度语法"></a>百度语法</h1><h3 id="intitle搜索范围限定在网页标题"><a href="#intitle搜索范围限定在网页标题" class="headerlink" title="intitle搜索范围限定在网页标题"></a>intitle搜索范围限定在网页标题</h3><p>网页标题通常是对网页内容提纲挈领式的归纳。把查询内容范围限定在网页标题中，有时能获得良好的效果。</p>
+<h3 id="site搜索范围限定在特定站点中"><a href="#site搜索范围限定在特定站点中" class="headerlink" title="site搜索范围限定在特定站点中"></a>site搜索范围限定在特定站点中</h3><p>您如果知道某个站点中有自己需要找的东西，就可以把搜索范围限定在这个站点中，提高查询效率。</p>
+<p>例如：百度影音 site:<a href="https://link.zhihu.com/?target=http://www.skycn.com">http://www.skycn.com</a><br>“site:”后面跟的站点域名，不要带“http:&#x2F;&#x2F;”。site:和站点名之间，不要带空格。</p>
+<h3 id="inurl搜索范围限定在url链接中"><a href="#inurl搜索范围限定在url链接中" class="headerlink" title="inurl搜索范围限定在url链接中"></a>inurl搜索范围限定在url链接中</h3><p>网页url中的某些信息，常常有某种有价值的含义。您如果对搜索结果的url做某种限定，可以获得良好的效果。</p>
+<h3 id="双引号“”和书名号《》精确匹配"><a href="#双引号“”和书名号《》精确匹配" class="headerlink" title="双引号“”和书名号《》精确匹配"></a>双引号“”和书名号《》精确匹配</h3><p>查询词加上双引号“”则表示查询词不能被拆分，在搜索结果中必需完整出现，可以对查询词精确匹配。如果不加双引号“”经过百度分析后可能会拆分。<br>查询词加上书名号《》有两层特殊功能，一是书名号会出现在搜索结果中；二是被书名号扩起来的内容，不会被拆分。 书名号在某些情况下特别有效果，比如查询词为手机，如果不加书名号在很多情况下出来的是通讯工具手机，而加上书名号后，《手机》结果就都是关于电影方面的了。</p>
+<h3 id="不含特定查询词"><a href="#不含特定查询词" class="headerlink" title="-不含特定查询词"></a>-不含特定查询词</h3><p>查询词用减号-语法可以帮您在搜索结果中排除包含特定的关键词所有网页。</p>
+<p>例子：电影 -007</p>
+<p>查询词“电影”在搜索结果中，“007”被排除在搜索结果中。</p>
+<h3 id="包含特定查询词"><a href="#包含特定查询词" class="headerlink" title="+包含特定查询词"></a>+包含特定查询词</h3><p>查询词用加号+语法可以帮您在搜索结果中必需包含特定的关键词所有网页。<br>例子：电影 +123</p>
+<p>查询词“电影”在搜索结果中，“123”被必需被包含在搜索结果中。</p>
+<h3 id="Filetype搜索范围限定在指定文档格式中"><a href="#Filetype搜索范围限定在指定文档格式中" class="headerlink" title="Filetype搜索范围限定在指定文档格式中"></a>Filetype搜索范围限定在指定文档格式中</h3><p>查询词用Filetype语法可以限定查询词出现在指定的文档中，支持文档格式有pdf，doc，xls，ppt，rtf,all(所有上面的文档格式)。对于找文档资料相当有帮助。</p>
+<h3 id="百度高级搜索页面"><a href="#百度高级搜索页面" class="headerlink" title="百度高级搜索页面"></a>百度高级搜索页面</h3><p>通过访问<a href="https://link.zhihu.com/?target=http://www.baidu.com/gaoji/advanced.html">http://www.baidu.com/gaoji/advanced.html</a>网址，百度高级搜索页面将上面的所有的高级语法集成，用户不需要记忆语法，只需要填写查询词和选择相关选项就能完成复杂的语法搜索。</p>
+<h1 id="域名查询"><a href="#域名查询" class="headerlink" title="域名查询"></a>域名查询</h1><p>站长之家<a target="_blank" rel="noopener" href="https://whois.chinaz.com/">域名Whois查询 - 站长之家 (chinaz.com)</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107194409548.png" alt="image-20240107194409548"></p>
+<p><a target="_blank" rel="noopener" href="http://z.zcjun.com/">在线子域名爆破 (zcjun.com)</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107194514418.png" alt="image-20240107194514418"></p>
+<h3 id="fofa"><a href="#fofa" class="headerlink" title="fofa"></a>fofa</h3><p><a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info/</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107194648468.png" alt="image-20240107194648468"></p>
+<p><a target="_blank" rel="noopener" href="https://www.qcc.com/">企查查 - 企业工商信息查询系统_查企业_查老板_查风险就上企查查! (qcc.com)</a></p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20240107195952117.png" alt="image-20240107195952117"></p>
+<h1 id="支付逻辑漏洞"><a href="#支付逻辑漏洞" class="headerlink" title="支付逻辑漏洞"></a>支付逻辑漏洞</h1><p>支付逻辑漏洞是指系统的支付流程中存在业务逻辑层面的漏洞</p>
+<h3 id="常见支付流程："><a href="#常见支付流程：" class="headerlink" title="常见支付流程："></a>常见支付流程：</h3><p>选择商品和数量——选择支付及配送方式——生成订单编号——订单支付选择——完成支付</p>
+<p>如：最常见的支付逻辑漏洞通常是由于服务器端没有对客户端请求数据中的金额、数量等敏感信息进行效验导致。一般漏洞产生在电子商务类应用中。</p>
+<h3 id="支付逻辑漏洞一般分为四类："><a href="#支付逻辑漏洞一般分为四类：" class="headerlink" title="支付逻辑漏洞一般分为四类："></a>支付逻辑漏洞一般分为四类：</h3><p>1.支付过程中可以修改支付金额<br>2.可以将订单中的商品数量修改为负值<br>3.请求重放导致<br>4.其他问题（程序异常，其他参数修改导致问题等）<br>其他支付问题补充：<br>修改支付状态、修改附属值（优惠券积分等）、修改支付接口、替换多个订单、重复支付等。</p>
+<h3 id="支付逻辑漏洞之修改订单数量："><a href="#支付逻辑漏洞之修改订单数量：" class="headerlink" title="支付逻辑漏洞之修改订单数量："></a>支付逻辑漏洞之修改订单数量：</h3><p>1、登录网站，选择购买一个商品并抓取数据包<br>2、找到其中代表商品数量的参数，将参数的值修改为负数<br>3、发送数据包，生成订单，观察订单是否有效，是否能进入支付页面<br>4、完成支付</p>
+<h3 id="可能产生零元购漏洞的地方"><a href="#可能产生零元购漏洞的地方" class="headerlink" title="可能产生零元购漏洞的地方"></a>可能产生零元购漏洞的地方</h3><p>一，参数包里面没有价格，或者价格跟商品id 校验，导致无法修改商品金额<br>1，隐藏商品的模糊测试，商品id<br>2，第一个:商品下单的处导致<br>3，第二个，商品购买处导致<br>4，购物车未校验加入零元商品商品<br>5，第四个是，支付宝接口和商品接口未校验导致商品任意购买<br>6.商品数量校验导致零元购，<br>7.附带商品导致支付漏洞</p>
+<p>8.四舍五入导致支付漏洞系统的支付和微信的支付校验导致(提现) 0.009  0.01</p>
+<p>9.使用过红包的订单:有一个支付宝的订单号 有效期是15 分钟 商家对接支付宝取消订单红包返回无限使用</p>
+<p>并发漏洞(服务器对功能点的多线程处理):优惠券，微博的点赞关注 取消点赞，取。消关注 优惠商品下单所有的都能并发</p>
+<h1 id="弱口令"><a href="#弱口令" class="headerlink" title="弱口令"></a>弱口令</h1><p>网站管理、运营人员由于安全意识不足，为了方便、避免忘记密码等，使用了非常容易记住的密码，或者是直接采用了系统的默认密码等。</p>
+<p>攻击者利用此漏洞可直接进入应用系统或者管理系统，从而进行系统、网页、数据的篡改与删除，非法获取系统、用户的数据，甚至可能导致服务器沦陷。</p>
+<p>弱口令(weak password) 没有严格和准确的定义，通常认为容易被别人（他们有可能对你很了解）猜测到或被破解工具破解的口令均为弱口令。弱口令指的是仅包含简单数字和字母的口令，例如“123456”、“abc”等，因为这样的口令很容易被别人破解，从而使用户的计算机面临风险，因此不推荐用户使用。</p>
+<h3 id="src"><a href="#src" class="headerlink" title="src"></a>src</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107204445724.png" alt="image-20240107204445724"></p>
+<h3 id="统一教育src分析"><a href="#统一教育src分析" class="headerlink" title="统一教育src分析"></a>统一教育src分析</h3><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107203219968.png" alt="image-20240107203219968"></p>
+<h3 id="通过社工定制字典库"><a href="#通过社工定制字典库" class="headerlink" title="通过社工定制字典库"></a>通过社工定制字典库</h3><p>​	有很多人为了方便记忆自己的密码，经常将个人身份信息嵌入其中。如果是对某用户有一定的了解，通过收集用户信息，包括生日，sfz号，手机号，用户名，车牌号，网站名称，地址等（包含中文信息可以使用拼音），可以通过暴力破解的方式尝试出用户密码。而且绝大多数人都会将多个账户设定为相同的密码，即如果你破解了某人的QQ密码，很可能你也找到了他的论坛、邮箱、微博、游戏账号密码……</p>
+<p>例如：姓名  邮箱  生日  用户名 特殊数字  常用密码  伴侣信息  手机号码</p>
+<p>​	当针对某个公司&amp;团体生成弱口令字典时，可以在从一些网站收集相关信息</p>
+<p>​	全国社会组织查询<br><a target="_blank" rel="noopener" href="http://www.chinanpo.gov.cn/search/orgindex.html">http://www.chinanpo.gov.cn/search/orgindex.html</a><br>天眼查-商业安全工具_企业信息查询_公司查询_工商查询_企业信用信息系统<br><a target="_blank" rel="noopener" href="https://www.tianyancha.com/">https://www.tianyancha.com/</a><br>工业和信息化部ICP&#x2F;IP地址&#x2F;域名信息备案管理系统<br><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action">http://www.beian.miit.gov.cn/publish/query/indexFirst.action</a><br>类似这样的网站还有很多</p>
+<p>​	另外现在越来越多的后台弱口令使用@、*、&amp;以及.等特殊字符作为增强密码复杂度的手段，虽然增加了爆破成本但是依然有规律可循。比如test@公司名或者当年年份@公司名，可以使用字典生成器来有针对性的生成字典。（<a target="_blank" rel="noopener" href="https://github.com/HongLuDianXue/BaiLu-SED-Tool%EF%BC%89">https://github.com/HongLuDianXue/BaiLu-SED-Tool）</a></p>
+<p>可以在github上面搜索一些字典库，也可以自己不断收集整理</p>
+<h3 id="通用类型危害程度常见定级"><a href="#通用类型危害程度常见定级" class="headerlink" title="通用类型危害程度常见定级"></a>通用类型危害程度常见定级</h3><p>中小型厂商<br>中危：常见类型有逻辑漏洞、未授权访问、任意文件读取、敏感信息泄露、XSS等等<br>&#x2F;&#x2F;&#x2F;价格为5-10kb一个<br>高危：SQL注入、getshell、命令执行、代码执行等等（框架漏洞不属于厂商通用，如weblogic,thinkphp,shiro等公开漏洞）<br>&#x2F;&#x2F;&#x2F;价格为10kb-无上限<br>大型厂商<br>中危：常见类型有逻辑漏洞、未授权访问、任意文件读取、敏感信息泄露、XSS等等<br>&#x2F;&#x2F;&#x2F;价格为100-无上限<br>高危：SQL注入、getshell、命令执行、代码执行等等<br>&#x2F;&#x2F;&#x2F;价格为500-无上限</p>
+<p><strong>越丑的站，越有可能存在洞。<br>Asp aspx 存在漏洞的可能更大<br>登陆口没得验证码的可能存在</strong></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 9.683093867547772px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 8.190254860267988px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 13.001394704102427px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 11.427077991679482px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 14.316563100180957px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.741599144183933px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 14.080539925279588px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 13.369871906596636px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.229850333147525px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/php/" style="font-size: 10.17350189715986px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 11.502134983292773px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.165735067005272px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 18.40945503066826px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 15.332735547610461px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 17.129916910431092px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 15.337476384665369px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 19.857092813085224px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 17.956558280125222px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 11.814373696777974px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 8.262598279933973px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 18.265125115711886px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 8.595000973927274px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 12.557211470531252px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4/" style="font-size: 14.21641193934645px;" class="tag-cloud-link">操作步骤</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.798546336494578px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 10.289186459506723px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 11.249726644857969px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/vue/" style="font-size: 18.26006987351008px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13.79303344425611px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.775384213796418px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 17.0110873494191px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 10.969878942075574px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 18.834283487540603px;" class="tag-cloud-link">wireshark抓包</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 10.456449874395872px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 12.368835768424788px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 12.137926375896718px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 14.114155570618166px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/waf/" style="font-size: 14.563099865803702px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 17.191156088369706px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 12.82495381865516px;" class="tag-cloud-link">nmap</a>
+    
+    <a href="/tags/pikachu/" style="font-size: 18.896110474443237px;" class="tag-cloud-link">pikachu</a>
+    
+    <a href="/tags/virtrualbox/" style="font-size: 17.74873865429429px;" class="tag-cloud-link">virtrualbox</a>
+    
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 17.773212173788814px;" class="tag-cloud-link">小米范端口扫描</a>
+    
+    <a href="/tags/dirsearch/" style="font-size: 15.204434683193478px;" class="tag-cloud-link">dirsearch</a>
+    
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 18.322166804136486px;" class="tag-cloud-link">百度谷歌语法</a>
+    
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 10.490997466980602px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 8.037751074154464px;" class="tag-cloud-link">弱口令</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
