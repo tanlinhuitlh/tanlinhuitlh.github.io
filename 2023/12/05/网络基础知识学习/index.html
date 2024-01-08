@@ -274,6 +274,20 @@
 <p>​	网络A的IP地址范围为“192.168.1.1~192.168.1.254”，子网掩码为255.255.255.0</p>
 <p>​	网络B的IP地址范围为“192.168.2.1~192.168.2.254”，子网掩码为255.255.255.0</p>
 <p>​	要实现这两个网络之间的通信，则必须通过网关。</p>
+<h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3><p>​	子网划分是什么？无非就是子网掩码里的那个网络区和主机区向右移动几位罢了。</p>
+<p>​	IP地址由32位二进制组成，32位二进制分成了4字节，每字节8位，字节之间用符.（点）分隔，为了方便人们记忆，经常需要转换成十进制数字显示，每字节最大为255（十进制）即二进制表示为11111111（8个1）。</p>
+<p>​	255.255.255.0&#x3D;&#x3D;&gt;对应256个地址，其中包括一个广播地址和一个网段地址（分别是全1和全0地址），也就说我们要在划分子网的时候预留出这两个地址的空间。然后在考虑可以划分的可能性。</p>
+<p>​	需要的主机号位数&#x3D;(2^n)-2</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108112409565.png" alt="image-20240108112409565"></p>
+<h4 id="需要划分成多少个网络（子网）？"><a href="#需要划分成多少个网络（子网）？" class="headerlink" title="需要划分成多少个网络（子网）？"></a><strong>需要划分成多少个网络（子网）？</strong></h4><p>假如要划分4个网络，则2^n&#x3D;4，n&#x3D;2、要划分8个网络，则2^n&#x3D;8，n&#x3D;3，现在知道为什么要先搞懂2的幂了吧，这里n就是&#x3D;2的幂值。</p>
+<h4 id="每个网络需要多少个IP？"><a href="#每个网络需要多少个IP？" class="headerlink" title="每个网络需要多少个IP？"></a><strong>每个网络需要多少个IP？</strong></h4><p>计算公式：2^y-2，y代表取值多少位0，如11111000，代表取值3位0，即y&#x3D;3,得出23&#x3D;8-2&#x3D;6，即每个网络可用的IP数量是6个。</p>
+<p>假如每个网络需要60台主机的IP，那么如何计算呢？即2^y-2≥60，根据2的幂算法得出，2^6&#x3D;64-2&#x3D;62，所有y的值为6。</p>
+<h4 id="有哪些子网网络（块大小）？"><a href="#有哪些子网网络（块大小）？" class="headerlink" title="有哪些子网网络（块大小）？"></a><strong>有哪些子网网络（块大小）？</strong></h4><p>计算公式：256-子网掩码。假如子网掩码为255.255.255.192，则块大小为256-192&#x3D;64，即块大小为64。从0开始以64为基数不断递增，直到达到子网掩码值，中间的结果即为子网</p>
+<h4 id="每个子网的子网号和广播地址是多少？"><a href="#每个子网的子网号和广播地址是多少？" class="headerlink" title="每个子网的子网号和广播地址是多少？"></a><strong>每个子网的子网号和广播地址是多少？</strong></h4><p>子网号很简单，即子网块值，如掩码为192，则子网块为256-192&#x3D;64，得出子网为0、64、128、192，即子网号为0、64、128、192。再如掩码为128，则子网为128，则子网好0、128。</p>
+<p>广播地址也很简单，总是下一个子网前面的数。如子网号为0、64、128、192、则广播地址为63、127、191。再如子网号为0、128，则广播地址为127.</p>
+<h4 id="每个子网的可用（合法）的主机地址是哪些？"><a href="#每个子网的可用（合法）的主机地址是哪些？" class="headerlink" title="每个子网的可用（合法）的主机地址是哪些？"></a><strong>每个子网的可用（合法）的主机地址是哪些？</strong></h4><p>规则就是除去每个每个子网的子网号、广播地址，剩下的就是可用的主机地址，如子网号为0、64、128、192，则可用的主机地址为1-62、65-126、129-190，因为0是子网地址，63是广播地址，同样128、192是子网地址，127、191是广播地址。</p>
+<p>​	一企业内部网ip为192.168.1.0&#x2F;24,企业共4个部门,A部门20台主机,B部门120台主机,C部门30台主机，D部门16台主机，请问该如何划分？</p>
+<p>A 192.168.1.128 192.168.1.129 - 192.168.1.158 192.168.1.159<br>B 192.168.1.160 192.168.1.161 - 192.168.1.190 192.168.1.191<br>C 192.168.1.192 192.168.1.193 - 192.168.1.222 192.168.1.223<br>D 192.168.1.224 192.168.1.225 - 192.168.1.254 192.168.1.255</p>
 <h1 id="私网和公网"><a href="#私网和公网" class="headerlink" title="私网和公网"></a>私网和公网</h1><p>​	公网地址和私网地址之间的区别主要体现在以下几个方面： </p>
 <p>​	分配方式不同：公网地址由互联网注册机构分配，而私网地址由局域网管理员自行分配。</p>
 <pre><code> 使用范围不同：公网地址用于Internet上的设备，私网地址用于局域网内部的设备。 
@@ -478,13 +492,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
                 </span>
             </li>
             
@@ -502,13 +510,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
                 </span>
             </li>
             
@@ -520,7 +528,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                    <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
             
@@ -532,7 +540,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
                 </span>
             </li>
             
@@ -565,97 +579,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 8.603062565395174px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 11.382994091046477px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.214411834065448px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.343548470820764px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 11.563531065125492px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.428942736335646px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/HTML/" style="font-size: 12.018592282268704px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/HTML/" style="font-size: 17.051780957028996px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/CSS/" style="font-size: 10.195216011744952px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/CSS/" style="font-size: 13.210930395199423px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/php/" style="font-size: 10.175442217070348px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php/" style="font-size: 11.444712977664048px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/html/" style="font-size: 11.056145080687036px;" class="tag-cloud-link">html</a>
+    <a href="/tags/html/" style="font-size: 18.263929825058966px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/postman/" style="font-size: 8.495292278705904px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/postman/" style="font-size: 11.2124664877064px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/PHP/" style="font-size: 8.694339186588854px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/PHP/" style="font-size: 13.336721805780254px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/Navicat/" style="font-size: 8.617096953564081px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/Navicat/" style="font-size: 12.041777689431001px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 8.597952450997763px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.976021724446216px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 16.26863404595481px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 11.945342646184365px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 12.449022269985615px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 16.011588928621485px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/python/" style="font-size: 9.736118500243844px;" class="tag-cloud-link">python</a>
+    <a href="/tags/python/" style="font-size: 11.569058007544132px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.55909207492297px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.17451869154192px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 10.596983217687125px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.057397716429264px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.366129720274685px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.036532727798445px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 14.498341290691112px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 15.436897117868739px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 14.695888701905812px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 11.859517605574077px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 12.251605086724608px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 11.826152727562668px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 16.203107088322483px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 19.187427893595466px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 16.90602868253093px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/dirsearch/" style="font-size: 16.04883157742689px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 11.105227447570606px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 19.85463389366812px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 9.168588976450398px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/sqlmap/" style="font-size: 16.211154418838124px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 13.947370254553473px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 9.533524681704677px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.49958645198237px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 17.668117891218827px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 11.39791645747508px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 10.132404466387868px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 8.56270269221806px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 15.834502600825097px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 15.61409315880943px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 16.573828082819695px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/pikachu/" style="font-size: 19.726563924566427px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/pikachu/" style="font-size: 14.28352106981473px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 10.49933017648166px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/virtrualbox/" style="font-size: 17.787369073329735px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 19.5767391557537px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 11.323756308247333px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14.246370234937029px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.73167742259584px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/waf/" style="font-size: 14.42998740031029px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/waf/" style="font-size: 8.153901934059075px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 13.362222898951662px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/BurpSuite/" style="font-size: 16.13230728609277px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/nmap/" style="font-size: 8.295361979059006px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/nmap/" style="font-size: 13.46273258366591px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 18.605428103838978px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/vue/" style="font-size: 17.585871816857733px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 16.63912538577646px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 9.364394161443379px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 9.354892171452722px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 10.343859989521325px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.638363830031539px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 19.917115903241722px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 10.290310570867899px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 8.823951529290976px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 8.384540379770312px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 13.629887474867605px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 10.834973360818053px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 8.10426056955992px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.505051607262448px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 13.430872496046018px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 8.458841325676598px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 14.757366965292128px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 11.1284558816069px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 12.717631619460946px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 
