@@ -260,7 +260,7 @@
     </div>
     <div class="content-article">
         <p>今天补充之前学的Linux命令</p>
-<h1 id="Linux-查询命令"><a href="#Linux-查询命令" class="headerlink" title="Linux 查询命令"></a>Linux 查询命令</h1><h2 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h2><p>linux中使用<code>man</code>命令来查询命令的帮助文件,命令格式如下:</p>
+<h1><span id="linux-查询命令">Linux 查询命令</span></h1><h2><span id="man命令">man命令</span></h2><p>linux中使用<code>man</code>命令来查询命令的帮助文件,命令格式如下:</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210171733048.png" alt="image-20231210171733048"></p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7"><span class="hljs-keyword">man</span> <span class="hljs-comment">[章节]</span> command<br></code></pre></td></tr></table></figure>
 
@@ -274,7 +274,7 @@
 <p>使用<code>man</code>搜索命令 以<code>KEYWORD</code>指定的字符串为关键字，从当前位置向文件首部搜索，不区分字符大小写；</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">n:</span> 下一个 N：上一个 <br></code></pre></td></tr></table></figure>
 
-<h2 id="Linux-info命令"><a href="#Linux-info命令" class="headerlink" title="Linux info命令"></a>Linux info命令</h2><p>linux中使用<code>info</code>命令来查询命令的帮助文件。<code>info</code>页面比<code>man page</code>编写得要更好、更容易理解，也更友好，但<code>man page</code>使用起来确实要更容易得多。一个<code>man page</code>只有一页，而<code>info</code>页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。</p>
+<h2><span id="linux-info命令">Linux info命令</span></h2><p>linux中使用<code>info</code>命令来查询命令的帮助文件。<code>info</code>页面比<code>man page</code>编写得要更好、更容易理解，也更友好，但<code>man page</code>使用起来确实要更容易得多。一个<code>man page</code>只有一页，而<code>info</code>页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。</p>
 <p>命令格式如下：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/183243" alt="预览大图"></p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">info</span> [命令参数] command<br></code></pre></td></tr></table></figure>
@@ -285,7 +285,7 @@
 <p>常见命令如下：</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm">?键：它就会显示<span class="hljs-meta">info</span>的常用快捷键；N键：显示（相对于本节点的）下一节点的文档内容；P键：显示（相对于本节点的）前一节点的文档内容；U键：进入当前命令所在的主题；M键：敲M键后输入命令的名称就可以查看该命令的帮助文档了；G键：敲G键后输入主题名称，进入该主题；L键：回到上一个访问的页面；<span class="hljs-meta">SPACE</span>键：向前滚动一页；BACKUP或DEL键：向后滚动一页；Q：退出<span class="hljs-meta">info</span>。<br></code></pre></td></tr></table></figure>
 
-<h1 id="Linux文件-目录管理"><a href="#Linux文件-目录管理" class="headerlink" title="Linux文件&#x2F;目录管理"></a>Linux文件&#x2F;目录管理</h1><h2 id="chattr"><a href="#chattr" class="headerlink" title="chattr"></a>chattr</h2><p>​	<code>chattr</code>的作用是修改文件&#x2F;目录的特殊属性。</p>
+<h1><span id="linux文件x2f目录管理">Linux文件&#x2F;目录管理</span></h1><h2><span id="chattr">chattr</span></h2><p>​	<code>chattr</code>的作用是修改文件&#x2F;目录的特殊属性。</p>
 <p>具体命令如下：</p>
 <p>将目录<code>testDir</code>以及目录下所有内容一并设置为不得任意更动，具体使用如下命令：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185143" alt="预览大图"></p>
@@ -297,7 +297,7 @@
 <p>常用属性标示符：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span>：让文件或目录仅供附加用途；<span class="hljs-selector-tag">A</span>：不更新文件或目录的最后存取时间；c：将文件或目录压缩后存放；d：将文件或目录排除在倾倒操作之外；<span class="hljs-selector-tag">i</span>：不得任意更动文件或目录；s：保密性删除文件或目录；S：即时更新文件或目录；u：预防意外删除。<br></code></pre></td></tr></table></figure>
 
-<h2 id="lsattr"><a href="#lsattr" class="headerlink" title="lsattr"></a>lsattr</h2><p><code>lsattr</code>的作用查看文件&#x2F;目录的特殊属性设置情况。</p>
+<h2><span id="lsattr">lsattr</span></h2><p><code>lsattr</code>的作用查看文件&#x2F;目录的特殊属性设置情况。</p>
 <p>具体命令如下：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185145" alt="预览大图"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">lsattr</span>　命令参数　文件/目录<br></code></pre></td></tr></table></figure>
@@ -308,17 +308,17 @@
 <p>查看目录<code>testDir</code>下所有内容的特殊属性，具体使用如下命令：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">lsattr -Ra testFile</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="Linux硬链接"><a href="#Linux硬链接" class="headerlink" title="Linux硬链接"></a>Linux硬链接</h2><p>ln　源文件　目标文件</p>
+<h2><span id="linux硬链接">Linux硬链接</span></h2><p>ln　源文件　目标文件</p>
 <p>为当前目录下的文件<code>testFile</code>创建一个硬链接<code>testFileLink</code>，可以使用如下命令：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185066" alt="预览大图"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> testFile testFileLink<br></code></pre></td></tr></table></figure>
 
-<h3 id="Linux软链接"><a href="#Linux软链接" class="headerlink" title="Linux软链接"></a>Linux软链接</h3><p>ln -s　源文件　目标文件</p>
+<h3><span id="linux软链接">Linux软链接</span></h3><p>ln -s　源文件　目标文件</p>
 <p>为当前目录下的文件<code>testFile</code>创建一个软链接<code>myLink</code>，可以使用如下命令：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/185067" alt="预览大图"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -s testFile myLink<br></code></pre></td></tr></table></figure>
 
-<h3 id="设置文件-目录的特殊权限setuid和setgid。"><a href="#设置文件-目录的特殊权限setuid和setgid。" class="headerlink" title="设置文件&#x2F;目录的特殊权限setuid和setgid。"></a>设置文件&#x2F;目录的特殊权限<code>setuid</code>和<code>setgid</code>。</h3><ul>
+<h3><span id="设置文件x2f目录的特殊权限setuid和setgid">设置文件&#x2F;目录的特殊权限<code>setuid</code>和<code>setgid</code>。</span></h3><ul>
 <li><p><code>setuid</code>的八进制表示为<code>4000</code></p>
 </li>
 <li><p><code>setgid</code>的八进制表示为<code>2000</code></p>
@@ -343,7 +343,7 @@
 <p>创建一个新文件<code>testFile</code>，使用数字设置方法为文件<code>testFile</code>添加<code>setgid</code>权限，具体使用如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">touch</span> testFilels -l testFilesudo <span class="hljs-built_in">chmod</span> 2674 testFilels -l testFile<br></code></pre></td></tr></table></figure>
 
-<h1 id="Linux压缩和归档文件"><a href="#Linux压缩和归档文件" class="headerlink" title="Linux压缩和归档文件"></a>Linux压缩和归档文件</h1><h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p><code>tar</code>命令可以将多个文件&#x2F;目录进行打包，将多个文件生成一个文件，生成的文件后缀为<code>.tar</code>。</p>
+<h1><span id="linux压缩和归档文件">Linux压缩和归档文件</span></h1><h2><span id="tar命令">tar命令</span></h2><h3><span id="打包">打包</span></h3><p><code>tar</code>命令可以将多个文件&#x2F;目录进行打包，将多个文件生成一个文件，生成的文件后缀为<code>.tar</code>。</p>
 <p>具体打包命令如下：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210165104272.png" alt="image-20231210165104272"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span>　-cvf　生成的tar包名　要打包的文件/目录列表<br></code></pre></td></tr></table></figure>
@@ -351,7 +351,7 @@
 <p>常用命令参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>采用<code>bzip2</code>方式执行<code>tar</code>命令进行压缩的具体命令如下：</p>
+<h3><span id="压缩">压缩</span></h3><p>采用<code>bzip2</code>方式执行<code>tar</code>命令进行压缩的具体命令如下：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210164630999.png" alt="image-20231210164630999"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210164443803.png" alt="image-20231210164443803"></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tar</span> -jcvf　指定生成的压缩文件名　要被压缩的文件/目录列表<br></code></pre></td></tr></table></figure>
@@ -366,7 +366,7 @@
 <p>常用命令参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-c 建立新的归档文件；-v 处理过程中输出相关信息；-f 对普通文件操作；-z 以gzip对文件/目录进行压缩；</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">tar　-<span class="hljs-keyword">jxvf　</span>指定要解压的文件<br></code></pre></td></tr></table></figure>
+<h3><span id="解压">解压</span></h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">tar　-<span class="hljs-keyword">jxvf　</span>指定要解压的文件<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210163656825.png" alt="image-20231210163656825"></p>
 <p>常用命令参数如下：</p>
@@ -397,13 +397,13 @@
 <p>常用命令参数如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">-q：执行时不显示任何信息；-n：解压缩时不要覆盖原有的文件；-d<span class="hljs-tag">&lt;<span class="hljs-name">目录</span>&gt;</span>：指定文件解压缩后所要存储的目录；<br></code></pre></td></tr></table></figure>
 
-<h1 id="Linux文件定位命令"><a href="#Linux文件定位命令" class="headerlink" title="Linux文件定位命令"></a>Linux文件定位命令</h1><h2 id="查询命令-locate"><a href="#查询命令-locate" class="headerlink" title="查询命令-locate"></a>查询命令-locate</h2><p><code>locate</code>具体命令如下：</p>
+<h1><span id="linux文件定位命令">Linux文件定位命令</span></h1><h2><span id="查询命令-locate">查询命令-locate</span></h2><p><code>locate</code>具体命令如下：</p>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-keyword">locate</span>　命令参数　文件/目录<br></code></pre></td></tr></table></figure>
 
 <p>常用命令参数如下：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">-c, <span class="hljs-attr">--count</span>            只输出找到的数量；<br>-d, <span class="hljs-attr">--database</span> DBPATH  使用DBPATH指定的数据库，而不是默认数据库/<span class="hljs-selector-tag">var</span>/lib/mlocate/mlocate<span class="hljs-selector-class">.db</span>；<br>-<span class="hljs-selector-tag">i</span>, <span class="hljs-attr">--ignore-case</span>      忽略大小写；<br>-<span class="hljs-selector-tag">q</span>, <span class="hljs-attr">--quiet</span>            安静模式，不会显示任何错误讯息；<br>-e, <span class="hljs-attr">--existing</span>         只显示当前存在的文件条目；<br></code></pre></td></tr></table></figure>
 
-<h2 id="查询命令-which-whereis"><a href="#查询命令-which-whereis" class="headerlink" title="查询命令-which&#x2F;whereis"></a>查询命令-which&#x2F;whereis</h2><p>使用<code>which</code>命令定位<code>passwd</code>命令的位置，具体使用如下命令：</p>
+<h2><span id="查询命令-whichx2fwhereis">查询命令-which&#x2F;whereis</span></h2><p>使用<code>which</code>命令定位<code>passwd</code>命令的位置，具体使用如下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> passwd<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162458545.png" alt="image-20231210162458545"></p>
@@ -414,7 +414,7 @@
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-b：只查找二进制文件；</span><br><span class="hljs-deletion">-B&lt;目录&gt;：只在设置的目录下查找二进制文件；</span><br><span class="hljs-deletion">-m：只查找说明文件；</span><br><span class="hljs-deletion">-M&lt;目录&gt;：只在设置的目录下查找说明文件；</span><br><span class="hljs-deletion">-s：只查找原始代码文件；</span><br><span class="hljs-deletion">-S&lt;目录&gt;只在设置的目录下查找原始代码文件；</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162606360.png" alt="image-20231210162606360"></p>
-<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span>　查找目录　查找参数　查找内容<br></code></pre></td></tr></table></figure>
+<h2><span id="find">find</span></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">find</span>　查找目录　查找参数　查找内容<br></code></pre></td></tr></table></figure>
 
 <p>常用查找参数如下：</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-amin&lt;+|-分钟&gt;：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；</span><br><span class="hljs-deletion">-atime&lt;+|-24小时数&gt;：查找在指定时间曾被存取过的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-cmin&lt;+|-分钟&gt;：查找在指定时间之时被更改过的文件或目录；</span><br><span class="hljs-deletion">-ctime&lt;+|-24小时数&gt;：查找在指定时间之时被更改的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-mmin&lt;+|-分钟&gt;：查找在指定时间曾被更改过的文件或目录，单位以分钟计算；</span><br><span class="hljs-deletion">-mtime&lt;+|-24小时数&gt;：查找在指定时间曾被更改过的文件或目录，单位以24小时计算；</span><br><span class="hljs-deletion">-depth：从指定目录下最深层的子目录开始查找；</span><br><span class="hljs-deletion">-exec&lt;执行指令&gt;：假设find指令的回传值为True，就执行该指令；</span><br><span class="hljs-deletion">-follow：排除符号连接；</span><br><span class="hljs-deletion">-gid&lt;群组识别码&gt;：查找符合指定群组识别码的文件或目录；</span><br><span class="hljs-deletion">-group&lt;群组名称&gt;：查找符合指定群组名称的文件或目录；</span><br><span class="hljs-deletion">-uid&lt;用户识别码&gt;：查找符合指定的用户识别码的文件或目录；</span><br><span class="hljs-deletion">-user&lt;拥有者名称&gt;：查找符和指定的拥有者名称的文件或目录；</span><br><span class="hljs-deletion">-name&lt;范本样式&gt;：指定字符串作为寻找文件或目录的范本样式；</span><br><span class="hljs-deletion">-iname&lt;范本样式&gt;：此参数的效果和指定“-name”参数类似，但忽略字符大小写的差别；</span><br><span class="hljs-deletion">-inum&lt;inode编号&gt;：查找符合指定的inode编号的文件或目录；</span><br><span class="hljs-deletion">-newer&lt;参考文件或目录&gt;：查找其更改时间较指定文件或目录的更改时间更接近现在的文件或目录；</span><br><span class="hljs-deletion">-size&lt;+|-|=文件大小&gt;：查找符合指定的文件大小的文件；</span><br><span class="hljs-deletion">-type&lt;文件类型&gt;：只寻找符合指定的文件类型的文件；</span><br><span class="hljs-deletion">-a：是前后条件都要满足；</span><br><span class="hljs-deletion">-o ：是满足一个条件就好；</span><br></code></pre></td></tr></table></figure>
@@ -440,7 +440,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo find /etc -size 1M -<span class="hljs-built_in">exec</span> <span class="hljs-built_in">ls</span> -l &#123;&#125; \;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210162216910.png" alt="image-20231210162216910"></p>
-<h1 id="Linux-远程联机服务"><a href="#Linux-远程联机服务" class="headerlink" title="Linux 远程联机服务"></a>Linux 远程联机服务</h1><h5 id="Telnet远程登录服务器"><a href="#Telnet远程登录服务器" class="headerlink" title="Telnet远程登录服务器"></a>Telnet远程登录服务器</h5><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190813552.png" alt="image-20231210190813552"></p>
+<h1><span id="linux-远程联机服务">Linux 远程联机服务</span></h1><h5><span id="telnet远程登录服务器">Telnet远程登录服务器</span></h5><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210190813552.png" alt="image-20231210190813552"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210192223812.png" alt="image-20231210192223812"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210192355434.png" alt="image-20231210192355434"></p>
 <p><code>telnet</code> 命令格式：</p>
@@ -452,7 +452,7 @@
 <p>参数：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">远程主机：指定要登录进行管理的远程主机；<br>端口：指定TELNET协议使用的端口号；<br></code></pre></td></tr></table></figure>
 
-<h5 id="telnet常见命令"><a href="#telnet常见命令" class="headerlink" title="telnet常见命令"></a>telnet常见命令</h5><p>当我们执行输入<code>telnet</code>后回车，我们就进行了<code>telnet</code>的命令模式，<code>telnet</code>常见的命令：</p>
+<h5><span id="telnet常见命令">telnet常见命令</span></h5><p>当我们执行输入<code>telnet</code>后回车，我们就进行了<code>telnet</code>的命令模式，<code>telnet</code>常见的命令：</p>
 <ol>
 <li><code>logout：强制退出远程登录用户并关闭连接；</code></li>
 <li><code>open：新打开一个连接；</code></li>
@@ -460,7 +460,7 @@
 <li><code>quit：退出telnet；</code></li>
 <li><code>z：挂起telnet；</code></li>
 </ol>
-<h3 id="rsh远程登录"><a href="#rsh远程登录" class="headerlink" title="rsh远程登录"></a>rsh远程登录</h3><ol>
+<h3><span id="rsh远程登录">rsh远程登录</span></h3><ol>
 <li><p><code>更新软件源：sudo apt-get update</code></p>
 </li>
 <li><p><code>安装Rsh服务器：sudo apt-get install rsh-server</code></p>
@@ -538,6 +538,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -590,12 +596,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -614,13 +614,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                    <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
                 </span>
             </li>
             
@@ -632,7 +638,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
                 </span>
             </li>
             
@@ -644,31 +656,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
                 </span>
             </li>
             
@@ -701,97 +701,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 14.349687079429208px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 13.230571085055878px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.362899561499333px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.287297139724426px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 13.07817507879695px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.988764888392968px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 9.820364549246301px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 8.16521331517662px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 17.69483592541522px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 8.517823647429202px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 12.901171925690345px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 17.73043028519875px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 18.992771578237093px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 10.195498822121902px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.110292436608344px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 15.217370231066525px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 15.841002193957532px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 18.627071382148035px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 13.925262008702038px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 15.984395241905109px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 19.624675535825812px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 16.221363884466818px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.122979930195267px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 9.172762074672011px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 10.585256944449057px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 10.895211523268229px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 12.485423442259663px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 8.755954084393451px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 8.321500917724434px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 17.982035044317925px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 9.081103763452905px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 19.282893483505198px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.957135275247749px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 9.888375349550437px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.442498994761827px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 13.416498188675972px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.465033650074425px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 8.655038838676155px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 8.744512702301797px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 19.150902142315875px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.349634359099966px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 17.409969080118906px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 18.020597735010522px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 10.739393885289969px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 14.04871897410955px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 12.317962669736318px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 9.365011627694326px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 15.485586132071122px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 13.710926386101725px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 9.101147410371448px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 15.43612906192517px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 16.91857988328988px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 12.408645712662645px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 15.998945256338297px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 9.824296807520486px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 13.522937841011663px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 8.792329415702346px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 12.846465185681955px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 16.208915135322897px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 15.00787619807431px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 13.656264942073765px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 9.77582527152127px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 18.176851831457956px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 16.83827645852425px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 10.72901335845668px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 15.470205341661067px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 11.76938014081365px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 17.52043568042831px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 17.527211614505873px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 19.242420767821105px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 13.367318983213387px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 17.8712672648226px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 14.635636621287649px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 13.646925836150032px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 9.485404392968466px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.61393998548575px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 11.22783492037004px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 13.330037859375068px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.521780939606051px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 16.64438095372317px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 9.404176216776962px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 14.067778039808145px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.97427667370092px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 13.225801950557873px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 12.282348497230885px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 11.08423521987184px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 16.800617032731317px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 17.66166574134696px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 9.435511103742805px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 9.761455533608801px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 13.234504401011227px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 17.84146436950384px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 

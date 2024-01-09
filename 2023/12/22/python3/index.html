@@ -251,14 +251,14 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>在计算机 中要操作文件一共包含三个步骤：<br>1.打开文件</p>
+        <h1><span id="文件操作">文件操作</span></h1><p>在计算机 中要操作文件一共包含三个步骤：<br>1.打开文件</p>
 <p>2.读、写文件</p>
 <ul>
 <li>读 将文件内容读入内容</li>
 <li>写 将内存内容写入文件</li>
 </ul>
 <p>3.关闭文件</p>
-<h2 id="文件打开与关闭"><a href="#文件打开与关闭" class="headerlink" title="文件打开与关闭"></a>文件打开与关闭</h2><p>使用Python对文件进行读和写。为此，使用合适的模式打开文件</p>
+<h2><span id="文件打开与关闭">文件打开与关闭</span></h2><p>使用Python对文件进行读和写。为此，使用合适的模式打开文件</p>
 <p>1，open 函数负责打开文件，并且返回文件对象</p>
 <p>2，read &#x2F;write &#x2F; close 三个方法都需要通过文件对象 来调用</p>
 <p>read方法——读取文件</p>
@@ -306,41 +306,41 @@
 </tbody></table>
 </li>
 </ul>
-<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>在python中，使用open函数，可以打开已经存在的文件，或者创建一个新文件，open（文件名，访问模式）</p>
+<h3><span id="打开文件">打开文件</span></h3><p>在python中，使用open函数，可以打开已经存在的文件，或者创建一个新文件，open（文件名，访问模式）</p>
 <p>f &#x3D; open(‘test.txt’,’w’)</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223174721064.png" alt="image-20231223174721064"></p>
 <p>没有找到‘test.txt’文件，所以新建了‘test.txt’文件。</p>
-<h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h3><p>close()<br>示例如下：</p>
+<h3><span id="关闭文件">关闭文件</span></h3><p>close()<br>示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#新建一个文件，文件名为：test.txt</span><br>f = <span class="hljs-built_in">open</span>(“text.txt”,”w”)<br>f.colse()<span class="hljs-comment">#关闭这个文件</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="写数据（write）"><a href="#写数据（write）" class="headerlink" title="写数据（write）"></a>写数据（write）</h3><p>  三种写入模式</p>
+<h2><span id="文件读写">文件读写</span></h2><h3><span id="写数据write">写数据（write）</span></h3><p>  三种写入模式</p>
 <p>​		覆盖模式（“w”）：打开文件并将内容写入文件，如果文件存在，则覆盖原有内容。如果文件不存在则创建一个新的文件。<br>​		追加模式（“a”）：打开文件并将内容写入文件，如果文件存在，则在文件末尾添加内容。如果文件不存在则创建一个新的文件。<br>​		读写模式（“r+”）：打开文件供读取和写入，如果文件存在，则覆盖原有内容。如果文件不存在，将抛出FileNotFoundError异常。</p>
 <p>使用write()可以完后向文件写入数据<br>f &#x3D; open(“test.txt”,”w”) #打开文件，w模式（写模式），文件不存在就新建<br>f.write(“hello world,I am here!”)   #将字符串写入文件中<br>f.close()   #关闭文件</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182211574.png" alt="image-20231223182211574"></p>
 <p>写入字节数据<br>使用write()方法将字节数据写入文件。<br>可以使用encode()方法将字符串转换为字节数据进行写入。</p>
-<h1 id="写入字节数据"><a href="#写入字节数据" class="headerlink" title="写入字节数据"></a>写入字节数据</h1><p><code>wi</code>th open(“file.txt”, “wb”) as file:<code>     </code>content &#x3D; “Hello, World!\n”<code>     file.write(content.encode(&quot;utf-8&quot;))</code></p>
+<h1><span id="写入字节数据">写入字节数据</span></h1><p><code>wi</code>th open(“file.txt”, “wb”) as file:<code>     </code>content &#x3D; “Hello, World!\n”<code>     file.write(content.encode(&quot;utf-8&quot;))</code></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223185100999.png" alt="image-20231223185100999"></p>
-<h3 id="读数据（read）"><a href="#读数据（read）" class="headerlink" title="读数据（read）"></a>读数据（read）</h3><p>  使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度(单位是字节)，如果没有传入num，那么就表示读取文件中的所有数据</p>
+<h3><span id="读数据read">读数据（read）</span></h3><p>  使用read(num)可以从文件中读取数据，num表示要从文件中读取的数据的长度(单位是字节)，如果没有传入num，那么就表示读取文件中的所有数据</p>
 <p><code>#读：read方法，读取指定的字符，开始时定位在文件头部，每执行一次向后移动指定字符数</code><br><code>f = open(&quot;test.txt&quot;,&quot;r&quot;)</code><br><code>content = f.read(5) #一次读五个字符</code><br><code>print(content)</code><br><code>print(&#39;-&#39;*30)</code><br><code>content = f.read()</code><br><code>print(content)</code><br><code>f.close()</code></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182632326.png" alt="image-20231223182632326"></p>
-<h3 id="读数据（readlines）"><a href="#读数据（readlines）" class="headerlink" title="读数据（readlines）"></a>读数据（readlines）</h3><p>​	就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性的读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
+<h3><span id="读数据readlines">读数据（readlines）</span></h3><p>​	就像read没有参数时一样，readlines可以按照行的方式把整个文件中的内容进行一次性的读取，并且返回的是一个列表，其中每一行的数据为一个元素</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223182915395.png" alt="image-20231223182915395"></p>
-<h4 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>    <br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> os.scandir():<br>    <span class="hljs-built_in">print</span>(file.stat())<br>    os.stat(文件名）<br></code></pre></td></tr></table></figure>
+<h4><span id="获取文件信息">获取文件信息</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>    <br><span class="hljs-keyword">for</span> file <span class="hljs-keyword">in</span> os.scandir():<br>    <span class="hljs-built_in">print</span>(file.stat())<br>    os.stat(文件名）<br></code></pre></td></tr></table></figure>
 
-<h2 id="文件的相关操作"><a href="#文件的相关操作" class="headerlink" title="文件的相关操作"></a>文件的相关操作</h2><p>  有些时候，需要对文件进行重命名、删除一些操作，python的os模块中都有这些功能</p>
-<h3 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h3><p>  os模块中的rename()可以完成对文件的重命名操作rename(需要修改的文件名，新的文件名)text.txt被改为了ppt.txt。</p>
+<h2><span id="文件的相关操作">文件的相关操作</span></h2><p>  有些时候，需要对文件进行重命名、删除一些操作，python的os模块中都有这些功能</p>
+<h3><span id="文件重命名">文件重命名</span></h3><p>  os模块中的rename()可以完成对文件的重命名操作rename(需要修改的文件名，新的文件名)text.txt被改为了ppt.txt。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223183606038.png" alt="image-20231223183606038"></p>
-<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>  os中的remove()可以完成对文件的删除操作remove(待删除的文件名)，删除ppt.txt文件。</p>
+<h3><span id="删除文件">删除文件</span></h3><p>  os中的remove()可以完成对文件的删除操作remove(待删除的文件名)，删除ppt.txt文件。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os <br>os.remove(<span class="hljs-string">&quot;ppt.txt&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223183755884.png" alt="image-20231223183755884"></p>
-<h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.mkdir(<span class="hljs-string">&quot;张三&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h3><span id="创建文件夹">创建文件夹</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.mkdir(<span class="hljs-string">&quot;张三&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>创建一个名叫张三的文件夹。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223184102457.png" alt="image-20231223184102457"></p>
-<h3 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a>获取当前目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.getcwd()<br></code></pre></td></tr></table></figure>
+<h3><span id="获取当前目录">获取当前目录</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.getcwd()<br></code></pre></td></tr></table></figure>
 
-<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p>两种方式使用：</p>
+<h3><span id="移动文件">移动文件</span></h3><p>两种方式使用：</p>
 <ul>
 <li>第二个参数是文件夹位置，则移动到文件夹下面</li>
 <li>第二个参数是文件路径，移动到这个路径并且重命名<br>注意：如果是文件夹后面一定要加<code>&#39;/&#39;</code>。</li>
@@ -349,19 +349,19 @@
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> shutil  <br>shutil.<span class="hljs-keyword">move</span>(<span class="hljs-string">&#x27;file.txt&#x27;</span>,<span class="hljs-string">&#x27;张三&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223185744292.png" alt="image-20231223185744292"></p>
-<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><p>shutil.copy(要复制的文件，要复制到的位置)</p>
+<h3><span id="复制文件">复制文件</span></h3><p>shutil.copy(要复制的文件，要复制到的位置)</p>
 <p><code>import shutil</code><br><code>shutil.copy(&#39;file1.txt&#39;,&#39;./张三&#39;)</code>      #复制到路径下<br><code>shutil.copy(&#39;file1.txt&#39;,&#39;./张三/f2&#39;)</code>   #复制到路径下并重命名</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223190241909.png" alt="image-20231223190241909"></p>
-<h4 id="遍历目录下所有的文件"><a href="#遍历目录下所有的文件" class="headerlink" title="遍历目录下所有的文件"></a>遍历目录下所有的文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> dirpath, dirnames, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&#x27;./&#x27;</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;发现文件夹：<span class="hljs-subst">&#123;dirpath&#125;</span>&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(files)<br></code></pre></td></tr></table></figure>
+<h4><span id="遍历目录下所有的文件">遍历目录下所有的文件</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">for</span> dirpath, dirnames, files <span class="hljs-keyword">in</span> os.walk(<span class="hljs-string">&#x27;./&#x27;</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;发现文件夹：<span class="hljs-subst">&#123;dirpath&#125;</span>&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(files)<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223190642969.png" alt="image-20231223190642969"></p>
-<h3 id="创建临时文件"><a href="#创建临时文件" class="headerlink" title="创建临时文件"></a>创建临时文件</h3><p><code>TemporaryFile()</code></p>
+<h3><span id="创建临时文件">创建临时文件</span></h3><p><code>TemporaryFile()</code></p>
 <p><code>from tempfile import TemporaryFile</code><br><code>f = TemporaryFile(&#39;w+&#39;)</code><br><code>f.write(&#39;Hello World&#39;)</code><br><code>f.seek(0)</code><br><code>data = f.readlines()</code><br><code>print(data)</code><br><code>f.close()</code></p>
 <p><code>with TempooraryFile(&#39;w+&#39;) as f:</code><br>    <code>f.write(&#39;Hello World&#39;)</code><br>    <code>f.seek(0)</code><br>    <code>data = f.readlines()</code><br>    <code>print(data)</code><br>‘w+’表示写入及读取文件 .seek(0)表示回到文件开头位置 程序运行完后会自动删掉临时文件</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231223193059595.png" alt="image-20231223193059595"></p>
-<h4 id="匹配文件名"><a href="#匹配文件名" class="headerlink" title="匹配文件名"></a>匹配文件名</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> fnmatch<br>    <br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>, <span class="hljs-string">&#x27;le*1.py&#x27;</span>))  <span class="hljs-comment"># True</span><br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>,<span class="hljs-string">&#x27;le*[0-9].py&#x27;</span>)) <span class="hljs-comment"># True</span><br></code></pre></td></tr></table></figure>
+<h4><span id="匹配文件名">匹配文件名</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> fnmatch<br>    <br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>, <span class="hljs-string">&#x27;le*1.py&#x27;</span>))  <span class="hljs-comment"># True</span><br><span class="hljs-built_in">print</span>(fnmatch.fnmatch(<span class="hljs-string">&#x27;lesson1.py&#x27;</span>,<span class="hljs-string">&#x27;le*[0-9].py&#x27;</span>)) <span class="hljs-comment"># True</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="匹配文件名称"><a href="#匹配文件名称" class="headerlink" title="匹配文件名称"></a>匹配文件名称</h4><p>（1）字符串内置方法<br>.startswith(),.endswith()</p>
+<h4><span id="匹配文件名称">匹配文件名称</span></h4><p>（1）字符串内置方法<br>.startswith(),.endswith()</p>
 <p>（2）glob模块<br><code>import glob</code><br><code>print(glob.glob(&#39;*.py&#39;))</code><br><code>print(glob.glob(&#39;**/.txt&#39;,recursive=True))</code></p>
 <table>
 <thead>
@@ -388,7 +388,7 @@
 </tr>
 </tbody></table>
 <p>用<code>**</code>表示任意层文件或文件夹 recursive＝True会不断进入文件夹内</p>
-<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>try:</p>
+<h4><span id="异常处理">异常处理</span></h4><p>try:</p>
 <pre><code>with open(&#39;file.txt&#39;, &#39;r&#39;) as file:
 
     content = file.read()
@@ -459,6 +459,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -511,12 +517,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -535,13 +535,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/22/python3/">python3</a>
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
                 </span>
             </li>
             
@@ -553,19 +553,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
             
@@ -577,19 +577,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
                 </span>
             </li>
             
@@ -622,97 +622,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 8.013542279745923px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 8.048106812731248px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.134489832260352px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.740163510028673px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 17.86688039216672px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 18.417084073472033px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.160601608741388px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 19.738558893725894px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 12.294618829909414px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 19.238751595378382px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 19.868714858200583px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 9.544449150717845px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 17.40666641671799px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.784291324455422px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 13.645668465273786px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 15.062336662087823px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.916532957323454px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 13.22645150923714px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 10.741662123480612px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 16.83160487046992px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 12.590447874694902px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 8.894791722332666px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 17.495216703052px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 16.65002121010331px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 12.792726710049845px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.259055514433916px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 15.099397040081996px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.61596029698626px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 11.634368520750803px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.84466171625952px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 10.981085628603324px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 11.213922986952227px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.750232648490588px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 14.243573071100197px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.929159917365535px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 11.457256775497887px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 8.178826423153312px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 16.988778281181574px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 12.615345048776566px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 14.015966599794787px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 10.858625933728808px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 18.374860123288226px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 11.941956102405294px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.429268379657138px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 13.58551376944123px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 9.089924687950948px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 10.705666690320548px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 12.132126903752086px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 8.696706654300538px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 11.9072562841851px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 10.615415576957474px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 8.004012648463881px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 10.093762519259556px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 14.505360865228415px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 16.50961878286257px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 18.658325309114748px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 14.859057967217481px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 12.588447140160063px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 9.420432412570415px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 13.310327461686125px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 17.477363501827558px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 14.583836955228193px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 14.899557512199559px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 16.81696499035589px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 19.401087281209865px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 16.058339511169372px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 10.752274543486463px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 14.407370503567734px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 13.492106538129319px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 13.647106203042755px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 16.04655679432976px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 17.646158082430606px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 13.94746965387423px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 10.78455003448504px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 17.255608172499826px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 17.933304518144645px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 17.36111042732748px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.581962279196548px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 19.546181614998464px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 12.9214738905557px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 15.703472497113774px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 14.65663019894574px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 12.384197321743097px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 19.431695102478766px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 19.301969100496123px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 8.493828963952367px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 10.907667025596197px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 17.697941136796608px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 15.630919593421915px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 16.29917734901492px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 9.841469858902379px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 8.22358963171476px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 

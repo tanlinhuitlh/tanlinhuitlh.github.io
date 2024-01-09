@@ -259,10 +259,10 @@
         </center>
     </div>
     <div class="content-article">
-        <h1 id="php函数"><a href="#php函数" class="headerlink" title="php函数"></a>php函数</h1><p>​	PHP 的真正威力源自于它的函数。</p>
+        <h1><span id="php函数">php函数</span></h1><p>​	PHP 的真正威力源自于它的函数。</p>
 <p>​	在 PHP 中，提供了超过 1000 个内建的函数。如要在页面加载时执行脚本，可以把它放到函数里。</p>
 <p>函数是通过调用函数来执行的。可以在页面的任何位置调用函数。</p>
-<h2 id="创建-PHP-函数"><a href="#创建-PHP-函数" class="headerlink" title="创建 PHP 函数"></a>创建 PHP 函数</h2><p>函数是通过调用函数来执行的。</p>
+<h2><span id="创建-php-函数">创建 PHP 函数</span></h2><p>函数是通过调用函数来执行的。</p>
 <p>​	语法</p>
 <?php function functionName() {    // 要执行的代码 } ?>
 
@@ -271,20 +271,20 @@
 <li>函数的名称应该提示出它的功能</li>
 <li>函数名称以字母或下划线开头（不能以数字开头）</li>
 </ul>
-<h2 id="PHP-函数-添加参数"><a href="#PHP-函数-添加参数" class="headerlink" title="PHP 函数 - 添加参数"></a>PHP 函数 - 添加参数</h2><p>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
+<h2><span id="php-函数-添加参数">PHP 函数 - 添加参数</span></h2><p>为了给函数添加更多的功能，我们可以添加参数，参数类似变量。</p>
 <p>​	参数就在函数名称后面的一个括号内指定。<br>‘’’<br>&lt;?php<br>function writeName($fname)<br>{<br>​    echo $fname . “ Refsnes.<br>“;<br>}</p>
 <p>echo “My name is “;<br>writeName(“Kai Jim”);<br>echo “My sister’s name is “;<br>writeName(“Hege”);<br>echo “My brother’s name is “;<br>writeName(“Stale”);<br>?&gt;<br>‘’’</p>
 <p>运行结果</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213170035927.png" alt="image-20231213170035927"></p>
-<h2 id="PHP-函数-返回值"><a href="#PHP-函数-返回值" class="headerlink" title="PHP 函数 - 返回值"></a>PHP 函数 - 返回值</h2><p>如需让函数返回一个值，请使用 return 语句。</p>
+<h2><span id="php-函数-返回值">PHP 函数 - 返回值</span></h2><p>如需让函数返回一个值，请使用 return 语句。</p>
 <p>实例</p>
 <p><code>&lt;?php function add($x,$y) &#123;    $total=$x+$y;    return $total; &#125;  echo &quot;1 + 16 = &quot; . add(1,16); ?&gt;</code></p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213170321693.png" alt="image-20231213170321693"></p>
-<h2 id="PHP-变量函数"><a href="#PHP-变量函数" class="headerlink" title="PHP 变量函数"></a>PHP 变量函数</h2><p>变量函数是指在 PHP 中，将一个变量作为函数名来调用的函数。</p>
+<h2><span id="php-变量函数">PHP 变量函数</span></h2><p>变量函数是指在 PHP 中，将一个变量作为函数名来调用的函数。</p>
 <p>变量函数可以让我们在运行时动态地决定调用哪个函数。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;In foo()&lt;br /&gt;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"><span class="hljs-variable">$arg</span> = <span class="hljs-string">&#x27;&#x27;</span></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;In bar(); argument was &#x27;<span class="hljs-subst">$arg</span>&#x27;.&lt;br /&gt;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-comment">// 使用 echo 的包装函数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoit</span>(<span class="hljs-params"><span class="hljs-variable">$string</span></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$string</span>;<br>&#125;<br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;foo&#x27;</span>;<br><span class="hljs-variable">$func</span>();        <span class="hljs-comment">// 调用 foo()</span><br><br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;bar&#x27;</span>;<br><span class="hljs-variable">$func</span>(<span class="hljs-string">&#x27;test&#x27;</span>);  <span class="hljs-comment">// 调用 bar()</span><br><br><span class="hljs-variable">$func</span> = <span class="hljs-string">&#x27;echoit&#x27;</span>;<br><span class="hljs-variable">$func</span>(<span class="hljs-string">&#x27;test&#x27;</span>);  <span class="hljs-comment">// 调用 echoit()</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h1 id="登录验证"><a href="#登录验证" class="headerlink" title="登录验证"></a>登录验证</h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs awk">&lt;?php<br>header(<span class="hljs-string">&#x27;content-type: text/html; charset=utf-8&#x27;</span>);<br>session_start();<br><br><span class="hljs-keyword">if</span>(isset(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;submit&#x27;</span>]))&#123;<br>    <span class="hljs-variable">$u</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);<br>    <span class="hljs-variable">$p</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>]);<br> <span class="hljs-variable">$link</span>=mysqli_connect(<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;security&quot;</span>)or <span class="hljs-keyword">exit</span>(<span class="hljs-string">&quot;Error connecting&quot;</span>);<br>      mysqli_query(<span class="hljs-variable">$link</span>,<span class="hljs-string">&quot;set names utf8&quot;</span>);<br>  <span class="hljs-variable">$sql</span>=  <span class="hljs-string">&quot;select * from users where username=&#x27;$u&#x27; and password=&#x27;$p&#x27;&quot;</span>;<br>  <span class="hljs-variable">$result</span>=mysqli_query(<span class="hljs-variable">$link</span>, <span class="hljs-variable">$sql</span>) ;<br>  <span class="hljs-keyword">if</span>(mysqli_num_rows(<span class="hljs-variable">$result</span>)&gt;=<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]=<span class="hljs-variable">$u</span>;       <br>        setcookie(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-variable">$p</span>,time()+<span class="hljs-number">7</span>*<span class="hljs-number">12</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>);<br>        header(<span class="hljs-string">&#x27;Location:zhuye.php&#x27;</span>);<br>        <span class="hljs-keyword">exit</span>();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        echo <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        echo <span class="hljs-string">&#x27;用户名或密码错误!请重新输入!&#x27;</span>;<br>		<span class="hljs-regexp">//</span>sleep(<span class="hljs-number">3</span>);<br>		echo <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;./index.php&quot;&gt;返回&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1><span id="登录验证">登录验证</span></h1><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs awk">&lt;?php<br>header(<span class="hljs-string">&#x27;content-type: text/html; charset=utf-8&#x27;</span>);<br>session_start();<br><br><span class="hljs-keyword">if</span>(isset(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;submit&#x27;</span>]))&#123;<br>    <span class="hljs-variable">$u</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;username&#x27;</span>]);<br>    <span class="hljs-variable">$p</span> = trim(<span class="hljs-variable">$_POST</span>[<span class="hljs-string">&#x27;password&#x27;</span>]);<br> <span class="hljs-variable">$link</span>=mysqli_connect(<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;root&quot;</span>,<span class="hljs-string">&quot;security&quot;</span>)or <span class="hljs-keyword">exit</span>(<span class="hljs-string">&quot;Error connecting&quot;</span>);<br>      mysqli_query(<span class="hljs-variable">$link</span>,<span class="hljs-string">&quot;set names utf8&quot;</span>);<br>  <span class="hljs-variable">$sql</span>=  <span class="hljs-string">&quot;select * from users where username=&#x27;$u&#x27; and password=&#x27;$p&#x27;&quot;</span>;<br>  <span class="hljs-variable">$result</span>=mysqli_query(<span class="hljs-variable">$link</span>, <span class="hljs-variable">$sql</span>) ;<br>  <span class="hljs-keyword">if</span>(mysqli_num_rows(<span class="hljs-variable">$result</span>)&gt;=<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]=<span class="hljs-variable">$u</span>;       <br>        setcookie(<span class="hljs-string">&#x27;password&#x27;</span>,<span class="hljs-variable">$p</span>,time()+<span class="hljs-number">7</span>*<span class="hljs-number">12</span>*<span class="hljs-number">60</span>*<span class="hljs-number">60</span>);<br>        header(<span class="hljs-string">&#x27;Location:zhuye.php&#x27;</span>);<br>        <span class="hljs-keyword">exit</span>();<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        echo <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        echo <span class="hljs-string">&#x27;用户名或密码错误!请重新输入!&#x27;</span>;<br>		<span class="hljs-regexp">//</span>sleep(<span class="hljs-number">3</span>);<br>		echo <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;./index.php&quot;&gt;返回&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ol>
 <li><code>header(&#39;content-type: text/html; charset=utf-8&#39;);</code><ul>
@@ -358,12 +358,12 @@
 <li>输出一个返回链接，点击后将重定向到 <code>index.php</code> 页面。</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213173658448.png" alt="image-20231213173658448"></p>
-<h1 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./comment.php&quot;</span>);<br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./upload.php&quot;</span>);<br><span class="hljs-title function_ invoke__">session_start</span>();<br><br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]))&#123;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;当前登录用户:&#x27;</span>.<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>].<span class="hljs-string">&#x27;&#x27;</span>; <br>	<br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;logout&#x27;</span>])) &#123;<br>    <span class="hljs-comment">// 清除会话数据</span><br>    <span class="hljs-title function_ invoke__">session_unset</span>();<br>    <span class="hljs-title function_ invoke__">session_destroy</span>();<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;您已成功注销。&lt;br&gt;&quot;</span>;<br>	<span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;?logout=true&quot;&gt;注销&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;错误!&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h1><span id="主页">主页</span></h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./comment.php&quot;</span>);<br><span class="hljs-keyword">include</span>(<span class="hljs-string">&quot;./upload.php&quot;</span>);<br><span class="hljs-title function_ invoke__">session_start</span>();<br><br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>]))&#123;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;当前登录用户:&#x27;</span>.<span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;user&#x27;</span>].<span class="hljs-string">&#x27;&#x27;</span>; <br>	<br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;logout&#x27;</span>])) &#123;<br>    <span class="hljs-comment">// 清除会话数据</span><br>    <span class="hljs-title function_ invoke__">session_unset</span>();<br>    <span class="hljs-title function_ invoke__">session_destroy</span>();<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;您已成功注销。&lt;br&gt;&quot;</span>;<br>	<span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;h1&gt;&lt;a href=&quot;?logout=true&quot;&gt;注销&lt;/a&gt;&lt;/h1&gt;&#x27;</span>;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;错误!&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Location:index.php&#x27;</span>);<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 <p>include(“.&#x2F;comment.php”);<br>include(“.&#x2F;upload.php”);</p>
 <p>代码将<code>comment.php</code>文件包含进来。这个文件包含了关于评论功能的相关代码或设置。</p>
 <p>代码将<code>upload.php</code>文件包含进来。这个文件包含了关于文件上传功能的相关代码或设置。</p>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231214103538242.png" alt="image-20231214103538242"></p>
-<h1 id="接收和显示评论"><a href="#接收和显示评论" class="headerlink" title="接收和显示评论"></a>接收和显示评论</h1><pre><code>&lt;!DOCTYPE html&gt;
+<h1><span id="接收和显示评论">接收和显示评论</span></h1><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;body&gt;
   &lt;h1&gt;历史评论&lt;/h1&gt;
@@ -427,7 +427,7 @@ mysqli_close($link);
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213174455256.png" alt="image-20231213174455256"></p>
-<h1 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="hljs-string">&lt;label for=&quot;upload&quot;&gt;上传你的头像&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;file&quot; id=&quot;upload&quot; type=&quot;file&quot; &gt;</span><br><span class="hljs-string">&lt;label for=&quot;submit&quot;  &gt;文件上传&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;submit&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;</span><br><span class="hljs-string">&lt;h1&gt;下面是接收到的文件&lt;/h1&gt;</span><br><span class="hljs-string">&lt;/form&gt;</span><br><span class="hljs-string">&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>]))&#123;<br>    <span class="hljs-variable">$upload_dir</span> = <span class="hljs-string">&quot;uploads&quot;</span>;<br>    <span class="hljs-variable">$file_name</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;name&quot;</span>];<br>    <span class="hljs-variable">$file_type</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;type&quot;</span>];<br>    <span class="hljs-variable">$file_size</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;size&quot;</span>];<br>    <span class="hljs-variable">$file_tmp</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;tmp_name&quot;</span>];<br>    <span class="hljs-variable">$target_path</span> = <span class="hljs-variable">$upload_dir</span>.<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$file_name</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">move_uploaded_file</span>(<span class="hljs-variable">$file_tmp</span>, <span class="hljs-variable">$target_path</span>))&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传成功&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件类型: &quot;</span> . <span class="hljs-variable">$file_type</span> . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件大小: &quot;</span> . (<span class="hljs-variable">$file_size</span> / <span class="hljs-number">1024</span>) . <span class="hljs-string">&quot; kB&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件存储的位置: &quot;</span> . <span class="hljs-variable">$target_path</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传失败&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>    &#125;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=&#x27;<span class="hljs-subst">$target_path</span>.&#x27;&gt;&quot;</span>;<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+<h1><span id="上传文件">上传文件</span></h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;form action=&quot;&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="hljs-string">&lt;label for=&quot;upload&quot;&gt;上传你的头像&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;file&quot; id=&quot;upload&quot; type=&quot;file&quot; &gt;</span><br><span class="hljs-string">&lt;label for=&quot;submit&quot;  &gt;文件上传&lt;/label&gt;</span><br><span class="hljs-string">&lt;input name=&quot;submit&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;</span><br><span class="hljs-string">&lt;h1&gt;下面是接收到的文件&lt;/h1&gt;</span><br><span class="hljs-string">&lt;/form&gt;</span><br><span class="hljs-string">&#x27;</span>;<br><span class="hljs-title function_ invoke__">header</span>(<span class="hljs-string">&#x27;Content-Type: text/html; charset=utf-8&#x27;</span>);<br><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>]))&#123;<br>    <span class="hljs-variable">$upload_dir</span> = <span class="hljs-string">&quot;uploads&quot;</span>;<br>    <span class="hljs-variable">$file_name</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;name&quot;</span>];<br>    <span class="hljs-variable">$file_type</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;type&quot;</span>];<br>    <span class="hljs-variable">$file_size</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;size&quot;</span>];<br>    <span class="hljs-variable">$file_tmp</span> = <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&quot;file&quot;</span>][<span class="hljs-string">&quot;tmp_name&quot;</span>];<br>    <span class="hljs-variable">$target_path</span> = <span class="hljs-variable">$upload_dir</span>.<span class="hljs-string">&#x27;/&#x27;</span>.<span class="hljs-variable">$file_name</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">move_uploaded_file</span>(<span class="hljs-variable">$file_tmp</span>, <span class="hljs-variable">$target_path</span>))&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传成功&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件类型: &quot;</span> . <span class="hljs-variable">$file_type</span> . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件大小: &quot;</span> . (<span class="hljs-variable">$file_size</span> / <span class="hljs-number">1024</span>) . <span class="hljs-string">&quot; kB&lt;br&gt;&quot;</span>;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;文件存储的位置: &quot;</span> . <span class="hljs-variable">$target_path</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;上传失败&quot;</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>    &#125;<br>	<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;img src=&#x27;<span class="hljs-subst">$target_path</span>.&#x27;&gt;&quot;</span>;<br>&#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20231213190546540.png" alt="image-20231213190546540"></p>
 <p>使用 <code>enctype=&quot;multipart/form-data&quot;</code> 来确保可以上传文件。</p>
@@ -440,7 +440,7 @@ mysqli_close($link);
 <li><code>$file_tmp</code>：上传文件的临时路径。</li>
 </ul>
 <p><code>move_uploaded_file($file_tmp, $target_path)</code> 将临时文件移动到目标路径。如果移动成功，则显示成功消息和文件的详细信息；否则，显示上传失败的消息。</p>
-<p><img src='$target_path'> 显示上传的图片。</p>
+<p><img src="$target_path"> 显示上传的图片。</p>
 
     </div>
 </article>
@@ -502,6 +502,12 @@ mysqli_close($link);
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
@@ -554,12 +560,6 @@ mysqli_close($link);
                 </span>
             </li>
             
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
-                </span>
-            </li>
-            
         </ul>
     </div>
 </aside>
@@ -578,7 +578,25 @@ mysqli_close($link);
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/09/python%E5%AD%A6%E4%B9%A01/">python列表元组</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
                 </span>
             </li>
             
@@ -590,49 +608,31 @@ mysqli_close($link);
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/22/python3/">python3</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
                 </span>
             </li>
             
@@ -665,97 +665,97 @@ mysqli_close($link);
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Linux/" style="font-size: 9.010457150383022px;" class="tag-cloud-link">Linux</a>
+    <a href="/tags/Linux/" style="font-size: 19.18169692093634px;" class="tag-cloud-link">Linux</a>
     
-    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 12.742337900452863px;" class="tag-cloud-link">基础知识</a>
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 12.714383411342332px;" class="tag-cloud-link">基础知识</a>
     
-    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 13.503854307215288px;" class="tag-cloud-link">DNS域名解析</a>
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 10.874455045665961px;" class="tag-cloud-link">DNS域名解析</a>
     
-    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 8.705195124952606px;" class="tag-cloud-link">学习</a>
+    <a href="/tags/HTML/" style="font-size: 8.670753014613856px;" class="tag-cloud-link">HTML</a>
     
-    <a href="/tags/HTML/" style="font-size: 11.396599572608185px;" class="tag-cloud-link">HTML</a>
+    <a href="/tags/CSS/" style="font-size: 17.68818472530407px;" class="tag-cloud-link">CSS</a>
     
-    <a href="/tags/CSS/" style="font-size: 18.999173658974257px;" class="tag-cloud-link">CSS</a>
+    <a href="/tags/php/" style="font-size: 11.606119938523026px;" class="tag-cloud-link">php</a>
     
-    <a href="/tags/php/" style="font-size: 15.13296827842749px;" class="tag-cloud-link">php</a>
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 10.163156042231822px;" class="tag-cloud-link">php函数</a>
     
-    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 15.167802213087803px;" class="tag-cloud-link">php函数</a>
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 8.918480552695637px;" class="tag-cloud-link">简单网站功能实现</a>
     
-    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 19.027134783492173px;" class="tag-cloud-link">简单网站功能实现</a>
+    <a href="/tags/html/" style="font-size: 9.885919214360964px;" class="tag-cloud-link">html</a>
     
-    <a href="/tags/PHP/" style="font-size: 16.985037992564653px;" class="tag-cloud-link">PHP</a>
+    <a href="/tags/postman/" style="font-size: 15.445133657014964px;" class="tag-cloud-link">postman</a>
     
-    <a href="/tags/Navicat/" style="font-size: 19.4108233302606px;" class="tag-cloud-link">Navicat</a>
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 15.669013620106632px;" class="tag-cloud-link">文件操作</a>
     
-    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 8.922547396820919px;" class="tag-cloud-link">安装</a>
+    <a href="/tags/python/" style="font-size: 15.560465730845989px;" class="tag-cloud-link">python</a>
     
-    <a href="/tags/html/" style="font-size: 12.08797223843467px;" class="tag-cloud-link">html</a>
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 15.281600379517162px;" class="tag-cloud-link">变量</a>
     
-    <a href="/tags/postman/" style="font-size: 13.31005055229442px;" class="tag-cloud-link">postman</a>
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 18.893138631205076px;" class="tag-cloud-link">字符串</a>
     
-    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 9.749825304874445px;" class="tag-cloud-link">文件操作</a>
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 9.32494893373137px;" class="tag-cloud-link">列表</a>
     
-    <a href="/tags/python/" style="font-size: 18.32014112301153px;" class="tag-cloud-link">python</a>
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 14.787408439022808px;" class="tag-cloud-link">元组</a>
     
-    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 17.71097595062624px;" class="tag-cloud-link">变量</a>
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 17.160139053479234px;" class="tag-cloud-link">if条件判断</a>
     
-    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 16.60966440673134px;" class="tag-cloud-link">字符串</a>
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.30010922280858px;" class="tag-cloud-link">循环语句</a>
     
-    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 19.54486640617128px;" class="tag-cloud-link">列表</a>
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 18.983054534760196px;" class="tag-cloud-link">学习</a>
     
-    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 13.765714020837457px;" class="tag-cloud-link">元组</a>
+    <a href="/tags/PHP/" style="font-size: 15.068148331267675px;" class="tag-cloud-link">PHP</a>
     
-    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 14.550572434194336px;" class="tag-cloud-link">if条件判断</a>
+    <a href="/tags/Navicat/" style="font-size: 11.338496542048805px;" class="tag-cloud-link">Navicat</a>
     
-    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 9.435369391733715px;" class="tag-cloud-link">循环语句</a>
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 14.937365901031697px;" class="tag-cloud-link">安装</a>
     
-    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 14.79234603295117px;" class="tag-cloud-link">sql 注入</a>
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 17.751145866272797px;" class="tag-cloud-link">sqlmap使用</a>
     
-    <a href="/tags/sqlmap/" style="font-size: 9.399078240403178px;" class="tag-cloud-link">sqlmap</a>
+    <a href="/tags/dirsearch/" style="font-size: 19.914899933168687px;" class="tag-cloud-link">dirsearch</a>
     
-    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.38901850926485px;" class="tag-cloud-link">联合查询</a>
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 16.5631183564413px;" class="tag-cloud-link">sql 注入</a>
     
-    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 14.279725463456742px;" class="tag-cloud-link">sql报错函数</a>
+    <a href="/tags/sqlmap/" style="font-size: 16.391016935068066px;" class="tag-cloud-link">sqlmap</a>
     
-    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 14.233430665030788px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 18.656912663708162px;" class="tag-cloud-link">联合查询</a>
     
-    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 11.342140113511597px;" class="tag-cloud-link">sqlmap使用</a>
+    <a href="/tags/pikachu/" style="font-size: 14.152439343389933px;" class="tag-cloud-link">pikachu</a>
     
-    <a href="/tags/dirsearch/" style="font-size: 16.541378677853693px;" class="tag-cloud-link">dirsearch</a>
+    <a href="/tags/virtrualbox/" style="font-size: 17.001398504476555px;" class="tag-cloud-link">virtrualbox</a>
     
-    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.683485077333007px;" class="tag-cloud-link">sql绕过</a>
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 10.794274528644237px;" class="tag-cloud-link">小米范端口扫描</a>
     
-    <a href="/tags/sqlmap-tamper/" style="font-size: 10.162707871772525px;" class="tag-cloud-link">sqlmap tamper</a>
+    <a href="/tags/vue/" style="font-size: 16.767718199075397px;" class="tag-cloud-link">vue</a>
     
-    <a href="/tags/pikachu/" style="font-size: 13.082443807870856px;" class="tag-cloud-link">pikachu</a>
+    <a href="/tags/waf/" style="font-size: 12.809865806494585px;" class="tag-cloud-link">waf</a>
     
-    <a href="/tags/virtrualbox/" style="font-size: 13.12732389109881px;" class="tag-cloud-link">virtrualbox</a>
+    <a href="/tags/BurpSuite/" style="font-size: 9.387242436746483px;" class="tag-cloud-link">BurpSuite</a>
     
-    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 12.122416982406186px;" class="tag-cloud-link">小米范端口扫描</a>
+    <a href="/tags/nmap/" style="font-size: 11.639832325093064px;" class="tag-cloud-link">nmap</a>
     
-    <a href="/tags/vue/" style="font-size: 16.479918322271374px;" class="tag-cloud-link">vue</a>
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 10.690796963952709px;" class="tag-cloud-link">百度谷歌语法</a>
     
-    <a href="/tags/waf/" style="font-size: 11.491056912227968px;" class="tag-cloud-link">waf</a>
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 9.356651888347585px;" class="tag-cloud-link">支付逻辑漏洞</a>
     
-    <a href="/tags/BurpSuite/" style="font-size: 17.575593755672067px;" class="tag-cloud-link">BurpSuite</a>
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 8.60963844092651px;" class="tag-cloud-link">弱口令</a>
     
-    <a href="/tags/nmap/" style="font-size: 18.248696844740035px;" class="tag-cloud-link">nmap</a>
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 9.637036132311387px;" class="tag-cloud-link">博客搭建</a>
     
-    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 19.955834265335707px;" class="tag-cloud-link">百度谷歌语法</a>
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 17.438232757362016px;" class="tag-cloud-link">主题配置</a>
     
-    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 12.380979259571072px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.164047749476165px;" class="tag-cloud-link">sql绕过</a>
     
-    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 18.714459815477753px;" class="tag-cloud-link">弱口令</a>
+    <a href="/tags/sqlmap-tamper/" style="font-size: 17.23521597571262px;" class="tag-cloud-link">sqlmap tamper</a>
     
-    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 8.792140951395982px;" class="tag-cloud-link">博客搭建</a>
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 16.474586903451325px;" class="tag-cloud-link">sql报错函数</a>
     
-    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 17.487515796393346px;" class="tag-cloud-link">主题配置</a>
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 14.800607030387761px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
     
-    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 15.275382885945774px;" class="tag-cloud-link">ip和路由</a>
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 18.148692116365606px;" class="tag-cloud-link">ip和路由</a>
     
-    <a href="/tags/proxifier/" style="font-size: 12.590644631914875px;" class="tag-cloud-link">proxifier</a>
+    <a href="/tags/proxifier/" style="font-size: 19.875194605976816px;" class="tag-cloud-link">proxifier</a>
     
-    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 9.44462474461065px;" class="tag-cloud-link">wireshark抓包</a>
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 15.341763578081087px;" class="tag-cloud-link">wireshark抓包</a>
     
 </div>
                 
