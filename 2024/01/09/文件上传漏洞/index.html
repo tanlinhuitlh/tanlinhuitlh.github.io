@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>文件上传漏洞 | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>文件上传漏洞</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-09
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-09
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2><span id="webshell编写">webshell编写</span></h2><p>​	Webshell是黑客经常使用的一种恶意脚本，其目的是获得对服务器的执行操作权限，比如执行系统命令、窃取用户数据、删除web页面、修改主页等，其危害不言而喻。黑客通常利用常见的漏洞，如SQL注入、远程文件包含(RFI)、FTP，甚至使用跨站点脚本攻击(XSS)等方式作为社会工程攻击的一部分，最终达到控制网站服务器的目的。</p>
+<p>常见的webshell编写语言为asp、jsp和php。</p>
+<h3><span id="webshell常用的php函数">Webshell常用的PHP函数</span></h3><p><strong>system()</strong></p>
+<p>system()函数将命令作为参数，并输出结果。</p>
+<p><strong>exec()</strong></p>
+<p>exec()功能是将命令作为参数，但不输出结果。如果指定了第二个可选参数，则返回结果为数组。否则，如果回显，只显示结果的最后一行。</p>
+<p>用exec()函数执行echo命令，只会输出最后一行命令结果。</p>
+<p>如果指定了第二个参数，则返回结果为数组</p>
+<p><strong>shell_exec()</strong></p>
+<p>shell_exec()函数类似于exec()，但是，其整个输出结果为字符串。</p>
+<p><strong>passthru()</strong></p>
+<p>passthru()执行一个命令并返回原始格式的输出。</p>
+<p><strong>proc_open()</strong></p>
+<p>proc_open()函数可能很难理解。简单地说，我们可以使用proc_open()，创建一个处理程序（流程），实现脚本和要运行的程序之间的通信。</p>
+<p><strong>倒引号</strong></p>
+<p>很多PHP开发人员并没有意识到这一点，但是PHP会首先执行shell命令中倒引号（<code>）内的内容。请注意，倒引号（</code>）和单引号（’）不同。</p>
+<h2><span id="upload-labs-数据包学习-burp使用-yakit使用">upload-labs、数据包学习、burp使用、yakit使用</span></h2><h3><span id="upload-labs">upload-labs</span></h3><h4><span id="upload-labs靶场的安装搭建windows">upload-labs靶场的安装搭建（windows）</span></h4><p>（1）首先当然是需要phpstudy的环境，所以要先下载安装phpstudy。</p>
+<p>（2）然后到github的网址中下载源码的压缩包。</p>
+<pre><code>github网址：https://github.com/Tj1ngwe1/upload-labs
+</code></pre>
+<p>（3）下载后解压缩到phpstudy目录下的WWW子文件夹中，这里要注意把压缩包的名字改成upload-labs，不然<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9D%B6%E5%9C%BA&spm=1001.2101.3001.7020">靶场</a>的页面会显示得不对。</p>
+<p>（4）然后在输入url HTTPS:&#x2F;&#x2F;127.0.0.1&#x2F;upload-labs&#x2F;就可以访问靶场。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240109143437450.png" alt="image-20240109143437450"></p>
+<h3><span id="pass-01前端验证">Pass-01（前端验证）</span></h3><p>因为是进行前端JS校验，因此可以直接在浏览器检查代码把checkFile()函数(即如下图红色框选中的函数)删了或者也可以把红色框改成true，并按回车，即可成功上传php文件,</p>
+<p>也可以f12找到禁用JavaScript</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110192737089.png" alt="image-20240110192737089"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110202137601.png" alt="image-20240110202137601"></p>
+<h3><span id="pass-02mime验证">Pass-02（MIME验证）</span></h3><p>​	分析代码，可以看到，后端PHP代码只对content-type进行了检查<br>使用bp或yakit抓包，修改上传的PHP的content-type为image&#x2F;png</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110202333217.png" alt="image-20240110202333217"></p>
+<h3><span id="pass-03黑名单验证特殊后缀">Pass-03（黑名单验证，特殊后缀）</span></h3><p>分析代码，进行黑名单验证，但是黑名单不全，可以使用php3、php5、phtml等等绕过<br>但是因为靶场是用phpstudy环境搭建的，要进去修改一下配置文件</p>
+<p>把一句话木马文件.php后缀改为.php5 即可上传</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110202503063.png" alt="image-20240110202503063"></p>
+<h3><span id="pass-04黑名单验证htaccess">Pass-04（黑名单验证，.htaccess）</span></h3><p>​	发现使用上面上传的php5或者其他类型的文件，都以失败告终。<br>但是发下有一个文件是没有过滤，也是我们上传过程中经常用到的.htaccess</p>
+<p>​	.htaccess可以帮我们实现包括：文件夹密码保护、用户自动重定向、自定义错误页面、改变你的文件扩展名、封禁特定IP地址的用户、只允许特定IP地址的用户、禁止目录列表，以及使用其他文件作为index文件等一些功能。<br>我们开始上传一个.htaccess内容如下的文件:</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110202721622.png" alt="image-20240110202721622"></p>
+<p>上传成功，我们再上传一个图片马：<br>图片马可以用在一句话木马里面加上<code>GIF89a</code>就可以了，然后把后缀名改成png或者jpg等等</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110202835616.png" alt="image-20240110202835616"></p>
+<h3><span id="pass-05黑名单验证userini">Pass-05（黑名单验证，.user.ini.）</span></h3><p>​	源码里把所有可以解析的后缀名都给写死了，包括大小写，转换，空格，还有点号，正常的php类文件上传不了了，并且拒绝上传 .htaccess 文件。<br>反复观察发现没有被限制的后缀名有 .php7 以及 .ini</p>
+<p>php.ini 是 php的配置文件，.user.ini 中的字段也会被 php 视为配置文件来处理，从而导致 php 的文件解析漏洞。</p>
+<p>但是想要引发 .user.ini 解析漏洞需要三个前提条件</p>
+<p>服务器脚本语言为PHP  </p>
+<p>服务器使用CGI／FastCGI模式  </p>
+<p><strong>这关其实也可用 <code>php. .</code> 点空格点 绕过上传（如下图）</strong></p>
+<h3><span id="pass-06黑名单验证大小写绕过">Pass-06（黑名单验证，大小写绕过）</span></h3><p>这一关同样是后端黑名单，同时过滤掉.htaccess和.ini。但是没有使用strtolower()函数，可以使用大小写绕过黑名单</p>
+<p>把.php 格式改为 .PHP 上传上去之后，就会自动解析为.php</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110203255558.png" alt="image-20240110203255558"></p>
+<h3><span id="pass-07黑名单验证空格绕过">Pass-07（黑名单验证，空格绕过）</span></h3><p>这一关黑名单，没有使用trim()去除空格，可以使用空格绕过黑名单</p>
+<p>抓包，修改上传一句话木马文件名<code>1.php</code>（注意这里有个空格）</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110203618591.png" alt="image-20240110203618591"></p>
+<h3><span id="pass-18条件竞争一">Pass-18（条件竞争一）</span></h3><p>打开第十八关，通过提示发现跟以前的都不一样。</p>
+<p>从源码来看，服务器先是将上传的文件保存下来，然后将文件的后缀名同白名单对比，如果是jpg、png、gif中的一种，就将文件进行重命名。如果不符合的话，unlink()函数就会删除该文件。</p>
+<p>这么看来如果我们还是上传一个图片马的话，网站依旧存在文件包含漏洞我们还是可以进行利用。但是如果没有文件包含漏洞的话，我们就只能上传一个php木马来解析运行了<br>我们可以利用burp和yakit多线程发包，然后不断在浏览器访问我们的<code>webshell</code>，会有一瞬间的访问成功。</p>
+<h1><span id="文件上传下载系统">文件上传下载系统</span></h1><p>知道IP192.168.2.197</p>
+<p>利用nmap扫描nmap -p- 192.168.2.197</p>
+<h1><span id="查找上传的木马文件">查找上传的木马文件</span></h1><p>文件上传查找木马文件位置<a target="_blank" rel="noopener" href="http://192.168.2.114/">192.168.2.114</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110204321302.png" alt="image-20240110204321302"></p>
+<p>提示</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110204346828.png" alt="image-20240110204346828"></p>
+<p>先上传木马文件1.php,根据提示，文件在当前目录的upload目录</p>
+<p>但是文件经过处理</p>
+<p>$filename&#x3D;$files[“name”];<br>$randnum&#x3D;rand(1,9999);<br>$fullpath&#x3D;’&#x2F;‘.md5($filename.$randnum).”.”.substr($filename,strripos($filename,’.’)+1);</p>
+<p>所以利用burp抓包，随便输入路径&#x2F;upload&#x2F;123.php</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110205048855.png" alt="image-20240110205048855"></p>
+<p>将抓到的包发给Intruder，添加payload位置。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110205310460.png" alt="image-20240110205310460"></p>
+<p>payload类型为数值，从1-9999，间隔为1，添加前缀1.php，添加Hash:MD5,进行攻击。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110205754351.png" alt="image-20240110205754351"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110205810304.png" alt="image-20240110205810304"></p>
+<p>点击开始攻击</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240110210029497.png" alt="image-20240110210029497"></p>
+<h1><span id="冰蝎-蚁剑-哥斯拉-菜刀">冰蝎、蚁剑、哥斯拉、菜刀</span></h1><h3><span id="菜刀">菜刀</span></h3><p>流量特征(最开始是明文传输，后来采用base64加密)：PHP类		WebShell链接流量</p>
+<p>​	第一：“eval”，eval函数用于执行传递的攻击payload，这是必不可少的；</p>
+<p>​	第二：(base64_decode($_POST[z0]))，(base64_decode($_POST[z0]))将攻击payload进行Base64解码，因为菜刀默认是使用Base64编码，以避免被检测；</p>
+<p>​	第三：&amp;z0&#x3D;QGluaV9zZXQ…，该部分是传递攻击payload，此参数z0对应$_POST[z0]接收到的数据，该参数值是使用Base64编码的，所以可以利用base64解码可以看到攻击明文。</p>
+<p>注：</p>
+<p>1.有少数时候eval方法会被assert方法替代。</p>
+<p>2.$_POST也会被$_GET、$_REQUEST替代。</p>
+<p>3.z0是菜刀默认的参数，这个地方也有可能被修改为其他参数名。</p>
+<h3><span id="蚁剑php用base64加密">蚁剑（PHP用base64加密）：</span></h3><p>PHP类WebShell链接流量</p>
+<p>将蚁剑的正文内容进行URL解码后，流量最中明显的特征为@ini_set(“display_errors”,”0”);这段代码基本是所有WebShell客户端链接PHP类WebShell都有的一种代码，但是有的客户端会将这段编码或者加密，而蚁剑是明文，所以较好发现，同时蚁剑也有eval这种明显的特征。</p>
+<p>蚁剑绕过特征流量</p>
+<p>由于蚁剑中包含了很多加密、绕过插件，所以导致很多流量被加密后无法识别，但是蚁剑混淆加密后还有一个比较明显的特征，即为参数名大多以“_0x…..&#x3D;”这种形式（下划线可替换为其他）所以，以_0x开头的参数名，后面为加密数据的数据包也可识别为蚁剑的流量特征。</p>
+<h3><span id="冰蝎aes对称加密">冰蝎（AES对称加密）：</span></h3><p>通过HTTP请求特征检测</p>
+<p>1、冰蝎数据包总是伴随着大量的content-type：application什么什么，无论GET还是POST，请求的http中，content-type为application&#x2F;octet-stream；</p>
+<p>2、冰蝎3.0内置的默认内置16个ua（user-agent）头</p>
+<p>3、content-length 请求长度，对于上传文件，命令执行来讲，加密的参数不定长。但是对于密钥交互，获取基本信息来讲，payload都为定长</p>
+<h3><span id="哥斯拉base64加密">哥斯拉（base64加密）：</span></h3><p>特征检测</p>
+<p>1、发送一段固定代码（payload），http响应为空<br>2、发送一段固定代码（test），执行结果为固定内容<br>3、发送一段固定代码（getBacisInfo）</p>
+<h1><span id="流量分析">流量分析</span></h1><h2><span id="开始抓包">开始抓包</span></h2><blockquote>
+<p>打开wireshark后，按ctrl+K，勾选需要抓包的网卡<br>点击Start开始抓包</p>
+</blockquote>
+<h2><span id="wireshark过滤器表达式">wireshark过滤器表达式</span></h2><blockquote>
+<p>协议过滤</p>
+<ul>
+<li>TCP：只显示TCP协议的数据流</li>
+<li>HTTP：只显示HTTP协议的数据流</li>
+<li>ICMP：只显示ICMP协议的数据流</li>
+<li>ARP：只显示ARP协议的数据流</li>
+<li>DNS：显示DNS协议的数据流</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>-IP过滤<br>-ip.addr &#x3D; 192.168.116.138，只显示ip为192.168.116.138有关的数据流<br>-ip.src &#x3D; 192.168.116.138，只显示源IP地址为192.168.116.138的数据流<br>-ip.dst &#x3D; 192.168.116.138，只显示目标IP地址为192.168.116.138的数据流</p>
+</blockquote>
+<blockquote>
+<p>-端口过滤<br>– tcp.port &#x3D;&#x3D; 80，只显示80端口TCP数据流<br>– udp.prot &#x3D;&#x3D; 67，只显示67端口UDP数据流<br>– tcp.srcport &#x3D;&#x3D; 80, 只显示源地址的80端口数据流<br>– tcp.dstport &#x3D;&#x3D; 80，只显示目的地址80端口数据流</p>
+</blockquote>
+<blockquote>
+<p>过滤HTTP协议<br>http.request.method&#x3D;&#x3D;“GET”，显示get请求<br>http.request.method&#x3D;&#x3D;“POST” ，显示POST请求<br>http.request.url contains admin ，显示url中包含admin的请求<br>http.request.code&#x3D;&#x3D;404，显示状态码为404<br>http contains “FLAG”，请求或相应中包含特定内容</p>
+<p>连接符<br>and，or<br>如：tcp.port &#x3D;&#x3D; 80 and ip.addr &#x3D; 192.168.116.138</p>
+<p>过滤包长度</p>
+<p>udp.length&#x3D;&#x3D;20，整个UDP数据包<br>tcp.len&gt;&#x3D;20，TCP数据包中的IP数据包<br>ip.len&#x3D;&#x3D;20，整个IP数据包<br>frame.len&#x3D;&#x3D;20，整个数据包</p>
+</blockquote>
+<h3><span id="数据流的追踪">数据流的追踪</span></h3><p>我们的一个完整的数据流一般都是由很多个包组成的；<br>所以当我们想查看某条数据包对于的数据流的话。可以选中数据，右键选择追踪流；<br>里面就会有tcp流、udp流、ssl流、http流。数据包属于哪种流就选择对应的流；<br>当我们选择了追踪流时，会弹出该流的完整的数据流还有这个数据流中包含的数据包，对话框下面可以选择数据流方向，顶部的过滤器就是该流的过滤规则</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213033987.png" alt="image-20240111213033987"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213212145.png" alt="image-20240111213212145"></p>
+<p>利用网站<a target="_blank" rel="noopener" href="https://icyberchef.com/%E8%A7%A3%E7%A0%81%E3%80%82">https://icyberchef.com/解码。</a></p>
+<p>先URL Decode解码，</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213901998.png" alt="image-20240111213901998"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213413175.png" alt="image-20240111213413175"></p>
+<p>再用base64解码</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213957656.png" alt="image-20240111213957656"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240111213538968.png" alt="image-20240111213538968"></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA%E7%BB%83%E4%B9%A0/">靶机练习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/sqlmap/">sqlmap</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/01/waf%E5%92%8CBP/">waf和BP</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/27/sql%E7%BB%95%E8%BF%87/">T1</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/html%E5%92%8Ccss%E5%AD%A6%E4%B9%A0/">html和css学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/22/python3/">python3</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/12/php%E5%AD%A6%E4%B9%A0/">php学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/21/sql%E6%B3%A8%E5%85%A52/">sql注入2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 8.74473738690311px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.75945629116135px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 17.33559991961703px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 17.09462946470193px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 11.152652771873946px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/php/" style="font-size: 14.98083746617138px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 18.66160660725777px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 10.425790215101575px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 14.785604360175073px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 13.532810447970348px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 17.490752946760328px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 17.840281622207765px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.500203109788785px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 13.941428990247402px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 18.67979074870859px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 8.79669268755337px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 12.294629562871231px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 14.552609089719489px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 10.168975819307018px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 16.606442075712543px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 19.012418436976017px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 12.123250543194983px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 9.996887576809563px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/dirsearch/" style="font-size: 13.215128523379374px;" class="tag-cloud-link">dirsearch</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 16.76912402432447px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 15.289359061936118px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 12.33600113581934px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/pikachu/" style="font-size: 18.721510609905266px;" class="tag-cloud-link">pikachu</a>
+    
+    <a href="/tags/virtrualbox/" style="font-size: 12.714460652318547px;" class="tag-cloud-link">virtrualbox</a>
+    
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 15.732775894172594px;" class="tag-cloud-link">小米范端口扫描</a>
+    
+    <a href="/tags/vue/" style="font-size: 11.322410858341545px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/waf/" style="font-size: 8.635311511920534px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 18.94845910548737px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 11.574957834635537px;" class="tag-cloud-link">nmap</a>
+    
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 10.477024411841267px;" class="tag-cloud-link">百度谷歌语法</a>
+    
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.32881664985673px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 9.145867114783616px;" class="tag-cloud-link">弱口令</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 11.411597265175406px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 10.071017961552936px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 19.775620877044197px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 16.90845643587357px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 9.063045015131873px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 12.105803962131219px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 9.271155861073911px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 17.83847658381343px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 16.736766490831155px;" class="tag-cloud-link">wireshark抓包</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
