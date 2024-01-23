@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="明 尘">
+    
+    
+    
+    
+    
+    
+    <title>文心雕龙</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">文心雕龙</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/php/">php</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/categories">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Linux/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/">DNS域名解析</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">文心雕龙</a>
+        >
+        <span></span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/01/05/vmware/"></a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-01-05
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/01/05/vmware/"></a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-01-05
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h1><span id="vmware虚拟机的12个使用技巧">VMware虚拟机的12个使用技巧</span></h1><h3><span id="1增加虚拟机可用的物理内存的技巧">1.增加虚拟机可用的物理内存的技巧</span></h3><p>步骤如下：关闭虚拟机→编辑虚拟机设置→选择“内存”→调整大小，如图1-70所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108090826953.png" alt="image-20240108090826953"></p>
+<h3><span id="2添加硬件设备的技巧">2.添加硬件设备的技巧</span></h3><p>步骤如下：编辑虚拟机设置→单击“添加”按钮→选择需要添加的设备，点击“下一步”按钮，即可添加，如图所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093311345.png" alt="image-20240108093311345"></p>
+<h3><span id="3控制权切换的技巧">3.控制权切换的技巧</span></h3><p>​	由于VMware虚拟机的工作特点是在一台计算机上同时运行多个操作系统，因此，就存在一个系统控制权的切换问题，如果发现鼠标和键盘在某一操作系统中无法使用，那么就必须进行切换，默认的切换方法是按Ctrl+Alt组合键。</p>
+<h3><span id="4正确关机的技巧">4.正确关机的技巧</span></h3><p>​	VMware虚拟机的关机也必须按照一定的步骤进行，如果直接单击VMware工具栏上的“Power OFF”按钮，相当于通常意义上的非法关机，那么下次启动VMware虚拟机时会自动扫描磁盘。正确的关机步骤是在操作系统上执行init 0命令。</p>
+<h3><span id="5发送快捷键的技巧">5.发送快捷键的技巧</span></h3><p>在物理主机中使用Ctrl+Alt+Del组合键来结束任务，但在VMware虚拟机中是使用Ctrl+Alt+Ins（Delete旁边）组合键或在图所示的界面中选择“虚拟机”→“发送Ctrl+Alt+Del（E）”命令。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093441633.png" alt="image-20240108093441633"></p>
+<p>图1-72　重启快捷键</p>
+<h3><span id="6显示模式的切换技巧">6.显示模式的切换技巧</span></h3><p>通过单击图1-73所示的按钮实现显示模式切换。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093619869.png" alt="image-20240108093619869"></p>
+<p>　切换显示模式</p>
+<p>图中的3个按钮分别为显示侧边栏、显示下边栏、显示全屏。</p>
+<h3><span id="7虚拟机网络使用技巧">7.虚拟机网络使用技巧</span></h3><p>VMware虚拟机提供了3种网络工作模式：Bridged（桥接）模式、NAT（网络地址转换）模式和Host-Only（仅主机）模式。<br>（1）Bridged模式：就是将物理主机的网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信，如图1-74所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093655099.png" alt="image-20240108093655099"></p>
+<p>图1-74　Bridged模式示意图<br>在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中。<br>虚拟机的IP地址需要与物理主机在同一个网段，如果需要联网，则网关与DNS需要与物理主机网卡一致。<br>（2）NAT模式：在NAT模式下，借助虚拟NAT设备和虚拟DHCP服务器，使得虚拟机可以联网。虚拟机和物理主机共用一个IP地址，如图1-75所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093719536.png" alt="image-20240108093719536"></p>
+<p>图1-75　NAT模式示意图</p>
+<p>注意：虚拟机使用NAT模式时，Linux系统要配置成动态获取IP。<br>（3）Host-Only模式：将虚拟机与外网隔开，使得虚拟机成为一个独立的系统，只与物理主机相互通信。相当于NAT模式去除了虚拟NAT地址转换功能，如图1-76所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093808538.png" alt="image-20240108093808538"></p>
+<p>注意：虚拟机使用Host-Only模式时，Linux系统要配置成动态获取IP。</p>
+<h3><span id="8虚拟机进入bios设置的技巧">8.虚拟机进入BIOS设置的技巧</span></h3><p>关闭虚拟机后，选择“打开电源时进入固件”选项，如图示，即可进入BIOS设置。<br>　进入BIOS</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108093852771.png" alt="image-20240108093852771"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108094225264.png" alt="image-20240108094225264"></p>
+<h3><span id="9设置显示屏幕分辨率的技巧">9.设置显示屏幕分辨率的技巧</span></h3><p>在CentOS 7以后，默认在安装系统时就直接安装好open VM- tools了，直接使用即可。</p>
+<h3><span id="10使用iso光盘文件的技巧">10.使用ISO光盘文件的技巧</span></h3><p>单击“编辑虚拟机设置”按钮，选择“CD&#x2F;DVD”按钮，勾选“启动时连接”复选框，选择“使用ISO映像文件”单选按钮，如图1-78所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108091839209.png" alt="image-20240108091839209"></p>
+<p>如果是在开机情况下，直接在右下角单击光驱图标，选择“设置”选项即可，如图1-79所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108092022889.png" alt="image-20240108092022889"></p>
+<h3><span id="11删除虚拟机的技巧">11.删除虚拟机的技巧</span></h3><p>关闭虚拟机，选择“虚拟机”→“管理”→“从磁盘中删除”命令，如图1-80所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108094313851.png" alt="image-20240108094313851"></p>
+<h3><span id="12快照管理技巧">12.快照管理技巧</span></h3><p>创建快照相当于做了一个完整备份，选中拍摄快照的虚拟机，选择“虚拟机”→“快照”→“拍摄快照”命令，如图1-81所示。在打开的对话框中进行设置，如图1-82所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108094450092.png" alt="image-20240108094450092"></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108094515236.png" alt="image-20240108094515236"></p>
+<h1><span id="vmware开发者小彩蛋">vmware开发者小彩蛋</span></h1><p>1.打开VMware，在主界面按下Ctrl+alt+Shift组合键</p>
+<p>2.选择左上角的“文件”选项卡，选择“新建Paschal Ovum虚拟机”</p>
+<p>3.打开虚拟机就可以玩了。</p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20240108212646496.png" alt="image-20240108212646496"></p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20240108212224627.png" alt="image-20240108212224627"></p>
+<p>输入“pride”可以变成彩色。</p>
+<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20240108212811389.png" alt="image-20240108212811389"></p>
+<h1><span id="vmware没有虚拟网卡">vmware没有虚拟网卡</span></h1><p>vmware安装完之后没有虚拟网卡：vm8&#x2F;vm1</p>
+<p>最好卸载重装，但不要直接卸载，可以用geek卸载vm，在用everything查找有没有残余，并全部卸载干净。然后重新安装</p>
+<h1><span id="常用网络命令">常用网络命令</span></h1><h3><span id="ping">ping</span></h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs inform7">用法: ping <span class="hljs-comment">[-t]</span> <span class="hljs-comment">[-a]</span> <span class="hljs-comment">[-n count]</span> <span class="hljs-comment">[-l size]</span> <span class="hljs-comment">[-f]</span> <span class="hljs-comment">[-i TTL]</span> <span class="hljs-comment">[-v TOS]</span><br>            <span class="hljs-comment">[-r count]</span> <span class="hljs-comment">[-s count]</span> <span class="hljs-comment">[<span class="hljs-comment">[-j host-list]</span> | <span class="hljs-comment">[-k host-list]</span>]</span><br>            <span class="hljs-comment">[-w timeout]</span> <span class="hljs-comment">[-R]</span> <span class="hljs-comment">[-S srcaddr]</span> <span class="hljs-comment">[-c compartment]</span> <span class="hljs-comment">[-p]</span><br>            <span class="hljs-comment">[-4]</span> <span class="hljs-comment">[-6]</span> target_name<br><br>选项:<br>    -t             Ping 指定的主机，直到停止。<br>                   若要查看统计信息并继续操作，请键入 Ctrl+Break；<br>                   若要停止，请键入 Ctrl+C。<br>    -a             将地址解析为主机名。<br>    -n count       要发送的回显请求数。<br>    -l size        发送缓冲区大小。<br>    -f             在数据包中设置“不分段”标记(仅适用于 IPv4)。<br>    -i TTL         生存时间。<br>    -v TOS         服务类型(仅适用于 IPv4。该设置已被弃用，<br>                   对 IP 标头中的服务类型字段没有任何<br>                   影响)。<br>    -r count       记录计数跃点的路由(仅适用于 IPv4)。<br>    -s count       计数跃点的时间戳(仅适用于 IPv4)。<br>    -j host-list   与主机列表一起使用的松散源路由(仅适用于 IPv4)。<br>    -k host-list    与主机列表一起使用的严格源路由(仅适用于 IPv4)。<br>    -w timeout     等待每次回复的超时时间(毫秒)。<br>    -R             同样使用路由标头测试反向路由(仅适用于 IPv6)。<br>                   根据 RFC 5095，已弃用此路由标头。<br>                   如果使用此标头，某些系统可能丢弃<br>                   回显请求。<br>    -S srcaddr     要使用的源地址。<br>    -c compartment 路由隔离舱标识符。<br>    -p             Ping Hyper-V 网络虚拟化提供程序地址。<br>    -4             强制使用 IPv4。<br>    -6             强制使用 IPv6。<br></code></pre></td></tr></table></figure>
+<p>ping命令的应用格式：</p>
+<p>①ping+IP地址或主机域名；</p>
+<p>②ping+IP地址或主机域名+命令参数；</p>
+<p>③ping+命令参数+IP地址或主机域名（注意，“+”要换成空格！）。</p>
+<p>当使用第①种格式时，默认只发送4个数据包。</p>
+<p>例如，ping一下<a target="_blank" rel="noopener" href="http://www.baidu.com这个地址,/">www.baidu.com这个地址，</a></p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108201134500.png" alt="image-20240108201134500"></p>
+<p>如图4-16所示。104.193.88.123就是百度的其中一台主机的地址；“字节”表示发送数据包的大小，默认为32B；“时间”表示从发出数据包到接收到返回数据包所用的时间；TTL表示生存时间值，该字段指定IP包被路由器丢弃之前允许通过的最大网段数量。<br>常用的还有直接ping一个IP地址，看看是不是能从网络层连接通过，如图4-17所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108201814630.png" alt="image-20240108201814630"></p>
+<h3><span id="ping命令的常用参数是-t-a-n-conut-l等几项">ping命令的常用参数是-t、-a、-n conut、-l等几项。</span></h3><p>（1）-t表示不间断向目标地址发送数据包，直到强迫其停止。若要查看统计信息并继续发送数据包，则按下〈Ctrl+Break〉组合键。若要终止发送数据包，则按下〈Ctrl+C〉组合键。</p>
+<p>（2）-n定义向目标地址发送数据包的次数。如果-t和-n两个参数一起使用，ping命令将以放在后面的参数为准，比如“ping IP-t-n 10”，虽然使用了-t参数，但并不是一直ping下去，而是只ping 10次。<br>（3）-l定义发送数据包的大小，默认情况下是32B，利用它可以最大定义到65500B。</p>
+<h3><span id="ipconfig指令">ipconfig指令</span></h3><p>ipconfig命令主要是用来查看ip和mac地址，刷新DNS缓存，释放ip地址等，下面来看看ipconfig命令的几个主要用法。<br>（1）ipconfig：当使用ipconfig时不带任何参数选项，那么它为每个已经配置了的接口显示IP地址、子网掩码和缺省网关值。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108202856100.png" alt="image-20240108202856100"></p>
+<p>（2）ipconfig&#x2F;all：当使用all选项时，ipconfig能为DNS和WINS服务器显示它已配置且所要使用的附加信息（如IP地址等），并且显示内置于本地网卡中的物理地址（MAC）。如果IP地址是从DHCP服务器租用的，ipconfig将显示DHCP服务器的IP地址和租用地址预计失效的日期。如图4-19所示为ipconfig&#x2F;all命令使用图。<br><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20240108203421630.png" alt="image-20240108203421630"><br>图4-19 ipconfig&#x2F;all命令<br>其他一些参数简介如下。（也可以在DOS方式下输入ipconfig&#x2F;？进行参数查询)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">●ipconfig/release：DHCP客户端手工释放IP地址。<br>●ipconfig/renew：DHCP客户端手工向服务器刷新请求。<br>●ipconfig/flushdns：清除本地DNS缓存内容。<br>●ipconfig/displaydns：显示本地DNS内容。<br>●ipconfig/registerdns：DNS客户端手工向服务器进行注册。<br>●ipconfig/showclassid：显示网络适配器的DHCP类别信息。<br>●ipconfig/setclassid：设置网络适配器的DHCP类别。<br>●ipconfig/renew“Local Area Connection”：更新“本地连接”适配器的由DHCP分配IP地址的配置。<br>●ipconfig/showclassid Local*：显示名称以Local开头的所有适配器的DHCP类ID。<br>●ipconfig/setclassid“Local Area Connection”TEST：将“本地连接”适配器的DHCP类别ID设置为TEST。<br></code></pre></td></tr></table></figure>
+<h3><span id="netstat指令">netstat指令</span></h3><p>netstat命令是一个监控TCP&#x2F;IP网络的非常有用的工具，它可以显示路由表、实际的网络连接以及每一个网络接口设备的状态信息。netstat是一个非常实用的命令，可用于列出系统上所有的网络套接字连接情况，包括tcp、udp以及unix套接字，另外它还能列出处于监听状态（即等待接入请求）的套接字。netstat命令的常用参数如下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs css">●-<span class="hljs-selector-tag">a</span>或<span class="hljs-attr">--all</span>：显示所有连线中的Socket。<br>●-<span class="hljs-selector-tag">A</span>&lt;网络类型&gt;或--&lt;网络类型&gt;：列出该网络类型连线中的相关地址。<br>●-c或<span class="hljs-attr">--continuous</span>：持续列出网络状态。<br>●-C或<span class="hljs-attr">--cache</span>：显示路由器配置的缓存信息。<br>●-e或<span class="hljs-attr">--extend</span>：显示网络其他相关信息。<br>●-F或<span class="hljs-attr">--fib</span>：显示FIB。<br><br>●-g或<span class="hljs-attr">--groups</span>：显示多重广播功能群组组员名单。<br>●-h或<span class="hljs-attr">--help</span>：在线帮助。<br>●-<span class="hljs-selector-tag">i</span>或<span class="hljs-attr">--interfaces</span>：显示网络界面信息表单。<br>●-l或<span class="hljs-attr">--listening</span>：显示监控中的服务器的Socket。<br>●-M或<span class="hljs-attr">--masquerade</span>：显示伪装的网络连线。<br>●-n或<span class="hljs-attr">--numeric</span>：直接使用ip地址，而不通过域名服务器。<br>●-N或<span class="hljs-attr">--netlink</span>或<span class="hljs-attr">--symbolic</span>：显示网络硬件外围设备的符号连接名称。<br>●-o或<span class="hljs-attr">--timers</span>：显示计时器。<br>●-<span class="hljs-selector-tag">p</span>或<span class="hljs-attr">--programs</span>：显示正在使用Socket的程序识别码和程序名称。<br>●-r或<span class="hljs-attr">--route</span>：显示Routing <span class="hljs-selector-tag">Table</span>。<br>●-s或<span class="hljs-attr">--statistice</span>：显示网络工作信息统计表。<br>●-t或<span class="hljs-attr">--tcp</span>：显示TCP传输协议的连线状况。<br>●-u或<span class="hljs-attr">--udp</span>：显示UDP传输协议的连线状况。<br>●-v或<span class="hljs-attr">--verbose</span>：显示指令执行过程。<br>●-V或<span class="hljs-attr">--version</span>：显示版本信息。<br>●-w或<span class="hljs-attr">--raw</span>：显示RAW传输协议的连线状况。<br>●-x或<span class="hljs-attr">--unix</span>：此参数的效果和指定“-<span class="hljs-selector-tag">A</span> unix”参数相同。<br>●<span class="hljs-attr">--ip</span>或<span class="hljs-attr">--inet</span>：此参数的效果和指定“-<span class="hljs-selector-tag">A</span> inet”参数相同。<br></code></pre></td></tr></table></figure>
+<p>例如图4-20为netstat-t命令，用地址显示TCP传输协议的连线状况。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108204824331.png" alt="image-20240108204824331"><br>图4-20 netstat-t命令<br>这些参数可以组合起来用。经常使用的是netstat-an命令，用来显示所有已经建立的有效连接，如图4-21所示。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108205018430.png" alt="image-20240108205018430"><br>图4-21 netstat-an命令显示所有建立的有效连接</p>
+<h3><span id="net指令">net指令</span></h3><p>net命令是一个命令行命令，net命令有很多函数用于使用和核查计算机之间的NetBIOS连接，可以查看我们的管理网络环境、服务、用户、登录等信息内容；可以在DOS环境下执行NET&#x2F;？或NET或NET HELP获得使用帮助，如图4-22所示。所有Net命令接受选项&#x2F;yes和&#x2F;no（可缩写为&#x2F;y和&#x2F;n)。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108205125710.png" alt="image-20240108205125710"><br>图4-22 net命令的语法<br>下面介绍一些简单的net命令使用方法。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs stata">1.<span class="hljs-keyword">net</span> <span class="hljs-keyword">view</span><br>作用：显示域列表、计算机列表或指定计算机的共享资源列表。<br>命令格式：<span class="hljs-keyword">net</span> <span class="hljs-keyword">view</span>[\\computername|/domain[:domainname]]<br>有关参数说明：<br>●键入不带参数的<span class="hljs-keyword">net</span> <span class="hljs-keyword">view</span>显示当前域的计算机列表。<br>●\\computername指定要查看其共享资源的计算机。<br>●/domain[:domainname]指定要查看其可用计算机的域。<br>例如：<span class="hljs-keyword">net</span> <span class="hljs-keyword">view</span>\\GHQ，查看GHQ计算机的共享资源列表。<br><span class="hljs-keyword">net</span> <span class="hljs-keyword">view</span>/domain:XYZ，查看XYZ域中的机器列表。<br>2.<span class="hljs-keyword">net</span> user<br>3.<span class="hljs-keyword">net</span> <span class="hljs-keyword">use</span><br>4.<span class="hljs-keyword">net</span> time<br>5.<span class="hljs-keyword">net</span> start<br>6.<span class="hljs-keyword">net</span> <span class="hljs-keyword">pause</span><br>7.<span class="hljs-keyword">net</span> <span class="hljs-keyword">continue</span><br>8.<span class="hljs-keyword">net</span> stop<br></code></pre></td></tr></table></figure>
+<h3><span id="tracert指令">tracert指令</span></h3><p>tracert是一个简单的网络诊断工具命令，可以列出分组经过的路由节点，以及它在IP网络中每一跳的延迟。（这里的延迟是指：分组从信息源发送到目的地所需的时间，延迟也分为许多种——传播延迟、传输延迟、处理延迟、排队延迟等，是大多数网站性能的瓶颈之一。）<br>tracert的使用方法可以使用tracert -?来查看，如图4-23所示。</p>
+<p><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108214150796.png" alt="image-20240108214150796"></p>
+<p>图4-23 tracert的使用方法<br>如图4-24所示为使用tracert命令来追踪<a target="_blank" rel="noopener" href="http://www.sina.com.cn网站./">www.sina.com.cn网站。</a><br>上面命令执行结果的说明：<br>●tracert命令用于确定IP数据包访问目标所采取的路径，显示从本地到目标网站所在网络服务器的一系列网络节点的访问速度，最多支持显示30个网络节点。<br>●最左侧的1～11，表明在使用的网络上，经过10（不算自己本地的）个路由节点，可以到达新浪网站；如果网络不同，则到达的站点可能不同；其他的IP，也有可能不同。感兴趣的读者可以自行测试一下。<br>●访问单位是ms，表示连接到每个路由节点的速度、返回速度和多次。连接反馈的平均值。<br><img src="https://raw.githubusercontent.com/tanlinhuitlh/123/main/img/image-20240108215012689.png" alt="image-20240108215012689"><br>图4-24 用tracert命令来追踪<a target="_blank" rel="noopener" href="http://www.sina.com.cn网站/">www.sina.com.cn网站</a><br>●后面的IP，就是每个路由节点对应的IP。<br>●如果返回消息是超时，则表示这个路由节点和使用的宽带，是无法连通的，至于原因，就有很多种了。比如，特意在路由上做了过滤限制，或者确实是路由的问题等，需要具体问题具体分析。<br>●如果在测试的时候，返回大量*和超时信息，则说明这个IP在各个路由节点都有问题。<br>●一般10个节点以内可以完成跟踪的网站，访问速度都是不错的；10～15个节点之内才完成跟踪的网站，访问速度则比较慢；如果超过30个节点都没有完成跟踪，则可以认为目标网站是无法访问的。</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            明 尘
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/21/webshall%E5%85%8D%E6%9D%80/">webshall免杀</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/19/beef/">beef</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/16/xss/">xss</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA%E7%BB%83%E4%B9%A0/">靶机练习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/sqli%E9%80%9A%E5%85%B3/">sqli通关</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/05/vmware/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/python%E5%AD%A6%E4%B9%A0/">python学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/06/linux%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%85/">linux命令补充</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/08/tg%E6%B3%A8%E5%86%8C%E5%92%8C%E6%B0%B8%E6%81%92%E4%B9%8B%E9%BB%91/">tg注册和永恒之黑</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/04/virtual%E5%92%8Cpicachu/">virtual和pikachu</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/07/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/10/%E5%AE%89%E5%8D%93%E7%97%85%E6%AF%92%E7%9B%91%E5%90%AC/">安卓病毒监听</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2023/12/05/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A0/">网络基础知识学习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA%E7%BB%83%E4%B9%A0/">靶机练习</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/01/21/webshall%E5%85%8D%E6%9D%80/">webshall免杀</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/01/05/vmware/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/05/vmware/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2024/01/05/vmware/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Linux/" style="font-size: 15.37697195190626px;" class="tag-cloud-link">Linux</a>
+    
+    <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 15.62917129392614px;" class="tag-cloud-link">基础知识</a>
+    
+    <a href="/tags/DNS%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/" style="font-size: 11.121642812471109px;" class="tag-cloud-link">DNS域名解析</a>
+    
+    <a href="/tags/HTML/" style="font-size: 19.88531463126825px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/CSS/" style="font-size: 19.88090599910833px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/php/" style="font-size: 11.854549393584051px;" class="tag-cloud-link">php</a>
+    
+    <a href="/tags/php%E5%87%BD%E6%95%B0/" style="font-size: 11.863744242859845px;" class="tag-cloud-link">php函数</a>
+    
+    <a href="/tags/%E7%AE%80%E5%8D%95%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/" style="font-size: 15.529017393223238px;" class="tag-cloud-link">简单网站功能实现</a>
+    
+    <a href="/tags/html/" style="font-size: 19.730877924849946px;" class="tag-cloud-link">html</a>
+    
+    <a href="/tags/postman/" style="font-size: 13.826702333447681px;" class="tag-cloud-link">postman</a>
+    
+    <a href="/tags/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" style="font-size: 13.206965795378087px;" class="tag-cloud-link">文件操作</a>
+    
+    <a href="/tags/python/" style="font-size: 19.79604040643937px;" class="tag-cloud-link">python</a>
+    
+    <a href="/tags/%E5%8F%98%E9%87%8F/" style="font-size: 9.628287855846029px;" class="tag-cloud-link">变量</a>
+    
+    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 11.564005731084398px;" class="tag-cloud-link">字符串</a>
+    
+    <a href="/tags/%E5%88%97%E8%A1%A8/" style="font-size: 15.171408598992702px;" class="tag-cloud-link">列表</a>
+    
+    <a href="/tags/%E5%85%83%E7%BB%84/" style="font-size: 9.353535339699679px;" class="tag-cloud-link">元组</a>
+    
+    <a href="/tags/if%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/" style="font-size: 11.840440991933733px;" class="tag-cloud-link">if条件判断</a>
+    
+    <a href="/tags/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" style="font-size: 14.112515178065268px;" class="tag-cloud-link">循环语句</a>
+    
+    <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 19.854688909434305px;" class="tag-cloud-link">学习</a>
+    
+    <a href="/tags/PHP/" style="font-size: 9.314321591734238px;" class="tag-cloud-link">PHP</a>
+    
+    <a href="/tags/Navicat/" style="font-size: 9.713803911821064px;" class="tag-cloud-link">Navicat</a>
+    
+    <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 16.510455442770372px;" class="tag-cloud-link">安装</a>
+    
+    <a href="/tags/sqlmap%E4%BD%BF%E7%94%A8/" style="font-size: 10.176558610621093px;" class="tag-cloud-link">sqlmap使用</a>
+    
+    <a href="/tags/dirsearch/" style="font-size: 14.550230594501986px;" class="tag-cloud-link">dirsearch</a>
+    
+    <a href="/tags/sql-%E6%B3%A8%E5%85%A5/" style="font-size: 11.349985912321783px;" class="tag-cloud-link">sql 注入</a>
+    
+    <a href="/tags/sqlmap/" style="font-size: 19.508613906675794px;" class="tag-cloud-link">sqlmap</a>
+    
+    <a href="/tags/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2/" style="font-size: 13.561158800382383px;" class="tag-cloud-link">联合查询</a>
+    
+    <a href="/tags/pikachu/" style="font-size: 8.391358678188343px;" class="tag-cloud-link">pikachu</a>
+    
+    <a href="/tags/virtrualbox/" style="font-size: 18.18144319843475px;" class="tag-cloud-link">virtrualbox</a>
+    
+    <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F/" style="font-size: 13.861091146568597px;" class="tag-cloud-link">小米范端口扫描</a>
+    
+    <a href="/tags/vue/" style="font-size: 9.276655310796407px;" class="tag-cloud-link">vue</a>
+    
+    <a href="/tags/waf/" style="font-size: 8.647787697015183px;" class="tag-cloud-link">waf</a>
+    
+    <a href="/tags/BurpSuite/" style="font-size: 10.965502018190467px;" class="tag-cloud-link">BurpSuite</a>
+    
+    <a href="/tags/nmap/" style="font-size: 16.042808434130812px;" class="tag-cloud-link">nmap</a>
+    
+    <a href="/tags/%E7%99%BE%E5%BA%A6%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/" style="font-size: 12.721875103687758px;" class="tag-cloud-link">百度谷歌语法</a>
+    
+    <a href="/tags/%E6%94%AF%E4%BB%98%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E/" style="font-size: 11.12248118426762px;" class="tag-cloud-link">支付逻辑漏洞</a>
+    
+    <a href="/tags/%E5%BC%B1%E5%8F%A3%E4%BB%A4/" style="font-size: 9.457747302450986px;" class="tag-cloud-link">弱口令</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 8.675300590299944px;" class="tag-cloud-link">博客搭建</a>
+    
+    <a href="/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" style="font-size: 9.155746038104649px;" class="tag-cloud-link">主题配置</a>
+    
+    <a href="/tags/sql%E7%BB%95%E8%BF%87/" style="font-size: 10.27379351897795px;" class="tag-cloud-link">sql绕过</a>
+    
+    <a href="/tags/sqlmap-tamper/" style="font-size: 18.85732351936506px;" class="tag-cloud-link">sqlmap tamper</a>
+    
+    <a href="/tags/sql%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0/" style="font-size: 18.058481225038012px;" class="tag-cloud-link">sql报错函数</a>
+    
+    <a href="/tags/bool%E5%92%8C%E7%9D%A1%E7%9C%A0%E7%9B%B2%E6%B3%A8%E8%84%9A%E6%9C%AC/" style="font-size: 10.000098382840658px;" class="tag-cloud-link">bool和睡眠盲注脚本</a>
+    
+    <a href="/tags/ip%E5%92%8C%E8%B7%AF%E7%94%B1/" style="font-size: 19.61372334504837px;" class="tag-cloud-link">ip和路由</a>
+    
+    <a href="/tags/proxifier/" style="font-size: 13.500749574167283px;" class="tag-cloud-link">proxifier</a>
+    
+    <a href="/tags/wireshark%E6%8A%93%E5%8C%85/" style="font-size: 12.04716562928687px;" class="tag-cloud-link">wireshark抓包</a>
+    
+    <a href="/tags/webshall%E5%85%8D%E6%9D%80/" style="font-size: 13.782219426703918px;" class="tag-cloud-link">webshall免杀</a>
+    
+    <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/" style="font-size: 19.11907065038423px;" class="tag-cloud-link">一句话木马</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/tanlinhuitlh/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 明 尘 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '8'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
